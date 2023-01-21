@@ -1,0 +1,407 @@
+{
+  "Profiles": [
+    {
+      "Tablet": "VEIKK S640 V2",
+      "OutputMode": {
+        "Path": "OpenTabletDriver.Desktop.Output.AbsoluteMode",
+        "Settings": [],
+        "Enable": true
+      },
+      "Filters": [
+        {
+          "Path": "TabletDriverFilters.Devocub.Antichatter",
+          "Settings": [
+            {
+              "Property": "AntichatterOffsetY",
+              "Value": 1.0
+            },
+            {
+              "Property": "PredictionEnabled",
+              "Value": false
+            },
+            {
+              "Property": "PredictionStrength",
+              "Value": 1.0
+            },
+            {
+              "Property": "PredictionSharpness",
+              "Value": 1.0
+            },
+            {
+              "Property": "PredictionOffsetX",
+              "Value": 3.0
+            },
+            {
+              "Property": "PredictionOffsetY",
+              "Value": 0.3
+            },
+            {
+              "Property": "Latency",
+              "Value": 12.0
+            },
+            {
+              "Property": "AntichatterStrength",
+              "Value": 10.0
+            },
+            {
+              "Property": "AntichatterOffsetX",
+              "Value": -1.0
+            },
+            {
+              "Property": "AntichatterMultiplier",
+              "Value": 1.0
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1000.0
+            }
+          ],
+          "Enable": true
+        },
+        {
+          "Path": "BezierInterpolator.BezierInterp",
+          "Settings": [
+            {
+              "Property": "SmoothingFactor",
+              "Value": 0.2
+            },
+            {
+              "Property": "TiltSmoothingFactor",
+              "Value": 0.2
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1000.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "RadialFollow.RadialFollowSmoothingTabletSpace",
+          "Settings": [
+            {
+              "Property": "OuterRadius",
+              "Value": 1.0
+            },
+            {
+              "Property": "InnerRadius",
+              "Value": 0.0
+            },
+            {
+              "Property": "SmoothingCoefficient",
+              "Value": 0.95
+            },
+            {
+              "Property": "SoftKneeScale",
+              "Value": 1.0
+            },
+            {
+              "Property": "SmoothingLeakCoefficient",
+              "Value": 0.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "RadialFollow.RadialFollowSmoothingScreenSpace",
+          "Settings": [
+            {
+              "Property": "OuterRadius",
+              "Value": 100.0
+            },
+            {
+              "Property": "InnerRadius",
+              "Value": 50.0
+            },
+            {
+              "Property": "SmoothingCoefficient",
+              "Value": 1.0
+            },
+            {
+              "Property": "SoftKneeScale",
+              "Value": 100.0
+            },
+            {
+              "Property": "SmoothingLeakCoefficient",
+              "Value": 0.5
+            }
+          ],
+          "Enable": true
+        },
+        {
+          "Path": "VoiDPlugins.Filter.Reconstructor",
+          "Settings": [
+            {
+              "Property": "EMAWeight",
+              "Value": 0.5
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "VoiDPlugins.Filter.MeL.MeLAsync",
+          "Settings": [
+            {
+              "Property": "Samples",
+              "Value": 20
+            },
+            {
+              "Property": "Complexity",
+              "Value": 2
+            },
+            {
+              "Property": "Weight",
+              "Value": 1.4
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1000.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "VoiDPlugins.Filter.MeL.MeLFilter",
+          "Settings": [
+            {
+              "Property": "Samples",
+              "Value": 20
+            },
+            {
+              "Property": "Weight",
+              "Value": 1.4
+            },
+            {
+              "Property": "Complexity",
+              "Value": 2
+            },
+            {
+              "Property": "Offset",
+              "Value": 10.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "SpringInterpolator.SpringInterpolator",
+          "Settings": [
+            {
+              "Property": "StepSize",
+              "Value": 40.0
+            },
+            {
+              "Property": "Stiffness",
+              "Value": 5.0
+            },
+            {
+              "Property": "Damping",
+              "Value": 1.1
+            },
+            {
+              "Property": "Frequency",
+              "Value": 10000.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Chatter_Generator.Chatter_Generator_Match_Rate",
+          "Settings": [
+            {
+              "Property": "Intensity",
+              "Value": 10.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Chatter_Generator.Chatter_Generator_Variable_Rate",
+          "Settings": [
+            {
+              "Property": "Frequency",
+              "Value": 420.0
+            },
+            {
+              "Property": "Intensity",
+              "Value": 10.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Kuuube_s_Chatter_Exterminator.Kuuube_s_CHATTER_EXTERMINATOR_SMOOTH",
+          "Settings": [
+            {
+              "Property": "Chatter_Extermination_Strength",
+              "Value": 20.0
+            },
+            {
+              "Property": "Frequency",
+              "Value": 1000.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Kuuube_s_Chatter_Exterminator.Kuuube_s_CHATTER_EXTERMINATOR_RAW",
+          "Settings": [
+            {
+              "Property": "Chatter_Extermination_Strength",
+              "Value": 3.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Pressure_Debounce.Pressure_Debounce",
+          "Settings": [
+            {
+              "Property": "Debounce_timer",
+              "Value": 30.0
+            },
+            {
+              "Property": "Pressure_threshold",
+              "Value": 1.0
+            },
+            {
+              "Property": "Drop_excess",
+              "Value": null
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "CustomFilter.MultiSampleCustomFilter",
+          "Settings": [
+            {
+              "Property": "XFunc",
+              "Value": "x"
+            },
+            {
+              "Property": "YFunc",
+              "Value": "y"
+            },
+            {
+              "Property": "SampleCount",
+              "Value": 1
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "Hover_Distance_Limiter.Hover_Distance_Limiter",
+          "Settings": [
+            {
+              "Property": "Hover_min",
+              "Value": 0.0
+            },
+            {
+              "Property": "Hover_max",
+              "Value": 63.0
+            },
+            {
+              "Property": "NearProximity",
+              "Value": null
+            },
+            {
+              "Property": "Pressure",
+              "Value": null
+            },
+            {
+              "Property": "Pressure_min",
+              "Value": 0.0
+            },
+            {
+              "Property": "Pressure_max",
+              "Value": 8192.0
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "CustomFilter.CustomFilter",
+          "Settings": [
+            {
+              "Property": "XFunc",
+              "Value": "x+(x-lx)"
+            },
+            {
+              "Property": "YFunc",
+              "Value": "y+(y-ly)"
+            }
+          ],
+          "Enable": false
+        }
+      ],
+      "AbsoluteModeSettings": {
+        "Display": {
+          "Width": 1366.0,
+          "Height": 768.0,
+          "X": 683.0,
+          "Y": 384.0,
+          "Rotation": 0.0
+        },
+        "Tablet": {
+          "Width": 53.28,
+          "Height": 35.18,
+          "X": 26.642502,
+          "Y": 17.5925,
+          "Rotation": 0.0
+        },
+        "EnableClipping": true,
+        "EnableAreaLimiting": false,
+        "LockAspectRatio": false
+      },
+      "RelativeModeSettings": {
+        "XSensitivity": 40.0,
+        "YSensitivity": 40.0,
+        "RelativeRotation": 0.0,
+        "RelativeResetDelay": "00:00:00.1000000"
+      },
+      "Bindings": {
+        "TipActivationThreshold": 0.0,
+        "TipButton": {
+          "Path": "OpenTabletDriver.Desktop.Binding.MouseBinding",
+          "Settings": [
+            {
+              "Property": "Button",
+              "Value": "Left"
+            }
+          ],
+          "Enable": true
+        },
+        "EraserActivationThreshold": 0.0,
+        "EraserButton": {
+          "Path": "OpenTabletDriver.Desktop.Binding.MouseBinding",
+          "Settings": [
+            {
+              "Property": "Button",
+              "Value": "Middle"
+            }
+          ],
+          "Enable": true
+        },
+        "PenButtons": [
+          null,
+          {
+            "Path": "OpenTabletDriver.Desktop.Binding.MouseBinding",
+            "Settings": [
+              {
+                "Property": "Button",
+                "Value": "Right"
+              }
+            ],
+            "Enable": true
+          }
+        ],
+        "AuxButtons": [],
+        "MouseButtons": [],
+        "MouseScrollUp": null,
+        "MouseScrollDown": null
+      }
+    }
+  ],
+  "LockUsableAreaDisplay": true,
+  "LockUsableAreaTablet": true,
+  "Tools": []
+}

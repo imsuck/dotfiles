@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+symbol() {
+    [ $(cat /sys/class/net/w*/operstate) = down ] && echo  && exit
+    echo 
+}
+
+name() {
+    name=$(nmcli | rg "^wlan0" | sed 's/\ connected\ to\ /Connected to /g' | cut -d ':' -f2)
+    echo $name
+}
+
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name && exit

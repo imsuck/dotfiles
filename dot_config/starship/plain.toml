@@ -1,0 +1,49 @@
+add_newline = false
+
+command_timeout = 2_000
+
+format = """$time $all"""
+
+# right_format = """$time"""
+
+[character]
+success_symbol = "λ"
+error_symbol = "λ"
+
+[cmd_duration]
+min_time = 500
+disabled = true
+
+[directory]
+# truncation_symbol = "…/"
+use_os_path_sep = false
+
+[git_branch]
+symbol = ""
+format = '[$symbol$branch](bold purple)'
+
+[git_status]
+format = '([$all_status$ahead_behind]($style)) '
+style = "cyan"
+deleted = "-"
+
+[rust]
+symbol = "rs"
+version_format = ""
+format = '[$symbol$version]($style) '
+
+[status]
+format = '[\[$status\]](bold red) '
+disabled = false
+
+[time]
+format = '''[\[$time\]]($style)'''
+time_format = '%R'
+style = 'yellow bold'
+disabled = false
+
+[line_break]
+disabled = true
+
+[package]
+disabled = true

@@ -1,0 +1,45 @@
+map i recolor
+map <F1> focus_inputbar ":exec sh -c \"cat ~/.local/share/zathura/history | rg -Po '\[\K[^\]]*' | rg '\\.' | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
+map <F2> focus_inputbar ":quit"
+map H feedkeys "<F1><Return><F2><Return>"
+map <F3> focus_inputbar ":exec sh -c \"fd "\.pdf" ~ | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
+map f feedkeys "<F3><Return><F2><Return>"
+
+map h feedkeys "<C-Left>"
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
+map l feedkeys "<C-Right>"
+
+
+set selection-clipboard clipboard
+
+set font "Fira Code 10"
+set default-bg rgba(36,40,59,0.8)
+set default-fg rgb(192,202,245)
+
+set completion-bg			"#24283B"
+set completion-fg			"#C0CAF5"
+set completion-group-bg		"#1D202F"
+set completion-group-fg		"#C0CAF5"
+set completion-highlight-bg	"#414868"
+set completion-highlight-fg	"#C0CAF5"
+
+set notification-bg			"#24283B"
+set notification-fg			"#FFFFFF"
+set notification-error-bg 	"#F7768E"
+set notification-error-fg 	"#FFFFFF"
+set notification-warning-bg "#E0AF68"
+set notification-warning-fg "#FFFFFF"
+
+
+set inputbar-bg				"#24283B"
+set inputbar-fg				"#C0CAF5"
+set statusbar-bg			"#414868"
+set statusbar-fg			"#C0CAF5"
+
+set highlight-color			"#C0CAF5"
+set highlight-active-color	"#F7768E"
+
+set recolor-keephue true
+set recolor-lightcolor		rgba(0,0,0,0)
+set recolor-darkcolor		"#C0CAF5"

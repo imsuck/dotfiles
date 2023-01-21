@@ -1,0 +1,194 @@
+// Unsets everything so you can customise from scratch
+* {
+	all: unset;
+}
+
+// Colours
+$background: #24283B;
+$foreground: #A9B1D6;
+
+$black: #32344A;
+$gray: #676E95;
+$red: #F7768E;
+$green: #9ECE6A;
+$yellow: #E0AF68;
+$blue: #7AA2F7;
+$magenta: #AD8EE6;
+$cyan: #449DAB;
+$white: #9699A8;
+
+// Bar colour
+.bar {
+	background-color: $background;
+	color: $foreground;
+}
+
+// Calendar colour
+.cal-box {
+	background-color: $background;
+	font-family: "Iosevka";
+	font-size: 1.1em;
+	font-weight: bold;
+  
+	.cal-inner-box {
+		padding: 0 0;
+  
+		.cal {
+			&.highlight {
+				padding: 10rem;
+			}
+  
+			padding: .8rem .25rem 0rem;
+			margin-left: 10px;
+		}
+	}
+}
+calendar:selected {
+	color: $blue;
+}
+calendar.header {
+	color: $blue;
+	font-weight: bold;
+}
+calendar.button {
+	color: $magenta;
+}
+calendar.highlight {
+	color: $magenta;
+	font-weight: bold;
+}
+calendar:indeterminate {
+	color: #bfbfbf;
+}
+
+// Grouping thing
+.group {
+	background-color: #1F212E;
+	padding: 0 0.75rem;
+	margin: 0 0.5rem;
+	border-radius: 12px;
+}
+
+// Fonts
+.date,
+.cpu,
+.memory,
+.fs {
+	font-family: "Roboto Mono";
+}
+
+.workspaces {
+	padding: 2px 0 4px 6px;
+}
+.workspaces button {
+	padding: 2px 4px 0px;
+	font-family: "Roboto Mono, Font Awesome 6 Free Solid";
+	font-size: 16px;
+}
+.1, .2, .3, .4, .5, .6, .7, .8, .9, .10 {
+	color: $background;
+}
+.11, .22, .33, .44, .55, .66, .77, .88, .99, .1010 {
+	color: #FFF;
+}
+
+// Icon font
+.workspaces {
+	font-family: "Font Awesome 6 Free Solid";
+	font-size: 20px;
+}
+.powermenu button,
+.volume-icon,
+.brightness-icon,
+.wifi-icon,
+.date-icon,
+.cpu-icon,
+.memory-icon,
+.fs-icon {
+	font-family: "Font Awesome 6 Free Solid";
+	font-size: 14px;
+}
+
+.button-off {
+    padding: 0rem 0.6rem;
+	color: $red;
+}
+.button-reboot {
+	color: $green;
+}
+.button-lock {
+	color: $blue;
+}
+.button-hibernate {
+	color: $yellow;
+}
+.button-quit {
+	color: $magenta;
+}
+.button-reboot,
+.button-lock,
+.button-hibernate,
+.button-quit {
+	padding: 0rem 0.4rem;
+}
+
+.volume-icon {
+	color: $green;
+	padding-left: .5rem;
+}
+.volbar trough highlight {
+	background-color: $green;
+	border-radius: 5px;
+}
+.brightness-icon {
+	font-family: "Font Awesome 6 Free Solid";
+	font-size: 16px;
+	color: $yellow;
+}
+.bribar trough highlight {
+	background-color: $yellow;
+	border-radius: 5px;
+}
+.wifi-icon {
+	font-size: 16px;
+	color: $magenta;
+	padding-left: 0.2rem;
+	padding-right: 0.6rem;
+}
+scale trough {
+	background-color: $background;
+	border-radius: 5px;
+	min-height: 0.65rem;
+	min-width: 5rem;
+	margin: 0rem 0.1rem 0rem 0.3rem;
+}
+
+.date,
+.cpu,
+.memory,
+.fs {
+	font-size: 18px;
+}
+.date-icon,
+.fs-icon {
+	padding: 0px 6px 0px 3px;
+}
+.cpu-icon,
+.memory-icon {
+	padding: 0px 6px 0px 6px;
+}
+.date-icon,
+.date {
+	color: $foreground;
+}
+.cpu-icon,
+.cpu {
+	color: $magenta
+}
+.cpu-icon {
+	font-family: "Font Awesome 6 Free Solid";
+}
+.memory-icon,
+.memory {
+	color: $blue
+}

@@ -1,0 +1,39 @@
+inherits = "base16_transparent"
+
+"ui.menu" = { fg = "white", bg = "black" }
+"ui.menu.selected" = { bg = "gray" }
+"ui.menu.scroll" = { fg = "light-gray", bg = "black" }
+"ui.popup" = { bg = "black" }
+"ui.linenr.selected" = { fg = "white", modifiers = ["bold"] }
+"ui.selection" = { bg = "gray" }
+# "comment" = { fg = "light-gray", modifiers = ["italic"] }
+"ui.statusline" = { fg = "white", bg = "gray" }
+"ui.statusline.inactive" = { fg = "white", bg = "gray" }
+"ui.help" = { fg = "white" }
+"ui.cursor" = { fg = "light-gray", modifiers = ["reversed"] }
+"ui.cursor.primary" = { fg = "white", modifiers = ["reversed"] }
+"ui.virtual.whitespace" = "white"
+"ui.bufferline" = { }
+"ui.bufferline.active" = { bg = "gray" }
+"ui.cursor.match" = { fg = "light-yellow", underline = { color = "yellow", style = "line" } }
+
+# zellij doesn't support undercurls yet :(
+"diagnostic.info" = { fg = "light-blue", modifiers = ["bold"], underline = { style = "line" } }
+"diagnostic.hint" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
+"diagnostic.debug" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
+"diagnostic.warning" = { fg = "light-yellow", modifiers = ["bold"], underline = { style = "line" } }
+"diagnostic.error" = { fg = "light-red", modifiers = ["bold"], underline = { style = "line" } }
+
+"hint" = { }
+
+
+"ui.statusline.normal" = { fg = "green", modifiers = ["bold", "reversed"] }
+"ui.statusline.insert" = { fg = "blue", modifiers = ["bold", "reversed"] }
+"ui.statusline.select" = { fg = "yellow", modifiers = ["bold", "reversed"] }
+
+"ui.cursorline.primary" = { bg = "black" }
+
+"ui.virtual.indent-guide" = "gray"
+"ui.virtual.ruler" = { bg = "black" }
+
+"comment" = "light-gray"

@@ -1,0 +1,66 @@
+add_newline = false
+
+command_timeout = 2_000
+
+format = """\
+$directory\
+[](fg:blue bg:purple)\
+$git_branch\
+$git_status\
+[](fg:purple bg:red)\
+$rust\
+[](red) \
+"""
+right_format = """
+[](red)\
+$status\
+$character\
+[](fg:yellow bg:red)\
+$time\
+"""
+
+[character]
+success_symbol = ""
+error_symbol = ""
+format = "[ $symbol ](red inverted)"
+
+[cmd_duration]
+min_time = 500
+
+[directory]
+truncation_symbol = "…/"
+style = "blue inverted"
+format = '[ $path ]($style)'
+use_os_path_sep = false
+
+[git_branch]
+symbol = ""
+style = "purple inverted"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "purple inverted"
+format = '([\[$all_status$ahead_behind\] ]($style))'
+deleted = "-"
+
+[rust]
+symbol = "rs"
+style = "red inverted"
+format = '[ $symbol ]($style)'
+
+[status]
+style = "red inverted"
+format = '[ \[$status\]]($style)'
+disabled = false
+
+[time]
+format = '[ $time ]($style)'
+time_format = "%R"
+style = "yellow inverted"
+disabled = false
+
+[line_break]
+disabled = true
+
+[package]
+disabled = true

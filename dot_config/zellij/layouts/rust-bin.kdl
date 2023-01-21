@@ -1,0 +1,16 @@
+layout {
+    default_tab_template {
+        children
+    }
+    pane split_direction="vertical" {
+        pane focus=true command="helix" {
+            args "."
+        }
+        pane split_direction="horizontal" {
+            pane
+            pane command="bacon" {
+                args "clippy"
+            }
+        }
+    }
+}

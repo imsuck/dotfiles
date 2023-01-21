@@ -1,0 +1,12 @@
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = " " }
+auto-format = true
+formatter = { command = "clang-format", args = ["-style={BasedOnStyle: llvm, IndentWidth: 4}"]}
+
+[[language]]
+name = "css"
+language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
+auto-format = true
+config = { "provideFormatter" = true }
+indent = { tab-width = 2, unit = "	" }

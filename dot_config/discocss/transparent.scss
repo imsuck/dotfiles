@@ -1,0 +1,358 @@
+// note to self: https://www.w3.org/TR/css-color-5/#relative-colors 
+// to optimize css (maybe) or use sass lmao 
+// I apologize to anybody reading this mess :<
+
+@use "sass:color";
+
+$red: #F7768E;
+$blue: #7AA2F7;
+$cyan: #7DCFFF;
+$green: #9ECE6A;
+$magenta: #BB9AF7;
+$yellow: #E0AF68;
+$light-grey: #414868;
+// 0.7 rather than 0.9 because of how discord is designed
+$bg-primary: rgba(36, 40, 59, 0.7);
+$corner-radius: 8px;
+
+// backgrounds if i feel like it
+body {
+	// 	background: url(https://cdn.discordapp.com/attachments/754143127308206132/930742260763594782/unknown.png);
+	background-color: var(--background-primary);
+	// 	background-attachment: fixed;
+	// 	background-position: center;
+	// 	background-size: cover;
+	// backdrop-filter: blur(5px);
+}
+
+.appMount-2yBXZl {
+	background-color: var(--background-primary);
+}
+
+// fonts
+:lang(ja),
+:lang(ja-JP),
+:root {
+	--i18n-fallbacks: "Noto Sans JP";
+	--owo: var(--i18n-fallbacks, "owo");
+	--font-primary: "Noto Sans", var(--owo);
+	--font-code: "FiraCode Nerd Font Mono", "Fira Code", var(--owo), monospace;
+	--font-display: var(--font-code);
+}
+
+code,
+.markup-eYLPri code.inline,
+.inlineCode-ERyvy_ {
+	font-weight: 475;
+}
+
+
+.theme-dark {
+	// colours
+	--brand-experiment: #{$blue};
+
+	// text
+	--text-normal: #A6ACCD;
+	// --text-muted: #515772;
+	--text-muted: #{$light-grey};
+	--header-secondary: var(--text-normal); // replies colour
+	--interactive-normal: var(--text-normal);
+
+	// background
+	--background-primary: #{$bg-primary};
+	--background-secondary: #{color.adjust($bg-primary, $hue: 3, $saturation: -0.8%, $lightness: -3.1%, $alpha: -0.0)};
+	--background-secondary-alt: #{color.adjust($bg-primary, $hue: 0, $saturation: -0.9%, $lightness: -5.6%, $alpha: -0.0)};
+	--background-tertiary: #{color.adjust($bg-primary, $hue: -4, $saturation: -0.5%, $lightness: -9.4%, $alpha: -0.0)};
+	--background-accent: #{color.adjust($bg-primary, $hue: -3, $saturation: -0.1%, $lightness: 10.6%, $alpha: -0.0)};
+	--background-floating: #{color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%)};
+	--chat-background: var(--background-primary);
+	--chat-border: var(--background-tertiary);
+	--chat-input-container-background: var(--background-primary);
+	--input-background: var(--background-tertiary);
+	--background-message-hover: rgba(0, 0, 0, 0.1);
+	--channeltextarea-background: #FFFFFF10;
+	// code popout
+	--modal-background: var(--background-secondary-alt);
+
+	// mention/ping colour
+	--info-warning-foreground: #444464;
+	--background-mentioned: #44446444;
+	--background-mentioned-hover: #1b1b2744;
+	--status-danger: #FF5370;
+	--modal-primary: var(--background-primary);
+
+	// scroll bar
+	--scrollbar-thin-thumb: var(--background-tertiary);
+	--scrollbar-thin-track: transparent;
+	--scrollbar-auto-thumb: var(--background-tertiary);
+	--scrollbar-auto-track: var(--background-secondary);
+	--scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
+	--scrollbar-auto-scrollbar-color-track: var(--background-secondary);
+
+	// channels list
+	--background-modifier-hover: #FFFFFF0B;
+	--background-modifier-selected: #FFFFFF10;
+	--interactive-muted: var(--text-muted);
+	--channels-default: var(--text-normal);
+	--channel-icon: var(--text-normal);
+
+	// green buttons
+	--status-positive-background: transparent;
+	--status-positive-text: $green;
+	--text-positive: #9EE057;
+}
+
+// .members-3WRCEx,
+// .members-3WRCEx>div {
+// 	background-color: transparent;
+// }
+
+.theme-dark {
+
+	.chat-2ZfjoI,
+	.bg-1QIAus,
+	.app-2CXKsg,
+	.content-1SgpWY,
+	.container-ZMc96U.themed-Hp1KC_,
+	.member-48YF_l,
+	.children-3xh0VB:after,
+	.form-3gdLxP:before,
+	.container-1oAagU,
+	.container-2cd8Mz {
+		background: transparent;
+	}
+}
+
+.messagesPopoutWrap-3zryHW,
+.container-2ebMPP,
+.userPopout-2j1gM4,
+.popout-TdhJ6Z,
+.imageContainer-10XenG .imageWrapper-oMkQl4,
+.hljs,
+.container-3i3IzO {
+	border-radius: $corner-radius;
+}
+
+.cozy-VmLDNB.hasThread-3h-KJV:after {
+	border-bottom-left-radius: $corner-radius;
+}
+
+// member list
+// friend tab
+.container-2cd8Mzx,
+// server notifications setting + leave prompt
+.root-g14mjS.medium-1ywRMv,
+.root-g14mjS.small-23Atuv,
+// thread popup when you hover on a channel
+.popout-TdhJ6Z,
+// server list
+// nav.wrapper-1_HaEi.guilds-2JjMmN,
+.scroller-3X7KbA,
+// forums
+.theme-dark .container-3wLKDe {
+	background-color: var(--background-primary);
+}
+
+// inbox
+.recentMentionsPopout-2bI1ZN,
+// pinned messages & threads & and that profile customizer thing
+[id^=popout],
+// user profile popout
+.userPopout-2j1gM4,
+.bodyInnerWrapper-2bQs1k,
+.footer-3naVBw {
+	// background-color: transparent;
+	// backdrop-filter: blur(5px);
+}
+
+// user profile popout
+// .menu-1QACrS {
+// 	opacity: 0.75;
+// }
+
+.scroller-145h9c.thin-31rlnD.scrollerBase-_bVAAt {
+	background-color: var(--background-secondary);
+}
+
+// .channelHeader-DFRX8q {
+// 	background-color: transparent;
+// }
+
+// thread popup when you hover on a channel
+.popout-TdhJ6Z {
+	border: 2px solid $blue;
+}
+
+// follow announcements
+.lookFilled-yCfaCM.colorPrimary-2AuQVo {
+	color: var(--background-primary);
+	background-color: var(--interactive-normal);
+}
+
+// slash menu
+.theme-dark .autocomplete-3NRXG8,
+.categoryHeader-OpJ1Ly {
+	background-color: var(--background-secondary);
+	//backdrop-filter: blur(5px);
+}
+
+// server notifications setting + leave prompt
+.footer-31IekZ {
+	background-color: var(--background-secondary);
+}
+
+// jump to present bar
+.jumpToPresentBar-1cEnH0 {
+	background-color: $blue;
+}
+
+// quick switcher + image and profile popout for some reason D:
+.backdrop-2ByYRN.withLayer-2VVmpp {
+	opacity: 0.2;
+}
+
+.layer-1Ixpg3 {
+	backdrop-filter: blur(5px);
+}
+
+// .quickswitcher-pKcM9U {
+// 	background-color: transparent;
+// }
+
+// link color
+.anchor-1MIwyf {
+	color: $cyan !important;
+}
+
+// code highlighting
+.hljs-variable {
+	color: $red !important;
+}
+
+.hljs-keyword,
+.hljs-meta,
+.hljs-symbol,
+.hljs-attr {
+	color: $magenta !important;
+}
+
+.hljs-title,
+.hljs-built_in,
+.hljs-number,
+.hljs-literal,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-title {
+	color: $yellow !important;
+}
+
+.hljs-string,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-selector-class {
+	color: $green !important;
+}
+
+.hljs-comment {
+	color: $light-grey !important;
+}
+
+// search thing
+.searchBar-jGtisZ:hover,
+.focused-1xh-wG .searchBar-jGtisZ,
+.open-1F8u2c .searchBar-jGtisZ {
+	width: 14rem;
+	background-color: var(--background-tertiary);
+}
+
+.searchBar-jGtisZ {
+	width: 24px;
+	background-color: transparent;
+	transition: ease-in-out 0.2s;
+}
+
+.searchBar-jGtisZ .icon-tZMHgY div svg {
+	position: absolute;
+	cursor: pointer;
+	color: var(--text-normal);
+	width: 24px;
+	height: 24px;
+	transform: translate(-6px, -3px);
+}
+
+.theme-dark .focused-2FU0YH {
+	background-color: var(--background-secondary-alt);
+}
+
+.option-ayUoaq:after,
+.option-ayUoaq:hover:after {
+	background: linear-gradient(to right, color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%, $alpha: -1), var(--background-floating), var(--background-floating));
+}
+
+.theme-dark .container-2IKOsH,
+.theme-dark .header-3xB4vB,
+.theme-dark .container-1um7CU,
+.theme-dark .emptyPage-2TGR7j,
+.theme-dark .scrollerContainer-y16Rs9 {
+	background-color: var(--background-secondary-alt);
+}
+
+// login screen
+.theme-dark.authBox-1HR6Ha {
+	background: var(--background-primary);
+}
+
+// sliding stuff
+// channels/dms
+.content-1SgpWY {
+	background-color: var(--background-secondary);
+}
+
+.base-2jDfDU,
+.sidebar-1tnWFu {
+	background-color: transparent;
+}
+
+.sidebar-1tnWFu {
+	opacity: 0;
+	width: 40px;
+	// -webkit-transition: opacity 0.2s ease-in-out, width 0.1s;
+	// -moz-transition: opacity 0.2s ease-in-out;
+	// -ms-transition: opacity 0.2s ease-in-out;
+	// -o-transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar-1tnWFu:hover {
+	opacity: 1;
+	width: 250px;
+}
+
+// member list
+[class|=membersWrap] {
+	opacity: 0;
+	width: 10px;
+	min-width: 40px;
+	// -webkit-transition: opacity 0.2s ease-in-out, width 0.1s;
+	// -moz-transition: opacity 0.2s ease-in-out;
+	// -ms-transition: opacity 0.2s ease-in-out;
+	// -o-transition: opacity 0.2s ease-in-out;
+}
+
+[class|=membersWrap]:hover {
+	opacity: 1;
+	width: 240px;
+}
+
+.members-3WRCEx {
+	opacity: 0;
+	width: 40px;
+	// -webkit-transition: opacity 0.2s ease-in-out, width 0.1s;
+	// -moz-transition: opacity 0.2s ease-in-out;
+	// -ms-transition: opacity 0.2s ease-in-out;
+	// -o-transition: opacity 0.2s ease-in-out;
+}
+
+.members-3WRCEx:hover {
+	opacity: 1;
+	width: 240px;
+}

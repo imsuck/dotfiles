@@ -1,0 +1,104 @@
+#!/usr/bin/env sh
+
+workspaces() {
+	ws1="1"
+	ws2="2"
+	ws3="3"
+	ws4="4"
+	ws5="5"
+	ws6="6"
+	ws7="7"
+	ws8="8"
+	ws9="9"
+	ws10="10"
+
+	occupied="$(i3-msg -t get_workspaces | jq -r '.[] | .name')"
+
+	o1="$(echo $occupied | rg -o $ws1 | head -1)"
+	o2="$(echo $occupied | rg -o $ws2)"
+	o3="$(echo $occupied | rg -o $ws3)"
+	o4="$(echo $occupied | rg -o $ws4)"
+	o5="$(echo $occupied | rg -o $ws5)"
+	o6="$(echo $occupied | rg -o $ws6)"
+	o7="$(echo $occupied | rg -o $ws7)"
+	o8="$(echo $occupied | rg -o $ws8)"
+	o9="$(echo $occupied | rg -o $ws9)"
+	o10="$(echo $occupied | rg -o $ws10)"
+
+	f="$(i3-msg -t get_workspaces | jq -r ".[]" | rg -B 2 '"focused": true,' | rg \"name\" | rg -o '\d\d?')"
+
+	normal="O"
+	focused="#"
+	ic_1=""
+	ic_2=""
+	ic_3=""
+	ic_4=""
+	ic_5=""
+	ic_6=""
+	ic_7="7"
+	ic_8="8"
+	ic_9="9"
+	ic_10="10"
+	# if [ $f == $o1 ]; then
+	#   ic_1=$normal
+	# elif [ $f == $o2 ]; then
+	#   ic_2=$normal
+	# elif [ $f == $o3 ]; then
+	#   ic_3=$normal
+	# elif [ $f == $o4 ]; then
+	#   ic_4=$normal
+	# elif [ $f == $o5 ]; then
+	#   ic_5=$normal
+	# elif [ $f == $o6 ]; then
+	#   ic_6=$normal
+	# elif [ $f == $o7 ]; then
+	#   ic_7=$normal
+	# elif [ $f == $o8 ]; then
+	#   ic_8=$normal
+	# elif [ $f == $o9 ]; then
+	#   ic_9=$normal
+	# elif [ $f == $o10 ]; then
+	#   ic_10=$normal
+	# fi
+
+	out="(box
+		:class \"workspaces\"
+		:orientation \"h\"
+		:space-evenly false
+		:halign \"start\""
+	if [ $o1 ]; then
+		out="$out(button :class \"$o1$f\" :onclick \"i3-msg 'workspace $ws1'\" \"$ic_1\")"
+	fi
+	if [ $o2 ]; then
+		out="$out(button :class \"$o2$f\" :onclick \"i3-msg 'workspace $ws2'\" \"$ic_2\")"
+	fi
+	if [ $o3 ]; then
+		out="$out(button :class \"$o3$f\" :onclick \"i3-msg 'workspace $ws3'\" \"$ic_3\")"
+	fi
+	if [ $o4 ]; then
+		out="$out(button :class \"$o4$f\" :onclick \"i3-msg 'workspace $ws4'\" \"$ic_4\")"
+	fi
+	if [ $o5 ]; then
+		out="$out(button :class \"$o5$f\" :onclick \"i3-msg 'workspace $ws5'\" \"$ic_5\")"
+	fi
+	if [ $o6 ]; then
+		out="$out(button :class \"$o6$f\" :onclick \"i3-msg 'workspace $ws6'\" \"$ic_6\")"
+	fi
+	if [ $o7 ]; then
+		out="$out(button :class \"$o7$f\" :onclick \"i3-msg 'workspace $ws7'\" \"$ic_7\")"
+	fi
+	if [ $o8 ]; then
+		out="$out(button :class \"$o8$f\" :onclick \"i3-msg 'workspace $ws8'\" \"$ic_8\")"
+	fi
+	if [ $o9 ]; then
+		out="$out(button :class \"$o9$f\" :onclick \"i3-msg 'workspace $ws9'\" \"$ic_9\")"
+	fi
+	if [ $o10 ]; then
+		out="$out(button :class \"$o10$f\" :onclick \"i3-msg 'workspace $ws10'\" \"$ic_10\")"
+	fi
+	out="$out)"
+
+	echo $out
+}
+
+workspaces

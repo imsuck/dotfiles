@@ -1,0 +1,13 @@
+[user]
+	name = imsuck
+	email = imsuck12@gmail.com
+[credential]
+	credentialStore = gpg
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main

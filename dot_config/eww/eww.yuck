@@ -1,0 +1,289 @@
+; widgets
+(defpoll workspaces :interval "0s" "scripts/workspaces")
+(defwidget workspaces [] 
+	(literal :content workspaces))
+
+; powermenu
+(defwidget power []
+	(eventbox
+		:onhover "eww update power=true"
+		:onhoverlost "eww update power=false"
+		(box
+			:orientation "h"
+			:space-evenly "false"
+			:hexpand "false"
+			:class "powermenu"
+			(revealer
+				:transition "slideleft"
+				:reveal power
+				:duration "500ms"
+				(box
+					:orientation "h"
+					:space-evenly "true"
+					(button
+						:class "button-reboot"
+						:tooltip "Reboot"
+						:onclick "reboot"
+						""
+					)
+					(button
+						:class "button-lock"
+						:tooltip "Lock Screen"
+						:onclick "betterlockscreen -l blur"
+						""
+					)
+					(button
+						:class "button-hibernate"
+						:tooltip "Hibernate"
+						:onclick "systemctl hibernate; betterlockscreen -l blur"
+						""
+					)
+					(button
+						:class "button-quit"
+						:tooltip "Logout"
+						:onclick "i3-msg exit"
+						""
+					)
+				)
+			)
+			(button
+				:class "button-off"
+				:tooltip "Shutdown"
+				:onclick "shutdown now"	""
+			)
+		)
+	)
+)
+(defvar power false)
+
+; volume widget
+(defwidget volume []
+	(eventbox
+		:onhover "eww update volume=true"
+		:onhoverlost "eww update volume=false"
+		(box
+			:orientation "h"
+			:space-evenly false
+			:spacing "2"
+			(button
+				:onclick "scripts/popup audio"
+				:class "volume-icon" ""
+			)
+			(revealer
+				:transition "slideright"
+				:reveal volume
+				:duration "500ms"
+				(scale
+					:width "100px"
+					:class "volbar"
+					:value current-volume
+					:orientation "h"
+					:tooltip "Volume: ${current-volume}%"
+					:max 101
+					:min 0
+					:onchange "amixer -D pulse sset Master {}%"
+				)
+			)
+		)
+	)
+)
+(defpoll current-volume :interval "1s" "scripts/get_volume")
+(defvar volume false)
+
+; brightness widget
+(defwidget bright []
+	(eventbox
+		:onhover "eww update bright=true"
+		:onhoverlost "eww update bright=false"
+		(box
+			:orientation "h"
+			:space-evenly false
+			:spacing "2"
+			(button :onclick "scripts/popup audio" :class "brightness-icon" "")
+			(revealer
+				:transition "slideright"
+				:reveal bright
+				:duration "500ms"
+				(scale
+					:width "100px"
+					:class "bribar"
+					:value current-brightness
+					:orientation "h"
+					:tooltip "Brightness: ${current-brightness}%"
+					:max 101
+					:min 0
+					:onchange "brightnessctl set {}%"
+				)
+			)
+		)
+	)
+)
+(defpoll current-brightness :interval "1s" "scripts/get_brightness")
+(defvar bright false)
+
+; wifi widget
+(defwidget wifi []
+	(box
+		:tooltip wifi-name
+		(button
+			:onclick "scripts/popup wifi"
+			:class "wifi-icon"
+			"${wifi-icon}"
+		)
+	)
+)
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
+(defpoll date
+	:interval "1s"
+	;"date '+%g-%m-%d %H:%M'"
+	"date '+%H:%M'"
+)
+(defwidget date []
+	(box
+		:class "date"
+		:space-evenly false
+		(box
+			:class "date-icon"
+			""
+		)
+		date
+	)
+)
+
+(defwidget cpu []
+	(box
+		:class "cpu"
+		:space-evenly false
+		(box
+			:class "cpu-icon"
+			""
+		)
+		"${round(EWW_CPU.avg, 0)}%"
+	)
+)
+(defwidget memory []
+	(box
+		:class "memory"
+		:space-evenly false
+		(box
+			:class "memory-icon"
+			""
+		)
+		"${round(EWW_RAM.used_mem_perc, 0)}%"
+	)
+)
+(defwidget fs []
+	(box
+		:class "fs"
+		:space-evenly false
+		(box
+			:class "fs-icon"
+			""
+		)
+		"${round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}%"
+	)
+)
+
+(defwidget left []
+	(box
+		:orientation "h"
+		:space-evenly false
+		:halign "start"
+		(workspaces)
+	)
+)
+(defwidget right []
+	(box
+		:orientation "h"
+		:space-evenly false
+		:halign "end"
+		(box
+			:class "group"
+			:space-evenly false
+			(wifi)
+			(bright)
+			(volume)
+		)
+;    	(box
+;			:class "group"
+;			:space-evenly false
+;			(fs)
+;			(memory)
+;			(cpu)
+;		)
+		(box
+			:class "group"
+			(button
+				:onclick "scripts/popup calendar"
+				(date)
+			)
+		)
+		(power)
+	)
+)
+(defwidget bar []
+	(box
+		:orientation "h"
+		(box
+			:orientation "h"
+			:space-evenly false
+			:halign "start"
+			(left)
+		)
+		(box
+			:orientation "h"
+			:space-evenly false
+			:halign "end"
+			(right)
+		)
+	)
+)
+
+(defwidget cal []
+	(box
+		:class "cal-box" 
+		:orientation "v"
+		(box
+			:class "cal-inner-box"
+			(calendar
+				:class "cal" 
+				:day calendar_day 
+				:month calendar_month
+				:year calendar_year
+			)
+		)
+	)
+)
+(defpoll calendar_day :interval "1h" "date '+%d'")
+(defpoll calendar_month :interval "1h" "scripts/month")
+(defpoll calendar_year :interval "1h" "date '+%Y'")
+
+; windows
+(defwindow bar
+	:geometry (geometry
+		:x "0%"
+		:y "0%"
+		:width "90%"
+		:height "20px"
+		:anchor "bottom center"
+	)
+	:window 0
+	:stacking "fg"
+	:reserve (struts
+		:distance "26px"
+		:side "bottom"
+	)
+	(bar)
+)
+
+(defwindow calendar
+	:geometry (geometry
+		:x "79%" 
+		:y "58%" 
+		:width "250px" 
+		:height "60px"
+	)
+	(cal)
+)

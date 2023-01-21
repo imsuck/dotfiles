@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version = 1.0
+Name = Cava
+GenericName = Audio Visualizer
+TryExec = alacritty
+Exec = alacritty -o window.padding.x=0 window.padding.y=0 window.opacity=0.5 --class cava,cava -e cava
+Terminal = True
+Type = Application
+
+StartupWMClass  =  cava

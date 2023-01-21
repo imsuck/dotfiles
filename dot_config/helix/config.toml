@@ -1,0 +1,53 @@
+theme = "base16_terminal_edit"
+
+[editor]
+cursorline = false
+line-number = "relative"
+color-modes = true
+idle-timeout = 0
+shell = ["fish", "-c"]
+rulers = [80]
+completion-trigger-len = 1
+bufferline = "multiple"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "block"
+
+[editor.lsp]
+display-messages = true
+display-signature-help-docs = false
+
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "file-name", "diagnostics"]
+right = ["position", "total-line-numbers", "selections", "file-encoding", "file-line-ending"]
+
+[editor.indent-guides]
+render = true
+character = "▏" # other things "▏", "┆", "┊"
+# skip-levels = 1
+
+[keys.normal]
+C-s = ":w"
+esc = ":q"
+backspace = { r = ":reload", c = ":config-open", R = ":config-reload", t = ":o ~/.config/helix/themes/base16_terminal_edit.toml" }
+
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
+A-down = ["extend_to_line_bounds", "delete_selection", "move_line_down", "goto_line_start", "paste_before", "collapse_selection"]
+A-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "goto_line_start", "paste_before", "collapse_selection"]
+
+[keys.select]
+C-s = ":w"
+
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "select_mode"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "select_mode"]
+A-down = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_before", "select_mode"]
+A-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_before", "select_mode"]
+
+[keys.insert]
+C-s = ":w"
+C-v = ":clipboard-paste-before"
+C-left = "move_prev_word_start"
+C-right = "move_next_word_end"
