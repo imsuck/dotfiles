@@ -70,6 +70,7 @@ prompt {
     enabled:                     true;
     background-color:            inherit;
     text-color:                  inherit;
+    font:                        "JetBrains Mono Nerd Font 10";
 }
 textbox-prompt-colon {
     enabled:                     true;

@@ -126,13 +126,13 @@ listview {
     lines:                       12;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   false;
+    scrollbar:                   true;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     0px;
+    spacing:                     0px 3px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -143,10 +143,9 @@ listview {
     cursor:                      "default";
 }
 scrollbar {
-    handle-width:                5px ;
+    handle-width:                5px;
     handle-color:                @handle-colour;
-    border-radius:               0px;
-    background-color:            @alternate-background;
+    background-color:            transparent;
 }
 
 /*****----- Elements -----*****/
