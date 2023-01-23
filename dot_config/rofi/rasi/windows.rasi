@@ -131,12 +131,20 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            @background;
+    background-color:            transparent;
     text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            transparent;
+    text-color:                  @selected;
 }
 element selected.normal {
     background-color:            @background-alt;
     text-color:                  @foreground;
+}
+element selected.active {
+    background-color:            @background-alt;
+    text-color:                  @selected;
 }
 element-icon {
     background-color:            transparent;

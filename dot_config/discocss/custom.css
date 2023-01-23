@@ -34,8 +34,8 @@ code,
   --channeltextarea-background: #FFFFFF10;
   --modal-background: var(--background-secondary-alt);
   --info-warning-foreground: #F7768E;
-  --background-mentioned: rgba(247, 118, 142, 0.3);
-  --background-mentioned-hover: rgba(247, 118, 142, 0.2);
+  --background-mentioned: rgba(247, 118, 142, 0.2);
+  --background-mentioned-hover: rgba(247, 118, 142, 0.1);
   --status-danger: #F7768E;
   --modal-primary: var(--background-primary);
   --scrollbar-thin-thumb: var(--background-tertiary);

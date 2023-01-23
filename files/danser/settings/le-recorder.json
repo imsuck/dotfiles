@@ -655,8 +655,8 @@
 		"ShowFFmpegLogs": true,
 		"MotionBlur": {
 			"Enabled": true,
-			"OversampleMultiplier": 4,
-			"BlendFrames": 4,
+			"OversampleMultiplier": 3,
+			"BlendFrames": 3,
 			"BlendFunctionID": 0,
 			"GaussWeightsMult": 1.5
 		}

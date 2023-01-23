@@ -93,7 +93,7 @@ inputbar {
     border:                      0px 0px 1px dash 0px;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            transparent;
     text-color:                  @foreground-colour;
     children:                    [ "prompt", "entry" ];
 }
@@ -163,7 +163,7 @@ element {
     cursor:                      pointer;
 }
 element normal.normal {
-    background-color:            var(normal-background);
+    background-color:            transparent;
     text-color:                  var(normal-foreground);
 }
 element normal.urgent {
@@ -187,16 +187,8 @@ element selected.active {
     text-color:                  var(selected-active-foreground);
 }
 element alternate.normal {
-    background-color:            var(alternate-normal-background);
+    background-color:            transparent;
     text-color:                  var(alternate-normal-foreground);
-}
-element alternate.urgent {
-    background-color:            var(alternate-urgent-background);
-    text-color:                  var(alternate-urgent-foreground);
-}
-element alternate.active {
-    background-color:            var(alternate-active-background);
-    text-color:                  var(alternate-active-foreground);
 }
 element-icon {
     background-color:            transparent;

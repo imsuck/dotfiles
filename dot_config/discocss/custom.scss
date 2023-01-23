@@ -74,8 +74,8 @@ code,
 
 	// mention/ping colour
 	--info-warning-foreground: #{$red};
-	--background-mentioned: #{color.adjust($red, $alpha: -0.7)};
-	--background-mentioned-hover: #{color.adjust($red, $alpha: -0.8)};
+	--background-mentioned: #{color.adjust($red, $alpha: -0.8)};
+	--background-mentioned-hover: #{color.adjust($red, $alpha: -0.9)};
 	--status-danger: #{$red};
 	--modal-primary: var(--background-primary);
 

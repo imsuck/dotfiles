@@ -14,8 +14,10 @@ map l feedkeys "<C-Right>"
 set selection-clipboard clipboard
 
 set font "Fira Code 10"
-set default-bg rgba(36,40,59,0.8)
+set default-bg rgba(36,40,59,0.9)
 set default-fg rgb(192,202,245)
+
+set guioptions "shv"
 
 set completion-bg			"#24283B"
 set completion-fg			"#C0CAF5"
@@ -31,6 +33,8 @@ set notification-error-fg 	"#FFFFFF"
 set notification-warning-bg "#E0AF68"
 set notification-warning-fg "#FFFFFF"
 
+set scrollbar-bg rgba(36,40,59,0.0)
+set scrollbar-fg rgb(192,202,245)
 
 set inputbar-bg				"#24283B"
 set inputbar-fg				"#C0CAF5"
