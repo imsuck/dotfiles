@@ -175,7 +175,7 @@ bindsym $mod+Return exec --no-startup-id wezterm # -e tmux
 bindsym $mod+q kill
 
 # exit-menu
-bindsym $mod+x exec --no-startup-id ~/.config/rofi/scripts/powermenu
+bindsym $mod+x exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
 
 # Lock the system
 # bindsym $mod+l exec --no-startup-id betterlockscreen -l blur
