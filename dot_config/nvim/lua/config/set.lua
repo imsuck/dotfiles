@@ -1,5 +1,5 @@
 ---vim.opt.guicursor = ""
-vim.opt.guifont = "Fira Code:h10"
+vim.opt.guifont = "Fira Code:h10, Arimo Nerd Font:h10"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -35,7 +35,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 -- Give more space for displaying messages.
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.

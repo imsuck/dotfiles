@@ -39,6 +39,7 @@ return {
     "tmux",
     "zellij",
   },
+  window_close_confirmation = 'NeverPrompt',
   -- for tiling wm's
   adjust_window_size_when_changing_font_size = false,
 }

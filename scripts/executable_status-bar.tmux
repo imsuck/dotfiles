@@ -9,8 +9,8 @@ tmux_set() {
 	tmux set-option -gq "$1" "$2"
 }
 
-right_arrow_icon=$(tmux_get '@tmux_power_right_arrow_icon' '')
-left_arrow_icon=$(tmux_get '@tmux_power_left_arrow_icon' '')
+# right_arrow_icon=$(tmux_get '@tmux_power_right_arrow_icon' '')
+# left_arrow_icon=$(tmux_get '@tmux_power_left_arrow_icon' '')
 time_icon="$(tmux_get '@tmux_power_time_icon' '')"
 date_icon="$(tmux_get '@tmux_power_date_icon' '')"
 prefix_highlight_pos=$(tmux_get @tmux_power_prefix_highlight_pos)

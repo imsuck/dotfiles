@@ -18,6 +18,8 @@ set default-bg rgba(36,40,59,0.9)
 set default-fg rgb(192,202,245)
 
 set guioptions "shv"
+set window-title-basename true
+set statusbar-home-tilde true
 
 set completion-bg			"#24283B"
 set completion-fg			"#C0CAF5"
