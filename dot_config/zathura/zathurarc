@@ -1,3 +1,4 @@
+## Keybinds
 map i recolor
 map <F1> focus_inputbar ":exec sh -c \"cat ~/.local/share/zathura/history | rg -Po '\[\K[^\]]*' | rg '\\.' | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
 map <F2> focus_inputbar ":quit"
@@ -5,21 +6,34 @@ map H feedkeys "<F1><Return><F2><Return>"
 map <F3> focus_inputbar ":exec sh -c \"fd "\.pdf" ~ | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
 map f feedkeys "<F3><Return><F2><Return>"
 
+# Smooth scroll
 map h feedkeys "<C-Left>"
 map j feedkeys "<C-Down>"
 map k feedkeys "<C-Up>"
 map l feedkeys "<C-Right>"
 
-
+## Configurations
 set selection-clipboard clipboard
 
 set font "Fira Code 10"
-set default-bg rgba(36,40,59,0.9)
-set default-fg rgb(192,202,245)
-
 set guioptions "shv"
 set window-title-basename true
 set statusbar-home-tilde true
+
+set adjust-open "width"
+
+## Theme
+set recolor-keephue true
+set recolor-lightcolor		rgba(0,0,0,0)
+set recolor-darkcolor		"#C0CAF5"
+
+set default-bg rgba(36,40,59,0.9)
+set default-fg rgb(192,202,245)
+
+set index-bg                rgba(36,40,59,0.0)
+set index-fg                "#C0CAF5"
+set index-active-bg         "#414868"
+set index-active-fg         "#C0CAF5"
 
 set completion-bg			"#24283B"
 set completion-fg			"#C0CAF5"
@@ -35,8 +49,8 @@ set notification-error-fg 	"#FFFFFF"
 set notification-warning-bg "#E0AF68"
 set notification-warning-fg "#FFFFFF"
 
-set scrollbar-bg rgba(36,40,59,0.0)
-set scrollbar-fg rgb(192,202,245)
+set scrollbar-bg			rgba(36,40,59,0.0)
+set scrollbar-fg			rgb(192,202,245)
 
 set inputbar-bg				"#24283B"
 set inputbar-fg				"#C0CAF5"
@@ -45,7 +59,3 @@ set statusbar-fg			"#C0CAF5"
 
 set highlight-color			"#C0CAF5"
 set highlight-active-color	"#F7768E"
-
-set recolor-keephue true
-set recolor-lightcolor		rgba(0,0,0,0)
-set recolor-darkcolor		"#C0CAF5"
