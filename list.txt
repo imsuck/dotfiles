@@ -1,0 +1,11 @@
+### Packages (Community)
+        LaTeX
+`texlive-latexextra texlab`
+     main stuff      LSP
+
+        Zathura
+`zathura zathura-pdf-poppler`
+
+### Packages (AUR)
+        Polybar
+`polybar-git polybar-spotify-module`
