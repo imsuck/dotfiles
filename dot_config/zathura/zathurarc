@@ -1,16 +1,19 @@
 ## Keybinds
 map i recolor
 map <F1> focus_inputbar ":exec sh -c \"cat ~/.local/share/zathura/history | rg -Po '\[\K[^\]]*' | rg '\\.' | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
-map <F2> focus_inputbar ":quit"
-map H feedkeys "<F1><Return><F2><Return>" # Open pdf files from history
-map <F3> focus_inputbar ":exec sh -c \"fd "\.pdf" ~ | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
-map f feedkeys "<F3><Return><F2><Return>" # Open pdf files in home directory
+map <F2> focus_inputbar ":exec sh -c \"fd "\\.pdf$" ~ | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
+map <F9> focus_inputbar ":quit"
+
+map O feedkeys "<F1><Return><F9><Return>" # Open pdf files from history
+map o feedkeys "<F2><Return><F9><Return>" # Open pdf files in home directory
 
 # Smooth scroll
 map h feedkeys "<C-Left>"
 map j feedkeys "<C-Down>"
 map k feedkeys "<C-Up>"
 map l feedkeys "<C-Right>"
+map d feedkeys "g<PageDown>e"
+map u feedkeys "g<PageUp>e"
 
 ## Configurations
 set selection-clipboard clipboard
@@ -24,6 +27,7 @@ set adjust-open "width"
 
 ## Theme
 set recolor-keephue true
+set recolor-reverse-video true
 set recolor-lightcolor		rgba(0,0,0,0)
 set recolor-darkcolor		"#C0CAF5"
 

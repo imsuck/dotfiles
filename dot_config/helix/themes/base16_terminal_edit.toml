@@ -10,8 +10,8 @@ inherits = "base16_transparent"
 "ui.statusline" = { fg = "white", bg = "gray" }
 "ui.statusline.inactive" = { fg = "white", bg = "gray" }
 "ui.help" = { fg = "white" }
-"ui.cursor" = { fg = "light-gray", modifiers = ["reversed"] }
-"ui.cursor.primary" = { fg = "white", modifiers = ["reversed"] }
+"ui.cursor" = { fg = "black", bg = "light-gray" }
+"ui.cursor.primary" = { fg = "black", bg = "white" }
 "ui.virtual.whitespace" = "white"
 "ui.bufferline" = { }
 "ui.bufferline.active" = { bg = "gray" }

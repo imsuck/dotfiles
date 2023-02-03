@@ -10,7 +10,7 @@ sudo pacman -S --noconfirm --needed \
  alacritty wezterm starship helix `#dunst` github-cli fzf zellij\
  exa ripgrep fd bat zoxide `# rust utilities`\
  htop bottom\
- discord opera nitrogen\
+ discord opera opera-ffmpeg-codecs nitrogen\
  `#polybar` rofi\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
@@ -22,7 +22,7 @@ sudo pacman -S --noconfirm --needed \
 
 yay -S --answerclean All --answerdiff None \
  discocss-git\
- opera-ffmpeg-codecs eww\
+ eww\
  spotify-adblock-git cava\
  nerd-fonts-hack betterlockscreen\
  ksuperkey autotiling\

@@ -29,23 +29,25 @@ abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add -p'
 abbr -a ct 'cargo t'
-abbr -a gah 'git stash; and git pull --rebase; and git stash pop'
+# abbr -a gah 'git stash; and git pull --rebase; and git stash pop'
 # abbr -a ks 'keybase chat send'
 # abbr -a kr 'keybase chat read'
 # abbr -a kl 'keybase chat list'
 abbr -a pr 'gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)'
 abbr -a fetchimg 'neofetch --w3m --source ~/backgrounds/74016100_p0.png --crop_mode fill --loop --size 200'
 abbr -a ltop 'watch -c -n 0.01667 "df; printf \'\\n\'; free -m; printf \'\\n\'; mpstat"'
-# complete --command aurman --wraps pacman
 
 if status --is-interactive
     if test -d ~/dev/others/base16/templates/fish-shell
         set fish_function_path $fish_function_path ~/dev/others/base16/templates/fish-shell/functions
         builtin source ~/dev/others/base16/templates/fish-shell/conf.d/base16.fish
     end
-    if ! set -q TMUX
-        # exec tmux
-    end
+    # if ! set -q TMUX
+    #     exec tmux
+    # end
+    # if ! set -q ZELLIJ
+    #     exec zellij
+    # end
 end
 
 if command -v aurman > /dev/null
@@ -65,90 +67,6 @@ else
     abbr -a l 'ls'
     abbr -a ll 'ls -l'
     abbr -a lll 'ls -la'
-end
-
-if test -f /usr/share/autojump/autojump.fish;
-    source /usr/share/autojump/autojump.fish;
-end
-
-function ssh
-    switch $argv[1]
-    case "*.amazonaws.com"
-        env TERM=xterm /usr/bin/ssh $argv
-    case "ubuntu@"
-        env TERM=xterm /usr/bin/ssh $argv
-    case "*"
-        /usr/bin/ssh $argv
-    end
-end
-
-function apass
-    if test (count $argv) -ne 1
-        pass $argv
-        return
-    end
-
-    asend (pass $argv[1] | head -n1)
-end
-
-function qrpass
-    if test (count $argv) -ne 1
-        pass $argv
-        return
-    end
-
-    qrsend (pass $argv[1] | head -n1)
-end
-
-function asend
-    if test (count $argv) -ne 1
-        echo "No argument given"
-        return
-    end
-
-    adb shell input text (echo $argv[1] | sed -e 's/ /%s/g' -e 's/\([#[()<>{}$|;&*\\~"\'`]\)/\\\\\1/g')
-end
-
-function qrsend
-    if test (count $argv) -ne 1
-        echo "No argument given"
-        return
-    end
-
-    qrencode -o - $argv[1] | feh --geometry 500x500 --auto-zoom -
-end
-
-function limit
-    numactl -C 0,1,2 $argv
-end
-
-function remote_alacritty
-    # https://gist.github.com/costis/5135502
-    set fn (mktemp)
-    infocmp alacritty > $fn
-    scp $fn $argv[1]":alacritty.ti"
-    ssh $argv[1] tic "alacritty.ti"
-    ssh $argv[1] rm "alacritty.ti"
-end
-
-function remarkable
-    if test (count $argv) -lt 1
-        echo "No files given"
-        return
-    end
-
-    ip addr show up to 10.11.99.0/29 | grep enp2s0f0u3 >/dev/null
-    if test $status -ne 0
-        # not yet connected
-        echo "Connecting to reMarkable internal network"
-        sudo dhcpcd enp2s0f0u3
-    end
-    for f in $argv
-        echo "-> uploading $f"
-        curl --form "file=@\""$f"\"" http://10.11.99.1/upload
-        echo
-    end
-    sudo dhcpcd -k enp2s0f0u3
 end
 
 # Type d to move up to top parent dir which is a repository
@@ -188,28 +106,12 @@ set FISH_CLIPBOARD_CMD "cat"
 
 function fish_user_key_bindings
     bind \cz 'fg>/dev/null ^/dev/null'
+    bind \e\[3\;5~ kill-word
+    bind \e\[3\;3~ kill-word
     if functions -q fzf_key_bindings
         fzf_key_bindings
     end
 end
-
-# function fish_prompt
-#     set_color brblack
-#     echo -n "["(date "+%H:%M")"] "
-#     set_color blue
-#     echo -n (whoami)
-#     if [ $PWD != $HOME ]
-#         set_color brblack
-#         echo -n ':'
-#         set_color yellow
-#         echo -n (basename $PWD)
-#     end
-#     set_color green
-#     printf '%s ' (__fish_git_prompt)
-#     set_color red
-#     echo -n '| '
-#     set_color normal
-# end
 
 function fish_greeting
     echo
@@ -226,36 +128,36 @@ function fish_greeting
     )
     echo
 
-    echo -e " \\e[1mNetwork:\\e[0m"
-    echo
-    # http://tdt.rocks/linux_network_interface_naming.html
-    echo -ne (\
-        ip addr show up scope global | \
-            grep -E ': <|inet' | \
-            sed \
-                -e 's/^[[:digit:]]\+: //' \
-                -e 's/: <.*//' \
-                -e 's/.*inet[[:digit:]]* //' \
-                -e 's/\/.*//'| \
-            awk 'BEGIN {i=""} /\.|:/ {print i" "$0"\\\n"; next} // {i = $0}' | \
-            sort | \
-            column -t -R1 | \
-            # public addresses are underlined for visibility \
-            sed 's/ \([^ ]\+\)$/ \\\e[4m\1/' | \
-            # private addresses are not \
-            sed 's/m\(\(10\.\|172\.\(1[6-9]\|2[0-9]\|3[01]\)\|192\.168\.\).*\)/m\\\e[24m\1/' | \
-            # unknown interfaces are cyan \
-            sed 's/^\( *[^ ]\+\)/\\\e[36m\1/' | \
-            # ethernet interfaces are normal \
-            sed 's/\(\(en\|em\|eth\)[^ ]* .*\)/\\\e[39m\1/' | \
-            # wireless interfaces are purple \
-            sed 's/\(wl[^ ]* .*\)/\\\e[35m\1/' | \
-            # wwan interfaces are yellow \
-            sed 's/\(ww[^ ]* .*\).*/\\\e[33m\1/' | \
-            sed 's/$/\\\e[0m/' | \
-            sed 's/^/\t/' \
-        )
-    echo
+    # echo -e " \\e[1mNetwork:\\e[0m"
+    # echo
+    # # http://tdt.rocks/linux_network_interface_naming.html
+    # echo -ne (\
+    #     ip addr show up scope global | \
+    #         grep -E ': <|inet' | \
+    #         sed \
+    #             -e 's/^[[:digit:]]\+: //' \
+    #             -e 's/: <.*//' \
+    #             -e 's/.*inet[[:digit:]]* //' \
+    #             -e 's/\/.*//'| \
+    #         awk 'BEGIN {i=""} /\.|:/ {print i" "$0"\\\n"; next} // {i = $0}' | \
+    #         sort | \
+    #         column -t -R1 | \
+    #         # public addresses are underlined for visibility \
+    #         sed 's/ \([^ ]\+\)$/ \\\e[4m\1/' | \
+    #         # private addresses are not \
+    #         sed 's/m\(\(10\.\|172\.\(1[6-9]\|2[0-9]\|3[01]\)\|192\.168\.\).*\)/m\\\e[24m\1/' | \
+    #         # unknown interfaces are cyan \
+    #         sed 's/^\( *[^ ]\+\)/\\\e[36m\1/' | \
+    #         # ethernet interfaces are normal \
+    #         sed 's/\(\(en\|em\|eth\)[^ ]* .*\)/\\\e[39m\1/' | \
+    #         # wireless interfaces are purple \
+    #         sed 's/\(wl[^ ]* .*\)/\\\e[35m\1/' | \
+    #         # wwan interfaces are yellow \
+    #         sed 's/\(ww[^ ]* .*\).*/\\\e[33m\1/' | \
+    #         sed 's/$/\\\e[0m/' | \
+    #         sed 's/^/\t/' \
+    #     )
+    # echo
 
     set r (random 0 100)
     if [ $r -lt 5 ] # only occasionally show backlog (5%)
@@ -265,38 +167,38 @@ function fish_greeting
         echo
     end
 
-    set_color normal
-    echo -e " \e[1mTODOs\e[0;32m"
-    echo
-    if [ $r -lt 10 ]
-            # unimportant, so show rarely
-        set_color cyan
-        # echo "  [project] <description>"
-    end
-    if [ $r -lt 25 ]
-        # back-of-my-mind, so show occasionally
-        set_color green
-        # echo "  [project] <description>"
-    end
-    if [ $r -lt 50 ]
-        # upcoming, so prompt regularly
-        set_color yellow
-        # echo "  [project] <description>"
-    end
+    # set_color normal
+    # echo -e " \e[1mTODOs\e[0;32m"
+    # echo
+    # if [ $r -lt 10 ]
+    #         # unimportant, so show rarely
+    #     set_color cyan
+    #     # echo "  [project] <description>"
+    # end
+    # if [ $r -lt 25 ]
+    #     # back-of-my-mind, so show occasionally
+    #     set_color green
+    #     # echo "  [project] <description>"
+    # end
+    # if [ $r -lt 50 ]
+    #     # upcoming, so prompt regularly
+    #     set_color yellow
+    #     # echo "  [project] <description>"
+    # end
 
-    # urgent, so prompt always
-    set_color red
-    # echo "  [project] <description>"
+    # # urgent, so prompt always
+    # set_color red
+    # # echo "  [project] <description>"
 
-    echo
+    # echo
 
-    if test -s ~/todo
-        set_color magenta
-        cat todo | sed 's/^/ /'
-        echo
-    end
+    # if test -s ~/todo
+    #     set_color magenta
+    #     cat todo | sed 's/^/ /'
+    #     echo
+    # end
 
-    set_color normal
+    # set_color normal
 end
 
 starship init fish | source
@@ -306,8 +208,6 @@ zoxide init fish | source
 
 # tab size
 # tabs 4
-bind \e\[3\;5~ kill-word
-bind \e\[3\;3~ kill-word
 
 # skim_key_bindings
 # bind \ct skim-file-widget
