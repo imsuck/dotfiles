@@ -6,6 +6,9 @@
         Zathura
 `zathura zathura-pdf-poppler`
 
+        Useful for changing GRUB stuff
+`grub-customizer`
+
 ### Packages (AUR)
         Polybar
 `polybar-git polybar-spotify-module`

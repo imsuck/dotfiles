@@ -1,6 +1,6 @@
-windows
-install_apps.fish
+windows/
+install_apps.sh
+list.txt
 emoji.sh
-.local/share/fish/fish_history
 README.md
-files
+files/

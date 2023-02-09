@@ -7,7 +7,6 @@ export NNN_FIFO="/tmp/nnn.fifo"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-pidof ibus-daemon > /dev/null || ibus-daemon -drx
 
 if command -v helix > /dev/null
     abbr -a hx helix
@@ -21,7 +20,6 @@ abbr -a ... ../../
 abbr -a .... ../../../
 abbr -a ..... ../../../../
 abbr -a yr 'cal -y'
-abbr -a wtr 'curl "wttr.in/?qF"'
 abbr -a c cargo
 abbr -a m make
 abbr -a o xdg-open
@@ -34,8 +32,10 @@ abbr -a ct 'cargo t'
 # abbr -a kr 'keybase chat read'
 # abbr -a kl 'keybase chat list'
 abbr -a pr 'gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)'
+abbr -a wtr 'curl "wttr.in/?qF"'
 abbr -a fetchimg 'neofetch --w3m --source ~/backgrounds/74016100_p0.png --crop_mode fill --loop --size 200'
 abbr -a ltop 'watch -c -n 0.01667 "df; printf \'\\n\'; free -m; printf \'\\n\'; mpstat"'
+abbr -a df 'duf -theme ansi'
 
 if status --is-interactive
     if test -d ~/dev/others/base16/templates/fish-shell

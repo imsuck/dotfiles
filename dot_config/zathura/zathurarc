@@ -27,7 +27,7 @@ set adjust-open "width"
 
 ## Theme
 set recolor-keephue true
-set recolor-reverse-video true
+# set recolor-reverse-video true
 set recolor-lightcolor		rgba(0,0,0,0)
 set recolor-darkcolor		"#C0CAF5"
 
@@ -61,5 +61,5 @@ set inputbar-fg				"#C0CAF5"
 set statusbar-bg			"#414868"
 set statusbar-fg			"#C0CAF5"
 
-set highlight-color			"#C0CAF5"
+set highlight-color			"#364A82"
 set highlight-active-color	"#F7768E"

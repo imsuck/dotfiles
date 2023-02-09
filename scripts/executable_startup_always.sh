@@ -13,10 +13,11 @@
 ~/scripts/touchpad.sh
 
 # Enable Super Keys For Menu
-ksuperkey -e 'Super_L=F9' &
-ksuperkey -e 'Super_R=F9' &
+ksuperkey -t 250 -e "Super_L=F9;Super_R=F9" &
 
 # activate-linux &
+
+ibus-daemon -drx
 
 # Don't turn screen off automatically
 xset s off -dpms &
