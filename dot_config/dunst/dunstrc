@@ -3,7 +3,7 @@
     # --- Display --- #
     monitor = 0
     follow = mouse
-    width = (0, 500)
+    width = (300, 500)
     height = 300
     offset = 30x40
     transparency = 0
@@ -17,7 +17,7 @@
     padding = 12
     horizontal_padding = 12
 
-    # Disable frame (border)
+    # Frame size (border)
     frame_width = 0
 
     # Sort messages by urgency.
@@ -28,7 +28,6 @@
 
    
     # --- Text --- #
-
     # Set the font
     font = "Noto Sans 9"
 
@@ -51,7 +50,7 @@
     #  %% Literal %
 
     markup = full
-    format = "<b>%s</b> (%a)\n%b"
+    format = "<b>%s</b>\n%b"
 
     # Text alignment
     alignment = left
@@ -128,7 +127,7 @@
     verbosity = mesg
 
     # Define the corner radius of the notification window
-    corner_radius = 0
+    corner_radius = 12
 
     # Don't ignore the dbus closeNotification message.
     ignore_dbusclose = false
@@ -167,16 +166,16 @@
 # --- Colors --- #
 
 [urgency_low]
-    background = "#1e2137cc"
-    foreground = "#ffffffff"
+    background = "#1e2137e6"
+    foreground = "#c0caf5ff"
     timeout = 8
 
 [urgency_normal]
-    background = "#24283bcc"
+    background = "#24283be6"
     foreground = "#c0caf5ff"
     timeout = 8
 
 [urgency_critical]
-    background = "#f7768ecc"
+    background = "#f7768ee6"
     foreground = "#fff"
     timeout = 0

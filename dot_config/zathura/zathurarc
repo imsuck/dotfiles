@@ -1,7 +1,7 @@
 ## Keybinds
 map i recolor
-map <F1> focus_inputbar ":exec sh -c \"cat ~/.local/share/zathura/history | rg -Po '\[\K[^\]]*' | rg '\\.' | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
-map <F2> focus_inputbar ":exec sh -c \"fd "\\.pdf$" ~ | sed 's/\/home\/\w*/~/' | rofi -dmenu -i -config ~/.config/rofi/rasi/list.rasi | xargs zathura\""
+map <F1> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh history\""
+map <F2> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh search\""
 map <F9> focus_inputbar ":quit"
 
 map O feedkeys "<F1><Return><F9><Return>" # Open pdf files from history

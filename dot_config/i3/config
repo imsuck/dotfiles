@@ -46,7 +46,7 @@ bindsym F1 exec --no-startup-id ~/.config/rofi/scripts/quicklinks.sh
 # Screenshot
 bindsym Print exec --no-startup-id ~/scripts/screenshot.sh
 # My keyboard is weird so I use this keybind for both jobs
-bindsym Shift+Print exec --no-startup-id "killall ffmpeg; ~/scripts/ffmpeg-record.sh"
+bindsym Shift+Print exec --no-startup-id "killall ffmpeg; ~/scripts/ffmpeg_record.sh"
 
 bindsym $mod+period exec --no-startup-id ibus emoji
 
@@ -373,6 +373,7 @@ for_window [title="^Developer Tools"] floating enable
 ######################################
 
 # Define colors variables:
+set $bg				#24283b
 set $blue			#7aa2f7
 set $cyan			#82aaff
 set $urgentred		#ff5370
@@ -385,8 +386,8 @@ set $grey			#eeffff
 # define colors for windows:
 #class		        		border		bground		text		indicator	child_border
 client.focused				$cyan		$cyan		$black		$cyan		$cyan	
-client.focused_inactive		$black		$black		$blue		$black		$black	
-client.unfocused			$black		$black		$blue		$black		$black
+client.focused_inactive		$bg			$bg			$blue		$bg			$bg		
+client.unfocused			$bg			$bg			$blue		$bg			$bg	
 client.urgent				$urgentred	$urgentred	$white		$urgentred	$urgentred
 
 #####################################

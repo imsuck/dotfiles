@@ -10,6 +10,10 @@ nnoremap("<leader>F", "<cmd>Ex<CR>")
 nnoremap("<leader>b", tele_builtin.buffers)
 nnoremap("<C-s>", "<cmd>:w<CR>")
 nnoremap("ge", "<cmd>:$<CR>")
+nnoremap("gs", "_")
+nnoremap("gh", "^")
+nnoremap("gl", "$")
+nnoremap("<leader>w", "<C-w>")
 
 inoremap("<C-S>", "<cmd>:w<CR>")
 

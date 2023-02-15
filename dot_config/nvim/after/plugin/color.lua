@@ -9,7 +9,7 @@ require("tokyonight").setup({
   style = "storm",
   transparent = is_transparent,
   styles = {
-      sidebars = "transparent",
+    sidebars = "transparent",
   },
   on_highlights = function(hl, c)
     hl.LineNr = {

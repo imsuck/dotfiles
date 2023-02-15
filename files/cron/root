@@ -1,0 +1,3 @@
+0,30 6-18 * * * /usr/bin/cp /home/imsuck/files/hosts-no-social /etc/hosts
+
+0 19-21 * * * /usr/bin/cp /home/imsuck/files/hosts /etc/hosts
