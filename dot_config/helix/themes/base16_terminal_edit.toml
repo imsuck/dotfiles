@@ -8,12 +8,12 @@ inherits = "base16_transparent"
 "ui.selection" = { bg = "gray" }
 # "comment" = { fg = "light-gray", modifiers = ["italic"] }
 "ui.statusline" = { fg = "white", bg = "gray" }
-"ui.statusline.inactive" = { fg = "white", bg = "gray" }
+"ui.statusline.inactive" = { fg = "white", bg = "black" }
 "ui.help" = { fg = "white" }
 "ui.cursor" = { fg = "black", bg = "light-gray" }
 "ui.cursor.primary" = { fg = "black", bg = "white" }
 "ui.virtual.whitespace" = "white"
-"ui.bufferline" = { }
+"ui.bufferline" = {  }
 "ui.bufferline.active" = { bg = "gray" }
 "ui.cursor.match" = { fg = "light-yellow", underline = { color = "yellow", style = "line" } }
 

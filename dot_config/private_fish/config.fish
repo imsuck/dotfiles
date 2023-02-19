@@ -33,7 +33,7 @@ abbr -a ct 'cargo t'
 # abbr -a kl 'keybase chat list'
 abbr -a pr 'gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)'
 abbr -a wtr 'curl "wttr.in/?qF"'
-abbr -a fetchimg 'neofetch --w3m --source ~/backgrounds/74016100_p0.png --crop_mode fill --loop --size 200'
+abbr -a fetchimg 'neofetch --iterm2 --source ~/backgrounds/74016100_p0.png --crop_mode fill --size 200'
 abbr -a ltop 'watch -c -n 0.01667 "df; printf \'\\n\'; free -m; printf \'\\n\'; mpstat"'
 abbr -a df 'duf -theme ansi'
 

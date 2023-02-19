@@ -63,7 +63,7 @@ run_cmd() {
 			systemctl reboot
 		elif [[ $1 == '--hibernate' ]]; then
 			systemctl hibernate
-			betterlockscreen -l
+			betterlockscreen -l blur
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
@@ -91,7 +91,7 @@ case ${chosen} in
         ;;
     $lock)
 		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
+			betterlockscreen -l blur
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi
