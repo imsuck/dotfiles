@@ -19,7 +19,7 @@ date_format=$(tmux_get @tmux_power_date_format '%m-%d')
 
 FG="#C0CAF5"
 BG1="black"
-BG2="blue"
+BG2="brightwhite"
 
 primary="blue"
 
@@ -56,7 +56,7 @@ tmux_set status-right "$RS"
 
 
 # Window status
-tmux_set window-status-format " #I:#W#F "
+tmux_set window-status-format "#[fg=$BG1,bg=$BG2] #I:#W#F #[default]"
 tmux_set window-status-current-format "#[fg=$BG1,bg=$primary]$right_arrow_icon#[fg=$BG1] #I:#W#F #[fg=$BG2,bg=$BG1,nobold]$right_arrow_icon"
 tmux_set window-status-separator ""
 

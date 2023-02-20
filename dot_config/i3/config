@@ -1,22 +1,9 @@
-# This file is a modified version based on default i3-config-wizard config
-# source is available here:
-# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
-# Maintainer: joekamprad [joekamprad@endeavouros.com]
-# https://endeavouros.com
-#
-# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
-#
-# --> to update this run the following command (will backup existing setup file)
-# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
-#
-# Endeavouros-i3 config file
-# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
-# EndeavourOS wiki holds some Information also: https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
-# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
-
 #######################
 # config starts here: #
 #######################
+
+# set the mod key to the winkey:
+set $mod Mod4
 
 # Startup
 
@@ -61,9 +48,6 @@ for_window [class="cava"] floating enable, sticky enable
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Roboto 10
-
-# set the mod key to the winkey:
-set $mod Mod4
 
 #####################
 # workspace layout: #
@@ -186,23 +170,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to update i3)
 bindsym $mod+Shift+r restart
 
-# keybinding in fancy rofi (automated):
-# bindsym F1 exec ~/.config/i3/scripts/keyhint-2
-# alternative
-# keybinding list in editor:
-# bindsym $mod+F1 exec xed ~/.config/i3/keybindings
-
 # Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
-bindsym XF86MonBrightnessDown exec xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -213,8 +189,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -296,9 +270,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# # automatic set focus new window if it opens on another workspace then the current:
-# for_window [class=(?i)firefox] focus
-
 #############################################
 # autostart applications/services on login: #
 #############################################
@@ -325,17 +296,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # xscreensaver
 # https://www.jwz.org/xscreensaver
 #exec --no-startup-id xscreensaver --no-splash
-
-
-# autotiling script
-# https://github.com/nwg-piotr/autotiling
-# `yay -S autotiling ;) (it is in AUR)
-exec_always --no-startup-id autotiling
-
-###############
-# system tray #
-###############
-
 
 ##################
 # floating rules #
@@ -373,9 +333,9 @@ for_window [title="^Developer Tools"] floating enable
 ######################################
 
 # Define colors variables:
-set $bg				#24283b
+set $bg				#24283be6
 set $blue			#7aa2f7
-set $cyan			#82aaff
+set $cyan			#7dcfff
 set $urgentred		#ff5370
 set $white			#C0CAF5
 set $black			#1D202F
@@ -385,7 +345,7 @@ set $grey			#eeffff
 
 # define colors for windows:
 #class		        		border		bground		text		indicator	child_border
-client.focused				$cyan		$cyan		$black		$cyan		$cyan	
+client.focused				$blue		$blue		$black		$blue		$blue	
 client.focused_inactive		$bg			$bg			$blue		$bg			$bg		
 client.unfocused			$bg			$bg			$blue		$bg			$bg	
 client.urgent				$urgentred	$urgentred	$white		$urgentred	$urgentred
