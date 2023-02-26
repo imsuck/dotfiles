@@ -53,7 +53,7 @@
             },
             {
               "Property": "Latency",
-              "Value": 7.0
+              "Value": 0.0
             }
           ],
           "Enable": true

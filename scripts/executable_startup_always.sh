@@ -24,4 +24,4 @@ xset s off -dpms &
 
 xbanish &
 
-exec_always --no-startup-id autotiling
+autotiling &

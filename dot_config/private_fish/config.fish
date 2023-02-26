@@ -2,7 +2,7 @@ set BROWSER opera
 set EDITOR helix
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
-# set PATH $HOME/.cargo/bin $PATH
+set PATH $HOME/.cargo/bin $PATH
 # Vietnamese thing
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

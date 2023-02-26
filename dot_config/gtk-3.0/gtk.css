@@ -21,7 +21,7 @@ window#whiskermenu-window treeview>* {
 
 VteTerminal,
 vte-terminal {
-	padding: 13px;
+	padding: 10px;
 }
 
 menu,

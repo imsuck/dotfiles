@@ -1,16 +1,45 @@
 {
-  "settingsVersion": "1.67.2",
-  "exclusionRules": [],
+  "settingsVersion": "1.67.4",
+  "exclusionRules": [
+    {
+      "pattern": "https?://kirka.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://ckrisirkc.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://play.rust-lang.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://leetcode.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://play.rust-lang.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://breadmaker.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://monkeytype.com/*",
+      "passKeys": ""
+    }
+  ],
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map ge scrollToBottom\nmap <c-u> scrollPageUp\nmap <c-d> scrollPageDown\nmap <c-f> scrollFullPageDown\nmap <c-b> scrollFullPageUp\nmap zh scrollToLeft\nmap zl scrollToRight\nmap gh firstTab\nmap gp previousTab\nmap gn nextTab\nmap ga visitPreviousTab\nmap gl lastTab\nmap yp duplicateTab\nmap d removeTab\nmap u restoreTab\nmap e Vomnibar.activateEditUrl\nmap E Vomnibar.activateEditUrlInNewTab\nmap x enterVisualLineMode\nmap X enterVisualLineMode\nmap \\ passNextKey\n\nunmap <c-e>\nunmap <c-y>\nunmap gT\nunmap gt\nunmap ^\nunmap g0\nunmap g$\nunmap yt",
+  "keyMappings": "unmap <c-e>\nunmap <c-y>\nunmap gT\nunmap gt\nunmap ^\nunmap g0\nunmap g$\nunmap yt\nunmap G\n\nmap G LinkHints.activateModeToOpenInNewForegroundTab\nmap ge scrollToBottom\nmap <c-u> scrollPageUp\nmap <c-d> scrollPageDown\nmap <c-f> scrollFullPageDown\nmap <c-b> scrollFullPageUp\nmap zh scrollToLeft\nmap zl scrollToRight\nmap gh firstTab\nmap gp previousTab\nmap gn nextTab\nmap ga visitPreviousTab\nmap gl lastTab\nmap yp duplicateTab\nmap d removeTab\nmap u restoreTab\nmap e Vomnibar.activateEditUrl\nmap E Vomnibar.activateEditUrlInNewTab\nmap x enterVisualLineMode\nmap X enterVisualLineMode\nmap \\ passNextKey",
   "linkHintCharacters": "asdfghjkl;weruiop",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
   "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
   "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-  "regexFindMode": false,
+  "regexFindMode": true,
   "ignoreKeyboardLayout": false,
   "scrollStepSize": 60,
   "smoothScroll": true,
