@@ -1,0 +1,14 @@
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Qalculate-gtk"] floating enable
+for_window [class="stalonetray"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [window_role="About"] floating enable
+for_window [title="^DevTools"] floating enable
+for_window [title="^Developer Tools"] floating enable
+for_window [title="Pomodoro"] floating enable; sticky enable
+for_window [class="cava"] floating enable, sticky enable

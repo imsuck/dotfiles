@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding = UTF-8
+Version = 0.8.1
+Type = Application
+Name = danser
+Terminal = False
+Comment = Dancing visualizer of osu! standard maps and custom osu! client written in Go. Also a generator for osu! videos.
+
+Exec = /home/imsuck/Desktop/danser/danser.sh
+Icon = /home/imsuck/Desktop/danser/dansercoin128.png

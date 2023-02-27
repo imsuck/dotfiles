@@ -1,0 +1,19 @@
+# workspace $ws2 gaps left -5
+# workspace $ws2 gaps top -3
+# workspace $ws2 gaps right -5
+
+# workspace $ws4 gaps left -2
+# workspace $ws4 gaps top -1
+# workspace $ws4 gaps right -2
+
+for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm"] move to workspace $ws1, focus
+
+for_window [class="Opera"] move to workspace $ws2, focus
+
+for_window [class="Thunar"] move to workspace $ws3
+
+for_window [class="discord"] move to workspace $ws4, focus
+
+for_window [class="Spotify"] move to workspace $ws5
+
+for_window [class="obsidian"] move to workspace $ws6

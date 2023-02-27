@@ -1,264 +1,5 @@
-#######################
-# config starts here: #
-#######################
-
-# set the mod key to the winkey:
 set $mod Mod4
-
-# Startup
-
-exec --no-startup-id ~/scripts/startup.sh
-exec_always --no-startup-id ~/scripts/startup_always.sh
-
-# Workspaces
-for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm"] move to workspace $ws1, focus
-
-for_window [class="Opera"] move to workspace $ws2, focus
-
-for_window [class="Thunar"] move to workspace $ws3
-
-for_window [class="discord"] move to workspace $ws4, focus
-
-for_window [class="Spotify"] move to workspace $ws5
-
-for_window [class="obsidian"] move to workspace $ws6
-
 set $alt Mod1
-
-# Show windows using Alt+Tab
-bindsym $alt+Tab exec --no-startup-id rofi -modi window -show window\
-	-window-format "{w} - {t}" -theme ~/.config/rofi/rasi/windows.rasi
-bindsym F1 exec --no-startup-id ~/.config/rofi/scripts/quicklinks.sh
-
-# Screenshot
-bindsym Print exec --no-startup-id ~/scripts/screenshot.sh
-# My keyboard is weird so I use this keybind for both jobs
-bindsym Shift+Print exec --no-startup-id "killall ffmpeg; ~/scripts/ffmpeg_record.sh"
-
-bindsym $mod+period exec --no-startup-id ibus emoji
-
-bindsym $mod+w sticky toggle
-
-# Cava
-for_window [class="cava"] floating enable, sticky enable
-
-
-# for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Roboto 10
-
-#####################
-# workspace layout: #
-#####################
-
-# default i3 tiling mode:
-workspace_layout default
-
-# i3 stacking layout:
-# Each window will be fullscreen and tabbed top to bottom.
-# workspace_layout stacking
-
-# i3 tabbed layout:
-# Each new window will open fullscreen as a tab (left to right)
-# workspace_layout tabbed
-
-##############################
-# extra options for windows: #
-##############################
-
-# border
-default_floating_border pixel 4
-# default_floating_border none
-default_border pixel 4
-# default_border none
-# for_window [class="^.*"] border none
-smart_borders true
-
-# Set inner/outer gaps
-gaps inner 6
-gaps outer 3
-
-smart_gaps true
-
-# gaps bottom 26
-
-# workspace $ws1 gaps inner 10
-
-# workspace $ws2 gaps left -5
-# workspace $ws2 gaps top -3
-# workspace $ws2 gaps right -5
-
-# workspace $ws4 gaps left -2
-# workspace $ws4 gaps top -1
-# workspace $ws4 gaps right -2
-
-# show window title bars (not officially supported with i3gaps)
-# default_border normal
-
-# window title alignment
-title_align center
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# switch/iterate between workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-
-# switch to workspace
-bindsym $mod+1    workspace  $ws1
-bindsym $mod+2    workspace  $ws2
-bindsym $mod+3    workspace  $ws3
-bindsym $mod+4    workspace  $ws4
-bindsym $mod+5    workspace  $ws5
-bindsym $mod+6    workspace  $ws6
-bindsym $mod+7    workspace  $ws7
-bindsym $mod+8    workspace  $ws8
-bindsym $mod+9    workspace  $ws9
-bindsym $mod+0    workspace  $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1    move container to workspace  $ws1
-bindsym $mod+Shift+2    move container to workspace  $ws2
-bindsym $mod+Shift+3    move container to workspace  $ws3
-bindsym $mod+Shift+4    move container to workspace  $ws4
-bindsym $mod+Shift+5    move container to workspace  $ws5
-bindsym $mod+Shift+6    move container to workspace  $ws6
-bindsym $mod+Shift+7    move container to workspace  $ws7
-bindsym $mod+Shift+8    move container to workspace  $ws8
-bindsym $mod+Shift+9    move container to workspace  $ws9
-bindsym $mod+Shift+0    move container to workspace  $ws10
-
-bindsym $mod+r mode "resize"
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
-
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-######################################
-# keybindings for different actions: #
-######################################
-
-# start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm # -e tmux
-
-# kill focused window
-bindsym $mod+q kill
-
-# exit-menu
-bindsym $mod+x exec --no-startup-id ~/.config/rofi/scripts/powermenu.sh
-
-# Lock the system
-# bindsym $mod+l exec --no-startup-id betterlockscreen -l blur
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to update i3)
-bindsym $mod+Shift+r restart
-
-# Backlight control
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -5 && notify-send "Brightness - $(xbacklight -get | cut -c1-2)%"
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-# bindsym $mod+h split h
-
-# split in vertical orientation
-# bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle; [tiling] border none; [floating] border pixel 4
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# open new empty workspace
-bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/scripts/empty_workspace
-
-# Multimedia Keys
-
-# volume
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
-
-# gradular volume control
-bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
-bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
-
-# mute
-bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
-
-# audio control
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-# Redirect sound to headphones
-bindsym $mod+p exec /usr/local/bin/switch-audio-port
-
-## App shortcuts
-# bindsym $mod+w exec /usr/bin/firefox
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id "picom -b"
-bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-# bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-
-# Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/scripts/power-profiles.sh
-
-##########################################
-# configuration for workspace behaviour: #
-##########################################
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -270,69 +11,42 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-#############################################
-# autostart applications/services on login: #
-#############################################
+include keybinds
+include workspaces
+include window_rules
+
+# Startup
+exec --no-startup-id ~/scripts/startup.sh
+exec_always --no-startup-id ~/scripts/startup_always.sh
+
+font pango: Roboto 10
+
+workspace_layout default
+# workspace_layout stacking
+# workspace_layout tabbed
+
+# border
+default_floating_border pixel 4
+# default_floating_border none
+default_border pixel 4
+# default_border none
+# for_window [class="^.*"] border none
+smart_borders true
+
+gaps inner 6
+gaps outer 3
+
+smart_gaps true
+
+# gaps bottom 26
+
+title_align center
+
+floating_modifier $mod
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# dex execute .desktop files + apps using /etc/xdg/autostart.
-# when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
-# in this cases better disable dex and use manual starting apps using xdg/autostart
-# if enabled you should comment welcome app.
-# https://github.com/jceb/dex
-#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
-#exec --no-startup-id dex --autostart --environment i3
-
-# start conky:
-#exec_always --no-startup-id conky
-
-
-# set powersavings for display:
-# exec --no-startup-id xset s 480 dpms 600 600 600
-
-
-# xscreensaver
-# https://www.jwz.org/xscreensaver
-#exec --no-startup-id xscreensaver --no-splash
-
-##################
-# floating rules #
-##################
-
-# set floating (nontiling) for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="stalonetray" instance="stalonetray"] floating enable
-
-# set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [window_role="About"] floating enable
-for_window [title="^DevTools"] floating enable
-for_window [title="^Developer Tools"] floating enable
-
-# set border of floating window
-# for_window [class="urxvt"] border pixel 1
-
-# set size of floating window
-#for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
-
-# set position of floating window
-#for_window [class=".*"] move position center
-
-######################################
-# color settings for bar and windows #
-######################################
-
-# Define colors variables:
 set $bg				#24283be6
 set $blue			#7aa2f7
 set $cyan			#7dcfff
@@ -343,17 +57,8 @@ set $grey			#414868
 set $purple			#c792ea
 set $grey			#eeffff
 
-# define colors for windows:
 #class		        		border		bground		text		indicator	child_border
 client.focused				$blue		$blue		$black		$blue		$blue	
 client.focused_inactive		$bg			$bg			$blue		$bg			$bg		
 client.unfocused			$bg			$bg			$blue		$bg			$bg	
 client.urgent				$urgentred	$urgentred	$white		$urgentred	$urgentred
-
-#####################################
-# Application menu handled by rofi: #
-#####################################
-
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
-
-bindsym F9 exec --no-startup-id ~/scripts/launcher.sh
