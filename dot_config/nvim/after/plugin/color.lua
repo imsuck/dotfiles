@@ -9,15 +9,20 @@ require("tokyonight").setup({
   style = "storm",
   transparent = is_transparent,
   styles = {
+    comments = { italic = false },
+    keywords = { italic = false },
     sidebars = "transparent",
   },
   on_highlights = function(hl, c)
     hl.LineNr = {
-      fg = c.grey,
+      fg = c.fg_dark,
+    }
+    hl.CursorLine = {
+        bg = c.none,
     }
     hl.CursorLineNr = {
       bold = true,
-      fg = c.fg,
+      fg = c.white,
     }
   end,
 })

@@ -22,7 +22,7 @@ require("lazy").setup({
     lazy = false,
   },
   "nvim-lualine/lualine.nvim",
-  "lukas-reineke/indent-blankline.nvim"
+  "lukas-reineke/indent-blankline.nvim",
 })
 
 require("config.set")

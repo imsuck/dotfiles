@@ -4,8 +4,8 @@ map <F1> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh history\""
 map <F2> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh search\""
 map <F9> focus_inputbar ":quit"
 
-map O feedkeys "<F1><Return><F9><Return>" # Open pdf files from history
-map o feedkeys "<F2><Return><F9><Return>" # Open pdf files in home directory
+map O feedkeys "<F1><Return><Return><F9><Return><Return>" # Open pdf files from history
+map o feedkeys "<F2><Return><Return><F9><Return><Return>" # Open pdf files in home directory
 
 # Smooth scroll
 map h feedkeys "<C-Left>"

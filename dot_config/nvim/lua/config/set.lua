@@ -1,16 +1,19 @@
 ---vim.opt.guicursor = ""
-vim.opt.guifont = "Fira Code:h10, Arimo Nerd Font:h10"
+vim.opt.guifont = "Fira Code:h9, Arimo Nerd Font:h9"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
 
 if vim.g.neovide then
     vim.g.neovide_padding_top = 10
     vim.g.neovide_padding_left = 10
     vim.g.neovide_padding_right = 10
     vim.g.neovide_padding_bottom = 10
-    vim.opt.winblend = 90
-    vim.opt.pumblend = 90
+    vim.opt.winblend = 20
+    vim.opt.pumblend = 20
 end
 
 vim.opt.errorbells = false
@@ -41,8 +44,6 @@ vim.opt.isfname:append("@-@")
 -- Give more space for displaying messages.
 -- vim.opt.cmdheight = 0
 
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
 vim.opt.updatetime = 50
 
 -- Don't pass messages to |ins-completion-menu|.
@@ -55,3 +56,13 @@ vim.g.mapleader = " "
 vim.cmd("set noto")
 vim.cmd("set nottimeout")
 
+vim.cmd("set autochdir")
+vim.cmd("syntax enable")
+vim.cmd("set cursorline")
+
+vim.api.nvim_command([[
+augroup LineNumber
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+augroup END
+]])

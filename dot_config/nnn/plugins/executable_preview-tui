@@ -16,12 +16,13 @@
 #
 # Authors: Todd Yamakawa, Léo Villeveygoux, @Recidiviste, Mario Ortiz Manero, Luuk van Baal, @WanderLanz
 # I added zellij support :D*
-# *: Images preview (Ueberzug) doesn't work in zellij
+# *: Images preview (Ueberzug) doesn't work in zellij**
+# **: It works with Ueberzugpp by using sixel
 
 # NNN_FIFO="/tmp/nnn.fifo"
 
 #SPLIT="$SPLIT"  # you can set a permanent split here
-TERMINAL="uxterm"  # same goes for the terminal
+TERMINAL="xterm"  # same goes for the terminal
 SPLIT_SIZE="${SPLIT_SIZE:-50}" # split size in percentage for supported previewers
 USE_SCOPE="${USE_SCOPE:-0}"
 USE_PISTOL="${USE_PISTOL:-0}"

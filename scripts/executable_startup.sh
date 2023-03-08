@@ -12,6 +12,6 @@ opera %U &
 
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
-sleep 2 && nitrogen --restore &
+nitrogen --restore &
 
-sleep 2 && picom -b &
+picom &

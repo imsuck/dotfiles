@@ -198,34 +198,3 @@ nav.wrapper-1_HaEi.guilds-2JjMmN,
 .sidebar-1tnWFu {
   background-color: var(--background-primary);
 }
-
-.sidebar-1tnWFu {
-  opacity: 0;
-  width: 40px;
-}
-
-.sidebar-1tnWFu:hover {
-  opacity: 1;
-  width: 250px;
-}
-
-[class|=membersWrap] {
-  opacity: 0;
-  width: 10px;
-  min-width: 40px;
-}
-
-[class|=membersWrap]:hover {
-  opacity: 1;
-  width: 240px;
-}
-
-.members-3WRCEx {
-  opacity: 0;
-  width: 40px;
-}
-
-.members-3WRCEx:hover {
-  opacity: 1;
-  width: 240px;
-}

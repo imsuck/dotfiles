@@ -6,11 +6,11 @@ layout {
         }
     }
     
-    tab name="lf" {
-        pane command="lf"
-    }
-    tab name="btm" {
-        pane command="btm"
-    }
+    // tab name="nnn" {
+    //     pane command="nnn"
+    // }
+    // tab name="btm" {
+    //     pane command="btm"
+    // }
     tab name="cmd"
 }
