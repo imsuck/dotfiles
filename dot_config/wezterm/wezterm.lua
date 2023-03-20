@@ -40,6 +40,18 @@ return {
     "zellij",
   },
   window_close_confirmation = 'NeverPrompt',
-  -- for tiling wm's
+  -- for tiling WMs
   adjust_window_size_when_changing_font_size = false,
+
+  keys = {
+    {
+      -- Needs fish keybind set up
+      key = "Backspace",
+      mods = "CTRL",
+      action = wezterm.action.SendKey {
+        key = "Backspace",
+        mods = "ALT",
+      },
+    }
+  }
 }

@@ -120,11 +120,11 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
-        bind "Alt n" { NewPane; }
-        bind "Alt h" { MoveFocusOrTab "Left"; }
-        bind "Alt l" { MoveFocusOrTab "Right"; }
-        bind "Alt j" { MoveFocus "Down"; }
-        bind "Alt k" { MoveFocus "Up"; }
+        // bind "Alt n" { NewPane; }
+        // bind "Alt h" { MoveFocusOrTab "Left"; }
+        // bind "Alt l" { MoveFocusOrTab "Right"; }
+        // bind "Alt j" { MoveFocus "Down"; }
+        // bind "Alt k" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
     }

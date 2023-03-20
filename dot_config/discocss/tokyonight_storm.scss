@@ -1,8 +1,3 @@
-// note to self: https://www.w3.org/TR/css-color-5/#relative-colors 
-// to optimize css (maybe) or use sass lmao 
-// actually discord won't update chromium so...
-// I apologize to anybody reading this mess :<
-
 @use "sass:color";
 
 $red: #F7768E;
@@ -12,22 +7,11 @@ $green: #9ECE6A;
 $magenta: #BB9AF7;
 $yellow: #E0AF68;
 $light-grey: #414868;
-$bg-primary: #24283BFF;
+$black: #1d202f;
+$fg: #c0caf5;
+$bg-primary: #24283B;
+$bg-night: #1a1b26;
 
-// backgrounds if i feel like it
-// body {
-// 	background: url(https://cdn.discordapp.com/attachments/754143127308206132/930742260763594782/unknown.png);
-// 	background-color: var(--background-primary);
-// 	background-attachment: fixed;
-// 	background-position: center;
-// 	background-size: cover;
-//  backdrop-filter: blur(5px);
-// }
-// .appMount-2yBXZl {
-// 	background-color: var(--background-primary);
-// }
-
-// fonts
 :lang(ja),
 :lang(ja-JP),
 :root {
@@ -45,42 +29,42 @@ code,
 }
 
 .theme-dark {
-	// colours
+	/* colours */
 	--brand-experiment: #{$blue};
+	--brand-experiment-560: #{$blue};
 
-	// text
-	--text-normal: #c0caf5;
-	--text-muted: #{$light-grey};
-	--text-link: #{$cyan};
-	--header-secondary: var(--text-normal); // replies colour
-	--interactive-normal: var(--text-normal);
-
-	// background
+	/* backgrounds */
 	--background-primary: #{$bg-primary};
-	--background-secondary: #{color.adjust($bg-primary, $hue: 3, $saturation: -0.8%, $lightness: -3.1%)};
-	--background-secondary-alt: #{color.adjust($bg-primary, $hue: 0, $saturation: -0.9%, $lightness: -5.6%)};
-	--background-tertiary: #{color.adjust($bg-primary, $hue: -4, $saturation: -0.5%, $lightness: -9.4%)};
-	--background-accent: #{color.adjust($bg-primary, $hue: -3, $saturation: -0.1%, $lightness: 10.6%)};
-	--background-floating: #{color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%)};
+	--background-secondary: #{$black};
+	--background-secondary-alt: #{$bg-night};
+	--background-tertiary: #{$bg-night};
+	--background-accent: #{$light-grey};
+	--background-floating: #{$bg-night};
 	--chat-background: var(--background-primary);
 	--chat-border: var(--background-tertiary);
 	--chat-input-container-background: var(--background-primary);
 	--input-background: var(--background-tertiary);
 	--background-message-hover: rgba(0, 0, 0, 0.1);
 	--channeltextarea-background: #FFFFFF10;
-	// code popout
 	--modal-background: var(--background-secondary-alt);
-	--modal-footer-background: var(--background-primary);
+	--modal-footer-background: var(--background-secondary);
 	--bg-overlay-chat: var(--background-primary);
+	--bg-overlay-2: var(--background-primary);
 
-	// mention/ping colour
+	/* text */
+	--text-normal: #{$fg};
+	--text-muted: #{$light-grey};
+	--text-link: #{$cyan};
+	--header-secondary: var(--text-normal); // replies colour
+	--interactive-normal: var(--text-normal);
+
+	/* mentions */
 	--info-warning-foreground: #{$red};
 	--background-mentioned: #{color.adjust($red, $alpha: -0.8)};
 	--background-mentioned-hover: #{color.adjust($red, $alpha: -0.9)};
 	--status-danger: #{$red};
 	--modal-primary: var(--background-primary);
 
-	// scroll bar
 	--scrollbar-thin-thumb: var(--background-tertiary);
 	--scrollbar-thin-track: transparent;
 	--scrollbar-auto-thumb: var(--background-tertiary);
@@ -88,7 +72,7 @@ code,
 	--scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
 	--scrollbar-auto-scrollbar-color-track: var(--background-secondary);
 
-	// channels list
+	/* channel selector */
 	--background-modifier-hover: #{$bg-primary};
 	--background-modifier-selected: #{$bg-primary};
 	--bg-overlay-active: #{$bg-primary};
@@ -96,50 +80,42 @@ code,
 	--channels-default: var(--text-normal);
 	--channel-icon: var(--text-normal);
 
-	// green buttons
-	--status-positive-background: transparent;
-	--status-positive-text: $green;
-	--text-positive: #9EE057;
-
+	/* miscellaneous */
+	--profile-body-background-color: transparent;
 	--button-secondary-background: #{$light-grey};
+	--button-danger-background: #{$red};
+	--button-danger-background-hover: #{$red};
 }
 
-.members-3WRCEx,
-.members-3WRCEx>div {
+/*** extra colouring ***/
+/* members list */
+.member-48YF_l,
+.members-3WRCEx {
 	background-color: var(--background-secondary);
 }
 
-// thread popup when you hover on a channel
-.popout-TdhJ6Z {
-	background-color: var(--background-primary);
+/* jump to present bar */
+.jumpToPresentBar-1cEnH0 {
+	background-color: $blue;
 }
 
-// .scroller-145h9c.thin-31rlnD.scrollerBase-_bVAAt {
-// 	background-color: var(--background-secondary);
-// }
-
-// loading screen
-.container-2RRFHK {
-	background-color: var(--background-primary);
-}
-
-// thread popup when you hover on a channel
-.popout-TdhJ6Z {
-	border: 2px solid $blue;
-}
-
-// slash menu
+/* slash menu */
 .theme-dark .autocomplete-3NRXG8,
 .categoryHeader-OpJ1Ly {
 	background-color: var(--background-secondary);
 }
 
-// jump to present bar
-.jumpToPresentBar-1cEnH0 {
-	background-color: $blue;
+
+/* loading screen */
+.container-2RRFHK {
+	background-color: var(--background-primary);
 }
 
-// code highlighting
+.caret-1TZU-U {
+	color: var(--text-normal);
+}
+
+/* code highlighting */
 .hljs-variable {
 	color: $red !important;
 }
@@ -172,7 +148,17 @@ code,
 	color: $light-grey !important;
 }
 
-// search thing
+.card-2guEcY {
+	background-color: var(--background-secondary);
+}
+
+/*** miscellaneous ***/
+
+.userPopoutOverlayBackground-dKOOda {
+	margin: 8px 0 0;
+}
+
+/* search bar */
 .focused-1xh-wG .searchBar-jGtisZ,
 .open-1F8u2c .searchBar-jGtisZ {
 	width: 14rem !important;
@@ -194,12 +180,13 @@ code,
 	transform: translate(-6px, -3px);
 }
 
+/* search items */
 .option-ayUoaq:after,
 .option-ayUoaq:hover:after {
 	background: linear-gradient(to right, color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%, $alpha: -1), var(--background-floating), var(--background-floating)) !important;
 }
 
-// login screen
+/* login screen */
 .theme-dark.authBox-1HR6Ha {
 	background: var(--background-primary);
 }

@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type = Application
-Exec = xfce4-terminal --title Pomodoro --geometry 33x4 -x /home/imsuck/.cargo/bin/porsmo
+Exec = xfce4-terminal --title Pomodoro --geometry 33x4 -x /home/imsuck/scripts/pomodoro.sh
 Terminal = false
 Name = Pomodoro
