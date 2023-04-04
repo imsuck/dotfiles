@@ -6,6 +6,7 @@ window:
     x: 10
     y: 10
   opacity: 0.9
+  resize_increments: true
 
 env:
   TERM: xterm-256color
@@ -26,8 +27,8 @@ font:
     # family: "Roboto Mono"
     # family: "Noto Sans Mono"
     # style: Italic
-  # size: 10.0
-  size: 8.0
+  size: 10.0
+  # size: 9.0
 
 colors:
   bright:

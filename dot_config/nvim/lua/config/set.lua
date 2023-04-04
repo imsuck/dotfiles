@@ -8,12 +8,12 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 
 if vim.g.neovide then
-    vim.g.neovide_padding_top = 10
-    vim.g.neovide_padding_left = 10
-    vim.g.neovide_padding_right = 10
-    vim.g.neovide_padding_bottom = 10
-    vim.opt.winblend = 20
-    vim.opt.pumblend = 20
+  vim.g.neovide_padding_top = 10
+  vim.g.neovide_padding_left = 10
+  vim.g.neovide_padding_right = 10
+  vim.g.neovide_padding_bottom = 10
+  vim.opt.winblend = 20
+  vim.opt.pumblend = 20
 end
 
 vim.opt.errorbells = false

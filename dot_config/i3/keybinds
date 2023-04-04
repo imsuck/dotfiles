@@ -11,6 +11,7 @@ bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id "picom"
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Shift+Return exec --no-startup-id alacritty
 bindsym $mod+period exec --no-startup-id ibus emoji
 # Screenshot
 bindsym Print exec --no-startup-id ~/scripts/screenshot.sh

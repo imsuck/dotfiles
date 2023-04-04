@@ -23,6 +23,17 @@ require("lazy").setup({
   },
   "nvim-lualine/lualine.nvim",
   "lukas-reineke/indent-blankline.nvim",
+  {
+    "neoclide/coc.nvim",
+    branch = "release",
+  },
+  "neoclide/coc-pairs",
+  "nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/nvim-treesitter-context",
+  {
+    "romgrk/barbar.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
+  },
 })
 
 require("config.set")

@@ -18,7 +18,7 @@ map u feedkeys "g<PageUp>e"
 ## Configurations
 set selection-clipboard clipboard
 
-set font "Fira Code 10"
+set font "Noto Sans 10"
 set guioptions "shv"
 set window-title-basename true
 set statusbar-home-tilde true

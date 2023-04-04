@@ -31,7 +31,11 @@ code,
 .theme-dark {
 	/* colours */
 	--brand-experiment: #{$blue};
+	--brand-experiment-600: #{$blue};
 	--brand-experiment-560: #{$blue};
+	--brand-experiment-360: #{$blue};
+	--primary-660: var(--background-tertiary);
+	--red-430: #{$red};
 
 	/* backgrounds */
 	--background-primary: #{$bg-primary};
@@ -64,10 +68,12 @@ code,
 	--background-mentioned-hover: #{color.adjust($red, $alpha: -0.9)};
 	--status-danger: #{$red};
 	--modal-primary: var(--background-primary);
+	--mention-foreground: #{$black};
+	--mention-background: #{$blue};
 
-	--scrollbar-thin-thumb: var(--background-tertiary);
+	--scrollbar-thin-thumb: #{$blue};
 	--scrollbar-thin-track: transparent;
-	--scrollbar-auto-thumb: var(--background-tertiary);
+	--scrollbar-auto-thumb: #{$blue};
 	--scrollbar-auto-track: var(--background-secondary);
 	--scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
 	--scrollbar-auto-scrollbar-color-track: var(--background-secondary);
@@ -153,9 +159,8 @@ code,
 }
 
 /*** miscellaneous ***/
-
 .userPopoutOverlayBackground-dKOOda {
-	margin: 8px 0 0;
+	margin: 8px 16px 16px;
 }
 
 /* search bar */
@@ -177,7 +182,7 @@ code,
 	color: var(--text-normal);
 	width: 24px;
 	height: 24px;
-	transform: translate(-6px, -3px);
+	transform: translate(-4px, -3px);
 }
 
 /* search items */

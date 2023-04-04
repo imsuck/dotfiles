@@ -11,7 +11,7 @@ return {
     },
     "Font Awesome 6 Brands",
   },
-  font_size = 10.0,
+  font_size = 12.0,
   -- font_size = 8.5,
   -- cell_width = 1.1,
 
