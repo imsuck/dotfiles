@@ -7,7 +7,7 @@ return {
     {
       family = "Fira Code",
       -- weight = "Medium",
-      harfbuzz_features = {"ss02", "ss07", "ss09"},
+      harfbuzz_features = {"ss02", "ss06", "ss07"},
     },
     "Font Awesome 6 Brands",
   },
