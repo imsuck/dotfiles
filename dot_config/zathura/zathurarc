@@ -61,5 +61,5 @@ set inputbar-fg				"#C0CAF5"
 set statusbar-bg			"#414868"
 set statusbar-fg			"#C0CAF5"
 
-set highlight-color			"#364A82"
+set highlight-color			"#373D5A"
 set highlight-active-color	"#F7768E"

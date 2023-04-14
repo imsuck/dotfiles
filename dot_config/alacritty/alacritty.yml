@@ -56,8 +56,9 @@ colors:
     background: '#24283b'
     foreground: '#c0caf5'
   selection:
-    background: '#364a82'
+    background: '#373d5a'
     text: '#c0caf5'
+  transparent_background_colors: true
 
 cursor:
   style:

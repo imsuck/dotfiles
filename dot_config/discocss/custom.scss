@@ -5,14 +5,15 @@
 
 @use "sass:color";
 
-$red: #F7768E;
-$blue: #7AA2F7;
-$cyan: #7DCFFF;
-$green: #9ECE6A;
-$magenta: #BB9AF7;
-$yellow: #E0AF68;
+$red: #f7768e;
+$blue: #7aa2f7;
+$cyan: #7dcfff;
+$green: #9ece6a;
+$magenta: #bb9af7;
+$yellow: #e0af68;
 $light-grey: #414868;
-$bg-primary: #24283BFF;
+$bg-primary: #24283bff;
+$bg-selection: #373d5a;
 
 // backgrounds if i feel like it
 // body {
@@ -70,7 +71,7 @@ code,
 	--chat-input-container-background: var(--background-primary);
 	--input-background: var(--background-tertiary);
 	--background-message-hover: rgba(0, 0, 0, 0.1);
-	--channeltextarea-background: #FFFFFF10;
+	--channeltextarea-background: #ffffff10;
 	// code popout
 	--modal-background: var(--background-secondary-alt);
 	--modal-footer-background: var(--background-primary);
@@ -102,7 +103,7 @@ code,
 	// green buttons
 	--status-positive-background: transparent;
 	--status-positive-text: $green;
-	--text-positive: #9EE057;
+	--text-positive: #9ee057;
 
 	--button-secondary-background: #{$light-grey};
 }
@@ -191,10 +192,18 @@ code,
 .searchBar-jGtisZ .icon-tZMHgY div svg {
 	position: absolute;
 	cursor: pointer;
-	color: var(--text-normal);
+	color: var(--interactive-normal);
 	width: 24px;
 	height: 24px;
-	transform: translate(-6px, -3px);
+	transform: translate(-4px, -4px);
+}
+
+.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.icon-18rqoe {
+	width: 100%;
+	height: 100%;
+	transform: none;
+	transition: none;
 }
 
 .option-ayUoaq:after,

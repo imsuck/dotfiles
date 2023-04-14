@@ -1,5 +1,8 @@
 local wezterm = require "wezterm"
 
+local colors = wezterm.color.get_builtin_schemes()['tokyonight-storm']
+colors.selection_bg = "#373d5a"
+
 return {
   font = wezterm.font_with_fallback {
     -- "Comic Mono",
@@ -15,6 +18,7 @@ return {
   -- font_size = 8.5,
   -- cell_width = 1.1,
 
+  color_schemes = {["tokyonight-storm"] = colors},
   color_scheme = "tokyonight-storm",
 
   enable_tab_bar = false,

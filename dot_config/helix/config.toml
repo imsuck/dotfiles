@@ -8,6 +8,7 @@ idle-timeout = 0
 shell = ["fish", "-c"]
 rulers = [80]
 completion-trigger-len = 1
+completion-replace = true
 bufferline = "multiple"
 
 [editor.cursor-shape]
@@ -17,10 +18,11 @@ select = "block"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 display-signature-help-docs = false
 
 [editor.statusline]
-left = ["mode", "spacer", "spinner", "file-name", "diagnostics"]
+left = ["mode", "spacer", "spinner", "spacer", "version-control", "file-name", "file-modification-indicator", "spacer", "diagnostics"]
 right = ["position", "total-line-numbers", "selections", "file-encoding", "file-line-ending"]
 
 [editor.indent-guides]

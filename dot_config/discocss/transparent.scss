@@ -258,10 +258,9 @@ code,
 }
 
 // search thing
-.searchBar-jGtisZ:hover,
 .focused-1xh-wG .searchBar-jGtisZ,
 .open-1F8u2c .searchBar-jGtisZ {
-	width: 14rem;
+	width: 14rem !important;
 	background-color: var(--background-tertiary);
 }
 
@@ -274,10 +273,18 @@ code,
 .searchBar-jGtisZ .icon-tZMHgY div svg {
 	position: absolute;
 	cursor: pointer;
-	color: var(--text-normal);
+	color: var(--interactive-normal);
 	width: 24px;
 	height: 24px;
-	transform: translate(-6px, -3px);
+	transform: translate(-4px, -4px);
+}
+
+.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.icon-18rqoe {
+	width: 100%;
+	height: 100%;
+	transform: none;
+	transition: none;
 }
 
 .theme-dark .focused-2FU0YH {

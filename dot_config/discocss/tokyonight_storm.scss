@@ -1,16 +1,17 @@
 @use "sass:color";
 
-$red: #F7768E;
-$blue: #7AA2F7;
-$cyan: #7DCFFF;
-$green: #9ECE6A;
-$magenta: #BB9AF7;
-$yellow: #E0AF68;
+$red: #f7768e;
+$blue: #7aa2f7;
+$cyan: #7dcfff;
+$green: #9ece6a;
+$magenta: #bb9af7;
+$yellow: #e0af68;
 $light-grey: #414868;
 $black: #1d202f;
 $fg: #c0caf5;
-$bg-primary: #24283B;
+$bg-storm: #24283b;
 $bg-night: #1a1b26;
+$bg-selection: #373d5a;
 
 :lang(ja),
 :lang(ja-JP),
@@ -38,7 +39,7 @@ code,
 	--red-430: #{$red};
 
 	/* backgrounds */
-	--background-primary: #{$bg-primary};
+	--background-primary: #{$bg-storm};
 	--background-secondary: #{$black};
 	--background-secondary-alt: #{$bg-night};
 	--background-tertiary: #{$bg-night};
@@ -49,7 +50,7 @@ code,
 	--chat-input-container-background: var(--background-primary);
 	--input-background: var(--background-tertiary);
 	--background-message-hover: rgba(0, 0, 0, 0.1);
-	--channeltextarea-background: #FFFFFF10;
+	--channeltextarea-background: #ffffff10;
 	--modal-background: var(--background-secondary-alt);
 	--modal-footer-background: var(--background-secondary);
 	--bg-overlay-chat: var(--background-primary);
@@ -79,9 +80,9 @@ code,
 	--scrollbar-auto-scrollbar-color-track: var(--background-secondary);
 
 	/* channel selector */
-	--background-modifier-hover: #{$bg-primary};
-	--background-modifier-selected: #{$bg-primary};
-	--bg-overlay-active: #{$bg-primary};
+	--background-modifier-hover: #{$bg-storm};
+	--background-modifier-selected: #{$bg-storm};
+	--bg-overlay-active: #{$bg-storm};
 	--interactive-muted: var(--text-muted);
 	--channels-default: var(--text-normal);
 	--channel-icon: var(--text-normal);
@@ -111,6 +112,10 @@ code,
 	background-color: var(--background-secondary);
 }
 
+/* selections */
+*::selection {
+	background-color: $bg-selection;
+}
 
 /* loading screen */
 .container-2RRFHK {
@@ -179,16 +184,24 @@ code,
 .searchBar-jGtisZ .icon-tZMHgY div svg {
 	position: absolute;
 	cursor: pointer;
-	color: var(--text-normal);
+	color: var(--interactive-normal);
 	width: 24px;
 	height: 24px;
-	transform: translate(-4px, -3px);
+	transform: translate(-4px, -4px);
+}
+
+.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.icon-18rqoe {
+	width: 100%;
+	height: 100%;
+	transform: none;
+	transition: none;
 }
 
 /* search items */
 .option-ayUoaq:after,
 .option-ayUoaq:hover:after {
-	background: linear-gradient(to right, color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%, $alpha: -1), var(--background-floating), var(--background-floating)) !important;
+	background: linear-gradient(to right, color.adjust($bg-storm, $hue: 5, $saturation: -0.1%, $lightness: -12.7%, $alpha: -1), var(--background-floating), var(--background-floating)) !important;
 }
 
 /* login screen */

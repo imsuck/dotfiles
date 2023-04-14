@@ -1,21 +1,18 @@
 inherits = "base16_transparent"
 
-"ui.menu" = { fg = "white", bg = "black" }
+"ui.menu" = { bg = "black" }
 "ui.menu.selected" = { bg = "gray" }
+"ui.help" = { bg = "black" }
 "ui.menu.scroll" = { fg = "light-gray", bg = "black" }
 "ui.popup" = { bg = "black" }
-"ui.linenr.selected" = { fg = "white", modifiers = ["bold"] }
-"ui.selection" = { bg = "gray" }
-# "comment" = { fg = "light-gray", modifiers = ["italic"] }
-"ui.statusline" = { fg = "white", bg = "gray" }
-"ui.statusline.inactive" = { fg = "white", bg = "black" }
-"ui.help" = { fg = "white" }
+"ui.selection" = { bg = "background_highlight" }
+"ui.statusline" = { fg = "white", bg = "black" }
+"ui.statusline.inactive" = { fg = "gray", bg = "black" }
 "ui.cursor" = { fg = "black", bg = "light-gray" }
 "ui.cursor.primary" = { fg = "black", bg = "white" }
-"ui.virtual.whitespace" = "white"
+"ui.virtual.inlay-hint" = { fg = "gray" }
 "ui.bufferline" = {  }
 "ui.bufferline.active" = { bg = "gray" }
-"ui.cursor.match" = { fg = "light-yellow", underline = { color = "yellow", style = "line" } }
 
 # zellij doesn't support undercurls yet :(
 "diagnostic.info" = { fg = "light-blue", modifiers = ["bold"], underline = { style = "line" } }
@@ -36,4 +33,9 @@ inherits = "base16_transparent"
 "ui.virtual.indent-guide" = "gray"
 "ui.virtual.ruler" = { bg = "black" }
 
-"comment" = "light-gray"
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"punctuation" = { fg = "comment" }
+
+[palette]
+comment = "#565f89"
+background_highlight = "#373d5a"

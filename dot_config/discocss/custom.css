@@ -16,14 +16,14 @@ code,
 
 .theme-dark {
   /* colours */
-  --brand-experiment: #7AA2F7;
-  --brand-experiment-600: #7AA2F7;
-  --brand-experiment-560: #7AA2F7;
-  --brand-experiment-360: #7AA2F7;
+  --brand-experiment: #7aa2f7;
+  --brand-experiment-600: #7aa2f7;
+  --brand-experiment-560: #7aa2f7;
+  --brand-experiment-360: #7aa2f7;
   --primary-660: var(--background-tertiary);
-  --red-430: #F7768E;
+  --red-430: #f7768e;
   /* backgrounds */
-  --background-primary: #24283B;
+  --background-primary: #24283b;
   --background-secondary: #1d202f;
   --background-secondary-alt: #1a1b26;
   --background-tertiary: #1a1b26;
@@ -34,7 +34,7 @@ code,
   --chat-input-container-background: var(--background-primary);
   --input-background: var(--background-tertiary);
   --background-message-hover: rgba(0, 0, 0, 0.1);
-  --channeltextarea-background: #FFFFFF10;
+  --channeltextarea-background: #ffffff10;
   --modal-background: var(--background-secondary-alt);
   --modal-footer-background: var(--background-secondary);
   --bg-overlay-chat: var(--background-primary);
@@ -42,35 +42,35 @@ code,
   /* text */
   --text-normal: #c0caf5;
   --text-muted: #414868;
-  --text-link: #7DCFFF;
+  --text-link: #7dcfff;
   --header-secondary: var(--text-normal);
   --interactive-normal: var(--text-normal);
   /* mentions */
-  --info-warning-foreground: #F7768E;
+  --info-warning-foreground: #f7768e;
   --background-mentioned: rgba(247, 118, 142, 0.2);
   --background-mentioned-hover: rgba(247, 118, 142, 0.1);
-  --status-danger: #F7768E;
+  --status-danger: #f7768e;
   --modal-primary: var(--background-primary);
   --mention-foreground: #1d202f;
-  --mention-background: #7AA2F7;
-  --scrollbar-thin-thumb: #7AA2F7;
+  --mention-background: #7aa2f7;
+  --scrollbar-thin-thumb: #7aa2f7;
   --scrollbar-thin-track: transparent;
-  --scrollbar-auto-thumb: #7AA2F7;
+  --scrollbar-auto-thumb: #7aa2f7;
   --scrollbar-auto-track: var(--background-secondary);
   --scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
   --scrollbar-auto-scrollbar-color-track: var(--background-secondary);
   /* channel selector */
-  --background-modifier-hover: #24283B;
-  --background-modifier-selected: #24283B;
-  --bg-overlay-active: #24283B;
+  --background-modifier-hover: #24283b;
+  --background-modifier-selected: #24283b;
+  --bg-overlay-active: #24283b;
   --interactive-muted: var(--text-muted);
   --channels-default: var(--text-normal);
   --channel-icon: var(--text-normal);
   /* miscellaneous */
   --profile-body-background-color: transparent;
   --button-secondary-background: #414868;
-  --button-danger-background: #F7768E;
-  --button-danger-background-hover: #F7768E;
+  --button-danger-background: #f7768e;
+  --button-danger-background-hover: #f7768e;
 }
 
 /*** extra colouring ***/
@@ -82,13 +82,18 @@ code,
 
 /* jump to present bar */
 .jumpToPresentBar-1cEnH0 {
-  background-color: #7AA2F7;
+  background-color: #7aa2f7;
 }
 
 /* slash menu */
 .theme-dark .autocomplete-3NRXG8,
 .categoryHeader-OpJ1Ly {
   background-color: var(--background-secondary);
+}
+
+/* selections */
+*::selection {
+  background-color: #373d5a;
 }
 
 /* loading screen */
@@ -102,14 +107,14 @@ code,
 
 /* code highlighting */
 .hljs-variable {
-  color: #F7768E !important;
+  color: #f7768e !important;
 }
 
 .hljs-keyword,
 .hljs-meta,
 .hljs-symbol,
 .hljs-attr {
-  color: #BB9AF7 !important;
+  color: #bb9af7 !important;
 }
 
 .hljs-title,
@@ -119,14 +124,14 @@ code,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-title {
-  color: #E0AF68 !important;
+  color: #e0af68 !important;
 }
 
 .hljs-string,
 .hljs-attribute,
 .hljs-selector-tag,
 .hljs-selector-class {
-  color: #9ECE6A !important;
+  color: #9ece6a !important;
 }
 
 .hljs-comment {
@@ -158,10 +163,18 @@ code,
 .searchBar-jGtisZ .icon-tZMHgY div svg {
   position: absolute;
   cursor: pointer;
-  color: var(--text-normal);
+  color: var(--interactive-normal);
   width: 24px;
   height: 24px;
-  transform: translate(-4px, -3px);
+  transform: translate(-4px, -4px);
+}
+
+.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.icon-18rqoe {
+  width: 100%;
+  height: 100%;
+  transform: none;
+  transition: none;
 }
 
 /* search items */
