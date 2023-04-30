@@ -51,12 +51,13 @@ vim.opt.shortmess:append("c")
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.whichwrap = "<,>,h,l,[,]"
+
 vim.g.mapleader = " "
 -- Don't timeout for leader key
 vim.cmd("set noto")
 vim.cmd("set nottimeout")
 
-vim.cmd("set autochdir")
 vim.cmd("syntax enable")
 vim.cmd("set cursorline")
 
@@ -66,4 +67,8 @@ autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 augroup END
 ]])
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  command = "setlocal shiftwidth=2 tabstop=2"
+})
 

@@ -9,7 +9,6 @@ require("tokyonight").setup({
   style = "storm",
   transparent = is_transparent,
   styles = {
-    comments = { italic = false },
     keywords = { italic = false },
     sidebars = "transparent",
   },

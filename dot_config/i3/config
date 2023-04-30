@@ -26,9 +26,9 @@ workspace_layout default
 # workspace_layout tabbed
 
 # border
-default_floating_border pixel 4
+default_floating_border pixel 3
 # default_floating_border none
-default_border pixel 4
+default_border pixel 3
 # default_border none
 # for_window [class="^.*"] border none
 smart_borders true

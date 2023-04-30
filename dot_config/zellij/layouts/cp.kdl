@@ -1,0 +1,19 @@
+// Auto test cpp code. Useful in competitive programming (for me atleast).
+layout {
+	tab focus=true {
+		pane split_direction="vertical" {
+			pane focus=true size="75%" command="helix" {
+				args "."
+			}
+			pane split_direction="horizontal" {
+				pane command="helix" {
+					args "a.inp"
+				}
+				pane command="bash" {
+					args "-c" "~/.config/zellij/scripts/auto_test_cpp.sh"
+				}
+			}
+		}
+	}
+	tab
+}

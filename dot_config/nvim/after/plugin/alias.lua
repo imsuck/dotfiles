@@ -1,3 +1,1 @@
-vim.cmd("Alias bc BufferClose")
-vim.cmd("Alias tr vert\\ res\\ -50")
-
+vim.cmd("Alias bc Bdelete")

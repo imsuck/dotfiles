@@ -1,7 +1,4 @@
 layout {
-    default_tab_template {
-        children
-    }
     pane split_direction="horizontal" {
         pane focus=true command="helix" {
             args "."
