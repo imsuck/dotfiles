@@ -21,6 +21,7 @@ abbr -a ... ../../
 abbr -a .... ../../../
 abbr -a ..... ../../../../
 abbr -a yr 'cal -y'
+abbr -a ze zellij
 abbr -a c cargo
 abbr -a m make
 abbr -a o xdg-open

@@ -11,6 +11,8 @@ inherits = "base16_transparent"
 "ui.cursor" = { fg = "black", bg = "light-gray" }
 "ui.cursor.primary" = { fg = "black", bg = "white" }
 "ui.virtual.inlay-hint" = { fg = "gray" }
+"ui.virtual.inlay-hint.parameter" = { fg = "gray" }
+"ui.virtual.inlay-hint.type" = { fg = "gray" }
 "ui.bufferline" = {  }
 "ui.bufferline.active" = { bg = "gray" }
 
