@@ -9,8 +9,8 @@ return {
     -- { family = "Liga Roboto Mono", weight = "Medium" },
     {
       family = "Fira Code",
-      -- weight = "Medium",
-      harfbuzz_features = {"ss02", "ss06", "ss07"},
+      weight = "Medium",
+      harfbuzz_features = {"ss02", "ss07"},
     },
     "Font Awesome 6 Brands",
   },
@@ -24,7 +24,7 @@ return {
   enable_tab_bar = false,
   enable_wayland = false,
 
-  default_cursor_style = "BlinkingBar",
+  default_cursor_style = "SteadyBar",
   cursor_blink_ease_in = "Constant",
   cursor_blink_ease_out = "Constant",
   cursor_blink_rate = 500,

@@ -1,5 +1,5 @@
 ---vim.opt.guicursor = ""
-vim.opt.guifont = "Fira Code:h9, Arimo Nerd Font:h9"
+vim.opt.guifont = "Fira Code:h10, Arimo Nerd Font:h10"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -42,7 +42,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 -- Give more space for displaying messages.
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
 
 vim.opt.updatetime = 50
 
