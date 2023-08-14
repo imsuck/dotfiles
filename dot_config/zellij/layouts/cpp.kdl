@@ -1,8 +1,10 @@
 layout {
-    pane split_direction="horizontal" {
-        pane focus=true command="helix" {
-            args "."
+    tab {
+        pane split_direction="horizontal" {
+            pane focus=true command="helix" {
+                args "."
+            }
+            pane size="20%"
         }
-        pane size="20%"
     }
 }

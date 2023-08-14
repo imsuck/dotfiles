@@ -4,6 +4,7 @@ set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 set PATH $HOME/.cargo/bin $PATH
+set RUSTC_WRAPPER sccache
 # Vietnamese thing
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

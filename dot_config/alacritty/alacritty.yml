@@ -16,7 +16,7 @@ font:
     family: "Fira Code"
     # family: "Roboto Mono"
     # family: "Noto Sans Mono"
-    style: Medium
+    # style: Medium
   bold:
     family: "Fira Code"
     # family: "Roboto Mono"

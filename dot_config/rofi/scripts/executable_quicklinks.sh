@@ -8,7 +8,7 @@
 # Import Current Theme
 theme="$HOME"/.config/rofi/rasi/applets.rasi
 
-BROWSER="opera"
+BROWSER="firefox"
 
 # Theme Elements
 prompt='Quick Links'

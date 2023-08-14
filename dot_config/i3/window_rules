@@ -1,9 +1,12 @@
+for_window [class="XClipboard"] move scratchpad
+
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="stalonetray"] floating enable
 
 # set floating (nontiling) for special apps
+for_window [class="smile"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable

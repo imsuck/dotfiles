@@ -1,9 +1,16 @@
 #!/usr/bin/env sh
 
+# helix comment macro   "t\h;vghms`;a#<space><esc>"
+# helix uncomment macro "ghlmd`dd"
+
 DIR="$(dirname "$0")"
 
 echo
 echo "---------- Compilation ---------"
-g++ -std=c++11 -O2 -Wall -o a.out $(fd -ae cpp --changed-within 3s)
+g++ -include bits/stdc++.h -include lib/debug.h -std=c++11 -DLOCAL \
+-Wall -Wextra -Wconversion -Wshadow -Wfloat-equal \
+`# -O2` \
+`# -fsanitize=undefined -fsanitize=address` \
+-o a.out $(fd -ae cpp --changed-within 3s)
 
 bash -c "$DIR/test.sh"

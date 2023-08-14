@@ -4,14 +4,16 @@ dex --autostart --environment i3
 
 eww daemon &
 
-wezterm &
+alacritty &
 
 # thunar &
 
-opera %U &
+firefox &
 
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 nitrogen --restore &
 
 picom &
+
+xclipboard &
