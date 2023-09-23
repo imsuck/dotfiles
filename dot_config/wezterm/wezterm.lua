@@ -44,8 +44,6 @@ return {
     "zellij",
   },
   window_close_confirmation = 'NeverPrompt',
-  -- for tiling WMs
-  adjust_window_size_when_changing_font_size = false,
 
   keys = {
     {

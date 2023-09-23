@@ -16,7 +16,7 @@ $bg-selection: #373d5a;
 :lang(ja),
 :lang(ja-JP),
 :root {
-	--i18n-fallbacks: "Noto Sans JP";
+	--i18n-fallbacks: "Klee One SemiBold", "Noto Sans JP";
 	--owo: var(--i18n-fallbacks, "owo");
 	--font-primary: "Noto Sans", var(--owo);
 	--font-code: "FiraCode Nerd Font Mono", "Fira Code", var(--owo), monospace;

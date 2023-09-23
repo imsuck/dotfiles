@@ -16,7 +16,7 @@ font:
     family: "Fira Code"
     # family: "Roboto Mono"
     # family: "Noto Sans Mono"
-    # style: Medium
+    style: Medium
   bold:
     family: "Fira Code"
     # family: "Roboto Mono"
@@ -56,7 +56,7 @@ colors:
   selection:
     background: "#373d5a"
     text: "#c0caf5"
-  transparent_background_colors: true
+  # transparent_background_colors: true
 
 cursor:
   style:

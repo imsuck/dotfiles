@@ -16,4 +16,4 @@ nitrogen --restore &
 
 picom &
 
-xclipboard &
+# xclipboard &

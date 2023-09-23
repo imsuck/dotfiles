@@ -19,28 +19,28 @@ include window_rules
 exec --no-startup-id ~/scripts/startup.sh
 exec_always --no-startup-id ~/scripts/startup_always.sh
 
-font pango: Roboto 10
+font pango: Roboto Mono 10
 
 workspace_layout default
 # workspace_layout stacking
 # workspace_layout tabbed
 
 # border
-default_floating_border pixel 3
-# default_floating_border none
-default_border pixel 3
+default_border pixel 2
+default_floating_border pixel 2
 # default_border none
 # for_window [class="^.*"] border none
-smart_borders true
+# smart_borders true
 
-gaps inner 4
+gaps inner 10
 gaps outer 0
 
 # smart_gaps true
 
 # gaps bottom 26
 
-title_align center
+# title_align center
+for_window [all] title_window_icon padding 2px
 
 floating_modifier $mod
 
