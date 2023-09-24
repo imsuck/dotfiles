@@ -26,8 +26,8 @@ workspace_layout default
 # workspace_layout tabbed
 
 # border
-default_border pixel 2
-default_floating_border pixel 2
+default_border normal 0
+default_floating_border normal 0
 # default_border none
 # for_window [class="^.*"] border none
 # smart_borders true

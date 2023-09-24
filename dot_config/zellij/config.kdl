@@ -144,7 +144,6 @@ keybinds clear-defaults=true {
         // bind "Alt k" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
-        bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
     }
     shared_except "normal" "locked" "entersearch" "renametab" "renamepane" {
