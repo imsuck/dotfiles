@@ -17,4 +17,4 @@
 `polybar-git polybar-spotify-module`
 
         Emoji picker
-`smile`
+`rofi-emoji`

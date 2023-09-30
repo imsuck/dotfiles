@@ -17,11 +17,11 @@ inherits = "base16_transparent"
 "ui.bufferline.active" = { bg = "gray" }
 
 # zellij doesn't support undercurls yet :(
-"diagnostic.info" = { fg = "light-blue", modifiers = ["bold"], underline = { style = "line" } }
-"diagnostic.hint" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
-"diagnostic.debug" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
-"diagnostic.warning" = { fg = "light-yellow", modifiers = ["bold"], underline = { style = "line" } }
-"diagnostic.error" = { fg = "light-red", modifiers = ["bold"], underline = { style = "line" } }
+# "diagnostic.info" = { fg = "light-blue", modifiers = ["bold"], underline = { style = "line" } }
+# "diagnostic.hint" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
+# "diagnostic.debug" = { fg = "light-gray", modifiers = ["bold"], underline = { style = "line" } }
+# "diagnostic.warning" = { fg = "light-yellow", modifiers = ["bold"], underline = { style = "line" } }
+# "diagnostic.error" = { fg = "light-red", modifiers = ["bold"], underline = { style = "line" } }
 
 "hint" = { }
 

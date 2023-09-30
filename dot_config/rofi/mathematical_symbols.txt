@@ -1,0 +1,130 @@
++	Mathematics	operators	plus	plus
+–	Mathematics	operators	minus	minus
+×	Mathematics	operators	times	cross | direct | product | cross product | direct product | Cartesian product
+·	Mathematics	operators	times	dot | product | dot product
+±	Mathematics	operators	plus minus	plus | minus | plus minus
+∓	Mathematics	operators	minus plus	plus | minus | minus plus
+÷	Mathematics	operators	divide	divide
+:	Mathematics	operators	divide	divide | such that | quotient structure | field extension
+/	Mathematics	operators	divide	divide | over
+√	Mathematics	operators	square root	square | root | square root
+∛	Mathematics	operators	cube root	cube | root | cube root
+∜	Mathematics	operators	fourth root	fourth | root | fourth root
+^	Mathematics	operators	exponent	exponent | power
+=	Mathematics	equalities	equal	equal
+≝	Mathematics	equalities	definition	definition | defining | by definition
+≜	Mathematics	equalities	definition	definition | defining | by definition
+≠	Mathematics	equalities	not equal	not equal
+≈	Mathematics	equalities	approximately	approximately
+~	Mathematics	equalities	approximately	approximately
+≡	Mathematics	equalities	congruent	congruent | identity
+<	Mathematics	equalities	less than	less than
+>	Mathematics	equalities	greater than	greater than
+≤	Mathematics	equalities	less than or equal	less | equal | less than or equal
+≥	Mathematics	equalities	greater than or equal	greater | equal | greater than or equal
+≪	Mathematics	equalities	much less than	much | less | much less than
+≫	Mathematics	equalities	much greater than	much | greater | much greater than
+Α	Mathematics	greek	capital alpha	alpha
+α	Mathematics	greek	alpha	alpha
+Β	Mathematics	greek	capital beta	beta
+β	Mathematics	greek	beta	beta
+Γ	Mathematics	greek	capital gamma	gamma
+γ	Mathematics	greek	gamma	gamma
+Δ	Mathematics	greek	capital delta	delta
+δ	Mathematics	greek	delta	delta
+Ε	Mathematics	greek	capital epsilon	epsilon
+ε	Mathematics	greek	epsilon	epsilon
+Ζ	Mathematics	greek	capital zeta	zeta
+ζ	Mathematics	greek	zeta	zeta
+Η	Mathematics	greek	capital eta	eta
+η	Mathematics	greek	eta	eta
+Θ	Mathematics	greek	capital theta	theta
+θ	Mathematics	greek	theta	theta
+Ι	Mathematics	greek	capital iota	iota
+ι	Mathematics	greek	iota	iota
+Κ	Mathematics	greek	capital kappa	kappa
+κ	Mathematics	greek	kappa	kappa
+Λ	Mathematics	greek	capital lambda	lambda
+λ	Mathematics	greek	lambda	lambda
+Μ	Mathematics	greek	capital mu	mu
+μ	Mathematics	greek	mu	mu
+Ν	Mathematics	greek	capital nu	nu
+ν	Mathematics	greek	nu	nu
+Ξ	Mathematics	greek	capital xi	xi
+ξ	Mathematics	greek	xi	xi
+Ο	Mathematics	greek	capital omicron	omicron
+ο	Mathematics	greek	omicron	omicron
+∏	Mathematics	greek	capital pi	product | pi
+π	Mathematics	greek	pi	pi
+Ρ	Mathematics	greek	capital rho	rho
+ρ	Mathematics	greek	rho	rho
+∑	Mathematics	greek	capital sigma	sum | sigma
+σ	Mathematics	greek	sigma	sigma
+ς	Mathematics	greek	sigma	sigma
+Τ	Mathematics	greek	capital tau	tau
+τ	Mathematics	greek	tau	tau
+Υ	Mathematics	greek	capital upsilon	upsilon
+υ	Mathematics	greek	upsilon	upsilon
+Φ	Mathematics	greek	capital phi	phi
+φ	Mathematics	greek	phi	phi
+Χ	Mathematics	greek	capital chi	chi
+χ	Mathematics	greek	chi	chi
+Ψ	Mathematics	greek	capital psi	psi
+ψ	Mathematics	greek	psi	psi
+Ω	Mathematics	greek	capital omega	omega
+ω	Mathematics	greek	omega	omega
+∅	Mathematics	set-theory	empty set	empty | empty set
+#	Mathematics	set-theory	cardinality	cardinality
+∈	Mathematics	set-theory	in	in | belongs to
+∋	Mathematics	set-theory	in	in | belongs to | such that
+∉	Mathematics	set-theory	not in	not in
+⊂	Mathematics	set-theory	subset	subset
+⊆	Mathematics	set-theory	subset	subset or equal
+⊊	Mathematics	set-theory	subset	proper subset
+⊃	Mathematics	set-theory	superset	superset
+⊇	Mathematics	set-theory	superset	superset or equal
+⊋	Mathematics	set-theory	superset	proper superset
+∪	Mathematics	set-theory	union	union
+∩	Mathematics	set-theory	intersection	intersection
+∖	Mathematics	set-theory	difference	difference | set difference
+⊖	Mathematics	set-theory	difference	difference | symmetric difference
+∁	Mathematics	set-theory	complement	complement | set complement
+⊔	Mathematics	set-theory	disjoint union	disjoint union
+∐	Mathematics	set-theory	coproduct	coproduct
+¬	Mathematics	logic	not	not | logical negation
+∨	Mathematics	logic	and	and | logical and
+∧	Mathematics	logic	or	or | logical or
+⊻	Mathematics	logic	exclusive or	xor | exclusive or
+⊕	Mathematics	logic	exclusive or	xor | exclusive or
+∀	Mathematics	logic	for all	for all
+∃	Mathematics	logic	there exists	there exists
+∃!	Mathematics	logic	there exists exactly one	there exists exactly one
+∄	Mathematics	logic	there does not exist	there does not exist
+⇒	Mathematics	logic	implies	implies
+⇔	Mathematics	logic	equivalence	logical equivalence | if and only if
+⊤	Mathematics	logic	true	true
+⊥	Mathematics	logic	false	false
+ℕ	Mathematics	bbold	natural numbers	set | set of natural numbers
+ℤ	Mathematics	bbold	intergers	set | set of integers
+ℚ	Mathematics	bbold	rational numbers	set | set of rational numbers
+ℝ	Mathematics	bbold	real numbers	set | set of real numbers
+ℂ	Mathematics	bbold	complex numbers	set | set of complex numbers
+ℍ	Mathematics	bbold	quanternions	quanternions
+∫	Mathematics	calculus	integral	intergral
+⊗	Mathematics	algebra	product	tensor product
+∞	Mathematics	infinite-numbers	infinity	infinity
+𝔠	Mathematics	infinite-numbers	cardinality of the continuum	cardinality of the continuum
+ℵ	Mathematics	infinite-numbers	aleph	aleph
+■	Mathematics	miscellaneous	QED	Q.E.D.
+□	Mathematics	miscellaneous	QED	Q.E.D.
+∴	Mathematics	miscellaneous	therefore	therefore
+∵	Mathematics	miscellaneous	because	since
+∝	Mathematics	miscellaneous	proportional	proportional
+|	Mathematics	miscellaneous	divisible	divisible | such that
+∤	Mathematics	miscellaneous	not divisible	not divisible
+∥	Mathematics	miscellaneous	parallel	parallel
+∦	Mathematics	miscellaneous	not parallel	not parallel
+⊥	Mathematics	miscellaneous	perpendicular	perpendicular
+∠	Mathematics	miscellaneous	angle	angle
+→	Mathematics	miscellaneous	maps to	maps to
+↦	Mathematics	miscellaneous	maps to	maps to
