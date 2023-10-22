@@ -16,4 +16,7 @@ nitrogen --restore &
 
 picom &
 
+synclient VertScrollDelta=-46
+synclient HorizScrollDelta=-46
+
 # xclipboard &

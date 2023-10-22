@@ -3,6 +3,7 @@ set EDITOR helix
 set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
+export CARGO_HOME="$HOME/.local/share/cargo"
 set PATH $HOME/.cargo/bin $PATH
 set RUSTC_WRAPPER sccache
 # Vietnamese thing
@@ -45,6 +46,10 @@ if status --is-interactive
         set fish_function_path $fish_function_path ~/dev/others/base16/templates/fish-shell/functions
         builtin source ~/dev/others/base16/templates/fish-shell/conf.d/base16.fish
     end
+
+    # tab size
+    tabs 4
+
     # if ! set -q TMUX
     #     exec tmux
     # end
@@ -101,7 +106,7 @@ setenv FZF_DEFAULT_OPTS '--height 20%'
 set FISH_CLIPBOARD_CMD "cat"
 
 function fish_user_key_bindings
-    bind \cz 'fg>/dev/null ^/dev/null'
+    bind \cz 'fg&>/dev/null; echo'
     bind \e\[3\;5~ kill-word
     bind \e\[3\;3~ kill-word
     if functions -q fzf_key_bindings
@@ -201,9 +206,6 @@ starship init fish | source
 
 # thefuck --alias | source
 zoxide init fish | source
-
-# tab size
-# tabs 4
 
 # skim_key_bindings
 # bind \ct skim-file-widget
