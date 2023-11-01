@@ -1,20 +1,20 @@
-### Packages (Community)
+# Packages (Community)
         LaTeX
 `texlive-latexextra texlab`
      main stuff      LSP
 
-        Zathura
+## Zathura
 `zathura zathura-pdf-poppler`
 
-        Useful for changing GRUB stuff
+## Useful for changing GRUB stuff
 `grub-customizer`
 
-        Clipboard manager
+# Clipboard manager
 `xclipboard`
 
-### Packages (AUR)
-        Polybar
+# Packages (AUR)
+## Polybar
 `polybar-git polybar-spotify-module`
 
-        Emoji picker
+## Emoji picker
 `rofi-emoji`

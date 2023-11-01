@@ -4,6 +4,7 @@ bindsym $mod+Shift+p exec --no-startup-id ~/.config/rofi/scripts/power-profiles.
 bindsym F9 exec --no-startup-id ~/scripts/launcher.sh
 bindsym $alt+Tab exec --no-startup-id ~/.config/rofi/scripts/windows.sh
 bindsym F1 exec --no-startup-id ~/.config/rofi/scripts/quicklinks.sh
+bindsym F8 exec --no-startup-id ~/scripts/rofi_script_runner.sh
 
 ## App shortcuts
 bindsym $mod+t exec --no-startup-id pkill picom

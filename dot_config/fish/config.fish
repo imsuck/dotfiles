@@ -26,7 +26,7 @@ abbr -a yr 'cal -y'
 abbr -a ze zellij
 abbr -a c cargo
 abbr -a m make
-abbr -a o xdg-open
+abbr -a o handlr open
 abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add -p'
