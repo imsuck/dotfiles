@@ -8,9 +8,9 @@
 
 sudo pacman -S --noconfirm --needed \
  alacritty wezterm starship helix `#dunst` github-cli fzf zellij\
- exa ripgrep fd bat zoxide `# rust utilities`\
+ eza ripgrep fd bat zoxide handlr `# rust utilities`\
  htop bottom\
- discord opera opera-ffmpeg-codecs nitrogen\
+ discord firefox nitrogen\
  `#polybar` rofi\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
@@ -23,11 +23,11 @@ sudo pacman -S --noconfirm --needed \
 yay -S --answerclean All --answerdiff None \
  discocss-git\
  eww\
- spotify-adblock-git cava\
+ spotify-adblock-git `#cava\`
  nerd-fonts-hack betterlockscreen\
  ksuperkey autotiling\
  `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather\
- ksuperkey `#diskonaut` polybar-git picom-git polybar-spotify-module
+ `#diskonaut` polybar-git picom-git polybar-spotify-module
 
 systemctl --user enable spotify-listener
 systemctl --user start spotify-listener

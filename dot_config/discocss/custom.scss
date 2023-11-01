@@ -66,6 +66,7 @@ code,
 	--background-tertiary: #{color.adjust($bg-primary, $hue: -4, $saturation: -0.5%, $lightness: -9.4%)};
 	--background-accent: #{color.adjust($bg-primary, $hue: -3, $saturation: -0.1%, $lightness: 10.6%)};
 	--background-floating: #{color.adjust($bg-primary, $hue: 5, $saturation: -0.1%, $lightness: -12.7%)};
+	--bg-overlay-app-frame: var(--background-floating);
 	--chat-background: var(--background-primary);
 	--chat-border: var(--background-tertiary);
 	--chat-input-container-background: var(--background-primary);
