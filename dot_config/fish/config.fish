@@ -4,7 +4,7 @@ set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 export CARGO_HOME="$HOME/.local/share/cargo"
-set PATH $HOME/.cargo/bin $PATH
+set PATH $CARGO_HOME/bin $PATH
 set RUSTC_WRAPPER sccache
 # Vietnamese thing
 export GTK_IM_MODULE=ibus
@@ -106,9 +106,10 @@ setenv FZF_DEFAULT_OPTS '--height 20%'
 set FISH_CLIPBOARD_CMD "cat"
 
 function fish_user_key_bindings
-    bind \cz 'fg&>/dev/null; echo'
+    bind \cz 'fg&>/dev/null; echo; fish_prompt'
     bind \e\[3\;5~ kill-word
     bind \e\[3\;3~ kill-word
+    bind \el "echo; exa --icons; fish_prompt"
     if functions -q fzf_key_bindings
         fzf_key_bindings
     end
