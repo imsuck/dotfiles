@@ -1,3 +1,5 @@
+for_window [title="Picture-in-Picture"] sticky enable
+
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Qalculate-gtk"] floating enable

@@ -23,8 +23,10 @@ ibus-daemon -drx
 # Don't turn screen off automatically
 xset s off -dpms &
 
-killall xbanish
-xbanish -i all &
+# killall xbanish
+# xbanish -i all &
+killall unclutter
+unclutter --timeout 5 -b
 
 killall autotiling
 autotiling &

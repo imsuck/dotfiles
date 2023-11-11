@@ -8,6 +8,8 @@
     offset = 30x40
     transparency = 0
 
+    highlight = "#c0caf5"
+
     # Show how many messages are hidden
     indicate_hidden = yes
 
@@ -92,7 +94,7 @@
     max_icon_size = 40
 
     # Paths to default icons.
-    #icon_path = 
+    icon_path = /home/imsuck/.local/share/icons/fontawesome/
     
 
     # --- History --- #
@@ -121,10 +123,10 @@
     class = Dunst
 
     # Avoid printing a notification on startup
-    startup_notification = false
+    # startup_notification = false
 
     # Manage dunst's desire for talking
-    verbosity = mesg
+    # verbosity = mesg
 
     # Define the corner radius of the notification window
     corner_radius = 12
@@ -149,7 +151,7 @@
     per_monitor_dpi = false
 
 
-[shortcuts]
+# [shortcuts]
     # Close notification.
     # close = ctrl+space
 
@@ -167,12 +169,12 @@
 
 [urgency_low]
     background = "#24283be6"
-    foreground = "#c0caf5ff"
+    foreground = "#c0caf5"
     timeout = 8
 
 [urgency_normal]
     background = "#24283be6"
-    foreground = "#c0caf5ff"
+    foreground = "#c0caf5"
     timeout = 8
 
 [urgency_critical]
