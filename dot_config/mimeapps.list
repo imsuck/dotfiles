@@ -34,3 +34,4 @@ text/x-makefile=helix.desktop;
 text/x-moc=helix.desktop;
 text/x-pascal=helix.desktop;
 text/x-tex=helix.desktop;
+x-scheme-handler/figma=figma-linux.desktop

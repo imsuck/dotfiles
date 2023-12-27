@@ -22,6 +22,7 @@ code,
   --brand-experiment-360: #7aa2f7 !important;
   --primary-660: var(--background-tertiary) !important;
   --primary-630: var(--background-secondary) !important;
+  --primary-600: var(--background-primary) !important;
   --red-430: #f7768e !important;
   /* backgrounds */
   --background-primary: #24283b !important;

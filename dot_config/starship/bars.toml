@@ -21,13 +21,16 @@ format = "[ ](bg:blue)[ $path ](bg:black) "
 use_os_path_sep = false
 
 [git_branch]
-symbol = ""
 format = '[ ](bg:purple)[ $symbol$branch ](bg:black)'
+symbol = ""
 
 [git_status]
 format = '([$all_status$ahead_behind ]($style)) '
 style = "fg:cyan bold bg:black"
 deleted = "-"
+
+[git_commit]
+format = '[ ](bg:purple)[ $hash$tag ](bg:black)'
 
 [rust]
 symbol = "rs"
