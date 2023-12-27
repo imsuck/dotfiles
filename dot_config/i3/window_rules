@@ -15,3 +15,4 @@ for_window [title="^DevTools"] floating enable
 for_window [title="^Developer Tools"] floating enable
 for_window [title="Pomodoro"] floating enable, sticky enable
 for_window [class="cava"] floating enable, sticky enable
+for_window [class="Sxiv"] floating enable, sticky enable
