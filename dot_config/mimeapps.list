@@ -3,7 +3,7 @@ application/json=helix.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 application/x-shellscript=fish.desktop;
 image/jpeg=feh.desktop;krita_jpeg.desktop;org.gnome.gThumb.desktop;
-image/png=feh.desktop;krita_png.desktop;
+image/png=krita_png.desktop;feh.desktop;
 inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 

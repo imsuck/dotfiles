@@ -1,0 +1,42 @@
+#multi_league > p,
+#multi_quickplay > p,
+#game_40l > p,
+#game_blitz > p,
+#game_zen > p,
+#game_custom > p {
+  font-size: 0;
+}
+#multi_league > p:after,
+#multi_quickplay > p:after,
+#game_40l > p:after,
+#game_blitz > p:after,
+#game_zen > p:after,
+#game_custom > p:after {
+	position: absolute;
+	top: 4.5rem;
+	left: 15.85rem;
+	font-size: 1.5rem;
+}
+#multi_league > p:after {
+  content: "grind grind grind";
+}
+#multi_quickplay > p:after {
+  content: "brr brr";
+}
+#game_40l > p:after {
+  content: "funny sprints";
+}
+#game_blitz > p:after {
+  content: "why can't this guy do b2b?";
+}
+#game_zen > p:after {
+  content: "this exists";
+}
+#game_custom > p:after {
+  content: "chaos";
+}
+
+/* hide ranks */
+#pair_rank_p2, #pair_rank_p1, #me_leaguerank.me_badge, #league_rating, #league_rank, #league_ticker, #league_placement, #leaguestanding_rating.ns.pingraise, #leaguestanding_rank, #leaguestanding_placement.league_placement_inline.lpi_big, #leaguestanding_placement_change.leaguechange, #leaguestanding_rating, div.tetra_modal_record.flex-item.tetra_modal_record_league.tetra_modal_record_league_active h5 {
+  display:none !important;
+}
