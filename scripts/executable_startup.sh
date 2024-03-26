@@ -16,4 +16,6 @@ nitrogen --restore &
 
 picom &
 
+systemctl --user start opentabletdriver --now
+
 # xclipboard &
