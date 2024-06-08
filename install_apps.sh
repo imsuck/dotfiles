@@ -8,7 +8,7 @@
 
 sudo pacman -S --noconfirm --needed \
  alacritty wezterm starship helix `#dunst` github-cli fzf zellij\
- eza ripgrep fd bat zoxide handlr `# rust utilities`\
+ eza ripgrep fd bat zoxide handlr git-delta `# rust utilities`\
  htop bottom\
  discord firefox nitrogen\
  `#polybar` rofi\

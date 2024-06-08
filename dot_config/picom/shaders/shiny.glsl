@@ -1,4 +1,6 @@
-#version 330
+#version 430
+
+// Source: https://github.com/yshui/picom/issues/295#issuecomment-592077997
 
 in vec2 texcoord;
 
@@ -7,13 +9,16 @@ uniform bool invert_color;
 uniform sampler2D tex;
 uniform float time;
 
-float amt = 3000.0;
+ivec2 window_size = textureSize(tex, 0);
+
+float amt = 10000.0;
 
 vec4 default_post_processing(vec4 c);
 
 vec4 window_shader() {
-    // float pct = mod(time, amt)/amt * 5000;
     float pct = mod(time, amt) / amt * 1000;
+    float factor = float(max(window_size.x, window_size.y));
+    pct *= factor / 150.0;
     vec2 pos = texcoord;
 	vec4 c = texelFetch(tex, ivec2(texcoord), 0);
 
