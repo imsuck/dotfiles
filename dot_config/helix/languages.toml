@@ -2,7 +2,21 @@
 name = "cpp"
 indent = { tab-width = 4, unit = " " }
 auto-format = true
-formatter = { command = "clang-format", args = ["-style={BasedOnStyle: llvm, IndentWidth: 4}"]}
+
+[language.formatter]
+command = "clang-format"
+args = ["""\
+  -style={BasedOnStyle: llvm, \
+  IndentWidth: 4, \
+  NamespaceIndentation: All, \
+  AllowShortIfStatementsOnASingleLine: WithoutElse, \
+  AllowShortLoopsOnASingleLine: true, \
+  IndentCaseLabels: true, \
+  SpaceAfterTemplateKeyword: false, \
+}"""]
+
+[language-server.clangd]
+config = { fallbackFlags = [ "-std=c++14", "-Wall", "-Wconversion", "-Wno-sign-conversion" ] }
 
 [[language]]
 name = "css"

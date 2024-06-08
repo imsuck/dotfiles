@@ -18,7 +18,7 @@ select = "block"
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = true
+display-inlay-hints = false
 display-signature-help-docs = false
 
 [editor.statusline]
@@ -33,12 +33,18 @@ character = "▏" # other things "▏", "┆", "┊"
 [keys.normal]
 C-s = ":w"
 esc = ":q"
-backspace = { r = ":rl", c = ":config-open", R = ":config-reload", t = ":o ~/.config/helix/themes/base16_terminal_edit.toml" }
-
 A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
 A-down = ["extend_to_line_bounds", "delete_selection", "move_line_down", "goto_line_start", "paste_before", "collapse_selection"]
 A-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "goto_line_start", "paste_before", "collapse_selection"]
+
+[keys.normal.backspace]
+r = ":rl"
+c = ":config-open"
+R = ":config-reload"
+t = ":o ~/.config/helix/themes/base16_terminal_edit.toml"
+i = ":set lsp.display-inlay-hints false"
+I = ":set lsp.display-inlay-hints true"
 
 [keys.select]
 C-s = ":w"
