@@ -207,11 +207,3 @@ starship init fish | source
 
 # thefuck --alias | source
 zoxide init fish | source
-
-# skim_key_bindings
-# bind \ct skim-file-widget
-# bind \cr skim-history-widget
-# bind \ec skim-cd-widget
-# bind -M insert \ct skim-file-widget
-# bind -M insert \cr skim-history-widget
-# bind -M insert \ec skim-cd-widget

@@ -1,0 +1,1244 @@
+/* ==UserStyle==
+@name          	osu color changer
+@namespace      https://github.com/cyperdark/osu-cc
+@author         cyperdark
+@version        1.4.21
+@license        MIT
+@preprocessor   stylus
+
+@var checkbox enable_colors "Enable custom theme" 1
+
+@var select   main_color     'Select theme' {
+    'Dark						': '4000deg',
+    'Red						': '0deg',
+    'Scarlet					': '10deg',
+    'International Orange		': '20deg',
+    'Dark Orange				': '30deg',
+    'Orange						': '40deg',
+    'Gold						': '50deg',
+    'Yellow						': '60deg',
+    'Electric Lime				': '70deg',
+    'Spring Bud					': '80deg',
+    'Chartreuse					': '90deg',
+    'Bright Green				': '100deg',
+    'Harlequin					': '110deg',
+    'Lime						': '120deg',
+    'Free Speech Green			': '130deg',
+    'Malachite					': '140deg',
+    'Spring Green				': '150deg',
+    'Medium Spring Green		': '160deg',
+    'Bright Turquoise			': '170deg',
+    'Aqua						': '180deg',
+    'Deep Sky Blue				': '190deg',
+    'Dodger Blue				': '210deg',
+    'Navy Blue					': '220deg',
+    'Light Blue					': '230deg',
+    'Blue						': '240deg',
+    'Dark Blue					': '250deg',
+    'Grey purple				': '255deg',
+    'Electric Indigo			': '260deg',
+    'Indigo						': '270deg',
+    'Electric Purple			': '280deg',
+    'Psychedelic Purple			': '290deg',
+    'Fuchsia					': '300deg',
+    'Hot Magenta				': '310deg',
+    'Hollywood Cerise			': '320deg',
+    'Deep Pink					': '330deg',
+    'Razzmatazz					': '340deg',
+    'Torch Red					': '350deg',
+}
+
+
+@var color empty_1 "// == Friends" #94a1ff
+
+@var checkbox friends_compact "Enable compact mode for friends list" 1
+@var checkbox friends_color "Apply theme color for mutual friends" 0
+
+
+@var color empty_2 "// == Misc" #70e6e1
+
+checkbox bg_top_enable "Enable header background" 0
+@var checkbox show_button "Always show beatmap buttons" 0
+@var checkbox dis_resolve_shadow "Enable color highlighting for comments on the beatmaps discussion page." 1
+@var checkbox forum_thing "Highlight the comments of the creator on forum post page" 1
+@var checkbox chat_row "Move direct messages to the right side" 1
+@var checkbox mode_icon_colors "Add colors for each gamemode icon (pink, blue, green, yellow)" 1
+
+
+@var color empty_3 "// == Profile" #fdf8ac
+
+@var checkbox new_profile_fix "Adjust profile (More compact)" 0
+@var checkbox badges_inline "Wrap profile badges in one horizontal line" 0
+@var checkbox custom_nickname_enable "Enable custom nickname color" 1
+@var text custom_nickname "Profile nickname color" "#7dcfff"
+@var checkbox disable_nickname_shadow "Disable nickname shadow" 1
+@var text me_expand "Size of me section (0 = max size)" 500px
+
+
+@var color empty_4 "// == Profile background" #ff93ef
+
+@var checkbox custom_bg "Enable backgrounds" 0
+@var checkbox bg_bg_remove "Remove Backgrounds block" 0
+
+@var text bg_max "Background max Height (px, %, em or rem)" "730px"
+@var text bg_padding "Background padding (px, %, em or rem)" "20px"
+@var text bg_opacity "Background opacity" "1"
+@var text bg_round "Background rounding (px, %, em or rem)" "20px"
+
+
+@var color empty_5 "// == Background left" #93ff97
+
+@var select bg_left_image "BG left image" {
+ "Default image":  `"https://i.imgur.com/bOwESaZ.jpg"`,
+ "Remove": "rem",
+ "Custom": "none",
+}
+@var text bg_left_image_custom "BG Left url; Example: 'image link' (qoutes important) " `"https://i.imgur.com/bOwESaZ.jpg"`
+
+@var select bg_left_position "BG Left Position" {
+ "Custom": "none",
+ "Center": "center",
+ "Top": "top",
+ "Left": "left",
+ "Right": "right",
+ "Bottom": "bottom",
+}
+@var text bg_left_position_custom "BG Left Position Custom; Example: 10px 10px or 50% 0%" "98% 50%"
+
+@var select bg_left_size "BG Left Size" {
+ "Cover": "cover",
+ "Contain": "contain",
+ "Custom": "none",
+}
+@var text bg_left_size_custom "BG Left Size Custom" "Cover"
+
+@var select bg_left_repeat "BG Left Repeat" {
+ "No repeat": "no-repeat",
+ "Repeat": "repeat",
+ "Repeat horizontally": "repeat-x",
+ "Repeat vertically": "repeat-y",
+ "Round": "round",
+ "Space": "space",
+}
+
+@var select bg_left_blend "BG Left Blend Mode" {
+ "Normal": "normal",
+ "Multiply": "multiply",
+ "Screen": "screen",
+ "Overlay": "overlay",
+ "Darken": "darken",
+ "Lighten": "lighten",
+ "Color dodge": "color-dodge",
+ "Color burn": "color-burn",
+ "Hard light": "hard-light",
+ "Soft light": "soft-light",
+ "Difference": "difference",
+ "Exclusion": "exclusion",
+ "Hue": "hue",
+ "Saturation": "saturation",
+ "Color": "color",
+ "Luminosity": "luminosity",
+}
+
+
+@var color empty_6 "// == Background right" #ffc793
+
+
+@var select bg_right_image "BG Right image" {
+ "Default image":  `"https://i.imgur.com/bOwESaZ.jpg"`,
+ "Remove": "rem",
+ "Custom": "none",
+}
+@var text bg_right_image_custom "BG Right url; Example: 'image link' (qoutes important) " `"https://i.imgur.com/bOwESaZ.jpg"`
+
+@var select bg_right_position "BG Right Position" {
+ "Custom": "none",
+ "Center": "center",
+ "Top": "top",
+ "Left": "left",
+ "Right": "right",
+ "Bottom": "bottom",
+}
+@var text bg_right_position_custom "BG Right Position Custom; Example: 10px 10px or 50% 0%" "0% 50%"
+
+@var select bg_right_size "BG Right Size" {
+ "Cover": "cover",
+ "Contain": "contain",
+ "Custom": "none",
+}
+@var text bg_right_size_custom "BG Right Size Custom" "Cover"
+
+@var select bg_right_repeat "BG Right Repeat" {
+ "No repeat": "no-repeat",
+ "Repeat": "repeat",
+ "Repeat horizontally": "repeat-x",
+ "Repeat vertically": "repeat-y",
+ "Round": "round",
+ "Space": "space",
+}
+
+@var select bg_right_blend "BG Right Blend Mode" {
+ "Normal": "normal",
+ "Multiply": "multiply",
+ "Screen": "screen",
+ "Overlay": "overlay",
+ "Darken": "darken",
+ "Lighten": "lighten",
+ "Color dodge": "color-dodge",
+ "Color burn": "color-burn",
+ "Hard light": "hard-light",
+ "Soft light": "soft-light",
+ "Difference": "difference",
+ "Exclusion": "exclusion",
+ "Hue": "hue",
+ "Saturation": "saturation",
+ "Color": "color",
+ "Luminosity": "luminosity",
+}
+
+==/UserStyle== */
+@-moz-document url-prefix("https://osu.ppy.sh/"),
+url-prefix("http://osu.ppy.sh/") {
+	// @var checkbox friends_color_ascent "Colors accent for friends list" 0
+	
+	if enable_colors {
+		:root {
+			--base-hue: main_color;
+			--base-hue-deg: main_color;
+		}
+	}
+
+	body,
+	html {
+		scrollbar-color: hsl(main_color, 100%, 70%) #000;
+	}
+	
+	.header-v4__bg-container {
+		z-index: -1;
+	}
+	
+	.forum-item:hover .forum-item-stripe span,
+ 	.forum-topic-entry:hover .forum-item-stripe span {
+		display: block;
+	}
+
+	.forum-item .forum-item-stripe span,
+ 	.forum-topic-entry .forum-item-stripe span{
+		display: none;
+	}
+	
+	if main_color == '4000deg' {
+		:root {
+			--hsl-p: 0, 0%, 50%;
+			--hsl-h1: 0, 0%, 100%;
+			--hsl-h2: 0, 0%, 30%;
+			--hsl-c1: 0, 0%, 100%;
+			--hsl-c2: 0, 0%, 90%;
+			--hsl-l1: 0, 0%, 80%;
+			--hsl-l2: 0, 0%, 75%;
+			--hsl-l3: 0, 0%, 70%;
+			--hsl-l4: 0, 0%, 50%;
+			--hsl-d1: 0, 0%, 30%;
+			--hsl-d2: 0, 0%, 25%;
+			--hsl-d3: 0, 0%, 20%;
+			--hsl-d4: 0, 0%, 15%;
+			--hsl-d5: 0, 0%, 10%;
+			--hsl-d6: 0, 0%, 5%;
+			--hsl-f1: 0, 0%, 60%;
+			--hsl-b1: 0, 0%, 30%;
+			--hsl-b2: 0, 0%, 25%;
+			--hsl-b3: 0, 0%, 20%;
+			--hsl-b4: 0, 0%, 15%;
+			--hsl-b5: 0, 0%, 10%;
+			--hsl-b6: 0, 0%, 5%;
+			// --colour-pink-hue: 333;
+			--hsl-pink-1: 0, 0%, 60%;
+			// --hsl-pink-2: var(--colour-pink-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-pink-3: var(--colour-pink-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-purple-hue: 255;
+			--hsl-purple-1: 0, 0%, 60%;
+			// --hsl-purple-2: var(--colour-purple-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-purple-3: var(--colour-purple-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-blue-hue: 200;
+			--hsl-blue-1: 0, 0%, 60%;
+			// --hsl-blue-2: var(--colour-blue-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-blue-3: var(--colour-blue-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-green-hue: 125;
+			--hsl-green-1: 0, 0%, 60%;
+			// --hsl-green-2: var(--colour-green-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-green-3: var(--colour-green-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-lime-hue: 90;
+			// --hsl-lime-1: var(--colour-lime-hue),var(--c-saturation-1),var(--c-lightness-1);
+			// --hsl-lime-2: var(--colour-lime-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-lime-3: var(--colour-lime-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-orange-hue: 45;
+			--hsl-orange-1: 0, 0%, 60%;
+			// --hsl-orange-2: var(--colour-orange-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-orange-3: var(--colour-orange-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-red-hue: 360;
+			--hsl-red-1: 0, 0%, 60%;
+			// --hsl-red-2: var(--colour-red-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-red-3: var(--colour-red-hue),var(--c-saturation-3),var(--c-lightness-3);
+			// --colour-darkorange-hue: 20;
+			--hsl-darkorange-1: 0, 0%, 60%;
+			// --hsl-darkorange-2: var(--colour-darkorange-hue),var(--c-saturation-2),var(--c-lightness-2);
+			// --hsl-darkorange-3: var(--colour-darkorange-hue),var(--c-saturation-3),var(--c-lightness-3);
+			
+			--beatmapset-graveyard-bg: #000;
+			--beatmapset-graveyard-colour: #939393;
+			--beatmapset-wip-bg: #FF9966;
+			--beatmapset-pending-bg: #FFD966;
+			--beatmapset-qualified-bg: #66CCFF;
+			--beatmapset-approved-bg: #B3FF66;
+			--beatmapset-ranked-bg: #B3FF66;
+			--beatmapset-loved-bg: #FF66AB;
+		}
+		
+		.beatmap-basic-stats {
+			color: hsl(0, 0%, 100%);
+		}
+
+		.beatmap-basic-stats__entry-icon {
+			filter: grayscale(1);
+		}
+
+		.stacked-bar-chart--beatmap-success-rate .stacked-bar-chart__bar--exit {
+			fill: hsl(0, 0%, 100%);
+		}
+
+		.stacked-bar-chart--beatmap-success-rate .stacked-bar-chart__bar--fail {
+			fill: hsl(0, 0%, 30%);
+		}
+
+		.beatmap-scoreboard-table__body-row.beatmap-scoreboard-table__body-row--friend {
+			--row-background-color: hsl(0, 0%, 30%);
+			--row-background-color-highlight: hsl(0, 0%, 50%);
+		}
+
+		.nav2-header__triangles {
+			filter: grayscale(1);
+		}
+
+		.profile-info__icon--supporter {
+			background-color: hsl(0, 0%, 50%);
+			color: hsl(0, 0%, 100%);
+		}
+		
+		.forum-item-stripe span {
+			color: white;
+		}
+
+		.t-forum-category-management .u-forum--before-bg:before, .t-forum-category-management .u-forum--bg {
+			background-color: hsl(0, 0%, 50%) !important;
+		}
+		
+		.btn-circle--activated, .btn-circle.js-activated {
+			color: hsl(0, 0%, 80%);
+			background-color: hsl(0, 0%, 30%);
+		}
+		
+		.game-mode-link {
+			color: hsl(0, 0%, 70%);
+		}
+		
+		.btn-osu-big:hover {
+			color: hsl(0, 0%, 30%);
+			background: hsl(0, 0%, 70%);
+		}
+		
+		.beatmap-pack-items__icon {
+			color: hsl(0, 0%, 50%);
+			
+			&.beatmap-pack-items__icon--cleared {
+				color: hsl(0, 0%, 80%); !important;
+			}
+		}
+		
+		.btn-osu-big--forum-button {
+			background: hsl(0, 0%, 25%);
+			color: hsl(0, 0%, 80%);
+		}
+
+		.btn-osu-big--forum-button:hover {
+			background: hsl(0, 0%, 50%);
+			color: hsl(0, 0%, 100%);
+		}
+		
+		.btn-osu-big--chat-send {
+			background: hsl(0, 0%, 25%);
+		}
+
+		.btn-osu-big--chat-send:hover {
+			color: hsl(0, 0%, 100%);
+			background: hsl(0, 0%, 50%);
+		}
+		
+		.user-level {
+			filter: grayscale(1);
+		}
+	} else {
+		.user-level {
+			filter: hue-rotate(calc(var(--base-hue) - 46deg));
+		}
+		
+		.stacked-bar-chart--beatmap-success-rate .stacked-bar-chart__bar--exit {
+			fill: hsl(main_color,100%,70%);
+		}
+
+		.stacked-bar-chart--beatmap-success-rate .stacked-bar-chart__bar--fail {
+			fill: hsl(main_color,50%,45%);
+		}
+
+		if enable_colors {
+			.beatmap-scoreboard-table__body-row.beatmap-scoreboard-table__body-row--friend {
+				--row-background-color: hsl(main_color,20%,35%);
+				--row-background-color-highlight: hsl(main_color,30%,45%);
+			}
+		}
+	}
+	
+	if forum_thing {
+// 		[data-post-position="1"] {position: relative;}
+			
+// 		[data-post-position="1"]::before {
+// 			content: '';
+// 			position: absolute;
+// 			width: 0.3em;
+// 			top: 0;
+// 			left: 0;
+// 			bottom: 0;
+// 			background: hsl(main_color, 50%, 60%);
+// 		}
+		
+		.forum-user-badge::before,
+		.forum-user-badge::after {
+			pointer-events: none;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			transform: translateX(-18em);
+		}
+		
+		.forum-user-badge::before {
+			width: 0.6em;
+			if enable_colors {
+				background: hsl(main_color, 50%, 60%);
+			} else {
+				background: hsl(85, 50%, 60%);
+			}
+		}		
+		// .forum-user-badge::after {
+		// 	width: 18em;
+		// 	background: linear-gradient(90deg, hsl(main_color, 50%, 60%, 0.5) -40%, transparent);
+		// 	// background: hsl(main_color, 50%, 60%);
+		// }
+		// .forum-post-info>* {z-index: 1;}
+	}
+	
+	if enable_colors {
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+		::-webkit-scrollbar-thumb {
+			if main_color == '4000deg' {
+				background-color: hsl(0, 0%, 100%);
+			} else {
+				background-color: hsl(main_color, 100%, 70%);
+			}
+			border-radius: 100px;
+		}
+		::-webkit-scrollbar-thumb:hover {
+			if main_color == '4000deg' {
+				background-color: hsl(0, 0%, 80%);
+			} else {
+				background-color: hsl(main_color, 50%, 50%);
+			}
+		}
+	}
+	
+	if badges_inline {
+		.profile-badges {
+			padding: 15px;
+			overflow-y: auto;
+			flex-wrap: nowrap;
+			
+			if main_color == '4000deg' {
+				background: hsl(0,0%,20%);
+			} else {
+				if enable_colors {
+					background: hsl(main_color,10%,20%);
+				} else {
+					background: hsl(333,10%,20%);
+				}
+			}
+			border-radius: 4px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+		}
+
+		.profile-badges::-webkit-scrollbar {
+			height: 6px;
+		}
+		.profile-badges::-webkit-scrollbar-thumb {
+			if main_color == '4000deg' {
+				background-color: hsl(0, 0%, 70%);
+			} else {
+				if enable_colors {
+					background-color: hsl(main_color, 70%, 70%);
+				} else {
+					background-color: hsl(333, 70%, 70%);
+				}
+			}
+			border-radius: 100px;
+		}
+		.profile-badges::-webkit-scrollbar-thumb:hover {
+			if main_color == '4000deg' {
+				background-color: hsl(0, 0%, 60%);
+			} else {
+				if enable_colors {
+					background-color: hsl(main_color, 60%, 60%);
+				} else {
+					background-color: hsl(333, 60%, 60%);
+				}
+			}
+		}
+	}
+	
+	// if bg_enable {
+	// 	.profile-info__bg {
+	// 		background: hsl(main_color, 20%, 40%);
+	// 		if bg_image == none {
+	// 			background-image: url(bg_image_custom) !important;		
+	// 		} else {
+	// 			background-image: url(bg_image) !important;
+	// 		}
+	// 		background-position: bg_position;
+	// 		background-size: bg_size;
+	// 		background-repeat: bg_repeat;
+	// 		background-blend-mode: bg_blend;
+	// 	}
+	// }
+	
+	.header-v4__bg-container::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 150px;
+		transform: translateY(100%);
+	}
+	
+/* 	if bg_top_enable {
+		.header-v4__bg {
+			background-image: url(/assets/images/forum-index.30398d92.jpg) !important;
+		}
+	} else {
+		.header-v4__bg {
+			display: none;
+		}
+	}
+	 */
+	if mode_icon_colors {
+		.game-mode-link>span {
+			opacity: 0.5;
+		}
+
+		.game-mode-link--active>span {
+			opacity: 1;
+		}
+		.beatmapset-panel__beatmap-icon {
+			i.fal.fa-extra-mode-osu {
+				color: #ff97c5;
+			}
+
+			i.fal.fa-extra-mode-fruits {
+				color: #97ffa2;
+			}
+
+			i.fal.fa-extra-mode-mania {
+				color: #ffff97;
+			}
+
+			i.fal.fa-extra-mode-taiko {
+				color: #97dfff;
+			}
+		}
+		
+		span.fal.fa-extra-mode-osu {
+			color: #ff97c5;
+			
+			&.beatmap-pack-items__icon {
+				color: #995B76 !important;
+			}
+			
+			&.beatmap-pack-items__icon.beatmap-pack-items__icon--cleared {
+				color: #ff97c5 !important;
+			}
+		}
+		
+
+		span.fal.fa-extra-mode-fruits {
+			color: #97ffa2;
+			
+			&.beatmap-pack-items__icon {
+				color: #5B9961 !important;
+			}
+			
+			&.beatmap-pack-items__icon.beatmap-pack-items__icon--cleared {
+				color: #97ffa2 !important;
+			}
+		}
+
+		span.fal.fa-extra-mode-mania {
+			color: #ffff97;
+			
+			&.beatmap-pack-items__icon {
+				color: #99995B !important;
+			}
+			
+			&.beatmap-pack-items__icon.beatmap-pack-items__icon--cleared {
+				color: #ffff97 !important;
+			}
+		}
+
+		span.fal.fa-extra-mode-taiko {
+			color: #97dfff;
+			
+			&.beatmap-pack-items__icon {
+				color: #5B8699 !important;
+			}
+			
+			&.beatmap-pack-items__icon.beatmap-pack-items__icon--cleared {
+				color: #97dfff !important;
+			}
+		}
+	} else {
+		.beatmap-pack-items__icon {
+			color: hsl(main_color, 25%, 50%);
+			
+			&.beatmap-pack-items__icon--cleared {
+				color: hsl(main_color, 40%, 80%); !important;
+			}
+		}
+	}
+	
+	if bg_enable {
+		.osu-layout.osu-layout--full > .js-switchable-mode-page--scrollspy.js-switchable-mode-page--page {
+			background: hsl(main_color, 20%, 40%);
+			if bg_image == none {
+				background-image: url(bg_image_custom);		
+			} else {
+				background-image: url(bg_image);
+			}
+			background-position: bg_position;
+			background-size: bg_size;
+			background-repeat: bg_repeat;
+			background-blend-mode: bg_blend;
+		}
+	}
+
+	.osu-page--supporter,
+	.osu-page--users {
+		box-shadow: 0 -70px 60px 30px #0000008c;
+	}
+
+	if enable_colors {
+		if bg_top_enable {
+			if main_color == '4000deg' {
+				.header-v4__bg-container {
+					background-color: hsl(0, 0%, 10%);
+				}
+
+				.header-v4__bg-container::before {
+					background: linear-gradient(180deg, hsl(0, 0%, 10%), transparent);
+				}
+			} else {
+				.header-v4__bg-container::before {background: linear-gradient(180deg, hsl(main_color, 20%, 15%), transparent);}
+
+				.header-v4__bg-container {
+					background-color: hsl(main_color, 20%, 15%);
+				}
+			}
+		} else {
+			if main_color == '4000deg' {
+				.header-v4__bg-container {
+					background-color: hsl(0, 0%, 15%);
+				}
+
+				.header-v4__bg-container::before {
+					background: linear-gradient(180deg, hsl(0, 0%, 15%), transparent);
+				}
+			} else {
+				.header-v4__bg-container::before {background: linear-gradient(180deg, hsl(main_color, 20%, 20%), transparent);}
+
+				.header-v4__bg-container {
+					background-color: hsl(main_color, 20%, 20%);
+				}
+			}
+		}
+	
+		.line-chart--profile-page .line-chart__line {
+			if main_color == '4000deg' {
+				stroke: hsl(0, 0%, 100%);
+			} else {
+				stroke: hsl(main_color, 100%, 70%);
+			}
+		}
+
+		.line-chart--profile-page .line-chart__hover-line {
+			if main_color == '4000deg' {
+				background-color: hsl(0, 0%, 100%);
+			} else {
+				background-color: hsl(main_color, 100%, 70%);
+			}
+		}
+
+		.line-chart--profile-page .line-chart__hover-circle {
+			if main_color == '4000deg' {
+				border-color: hsl(0, 0%, 100%);
+			} else {
+				border-color: hsl(main_color, 100%, 70%);
+			}
+		}
+	}
+
+	
+	if dis_resolve_shadow {
+// 		.far.fa-comments::after {
+// 			content: '';
+// 			filter: hue-rotate(-20deg);
+// 			position: absolute;
+// 			top: 0;
+// 			left: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			background: hsl(main_color,50%,45%);
+// 			z-index: 0;
+// 		}
+
+// 		.btn-osu-big {
+// 			position: relative;
+// 		}
+
+// 		.fa-comments:before {
+// 			z-index: 1;
+// 			position: relative;
+// 		}
+
+// 		.btn-osu-big__left {
+// 			position: relative;
+// 			z-index: 1;
+// 		}
+
+// 		.btn-osu-big:hover .fa-comments::after {
+// 			filter: hue-rotate(-20deg) brightness(1.2);
+// 		}
+
+		.beatmap-discussion__line--resolved::before {
+			content: '';
+			pointer-events: none;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			top: 0;
+			width: 200px;
+			background: linear-gradient(90deg, hsla(90,60%,50%, 0.3), transparent);
+			z-index: 0;
+		}	
+
+		.beatmap-discussion__top-user {
+			z-index: 1;
+		}
+		
+		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--hype::before,
+		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--hype::after,
+		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--praise::before,
+		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--praise::after,
+ 		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--mapper-note::before,
+ 		.beatmap-discussion--preview .beatmap-discussion__timestamp .beatmap-discussion-message-type--mapper-note::after
+
+		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--hype::before,
+		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--hype::after,
+		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--praise::before,
+		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--praise::after,
+ 		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--mapper-note::before,
+ 		.beatmap-discussion--timeline .beatmap-discussion__timestamp .beatmap-discussion-message-type--mapper-note::after {
+			left: 110px;
+		}
+		
+		.beatmap-discussion-message-type--hype::before,
+		.beatmap-discussion-message-type--hype::after,
+		.beatmap-discussion-message-type--praise::before,
+		.beatmap-discussion-message-type--praise::after,
+ 		.beatmap-discussion-message-type--mapper-note::before,
+ 		.beatmap-discussion-message-type--mapper-note::after {
+			content: '';
+			pointer-events: none;
+			position: absolute;
+			top: 4px;
+			left: 50px;
+			height: calc(100% - 10px);
+			border-radius: 4px 0 0 4px;
+			z-index: 1;
+		}
+
+		.beatmap-discussion-message-type--praise::before {
+			width: 200px;
+			background: linear-gradient(90deg, rgba(79,214,255, 40%), transparent);
+		}
+
+		.beatmap-discussion-message-type--praise::after {
+			width: 6px;
+			background: #4fd6ff;		
+		}
+		
+		.beatmap-discussion-message-type--mapper-note::before {
+			width: 200px;
+			background: linear-gradient(90deg, rgba(116, 86, 206, .4), transparent);
+		}
+
+		.beatmap-discussion-message-type--mapper-note::after {
+			width: 6px;
+			background: #7456CE;		
+		}
+		
+		.beatmap-discussion-message-type--hype::before {
+			width: 200px;
+			background: linear-gradient(90deg, rgba(79,214,255, 40%), transparent);
+		}
+
+		.beatmap-discussion-message-type--hype::after {
+			width: 6px;
+			background: #4fd6ff;		
+		}
+	}
+	
+	if friends_compact {
+		.user-card-brick__group-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--group-colour);
+			border-radius: 6px;
+			opacity: .3;
+		}
+
+		.user-card-brick {
+			position: relative;
+			border: 1px solid transparent;
+		}
+
+		.user-card-brick__username {
+			margin: 0 5px 0 5px;
+		}
+		
+		.user-card-brick__link {
+			padding: 0;
+		}
+//	}
+	
+//	if friends_color_ascent {
+		.user-card-brick__username {
+			--s: 0.8;
+			--b: 2.5;
+			if enable_colors {
+				color: hsl(main_color,10%,30%);
+			} else {
+				color: hsl(255,10%,30%);
+			}
+			filter: saturate(var(--s)) brightness(var(--b));
+		}
+
+
+		.user-card-brick--mutual .user-card-brick__username {
+			--s: 0.2;
+			--b: 2.2;
+			color: white;
+			color: var(--b_color);
+		}
+
+		[title="Beatmap Nominators"] + .user-card-brick__username,
+		[data-orig-title="Beatmap Nominators"] + .user-card-brick__username,
+		[title="Beatmap Nominators (Probationary)"] + .user-card-brick__username,
+		[data-orig-title="Beatmap Nominators (Probationary)"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 2;
+			color: #A347EB;
+		}
+
+
+		[title="Global Moderation Team"] + .user-card-brick__username,
+		[data-orig-title="Global Moderation Team"] + .user-card-brick__username {
+			--s: 0.5;
+			--b: 1;
+			color: #99EB47;
+		}
+
+		[title="ppy"] + .user-card-brick__username,
+		[data-orig-title="ppy"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 2;
+			color: #0066FF;
+		}
+
+		[title="Project Loved"] + .user-card-brick__username,
+		[data-orig-title="Project Loved"] + .user-card-brick__username {
+			--s: 0.7;
+			--b: 1;
+			color: #FFD1DC;
+		}
+
+		[title="Developers"] + .user-card-brick__username,
+		[data-orig-title="Developers"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 1.8;
+			color: #EB47D0;
+		}
+
+		[title="osu! Alumni"] + .user-card-brick__username,
+		[data-orig-title="osu! Alumni"] + .user-card-brick__username {
+			--s: 0.3;
+			--b: 1.5;
+			color: #999999;
+		}
+		
+		[title="Featured Artist"] + .user-card-brick__username,
+		[data-orig-title="Featured Artist"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 1.5;
+			color: #00FFFF;
+		}		
+		
+		[title="Nomination Assessment Team"] + .user-card-brick__username,
+		[data-orig-title="Nomination Assessment Team"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 1.5;
+			color: #EB8C47;
+		}
+		
+		[title="Beatmap Spotlight Curators"] + .user-card-brick__username,
+		[data-orig-title="Beatmap Spotlight Curators"] + .user-card-brick__username {
+			--s: 0.4;
+			--b: 1.5;
+			color: #76AEBC;
+		}
+
+
+		.user-card-brick__group-bar[title="Beatmap Spotlight Curators"],
+		.user-card-brick__group-bar[data-orig-title="Beatmap Spotlight Curators"],
+		.user-card-brick__group-bar[title="Nomination Assessment Team"],
+		.user-card-brick__group-bar[data-orig-title="Nomination Assessment Team"],
+		.user-card-brick__group-bar[title="Beatmap Nominators (Probationary)"],
+		.user-card-brick__group-bar[data-orig-title="Beatmap Nominators (Probationary)"],
+		.user-card-brick__group-bar[title="Featured Artist"],
+		.user-card-brick__group-bar[data-orig-title="Featured Artist"],
+		.user-card-brick__group-bar[title="Beatmap Nominators"],
+		.user-card-brick__group-bar[data-orig-title="Beatmap Nominators"],
+		.user-card-brick__group-bar[title="Global Moderation Team"],
+		.user-card-brick__group-bar[data-orig-title="Global Moderation Team"],
+		.user-card-brick__group-bar[title="ppy"],
+		.user-card-brick__group-bar[data-orig-title="ppy"],
+		.user-card-brick__group-bar[title="Project Loved"],
+		.user-card-brick__group-bar[data-orig-title="Project Loved"],
+		.user-card-brick__group-bar[title="Developers"],
+		.user-card-brick__group-bar[data-orig-title="Developers"],
+		.user-card-brick__group-bar[title="osu! Alumni"],
+		.user-card-brick__group-bar[data-orig-title="osu! Alumni"] {
+			opacity: 0;
+		}
+	}
+	
+	.user-card-brick__username {
+		z-index: 1;
+	}
+	
+	.user-card-brick {
+		position: relative;
+		border: 0;
+		box-shadow: none;
+	}
+
+	.user-card-brick--mutual {
+		if main_color == '4000deg' {
+			if friends_color {
+				--b_color:  hsl(0, 0%, 100%);
+			} else {
+				--b_color: hsl(333, 80%, 60%);
+			}
+		} else {
+			if friends_color {
+				if enable_colors {
+					--b_color:  hsl(main_color, 80%, 60%);
+				} else {
+					--b_color: hsl(255, 80%, 60%);
+				}
+			} else {
+				--b_color: hsl(255, 80%, 60%);
+			}
+		}
+	}
+	
+	.user-card-brick--mutual::before {content: '';position: absolute;top: 0;left: 0;right: 0;bottom: 0;background: var(--b_color);opacity: 0.3;border-radius: 6px;}
+	
+	if show_button {
+		.beatmapset-panel {
+			--menu-opacity: 1;
+			--stats-opacity: 1;
+			--menu-container-width: 30px;
+		}
+	}
+	
+	// new profile fix
+	if new_profile_fix {
+		.profile-info__title {
+			text-shadow: 0px 1px 1px black, 0px 1px 2px black;
+			filter: brightness(2) saturate(0.5);
+			// filter: brightness(1.5) saturate(0.5) contrast(1);
+		}
+		
+		.profile-tournament-banner__image {
+			border-radius: 0.5em;
+		}
+	
+		.profile-info__flag-flag {
+			font-size: calc(var(--icon-height) / 1.2);
+		}
+
+		.profile-info__flags {
+			margin-top: 5px;
+		}
+
+		.profile-info__flag-text {
+			padding-left: 6px;
+		}
+
+		.profile-detail__stats {
+			justify-content: center;
+			align-items: center;
+		}
+
+		.bar--user-profile {
+			height: 22px;
+			overflow: hidden;
+		}
+
+		.bar__text {
+			top: 50%;
+			right: 10px;
+			transform: translate(0, -50%);
+			margin-top: 0;
+		}
+		
+		.profile-info__bg::before {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.2));
+		}
+		
+		.profile-info__avatar {
+			border-radius: calc(var(--cover-radius) / 1.5);
+		}
+		
+		.profile-detail {
+			position: relative;
+			grid-template-areas: "stats" "badges";
+		}
+		
+		.profile-detail .profile-badges {grid-area: badges;}
+		.profile-detail .profile-detail__stats {grid-area: stats;}
+			
+		.profile-detail__stats>div:nth-child(1) {
+			display: grid;
+			grid-template-areas: "stats" "rank" "ranks";
+		}
+		
+		.profile-tournament-banner {
+			margin: 10px 50px 0 50px;
+		}
+
+		.profile-tournament-banner + .profile-detail .profile-detail__stats>div:nth-child(1)>div:nth-child(1) {
+			transform: translate(-40%, -300%);
+		}
+
+
+		.profile-detail__stats>div:nth-child(1)>div:nth-child(1) {grid-area: ranks;position: absolute;top: 0;right: 0;transform: translate(-40%, -145%);}
+		.profile-detail__stats>div:nth-child(1)>div:nth-child(2) {grid-area: rank;}
+		.profile-detail__stats>div:nth-child(1)>div:nth-child(3) {grid-area: stats;}
+			
+		.profile-detail__values--grid {
+		   display: grid; 
+
+		  gap: 0px 30px; 
+		  grid-template-areas: "time medals pp"; 
+		  grid-template-columns: none;
+		}
+
+		.profile-detail__values--grid>*:nth-child(1) {grid-area: medals;min-width: fit-content;}
+		.profile-detail__values--grid>*:nth-child(2) {grid-area: pp;min-width: fit-content;}
+		.profile-detail__values--grid>*:nth-child(3) {grid-area: time;min-width: fit-content;}
+			
+		.profile-info__icon--supporter {
+			color: hsl(main_color,20%,25%);
+		}
+	}
+	
+	if custom_bg {
+		.osu-layout__section--full::before, .osu-layout__section--full::after {
+			--rounded: bg_round;
+    		--padding: bg_padding;
+			--opacity: 0;
+			--speed: 0.5s;
+			content: '';
+			position: absolute;
+			top: 104px;
+			width: calc((100vw - 1020px) / 2 - (var(--padding) * 2));
+			height: calc((100vh - 106px) - (var(--padding) * 2));
+			max-height: bg_max;
+			opacity: var(--opacity);
+			if bg_bg_remove == 0 {
+				if main_color == '4000deg' {
+					background: hsl(0,0%,20%);
+				} else {
+					if enable_colors {
+						background: hsl(main_color,10%,20%);
+					} else {
+						background: transparent;
+					}
+				}
+			}
+			border-radius: var(--rounded);
+			transition: opacity var(--speed) ease,
+			 top var(--speed) ease,
+			  width var(--speed) ease,
+			   height var(--speed) ease,
+			    left var(--speed) ease,
+				 right var(--speed) ease,
+				  border-radius var(--speed) ease;
+		}
+
+		.osu-layout__section--full::before {
+			left: calc(var(--padding) + 5px)
+			// transform: translateX(-100%);
+			
+			if bg_left_image == none {
+				background-image: url(bg_left_image_custom) !important;		
+			} else if bg_left_image == 'rem' {
+				
+			} else {
+				background-image: url(bg_left_image) !important;
+			}
+			if bg_left_position == none {
+				background-position: bg_left_position_custom;
+			} else {
+				background-position: bg_left_position;
+			}
+			if bg_left_size == none {
+				background-size: bg_left_size_custom;
+			} else {
+				background-size: bg_left_size;
+			}
+			background-repeat: bg_left_repeat;
+			background-blend-mode: bg_left_blend;
+		}
+
+		.osu-layout__section--full::after {
+			right:calc(var(--padding) + 5px)
+			// transform: translateX(100%);
+			
+			if bg_right_image == none {
+				background-image: url(bg_right_image_custom) !important;		
+			} else if bg_left_image == 'rem' {
+				
+			} else {
+				background-image: url(bg_right_image) !important;
+			}
+			if bg_right_position == none {
+				background-position: bg_right_position_custom;
+			} else {
+				background-position: bg_right_position;
+			}
+			if bg_right_size == none {
+				background-size: bg_right_size_custom;
+			} else {
+				background-size: bg_right_size;
+			}
+			background-repeat: bg_right_repeat;
+			background-blend-mode: bg_right_blend;
+		}
+
+		// .osu-page--generic-compact {
+		// 	position: relative;
+		// }
+	}
+	
+	if (true || custom_nickname_enable == 1) {
+		.u-ellipsis-pre-overflow {
+			if (false && disable_nickname_shadow == 0) {
+				filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+			}
+			// background-image: transparent;
+			// background-size: cover;
+			// background-clip: text;
+			// -webkit-background-clip: text;
+			// -webkit-text-fill-color: transparent;
+			color: #7dcfff;
+		}
+	}
+	
+	.page-extra__content-overflow-wrapper-inner, .page-extra__content-overflow-wrapper-outer {
+		if me_expand == 0 {
+			max-height: fit-content;
+		} else {
+			max-height: --me_expand;
+		}
+	}
+}
+@-moz-document regexp("https://osu.ppy.sh/users/9893708") {
+	/* 	:root {
+		--base-hue: 255!important;
+		--base-hue-deg: 255deg;
+	} */
+	.value-display.value-display--pp {
+		display: none !important;
+	}
+}
+@-moz-document url-prefix("https://osu.ppy.sh/community/chat") {
+	if chat_row {
+		.osu-page--chat {
+			flex-direction: row-reverse;
+		}
+
+		.chat-conversation-list-item {
+			flex-direction: row-reverse;
+		}
+
+		.chat-conversation-list-item__chevron {
+			position: absolute;
+			top: 50%;
+			left: 4px;
+			transform: translate(50%, -50%) rotate(-180deg);
+		} // .chat-conversation-list-item--selected {
+		// 	// background: linear-gradient(-90deg,hsl(main_color,10%,10%) 10px,hsl(main_color,10%,20%) 33%,hsl(main_color,10%,20%));
+		// 	background: linear-gradient(90deg,hsl(main_color,10%,15%) 10px,hsl(main_color,10%,20%) 33%,hsl(main_color,10%,20%));
+		// }
+		.chat-conversation-list-item__tile {
+			margin: 0 0 0 20px;
+		}
+	}
+}
+@-moz-document url-prefix("https://osu.ppy.sh/users") {
+	.osu-layout__section--full::before, .osu-layout__section--full::after {
+		--opacity: bg_opacity;
+	}
+}

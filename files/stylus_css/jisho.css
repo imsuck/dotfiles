@@ -1,0 +1,5 @@
+@-moz-document domain("jisho.org") {
+* {
+	font-family: "Liberation Sans", "Klee One SemiBold" !important;
+}
+}
