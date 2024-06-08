@@ -21,7 +21,7 @@ sudo pacman -S --noconfirm --needed \
  # picom
 
 yay -S --answerclean All --answerdiff None \
- discocss-git\
+ openasar-bin\
  eww\
  spotify-adblock-git `#cava\`
  nerd-fonts-hack betterlockscreen\
