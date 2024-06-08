@@ -1,0 +1,10 @@
+@-moz-document domain("oj.vnoi.info") {
+code {
+	font-family: "Fira Code" !important;
+}
+
+.content-description code,
+.content-description span.code {
+	font-family: "Fira Code" !important;
+}
+}

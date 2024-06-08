@@ -1,0 +1,5 @@
+@-moz-document domain("www.duolingo.com") {
+span > ruby > rt {
+	display: none;
+}
+}
