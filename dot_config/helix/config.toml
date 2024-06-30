@@ -42,6 +42,7 @@ A-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "goto_line
 r = ":rl"
 c = ":config-open"
 R = ":config-reload"
+f = ":fmt"
 t = ":o ~/.config/helix/themes/base16_terminal_edit.toml"
 i = ":set lsp.display-inlay-hints false"
 I = ":set lsp.display-inlay-hints true"
