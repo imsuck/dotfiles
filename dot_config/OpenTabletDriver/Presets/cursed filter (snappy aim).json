@@ -1,7 +1,7 @@
 {
   "Profiles": [
     {
-      "Tablet": "VEIKK S640 V2",
+      "Tablet": "Wacom CTL-472",
       "OutputMode": {
         "Path": "OpenTabletDriver.Desktop.Output.AbsoluteMode",
         "Settings": [],

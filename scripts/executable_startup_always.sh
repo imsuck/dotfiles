@@ -12,10 +12,6 @@
 # Disable touchpad if there is a USB mouse plugged in
 ~/scripts/touchpad.sh
 
-# Enable Super Keys For Menu
-killall ksuperkey
-ksuperkey -t 250 -e "Super_L=F9;Super_R=F9" &
-
 # activate-linux &
 
 ibus-daemon -drx

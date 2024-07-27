@@ -25,7 +25,7 @@ yay -S --answerclean All --answerdiff None \
  eww\
  spotify-adblock-git `#cava\`
  nerd-fonts-hack betterlockscreen\
- ksuperkey autotiling\
+ kanata autotiling\
  `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather\
  `#diskonaut` polybar-git picom-git polybar-spotify-module
 

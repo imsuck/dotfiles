@@ -106,7 +106,7 @@ configuration {
 
 	/*---------- Keybindings ----------*/
 	kb-remove-word-forward: "Control+Alt+d,Control+Delete";
-	kb-cancel: "Escape,Control+c,Control+bracketleft,F9";
+	kb-cancel: "Escape,Control+c,Control+bracketleft,Shift+F9";
 	kb-select-1: "";
 	kb-select-2: "";
 	kb-select-3: "";

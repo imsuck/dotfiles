@@ -34,7 +34,7 @@ inherits = "base16_transparent"
 
 "ui.virtual.indent-guide" = "gray"
 "ui.virtual.ruler" = { bg = "black" }
-"ui.virtual.jump-label" = { fg = "yellow", modifiers = ["bold"] }
+"ui.virtual.jump-label" = { fg = "yellow", modifiers = ["bold"], underline = { style = "line" } }
 
 "comment" = { fg = "comment", modifiers = ["italic"] }
 "punctuation" = { fg = "comment" }
