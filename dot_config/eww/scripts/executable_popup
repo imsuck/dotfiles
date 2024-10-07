@@ -3,10 +3,9 @@
 calendar(){
     LOCK_FILE="$HOME/.cache/eww-calendar.lock"
     EWW_BIN="/bin/eww"
-    EWW_CONF="$HOME/.config/eww/"
 
     run() {
-        ${EWW_BIN} -c ${EWW_CONF} open calendar
+        ${EWW_BIN} open calendar
     }
 
     # Run eww daemon if not running
@@ -20,7 +19,7 @@ calendar(){
         touch "$LOCK_FILE"
         run
     else
-        eww -c ${EWW_CONF} close calendar
+        eww close calendar
         rm "$LOCK_FILE"
     fi
 }

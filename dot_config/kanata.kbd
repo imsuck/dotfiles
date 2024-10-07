@@ -1,7 +1,7 @@
 (defsrc
-  lmeta
+  caps
 )
 
 (deflayer base
-  (tap-hold 100 100 S-F9 lmeta)
+  (tap-hold 100 100 esc lctl)
 )

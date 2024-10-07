@@ -10,7 +10,7 @@ sudo pacman -S --noconfirm --needed \
  alacritty wezterm starship helix `#dunst` github-cli fzf zellij\
  eza ripgrep fd bat zoxide handlr git-delta `# rust utilities`\
  htop bottom\
- discord firefox nitrogen\
+ firefox nitrogen\
  `#polybar` rofi\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
@@ -21,7 +21,7 @@ sudo pacman -S --noconfirm --needed \
  # picom
 
 yay -S --answerclean All --answerdiff None \
- openasar-bin\
+ vesktop\
  eww\
  spotify-adblock-git `#cava\`
  nerd-fonts-hack betterlockscreen\

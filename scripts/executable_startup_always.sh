@@ -12,6 +12,9 @@
 # Disable touchpad if there is a USB mouse plugged in
 ~/scripts/touchpad.sh
 
+killall ksuperkey
+ksuperkey -t 250 -e "Super_L=Shift_L|F9" &
+
 # activate-linux &
 
 ibus-daemon -drx

@@ -1,0 +1,18 @@
+layout {
+	tab focus=true {
+		pane split_direction="vertical" {
+			pane focus=true size="75%" command="helix" {
+				args "stress_testing/a.cpp" "stress_testing/safe.cpp"
+			}
+			pane split_direction="horizontal" {
+				pane command="helix" {
+					args "stress_testing/a.inp"
+				}
+				pane command="helix" {
+					args "stress_testing/a.output" "stress_testing/a.ans"
+				}
+			}
+		}
+	}
+	tab
+}
