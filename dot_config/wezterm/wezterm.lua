@@ -9,7 +9,7 @@ return {
     -- { family = "Liga Roboto Mono", weight = "Medium" },
     {
       family = "Fira Code",
-      weight = "Medium",
+      weight = "Regular",
       harfbuzz_features = {"ss02", "ss07"},
     },
     "Font Awesome 6 Brands",
@@ -44,6 +44,8 @@ return {
     "zellij",
   },
   window_close_confirmation = 'NeverPrompt',
+
+  front_end = "WebGpu",
 
   keys = {
     {
