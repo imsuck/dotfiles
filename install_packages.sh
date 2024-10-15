@@ -23,10 +23,10 @@ sudo pacman -S --noconfirm --needed \
 yay -S --answerclean All --answerdiff None \
  vesktop\
  eww\
- spotify-adblock-git `#cava\`
+ spotify-adblock-git `#cava`\
  nerd-fonts-hack betterlockscreen\
- kanata autotiling\
- `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather\
+ ksuperkey kanata autotiling\
+ `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather ttf-twemoji\
  `#diskonaut` polybar-git picom-git polybar-spotify-module
 
 systemctl --user enable spotify-listener

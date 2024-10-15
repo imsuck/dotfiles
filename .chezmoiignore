@@ -1,5 +1,5 @@
 windows/
-install_apps.sh
+install_packages.sh
 list.txt
 emoji.sh
 README.md
