@@ -1,16 +1,16 @@
 [Added Associations]
 application/json=helix.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+application/x-krita=org.gnome.FileRoller.desktop;
 application/x-shellscript=fish.desktop;
 image/jpeg=feh.desktop;krita_jpeg.desktop;org.gnome.gThumb.desktop;
 image/png=org.gnome.gThumb.desktop;krita_png.desktop;feh.desktop;
 inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 text/x-log=helix.desktop;firefox.desktop;
-application/x-krita=org.gnome.FileRoller.desktop;
-
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
+application/x-krita=org.kde.krita.desktop;
 application/x-musedata=obsidian.desktop;
 image/bmp=feh.desktop;
 image/gif=feh.desktop;
@@ -36,8 +36,7 @@ text/x-makefile=helix.desktop;
 text/x-moc=helix.desktop;
 text/x-pascal=helix.desktop;
 text/x-tex=helix.desktop;
-x-scheme-handler/figma=figma-linux.desktop
-x-scheme-handler/discord-514551367759822855=discord-514551367759822855.desktop
-x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
-x-scheme-handler/lunarclient=lunarclient.desktop
-x-scheme-handler/discord-562286213059444737=lunarclient.desktop
+x-scheme-handler/figma=figma-linux.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handlr/https=firefox.desktop;

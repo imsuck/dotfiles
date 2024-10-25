@@ -1,15 +1,13 @@
 #!/usr/bin/env sh
 
+TIME_FMT="Time: %es Mem: %MKB"
+RUN_CMD="./a.out < a.inp; echo"
+
 echo
 echo "------------- Test -------------"
-tune="0.038"
-start=`date +%s.%N`
 if command -v systemd-run &>/dev/null; then
-  cat "a.inp" | systemd-run --scope -p MemoryMax=512M -q --user ./a.out
+  /usr/bin/time -f "$TIME_FMT" \
+    systemd-run --scope -p MemoryMax=512M -q --user bash -c "$RUN_CMD"
 else
-  cat "a.inp" | ./a.out
+  /usr/bin/time -f "$TIME_FMT" bash -c "$RUN_CMD"
 fi
-end=`date +%s.%N`
-dur=`echo "$end - $start - $tune" | bc`
-echo
-echo "Time: $(echo "($dur > 0) * $dur" | bc)s"

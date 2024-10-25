@@ -7,7 +7,7 @@ for_window [class="stalonetray"] floating enable
 
 # set floating (nontiling) for special apps
 for_window [class="OpenTabletDriver.UX"] floating enable
-for_window [class="pavucontrol"] floating enable
+for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [window_role="About"] floating enable

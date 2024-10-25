@@ -148,7 +148,7 @@
               "Value": 1.25
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "slimy_scylla.slimy_scylla_pressure_processing_moving_average",
@@ -166,7 +166,7 @@
               "Value": 1
             }
           ],
-          "Enable": true
+          "Enable": false
         },
         {
           "Path": "slimy_scylla.slimy_scylla_pressure_processing_fixed_value",
@@ -334,6 +334,42 @@
             {
               "Property": "never_intercept_pressure_on_off",
               "Value": null
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "slimy_scylla.slimy_scylla_dynamic_weighted",
+          "Settings": [
+            {
+              "Property": "drag",
+              "Value": 0.2
+            },
+            {
+              "Property": "mass",
+              "Value": 31.25
+            },
+            {
+              "Property": "max_pressure_speed",
+              "Value": 20.0
+            },
+            {
+              "Property": "pressure_deadzone_percent",
+              "Value": null
+            },
+            {
+              "Property": "remove_tail_pressure_reports",
+              "Value": 1
+            }
+          ],
+          "Enable": false
+        },
+        {
+          "Path": "slimy_scylla.slimy_scylla_tilt_smoothing_exponential_moving_average",
+          "Settings": [
+            {
+              "Property": "amount",
+              "Value": 0.1
             }
           ],
           "Enable": false

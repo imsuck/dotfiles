@@ -18,3 +18,6 @@
 
 ## Emoji picker
 `rofi-emoji`
+
+## Other
+`TokyoNight-Storm-BL (0fcb2ef)`
