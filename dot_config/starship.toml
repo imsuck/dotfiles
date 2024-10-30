@@ -4,7 +4,7 @@ command_timeout = 2_000
 
 format = """$time $all"""
 
-# right_format = """$time"""
+right_format = """$cmd_duration"""
 
 [character]
 success_symbol = ""
@@ -12,12 +12,14 @@ error_symbol = ""
 disabled = true
 
 [cmd_duration]
-min_time = 500
-disabled = true
+min_time = 0
+show_milliseconds = true
+format = '[$duration]($style) '
+disabled = false
 
 [directory]
 # truncation_symbol = "…/"
-format = "[ ](bg:blue)[ $path ](bg:black) "
+format = '[ ](bg:blue)[ $path ](bg:black) '
 use_os_path_sep = false
 
 [git_branch]
@@ -52,7 +54,7 @@ format = '[\[$status\]](bold red) '
 disabled = false
 
 [time]
-format = "[ ](bg:yellow)[ $time ](bg:black)"
+format = '[ ](bg:yellow)[ $time ](bg:black)'
 time_format = '%R'
 style = 'yellow bold'
 disabled = false

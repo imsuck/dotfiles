@@ -6,15 +6,15 @@ export NNN_FIFO="/tmp/nnn.fifo"
 export CARGO_HOME="$HOME/.local/share/cargo"
 set PATH $CARGO_HOME/bin $PATH
 set RUSTC_WRAPPER sccache
-# Vietnamese thing
+# Setup ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
-if command -v helix > /dev/null
+if command -v helix >/dev/null
     abbr -a hx helix
     abbr -a e helix
-else if command -v hx > /dev/null
+else if command -v hx >/dev/null
     abbr -a helix hx
     abbr -a e hx
 end
@@ -58,28 +58,28 @@ if status --is-interactive
     # end
 end
 
-if command -v aurman > /dev/null
-    abbr -a p 'aurman'
+if command -v aurman >/dev/null
+    abbr -a p aurman
     abbr -a up 'aurman -Syu'
 else
     abbr -a p 'sudo pacman'
     abbr -a up 'sudo pacman -Syu'
 end
 
-if command -v exa > /dev/null
+if command -v exa >/dev/null
     abbr -a l 'exa --icons'
     abbr -a ls 'exa --icons'
     abbr -a ll 'exa -l --icons'
     abbr -a lll 'exa -la --icons'
 else
-    abbr -a l 'ls'
+    abbr -a l ls
     abbr -a ll 'ls -l'
     abbr -a lll 'ls -la'
 end
 
 # Type d to move up to top parent dir which is a repository
 function d
-    while test $PWD != "/"
+    while test $PWD != /
         if test -d .git
             break
         end
@@ -103,7 +103,7 @@ setenv FZF_DEFAULT_OPTS '--height 20%'
 
 # Fish should not add things to clipboard when killing
 # See https://github.com/fish-shell/fish-shell/issues/772
-set FISH_CLIPBOARD_CMD "cat"
+set FISH_CLIPBOARD_CMD cat
 
 function fish_user_key_bindings
     bind \cz 'fg&>/dev/null; echo; fish_prompt'
@@ -202,6 +202,11 @@ function fish_greeting
     # end
 
     # set_color normal
+end
+
+# disable pkgfile searching
+function fish_command_not_found
+    __fish_default_command_not_found_handler $argv
 end
 
 starship init fish | source

@@ -14,7 +14,6 @@ sudo pacman -S --noconfirm --needed \
  `#polybar` rofi\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
- xf86-input-synaptics\
  rustup rust-analyzer bacon `# rust dev things`\
  cronie stalonetray xdo ranger\
  # thefuck
