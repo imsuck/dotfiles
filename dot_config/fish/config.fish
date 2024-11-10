@@ -4,7 +4,7 @@ set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 export CARGO_HOME="$HOME/.local/share/cargo"
-set PATH $CARGO_HOME/bin $PATH
+set PATH $CARGO_HOME/bin $HOME/.local/bin $PATH
 set RUSTC_WRAPPER sccache
 # Setup ibus
 export GTK_IM_MODULE=ibus
@@ -213,3 +213,6 @@ starship init fish | source
 
 # thefuck --alias | source
 zoxide init fish | source
+
+# Created by `pipx` on 2024-11-06 13:48:05
+set PATH $PATH /home/imsuck/.local/bin

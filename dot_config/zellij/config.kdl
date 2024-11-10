@@ -214,6 +214,8 @@ theme "tokyo-night-storm"
 
 default_layout "normal"
 
+session_serialization false
+
 // default_mode "locked"
 
 // mouse_mode false

@@ -8,6 +8,8 @@ image/png=org.gnome.gThumb.desktop;krita_png.desktop;feh.desktop;
 inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 text/x-log=helix.desktop;firefox.desktop;
+application/octet-stream=firefox.desktop;
+
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
 application/x-krita=org.kde.krita.desktop;
