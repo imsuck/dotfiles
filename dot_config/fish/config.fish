@@ -27,6 +27,7 @@ abbr -a ze zellij
 abbr -a c cargo
 abbr -a m make
 abbr -a o handlr open
+abbr -a yz yazi
 abbr -a g git
 abbr -a gc 'git checkout'
 abbr -a ga 'git add -p'

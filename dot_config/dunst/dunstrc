@@ -4,7 +4,7 @@
     monitor = 0
     follow = mouse
     width = (300, 500)
-    height = 300
+    # height = 50
     offset = 30x40
     transparency = 0
 

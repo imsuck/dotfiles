@@ -47,6 +47,9 @@ bindsym $mod+Shift+8    move container to workspace  $ws8
 bindsym $mod+Shift+9    move container to workspace  $ws9
 bindsym $mod+Shift+0    move container to workspace  $ws10
 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 bindsym $mod+r mode "resize"
 mode "resize" {
         bindsym h resize shrink width 5 px or 5 ppt

@@ -22,3 +22,4 @@
 ## Other
 `TokyoNight-Storm-BL (0fcb2ef)`
 `gtk-engine-murrine` (for GTK Tokyonight Storm)
+`python-legacy-cgi` (krita scripting stuff (check if needed before installing))
