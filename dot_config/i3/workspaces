@@ -8,7 +8,7 @@
 
 for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm"] move to workspace $ws1, focus
 
-for_window [class="Opera|Brave-browser|firefox"] move to workspace $ws2, focus
+for_window [class="Brave-browser|firefox"] move to workspace $ws2, focus
 
 for_window [class="Thunar"] move to workspace $ws3
 

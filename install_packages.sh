@@ -16,8 +16,8 @@ sudo pacman -S --noconfirm --needed \
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
  rustup rust-analyzer bacon `# rust dev things`\
  cronie stalonetray xdo ranger\
+ picom
  # thefuck
- # picom
 
 yay -S --answerclean All --answerdiff None \
  vesktop\
@@ -26,7 +26,7 @@ yay -S --answerclean All --answerdiff None \
  nerd-fonts-hack betterlockscreen\
  ksuperkey kanata autotiling\
  `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather ttf-twemoji\
- `#diskonaut` polybar-git picom-git polybar-spotify-module
+ `#diskonaut` polybar-git polybar-spotify-module
 
 systemctl --user enable spotify-listener
 systemctl --user start spotify-listener

@@ -1,10 +1,9 @@
 set BROWSER firefox
-set EDITOR helix
 set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
 export CARGO_HOME="$HOME/.local/share/cargo"
-set PATH $CARGO_HOME/bin $HOME/.local/bin $PATH
+set PATH $CARGO_HOME/bin $HOME/.local/bin $HOME/.nix-profile/bin $PATH
 set RUSTC_WRAPPER sccache
 # Setup ibus
 export GTK_IM_MODULE=ibus
@@ -12,9 +11,11 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 if command -v helix >/dev/null
+    set EDITOR helix
     abbr -a hx helix
     abbr -a e helix
 else if command -v hx >/dev/null
+    set EDITOR hx
     abbr -a helix hx
     abbr -a e hx
 end

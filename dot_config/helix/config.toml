@@ -11,6 +11,8 @@ completion-trigger-len = 1
 completion-replace = true
 bufferline = "multiple"
 
+end-of-line-diagnostics = "hint"
+
 [editor.cursor-shape]
 normal = "block"
 insert = "bar"
@@ -20,6 +22,9 @@ select = "block"
 display-messages = true
 display-inlay-hints = false
 display-signature-help-docs = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [editor.statusline]
 left = ["mode", "spacer", "spinner", "spacer", "version-control", "file-name", "read-only-indicator", "file-modification-indicator", "spacer", "diagnostics"]
