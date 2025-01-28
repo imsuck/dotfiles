@@ -1,8 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  require = [
-    ./helix.nix
+  imports = [
+    ./mod/helix.nix
+    ./mod/shell-things.nix
   ];
 
   home.username = "imsuck";
@@ -10,9 +11,10 @@
 
   home.packages = with pkgs; [
     bottom btop htop
-    nix-tree nix-web
     neovim
+    nix-tree nix-web
     typst
+    zellij
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
