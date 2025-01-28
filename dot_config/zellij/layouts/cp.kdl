@@ -2,11 +2,11 @@
 layout {
 	tab focus=true {
 		pane split_direction="vertical" {
-			pane focus=true size="75%" command="helix" {
+			pane focus=true size="75%" command="$EDITOR" {
 				args "."
 			}
 			pane split_direction="horizontal" {
-				pane command="helix" {
+				pane command="$EDITOR" {
 					args "a.inp"
 				}
 				pane command="bash" {

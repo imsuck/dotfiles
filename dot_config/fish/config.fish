@@ -20,6 +20,7 @@ else if command -v hx >/dev/null
     abbr -a e hx
 end
 
+alias sudoedit "sudo -E (which $EDITOR)"
 abbr -a ... ../../
 abbr -a .... ../../../
 abbr -a ..... ../../../../
@@ -119,19 +120,19 @@ function fish_user_key_bindings
 end
 
 function fish_greeting
-    echo
-    echo -e (uname -ro | awk '{print " \\\\e[1mOS: \\\\e[0;32m"$0"\\\\e[0m"}')
-    echo -e (uptime -p | sed 's/^up //' | awk '{print " \\\\e[1mUptime: \\\\e[0;32m"$0"\\\\e[0m"}')
+    # echo
+    # echo -e (uname -ro | awk '{print " \\\\e[1mOS: \\\\e[0;32m"$0"\\\\e[0m"}')
+    # echo -e (uptime -p | sed 's/^up //' | awk '{print " \\\\e[1mUptime: \\\\e[0;32m"$0"\\\\e[0m"}')
     # echo -e (uname -n | awk '{print " \\\\e[1mHostname: \\\\e[0;32m"$0"\\\\e[0m"}')
-    echo -e " \\e[1mDisk usage:\\e[0m"
-    echo
-    echo -ne (\
-        df -l -h | grep -E 'dev/(xvda|sd|mapper)' | \
-        awk '{printf "\\\\t%s\\\\t%4s / %4s  %s\\\\n\n", $6, $3, $2, $5}' | \
-        sed -e 's/^\(.*\([8][5-9]\|[9][0-9]\)%.*\)$/\\\\e[0;31m\1\\\\e[0m/' -e 's/^\(.*\([7][5-9]\|[8][0-4]\)%.*\)$/\\\\e[0;33m\1\\\\e[0m/' | \
-        paste -sd ''\
-    )
-    echo
+    # echo -e " \\e[1mDisk usage:\\e[0m"
+    # echo
+    # echo -ne (\
+    #     df -l -h | grep -E 'dev/(xvda|sd|mapper)' | \
+    #     awk '{printf "\\\\t%s\\\\t%4s / %4s  %s\\\\n\n", $6, $3, $2, $5}' | \
+    #     sed -e 's/^\(.*\([8][5-9]\|[9][0-9]\)%.*\)$/\\\\e[0;31m\1\\\\e[0m/' -e 's/^\(.*\([7][5-9]\|[8][0-4]\)%.*\)$/\\\\e[0;33m\1\\\\e[0m/' | \
+    #     paste -sd ''\
+    # )
+    # echo
 
     # echo -e " \\e[1mNetwork:\\e[0m"
     # echo
@@ -164,13 +165,13 @@ function fish_greeting
     #     )
     # echo
 
-    set r (random 0 100)
-    if [ $r -lt 5 ] # only occasionally show backlog (5%)
-        echo -e " \e[1mBacklog\e[0;32m"
-        set_color blue
-        echo "  [project] <description>"
-        echo
-    end
+    # set r (random 0 100)
+    # if [ $r -lt 5 ] # only occasionally show backlog (5%)
+    #     echo -e " \e[1mBacklog\e[0;32m"
+    #     set_color blue
+    #     echo "  [project] <description>"
+    #     echo
+    # end
 
     # set_color normal
     # echo -e " \e[1mTODOs\e[0;32m"
@@ -218,3 +219,5 @@ zoxide init fish | source
 
 # Created by `pipx` on 2024-11-06 13:48:05
 set PATH $PATH /home/imsuck/.local/bin
+
+bass source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

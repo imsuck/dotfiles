@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type = Application
-Exec = neovide --multigrid %F
+Exec = neovide %F
 Icon = neovide
 Name = Neovide (nvim)
 Keywords = Text;Editor;

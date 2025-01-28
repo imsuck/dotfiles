@@ -1,7 +1,7 @@
 layout {
     tab {
         pane split_direction="horizontal" {
-            pane focus=true command="helix" {
+            pane focus=true command="$EDITOR" {
                 args "."
             }
             pane size="20%"
