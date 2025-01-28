@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm --needed \
  eza ripgrep fd bat zoxide handlr git-delta\
  htop bottom\
  firefox nitrogen\
- polybar rofi\
+ polybar rofi rofi-emoji\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
  rustup rust-analyzer bacon `# rust dev things`\

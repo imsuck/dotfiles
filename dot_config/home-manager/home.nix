@@ -9,8 +9,10 @@
   home.homeDirectory = "/home/imsuck";
 
   home.packages = with pkgs; [
+    bottom btop htop
     nix-tree nix-web
     neovim
+    typst
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

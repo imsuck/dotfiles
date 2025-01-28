@@ -4,6 +4,10 @@
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
 
+  programs.helix.extraPackages = with pkgs; [
+    clang-tools tinymist
+  ];
+
   programs.helix.settings = {
     theme = "base16_terminal_edit";
 
@@ -78,7 +82,6 @@
 
   programs.helix.languages = with pkgs; {
     language-server.clangd = {
-      command = "${clang-tools}/bin/clangd";
       args = ["--header-insertion=never"];
       config = {
         fallbackFlags = [
@@ -92,7 +95,7 @@
         name = "cpp";
         indent = { tab-width = 4; unit = "    "; };
 
-        formatter.command = "${clang-tools}/bin/clang-format";
+        formatter.command = "clang-format";
         formatter.args =
           let
             style = lib.concatStrings [
@@ -115,5 +118,48 @@
         auto-format = true;
       }
     ];
+  };
+
+  programs.helix.themes = {
+    base16_terminal_edit = {
+      inherits = "base16_transparent";
+
+      "ui.menu" = { bg = "black"; };
+      "ui.menu.selected" = { bg = "gray"; };
+      "ui.help" = { bg = "black"; };
+      "ui.menu.scroll" = { fg = "light-gray"; bg = "black"; };
+      "ui.popup" = { bg = "black"; };
+      "ui.selection" = { bg = "background_highlight"; };
+      "ui.statusline" = { fg = "white"; bg = "black"; };
+      "ui.statusline.inactive" = { fg = "gray"; bg = "black"; };
+      "ui.cursor" = { fg = "black"; bg = "light-gray"; };
+      "ui.cursor.primary" = { fg = "black"; bg = "white"; };
+      "ui.virtual.inlay-hint" = { fg = "gray"; };
+      "ui.virtual.inlay-hint.parameter" = { fg = "gray"; };
+      "ui.virtual.inlay-hint.type" = { fg = "gray"; };
+      "ui.bufferline" = { };
+      "ui.bufferline.active" = { bg = "gray"; };
+
+      "hint" = { };
+
+
+      "ui.statusline.normal" = { fg = "green"; modifiers = ["bold" "reversed"]; };
+      "ui.statusline.insert" = { fg = "blue"; modifiers = ["bold" "reversed"]; };
+      "ui.statusline.select" = { fg = "yellow"; modifiers = ["bold" "reversed"]; };
+
+      "ui.cursorline.primary" = { bg = "black"; };
+
+      "ui.virtual.indent-guide" = "gray";
+      "ui.virtual.ruler" = { bg = "black"; };
+      "ui.virtual.jump-label" = { fg = "yellow"; modifiers = ["bold"]; underline = { style = "line"; }; };
+
+      "comment" = { fg = "comment"; modifiers = ["italic"]; };
+      "punctuation" = { fg = "comment"; };
+
+      palette = {
+        comment = "#565f89";
+        background_highlight = "#373d5a";
+      };
+    };
   };
 }
