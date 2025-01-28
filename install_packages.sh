@@ -7,8 +7,8 @@
 # Use `"@y` to yank macro ok
 
 sudo pacman -S --noconfirm --needed \
- alacritty wezterm starship helix `#dunst` github-cli fzf zellij\
- eza ripgrep fd bat zoxide handlr git-delta `# rust utilities`\
+ alacritty wezterm starship `#dunst` github-cli fzf zellij\
+ eza ripgrep fd bat zoxide handlr git-delta\
  htop bottom\
  firefox nitrogen\
  polybar rofi\
