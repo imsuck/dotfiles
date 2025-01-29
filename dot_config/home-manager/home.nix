@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -13,27 +13,47 @@
     bottom btop htop
     neovim
     nix-tree nix-web
+    opentabletdriver
     typst
     zellij
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+  home.file = {};
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+  xdg.configFile = {
+    "systemd/user/opentabletdriver.service".text = ''
+      [Unit]
+      Description=OpenTabletDriver Daemon
+      PartOf=graphical-session.target
+      After=graphical-session.target
+      ConditionEnvironment=|WAYLAND_DISPLAY
+      ConditionEnvironment=|DISPLAY
+
+      [Service]
+      ExecStart=${pkgs.opentabletdriver}/bin/otd-daemon
+      Restart=always
+      RestartSec=3
+
+      [Install]
+      WantedBy=graphical-session.target
+    '';
   };
 
   home.sessionVariables = {
     # EDITOR = "hx";
+  };
+
+  home.activation = {
+    enableOTDDaemon = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      # very bad!!!
+      _ctl="/usr/bin/systemctl"
+      if command -v $_ctl 2>&1 >/dev/null; then
+        $_ctl enable --user --now opentabletdriver
+        $_ctl --user daemon-reload
+      else
+        printf "\e[31mFailed to reload opentabletdriver daemon\e[0m\n"
+      fi
+    '';
   };
 
   # Let Home Manager install and manage itself.

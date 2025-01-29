@@ -1,6 +1,10 @@
+.PHONY: upgrade
+upgrade:
+	home-manager switch --flake .#imsuck
+
 .PHONY: update
 update:
-	home-manager switch --flake .#imsuck
+	nix flake update
 
 .PHONY: clean
 clean:

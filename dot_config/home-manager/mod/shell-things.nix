@@ -69,7 +69,7 @@
       python.disabled = true;
 
       status = {
-        format = "[\[$status\]](bold red) ";
+        format = "[\\[$status\\]](bold red) ";
         disabled = false;
       };
 
