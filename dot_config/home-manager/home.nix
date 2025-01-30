@@ -1,8 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./mod/helix.nix
+    ./mod/yazi/yazi.nix
     ./mod/shell-things.nix
   ];
 
@@ -10,22 +11,27 @@
   home.homeDirectory = "/home/imsuck";
 
   home.packages = with pkgs; [
-    bottom btop htop
+    bottom
+    btop
+    htop
+
+    nix-tree
+    nix-web
+
     neovim
-    nix-tree nix-web
     typst
     zellij
   ];
 
-  home.file = {};
+  home.file = { };
 
-  xdg.configFile = {};
+  xdg.configFile = { };
 
   home.sessionVariables = {
     # EDITOR = "hx";
   };
 
-  home.activation = {};
+  home.activation = { };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
