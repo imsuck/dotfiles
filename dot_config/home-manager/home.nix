@@ -1,14 +1,19 @@
 { pkgs, ... }:
 
+let
+  username = "imsuck";
+  homeDir = "/home/${username}";
+in
 {
   imports = [
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
     ./mod/shell-things.nix
+    ./mod/systemd.nix
   ];
 
-  home.username = "imsuck";
-  home.homeDirectory = "/home/imsuck";
+  home.username = username;
+  home.homeDirectory = homeDir;
 
   home.packages = with pkgs; [
     bottom
@@ -18,6 +23,7 @@
     nix-tree
     nix-web
 
+    memos
     neovim
     typst
     zellij
@@ -27,9 +33,7 @@
 
   xdg.configFile = { };
 
-  home.sessionVariables = {
-    # EDITOR = "hx";
-  };
+  home.sessionVariables = { };
 
   home.activation = { };
 
