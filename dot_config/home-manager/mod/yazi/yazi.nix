@@ -7,10 +7,21 @@
       preview = {
         image_delay = 100;
       };
+      plugin = {
+        prepend_previewers = [
+          { name = "*.kra"; run = "krita"; }
+          { mime = "image/webp"; run = "magick"; }
+        ];
+        prepend_preloaders = [
+          { name = "*.kra"; run = "krita"; }
+          { mime = "image/webp"; run = "magick"; }
+        ];
+      };
     };
     initLua = ./init.lua;
     plugins = {
       arrow = ./plugins/arrow;
+      krita = ./plugins/krita;
     };
     keymap = {
       manager = {

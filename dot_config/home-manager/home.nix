@@ -10,6 +10,7 @@ in
     ./mod/yazi/yazi.nix
     ./mod/shell-things.nix
     ./mod/systemd.nix
+    ./mod/thumbnailers.nix
   ];
 
   home.username = username;
@@ -19,10 +20,10 @@ in
     bottom
     btop
     htop
-
+    imagemagick
     nix-tree
     nix-web
-
+    megacmd
     memos
     neovim
     typst
