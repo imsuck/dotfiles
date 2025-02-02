@@ -1,9 +1,5 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
-let
-  username = "imsuck";
-  homeDir = "/home/${username}";
-in
 {
   imports = [
     ./mod/helix.nix
@@ -13,8 +9,8 @@ in
     ./mod/thumbnailers.nix
   ];
 
-  home.username = username;
-  home.homeDirectory = homeDir;
+  home.username = "imsuck";
+  home.homeDirectory = "/home/${config.home.username}";
 
   home.packages = with pkgs; [
     bottom

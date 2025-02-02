@@ -1,16 +1,13 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
-let
-  username = "imsuck";
-  homeDir = "/home/${username}";
-in
+with config;
 {
   systemd.user.services = {
     memos = {
       Unit.Description = "memos server";
 
       Service = {
-        ExecStart = "${pkgs.memos}/bin/memos -d ${homeDir}/.local/share/memos/ -m prod";
+        ExecStart = "${pkgs.memos}/bin/memos -d ${xdg.dataHome}/memos/ -m prod";
         Restart = "always";
         RestartSec = 3;
       };
