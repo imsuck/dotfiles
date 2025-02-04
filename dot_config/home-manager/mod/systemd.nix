@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
 
-with config;
 {
-  systemd.user.services = {
+  systemd.user.services = with config; {
     memos = {
       Unit.Description = "memos server";
 

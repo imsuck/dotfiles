@@ -45,13 +45,18 @@ abbr -a ltop 'watch -c -n 0.01667 "df; printf \'\\n\'; free -m; printf \'\\n\'; 
 abbr -a df 'duf -theme ansi'
 
 if status --is-interactive
-    if test -d ~/dev/others/base16/templates/fish-shell
-        set fish_function_path $fish_function_path ~/dev/others/base16/templates/fish-shell/functions
-        builtin source ~/dev/others/base16/templates/fish-shell/conf.d/base16.fish
-    end
-
     # tab size
     tabs 4
+
+    starship init fish | source
+    functions --copy fish_prompt _fish_prompt
+    function fish_prompt
+        printf "\e[0 q" # reset cursor
+        _fish_prompt
+    end
+
+    # thefuck --alias | source
+    zoxide init fish | source
 
     # if ! set -q TMUX
     #     exec tmux
@@ -92,12 +97,12 @@ end
 
 # colored man output
 # from http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
-setenv LESS_TERMCAP_mb \e'[01;31m'       # begin blinking
-setenv LESS_TERMCAP_md \e'[01;38;5;74m'  # begin bold
-setenv LESS_TERMCAP_me \e'[0m'           # end mode
-setenv LESS_TERMCAP_se \e'[0m'           # end standout-mode
-setenv LESS_TERMCAP_so \e'[38;5;246m'    # begin standout-mode - info box
-setenv LESS_TERMCAP_ue \e'[0m'           # end underline
+setenv LESS_TERMCAP_mb \e'[01;31m' # begin blinking
+setenv LESS_TERMCAP_md \e'[01;38;5;74m' # begin bold
+setenv LESS_TERMCAP_me \e'[0m' # end mode
+setenv LESS_TERMCAP_se \e'[0m' # end standout-mode
+setenv LESS_TERMCAP_so \e'[38;5;246m' # begin standout-mode - info box
+setenv LESS_TERMCAP_ue \e'[0m' # end underline
 setenv LESS_TERMCAP_us \e'[04;38;5;146m' # begin underline
 
 setenv FZF_DEFAULT_COMMAND 'fd --type file --follow'
@@ -126,11 +131,6 @@ end
 function fish_command_not_found
     __fish_default_command_not_found_handler $argv
 end
-
-starship init fish | source
-
-# thefuck --alias | source
-zoxide init fish | source
 
 # Created by `pipx` on 2024-11-06 13:48:05
 set PATH $PATH /home/imsuck/.local/bin

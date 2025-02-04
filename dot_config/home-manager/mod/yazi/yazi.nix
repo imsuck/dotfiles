@@ -11,10 +11,12 @@
         prepend_previewers = [
           { name = "*.kra"; run = "krita"; }
           { mime = "image/webp"; run = "magick"; }
+          { mime = "image/adobe.photoshop"; run = "psd"; }
         ];
         prepend_preloaders = [
           { name = "*.kra"; run = "krita"; }
           { mime = "image/webp"; run = "magick"; }
+          { mime = "image/adobe.photoshop"; run = "psd"; }
         ];
       };
     };
@@ -22,6 +24,7 @@
     plugins = {
       arrow = ./plugins/arrow;
       krita = ./plugins/krita;
+      psd = ./plugins/psd;
     };
     keymap = {
       manager = {
