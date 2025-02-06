@@ -1,3 +1,6 @@
+# Colors (Tokyo Night: Storm variant)
+# Source: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/tokyonight-storm.yml
+
 [window]
 opacity = 0.9
 resize_increments = true

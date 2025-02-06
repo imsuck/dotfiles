@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./mod/fonts.nix
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
     ./mod/shell-things.nix
@@ -43,8 +44,6 @@
 
   home.activation = { };
 
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  # Do not touch
   home.stateVersion = "24.11";
 }

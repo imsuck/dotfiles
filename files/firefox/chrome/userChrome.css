@@ -5,7 +5,9 @@
 /** Add your custom styles below **********************************************/
 
 #navigator-toolbox {
-	font-family: "Noto Sans", "Fusion Kai J", "Twemoji Mozilla", "Noto Color Emoji", "Noto Emoji";
+	font-family: sans-serif, "Fusion Kai J", "Twemoji Mozilla", "Noto Color Emoji", "Noto Emoji";
+  animation: none !important;
+  transition: none !important;
 }
 
 /* Enable option to edit bookmark URLs under Add Bookmark (blue star) menu */
