@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 send_notification() {
 	brightness=$(printf "%.0f\n" "$(brillo -G)")

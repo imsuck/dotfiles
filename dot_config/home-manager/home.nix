@@ -13,17 +13,26 @@
   home.homeDirectory = "/home/${config.home.username}";
 
   home.packages = with pkgs; [
-    bottom
-    btop
-    htop
-    imagemagick
+    # nix things
     nix-tree
     nix-web
+
+    # cli
+    bacon
+    bottom
+    btop
+    eza
+    fd
+    htop
+    imagemagick
     megacmd
-    memos
     neovim
-    typst
+    ripgrep
     zellij
+
+    # other
+    memos
+    typst
   ];
 
   home.file = { };

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 send_notification() {
 	volume=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
