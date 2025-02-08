@@ -5,10 +5,10 @@ export NNN_FIFO="/tmp/nnn.fifo"
 export CARGO_HOME="$HOME/.local/share/cargo"
 set PATH $CARGO_HOME/bin $HOME/.local/bin $HOME/.nix-profile/bin $PATH
 set RUSTC_WRAPPER sccache
-# Setup ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+# Setup IME
+export GTK_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+export QT_IM_MODULE=fcitx5
 
 if command -v helix >/dev/null
     set EDITOR helix

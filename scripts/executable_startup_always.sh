@@ -17,8 +17,6 @@ ksuperkey -t 250 -e "Super_L=Shift_L|F9" &
 
 # activate-linux &
 
-ibus-daemon -drx
-
 # Don't turn screen off automatically
 xset s off -dpms &
 
