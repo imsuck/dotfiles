@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./mod/fcitx5.nix
     ./mod/fonts.nix
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
@@ -32,6 +33,7 @@
     zellij
 
     # other
+    julia-bin
     memos
     typst
   ];

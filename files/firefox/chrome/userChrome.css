@@ -10,6 +10,16 @@
   transition: none !important;
 }
 
+#nav-bar {
+  padding: 4px 0 0 !important;
+}
+
+.openintabs-menuseparator,
+.openintabs-menuitem,
+.bookmarks-actions-menuseparator {
+  display: none !important;
+}
+
 /* Enable option to edit bookmark URLs under Add Bookmark (blue star) menu */
 /*
 .editBMPanel_locationRow {

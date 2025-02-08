@@ -6,7 +6,7 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      clang-tools tinymist nil nixfmt-rfc-style
+      clang-tools nil nixfmt-rfc-style ruff tinymist ruff
     ];
 
     settings = {
