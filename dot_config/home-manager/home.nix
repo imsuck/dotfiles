@@ -4,6 +4,7 @@
   imports = [
     ./mod/fcitx5.nix
     ./mod/fonts.nix
+    ./mod/git.nix
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
     ./mod/shell-things.nix
@@ -21,6 +22,7 @@
 
     # cli
     bacon
+    bat
     bottom
     btop
     eza
@@ -42,7 +44,16 @@
 
   xdg.configFile = { };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    BROWSER = "firefox";
+    PAGER = "bat";
+    CARGO_HOME = "$HOME/.local/share/cargo";
+    RUSTC_WRAPPER = "sccache";
+  };
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$CARGO_HOME/bin"
+  ];
 
   home.activation = { };
 

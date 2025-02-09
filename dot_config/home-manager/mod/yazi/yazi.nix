@@ -30,6 +30,10 @@
       manager = {
         prepend_keymap = [
           {
+            on = "!";
+            run = "shell --block '$SHELL'";
+          }
+          {
             on = "o";
             run = "shell --confirm --orphan 'handlr open \"$0\"'";
           }
@@ -40,11 +44,11 @@
 
           {
             on = "j";
-            run = "plugin arrow --args=1";
+            run = "plugin arrow 1";
           }
           {
             on = "k";
-            run = "plugin arrow --args=-1";
+            run = "plugin arrow -1";
           }
         ];
       };

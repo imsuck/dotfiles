@@ -2,13 +2,6 @@ set BROWSER firefox
 set PAGER bat
 export NNN_PLUG="p:preview-tui"
 export NNN_FIFO="/tmp/nnn.fifo"
-export CARGO_HOME="$HOME/.local/share/cargo"
-set PATH $CARGO_HOME/bin $HOME/.local/bin $HOME/.nix-profile/bin $PATH
-set RUSTC_WRAPPER sccache
-# Setup IME
-export GTK_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
-export QT_IM_MODULE=fcitx5
 
 if command -v helix >/dev/null
     set EDITOR helix
@@ -131,8 +124,5 @@ end
 function fish_command_not_found
     __fish_default_command_not_found_handler $argv
 end
-
-# Created by `pipx` on 2024-11-06 13:48:05
-set PATH $PATH /home/imsuck/.local/bin
 
 bass source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

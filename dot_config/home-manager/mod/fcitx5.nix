@@ -12,7 +12,7 @@
     (final: prev: {
       fcitx5-bamboo = prev.fcitx5-bamboo.overrideAttrs (old: {
         patches = (old.patches or []) ++ [
-          ./fcitx5-bamboo-label.patch
+          ../patches/fcitx5-bamboo-label.patch
         ];
       });
     })
