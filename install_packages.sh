@@ -7,14 +7,14 @@
 # Use `"@y` to yank macro ok
 
 sudo pacman -S --noconfirm --needed \
- alacritty wezterm starship `#dunst` github-cli fzf zellij\
- eza ripgrep fd bat zoxide handlr git-delta\
+ alacritty wezterm `#dunst` fzf \
+ ripgrep fd zoxide\
  htop bottom\
- firefox nitrogen\
+ firefox\
  polybar rofi rofi-emoji\
  xclip shotgun hacksaw `# screenshot`\
  ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
- rustup rust-analyzer bacon `# rust dev things`\
+ rustup rust-analyzer `# rust dev things`\
  cronie stalonetray xdo ranger\
  picom
  # thefuck

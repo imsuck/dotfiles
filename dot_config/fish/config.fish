@@ -117,8 +117,7 @@ function fish_user_key_bindings
     end
 end
 
-function fish_greeting
-end
+set fish_greeting
 
 # disable pkgfile searching
 function fish_command_not_found

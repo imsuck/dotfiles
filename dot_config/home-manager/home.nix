@@ -38,6 +38,7 @@
     julia-bin
     memos
     typst
+    sccache
   ];
 
   home.file = { };

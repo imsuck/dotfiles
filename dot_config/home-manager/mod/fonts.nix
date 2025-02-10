@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  jp-font = "Fusion Kai"; # "Fusion Kai", "Noto Sans CJK JP"
+  jp-font = "Fusion Kai J"; # "Fusion Kai J", "Noto Sans CJK JP"
 in {
   home.packages = with pkgs; [
     lxgw-fusionkai
