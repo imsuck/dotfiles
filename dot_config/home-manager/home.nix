@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./mod/cli.nix
     ./mod/fcitx5.nix
     ./mod/fonts.nix
     ./mod/git.nix
@@ -19,20 +20,26 @@
     # nix things
     nix-tree
     nix-web
+    nvd
 
     # cli
     bacon
-    bat
     bottom
     btop
+    duf
     eza
     fd
+    handlr
     htop
     imagemagick
     megacmd
     neovim
     ripgrep
     zellij
+
+    # desktop
+    polybarFull
+    (rofi.override { plugins = [ rofi-emoji ]; }) # too lazy to port config
 
     # other
     julia-bin
@@ -47,9 +54,10 @@
 
   home.sessionVariables = {
     BROWSER = "firefox";
-    PAGER = "bat";
     CARGO_HOME = "$HOME/.local/share/cargo";
+    PAGER = "bat";
     RUSTC_WRAPPER = "sccache";
+    VISUAL = "$HOME/.nix-profile/bin/hx";
   };
   home.sessionPath = [
     "$HOME/.local/bin"

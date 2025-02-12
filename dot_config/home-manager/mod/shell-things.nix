@@ -2,7 +2,69 @@
 
 {
   programs.fish = {
-    enable = false;
+    enable = true;
+    interactiveShellInit = ''
+      tabs 4
+      if not functions -q _fish_prompt
+        functions --copy fish_prompt _fish_prompt
+        function fish_prompt
+          printf "\e[0 q]" # reset cursor
+          _fish_prompt
+        end
+      end
+
+      batman --export-env | source
+      # set -gx FZF_DEFAULT_COMMAND "fd --type file --follow"
+      # set -gx FZF_CTRL_T_COMMAND "fd --type file --follow"
+      # set -gx FZF_DEFAULT_OPTS "--height 20%"
+
+      # if ! set -q ZELLIJ
+      #   exec zellij
+      # end
+    '';
+    functions = {
+      d = ''
+        while test $PWD != /
+          if test -d .git
+            break
+          end
+          cd ..
+        end
+      '';
+      fish_user_key_bindings = ''
+        bind \cz "fg&>/dev/null; echo; fish_prompt"
+        bind \e\[3\;5~ kill-word
+        bind \e\[3\;3~ kill-word
+        bind \el "echo; exa --icons; fish_prompt"
+        bind \cl "clear -x; printf '\e[6 q'; fish_prompt"
+      '';
+      fish_command_not_found = "__fish_default_command_not_found_handler $argv";
+      fish_greeting = "";
+    };
+    shellAbbrs = {
+      "..." = "../../";
+      "...." = "../../../";
+      "....." = "../../../../";
+      c = "cargo";
+      ct = "cargo test";
+      df = "duf -theme ansi";
+      e = "hx";
+      g = "git";
+      gc = "git checkout";
+      ga = "git add -p";
+      pr = "gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)";
+      l = "exa --icons";
+      ls = "exa --icons";
+      ll = "exa -l --icons";
+      lll = "exa -la --icons";
+      m = "make";
+      o = "handlr open";
+      p = "sudo pacman";
+      wtr = "curl 'wttr.in/?qF'";
+      yr = "cal -y";
+      yz = "yazi";
+      ze = "zellij";
+    };
     plugins = [
       {
         name = "bass";

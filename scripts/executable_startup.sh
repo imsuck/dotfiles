@@ -14,7 +14,7 @@ dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 nitrogen --restore &
 
-sh -c 'sleep 1; picom' &
+sh -c 'sleep 2; picom' &
 
 systemctl --user start opentabletdriver --now
 

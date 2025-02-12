@@ -27,12 +27,12 @@ function M:preload(job)
     :output()
 
   if not output then
-    return 0
+    return true, Err("Failed to start `unzip`, error: %s", err)
   elseif not output.status.success then
-    return 0
+    return true, Err("Failed to unzip .kra file, stderr: %s", output.stderr)
   end
 
-  return fs.write(cache, output.stdout) and 1 or 2
+  return fs.write(cache, output.stdout)
 end
 
 return M
