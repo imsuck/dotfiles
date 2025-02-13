@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  nixgl,
+  ...
+}:
 
 {
   imports = [
@@ -35,9 +40,11 @@
     megacmd
     neovim
     ripgrep
+    watchexec
     zellij
 
     # desktop
+    (config.lib.nixGL.wrap alacritty)
     polybarFull
     (rofi.override { plugins = [ rofi-emoji ]; }) # too lazy to port config
 
@@ -47,6 +54,9 @@
     typst
     sccache
   ];
+
+  nixGL.packages = nixgl.packages;
+  nixGL.installScripts = [ ];
 
   home.file = { };
 

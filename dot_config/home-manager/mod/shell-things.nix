@@ -5,13 +5,6 @@
     enable = true;
     interactiveShellInit = ''
       tabs 4
-      if not functions -q _fish_prompt
-        functions --copy fish_prompt _fish_prompt
-        function fish_prompt
-          printf "\e[0 q]" # reset cursor
-          _fish_prompt
-        end
-      end
 
       batman --export-env | source
       # set -gx FZF_DEFAULT_COMMAND "fd --type file --follow"
@@ -21,6 +14,15 @@
       # if ! set -q ZELLIJ
       #   exec zellij
       # end
+    '';
+    shellInitLast = ''
+      if not functions -q _fish_prompt
+        functions --copy fish_prompt _fish_prompt
+        function fish_prompt
+          printf "\e[0 q" # reset cursor
+          _fish_prompt
+        end
+      end
     '';
     functions = {
       d = ''
@@ -66,6 +68,15 @@
       ze = "zellij";
     };
     plugins = [
+      {
+        name = "auto-pair";
+        src = pkgs.fetchFromGitHub {
+          owner = "jorgebucaran";
+          repo = "autopair.fish";
+          rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
+          hash = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
+        };
+      }
       {
         name = "bass";
         src = pkgs.fetchFromGitHub {
