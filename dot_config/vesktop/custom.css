@@ -1,7 +1,7 @@
 :lang(ja),
 :lang(ja-JP),
 :root {
-  --i18n-fallbacks: "Klee One SemiBold", "Noto Sans JP";
+  --i18n-fallbacks: "Fusion Kai J", "Noto Sans JP";
   --owo: var(--i18n-fallbacks, "owo");
   --font-primary: "Noto Sans", var(--owo);
   --font-code: "FiraCode Nerd Font Mono", "Fira Code", var(--owo), monospace;
@@ -193,7 +193,7 @@ code,
 /* search items */
 .option_b5597b:after,
 .option_b5597b:hover:after {
-  background: linear-gradient(to right, rgba(11, 12, 19, 0), var(--background-floating), var(--background-floating)) !important;
+  background: linear-gradient(to right, rgba(11.4706939474, 12.1308943192, 18.7593060526, 0), var(--background-floating), var(--background-floating)) !important;
 }
 
 /* login screen */

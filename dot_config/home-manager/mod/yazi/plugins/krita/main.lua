@@ -2,7 +2,12 @@ local M = {}
 
 function M:peek(job)
   local start, cache = os.clock(), ya.file_cache(job)
-  if not cache or self:preload(job) ~= 1 then
+  if not cache then
+    return
+  end
+
+  local ok, err = self:preload(job)
+  if not ok or err then
     return
   end
 

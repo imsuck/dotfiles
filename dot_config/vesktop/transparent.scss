@@ -33,7 +33,7 @@ body {
 :lang(ja),
 :lang(ja-JP),
 :root {
-	--i18n-fallbacks: "Noto Sans JP";
+	--i18n-fallbacks: "Fusion Kai J", "Noto Sans JP";
 	--owo: var(--i18n-fallbacks, "owo");
 	--font-primary: "Noto Sans", var(--owo);
 	--font-code: "FiraCode Nerd Font Mono", "Fira Code", var(--owo), monospace;
