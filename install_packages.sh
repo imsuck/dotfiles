@@ -7,16 +7,13 @@
 # Use `"@y` to yank macro ok
 
 sudo pacman -S --noconfirm --needed \
- alacritty wezterm `#dunst` fzf \
- ripgrep fd zoxide\
- htop bottom\
+ wezterm `#dunst` fzf \
  firefox\
- polybar rofi rofi-emoji\
  xclip shotgun hacksaw `# screenshot`\
- ttf-fira-code ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd ttf-roboto-mono\
+ ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd\
  rustup rust-analyzer `# rust dev things`\
- cronie stalonetray xdo ranger\
- picom
+ cronie `#stalonetray` xdo `#ranger\`
+ `#picom`
  # thefuck
 
 yay -S --answerclean All --answerdiff None \
@@ -24,8 +21,8 @@ yay -S --answerclean All --answerdiff None \
  eww\
  spotify-adblock-git `#cava`\
  nerd-fonts-hack betterlockscreen\
- ksuperkey kanata autotiling\
- `#nerd-fonts-jetbrains-mono` ttf-icomoon-feather ttf-twemoji\
+ autotiling\
+ `#nerd-fonts-jetbrains-mono`\
  `#diskonaut` polybar-spotify-module
 
 systemctl --user enable spotify-listener

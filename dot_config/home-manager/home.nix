@@ -35,7 +35,6 @@
     eza
     fd
     handlr
-    htop
     imagemagick
     megacmd
     neovim
@@ -45,18 +44,45 @@
 
     # desktop
     (config.lib.nixGL.wrap alacritty)
+    nitrogen
+    (config.lib.nixGL.wrap picom)
     polybarFull
     (rofi.override { plugins = [ rofi-emoji ]; }) # too lazy to port config
 
     # other
     julia-bin
+    ksuperkey
     memos
     typst
     sccache
   ];
 
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      max-jobs = "auto";
+    };
+    gc = {
+      automatic = true;
+      frequency = "monthly";
+      options = "--delete-older-than 30d";
+    };
+  };
+
   nixGL.packages = nixgl.packages;
   nixGL.installScripts = [ ];
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      nitrogen = prev.nitrogen.overrideAttrs (old: {
+        buildInputs = (old.buildInputs or [ ]) ++ [ final.gtk-engine-murrine ];
+      });
+    })
+  ];
 
   home.file = { };
 
