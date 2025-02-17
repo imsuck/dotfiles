@@ -8,7 +8,7 @@ alacritty &
 
 # thunar &
 
-firefox &
+# firefox &
 
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 

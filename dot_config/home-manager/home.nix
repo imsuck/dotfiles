@@ -9,6 +9,7 @@
   imports = [
     ./mod/cli.nix
     ./mod/fcitx5.nix
+    ./mod/files.nix
     ./mod/fonts.nix
     ./mod/git.nix
     ./mod/helix.nix
@@ -50,11 +51,13 @@
     (rofi.override { plugins = [ rofi-emoji ]; }) # too lazy to port config
 
     # other
+    autotiling
     julia-bin
     ksuperkey
     memos
-    typst
     sccache
+    typst
+    unclutter-xfixes
   ];
 
   nix = {
@@ -74,19 +77,21 @@
   };
 
   nixGL.packages = nixgl.packages;
-  nixGL.installScripts = [ ];
+  nixGL.installScripts = [ "mesa" ];
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      nitrogen = prev.nitrogen.overrideAttrs (old: {
-        buildInputs = (old.buildInputs or [ ]) ++ [ final.gtk-engine-murrine ];
-      });
-    })
-  ];
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+    overlays = [
+      (import ./overlays)
+    ];
+  };
 
-  home.file = { };
-
-  xdg.configFile = { };
+  home.pointerCursor = {
+    package = pkgs.posy-cursors;
+    name = "Posy_Cursor";
+  };
 
   home.sessionVariables = {
     BROWSER = "firefox";

@@ -21,7 +21,6 @@ yay -S --answerclean All --answerdiff None \
  eww\
  spotify-adblock-git `#cava`\
  nerd-fonts-hack betterlockscreen\
- autotiling\
  `#nerd-fonts-jetbrains-mono`\
  `#diskonaut` polybar-spotify-module
 

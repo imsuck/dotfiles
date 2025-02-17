@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-# Disable mouse acceleration
-~/scripts/mouse.sh
-
 # Start polybar
 ~/scripts/polybar.sh
 
