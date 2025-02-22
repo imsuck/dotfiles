@@ -67,24 +67,14 @@
       yz = "yazi";
       ze = "zellij";
     };
-    plugins = [
+    plugins = with pkgs.fishPlugins; [
       {
-        name = "auto-pair";
-        src = pkgs.fetchFromGitHub {
-          owner = "jorgebucaran";
-          repo = "autopair.fish";
-          rev = "4d1752ff5b39819ab58d7337c69220342e9de0e2";
-          hash = "sha256-qt3t1iKRRNuiLWiVoiAYOu+9E7jsyECyIqZJ/oRIT1A=";
-        };
+        name = "autopair";
+        src = autopair.src;
       }
       {
         name = "bass";
-        src = pkgs.fetchFromGitHub {
-          owner = "edc";
-          repo = "bass";
-          rev = "79b62958ecf4e87334f24d6743e5766475bcf4d0";
-          hash = "sha256-3d/qL+hovNA4VMWZ0n1L+dSM1lcz7P5CQJyy+/8exTc=";
-        };
+        src = bass.src;
       }
     ];
   };
