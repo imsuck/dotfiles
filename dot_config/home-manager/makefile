@@ -1,10 +1,15 @@
-.PHONY: clean backup update upgrade
+.PHONY: clean backup switch update
 
-upgrade:
+switch:
 	home-manager switch --flake .
 
 update:
 	nix flake update
+	home-manager build --flake .
+	nvd diff ~/.local/state/home-manager/gcroots/current-home result
+	rm result
+	@read -p "Switch profile? "
+	$(MAKE) switch
 
 backup:
 	home-manager switch --flake . -b old 

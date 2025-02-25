@@ -7,9 +7,6 @@
       tabs 4
 
       batman --export-env | source
-      # set -gx FZF_DEFAULT_COMMAND "fd --type file --follow"
-      # set -gx FZF_CTRL_T_COMMAND "fd --type file --follow"
-      # set -gx FZF_DEFAULT_OPTS "--height 20%"
 
       # if ! set -q ZELLIJ
       #   exec zellij
@@ -19,8 +16,8 @@
       if not functions -q _fish_prompt
         functions --copy fish_prompt _fish_prompt
         function fish_prompt
-          printf "\e[0 q" # reset cursor
           _fish_prompt
+          printf "\e[0 q" # reset cursor
         end
       end
     '';
