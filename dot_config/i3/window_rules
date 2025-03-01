@@ -4,6 +4,7 @@ for_window [title="Picture-in-Picture"] sticky enable
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Qalculate-gtk"] floating enable
 for_window [class="stalonetray"] floating enable
+for_window [class="ripdrag"] floating enable, sticky enable
 
 # set floating (nontiling) for special apps
 for_window [class="OpenTabletDriver.UX"] floating enable

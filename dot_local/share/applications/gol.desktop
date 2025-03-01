@@ -2,6 +2,6 @@
 Version = 1.0
 Name = Game of Life
 TryExec = alacritty
-Exec = alacritty --class gol,gol -o window.padding.x=0 -o window.padding.y=0 -e gol -w 341 -h 192 -d 0.1 --fps 2
+Exec = alacritty --class gol,gol -o window.padding.x=0 -o window.padding.y=0 -e gol -w 341 -h 191 -d 0.1 --fps 2
 Type = Application
 Terminal = false

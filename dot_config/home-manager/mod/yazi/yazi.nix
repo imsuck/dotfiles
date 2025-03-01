@@ -68,6 +68,11 @@
             on = "k";
             run = "plugin arrow -1";
           }
+
+          {
+            on = "<C-n>";
+            run = "shell --confirm 'ripdrag -x -i -s 64 \"$@\" 2>/dev/null'";
+          }
         ];
       };
     };

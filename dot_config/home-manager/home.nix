@@ -39,6 +39,7 @@
     imagemagick
     megacmd
     neovim
+    ripdrag
     ripgrep
     watchexec
     zellij
