@@ -1,5 +1,5 @@
 [Added Associations]
-application/json=helix.desktop;
+application/json=Helix.desktop;helix.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 application/x-krita=org.gnome.FileRoller.desktop;
 application/x-shellscript=fish.desktop;

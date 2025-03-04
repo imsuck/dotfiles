@@ -1,6 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    git-filter-repo
+  ];
   programs.gh = {
     enable = true;
     gitCredentialHelper.enable = true;

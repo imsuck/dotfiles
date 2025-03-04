@@ -33,6 +33,7 @@
     bottom
     btop
     duf
+    dust
     eza
     fd
     handlr
