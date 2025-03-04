@@ -8,6 +8,7 @@
 	"SortAscending": true,
 	"LoadLatestReplay": false,
 	"SkipMapUpdate": false,
+	"AutoRefreshDB": false,
 	"ShowJSONPaths": false,
 	"LastKnockoutPath": ""
 }

@@ -1,8 +1,8 @@
 {
 	"General": {
-		"OsuSongsDir": "/run/media/imsuck/1A10597810595BB7/osu!/Songs",
-		"OsuSkinsDir": "/run/media/imsuck/1A10597810595BB7/osu!/Skins",
-		"OsuReplaysDir": "/run/media/imsuck/1A10597810595BB7/osu!/Replays",
+		"OsuSongsDir": "/run/media/imsuck/f-drive/osu!/Songs",
+		"OsuSkinsDir": "/run/media/imsuck/f-drive/osu!/Skins",
+		"OsuReplaysDir": "/run/media/imsuck/f-drive/osu!/Replays",
 		"DiscordPresenceOn": false,
 		"UnpackOszFiles": true,
 		"VerboseImportLogs": false
@@ -201,6 +201,7 @@
 			"Opacity": 1,
 			"XOffset": 0,
 			"YOffset": 0,
+			"Mode": "Normal",
 			"ModsOnly": false,
 			"AlignRight": false,
 			"HideOthers": false,
@@ -215,6 +216,7 @@
 			"YOffset": 0,
 			"HideInReplays": true,
 			"FoldInReplays": false,
+			"ShowLazerMod": true,
 			"AdditionalSpacing": 0
 		},
 		"Boundaries": {
@@ -247,7 +249,8 @@
 		"FlashlightDim": 1,
 		"PlayUsername": "imsuck",
 		"IgnoreFailsInReplays": false,
-		"UseLazerPP": false
+		"PPVersion": "latest",
+		"LazerClassicScore": false
 	},
 	"Skin": {
 		"CurrentSkin": "Varvalian",
@@ -297,6 +300,7 @@
 		"TrailMaxLength": 2000,
 		"TrailRemoveSpeed": 1,
 		"GlowEndScale": 0.4,
+		"SmokeRemoveSpeed": 1,
 		"InnerLengthMult": 0.9,
 		"AdditiveBlending": true,
 		"CursorRipples": true,
@@ -568,6 +572,7 @@
 		"HideOverlayOnBreaks": false,
 		"MinCursorSize": 3,
 		"MaxCursorSize": 7,
+		"SmokeEnabled": false,
 		"AddDanser": false,
 		"DanserName": "BTMC"
 	},
@@ -604,6 +609,13 @@
 			"RateControl": "cq",
 			"Bitrate": "10M",
 			"CQ": 24,
+			"Preset": "p7",
+			"AdditionalOptions": ""
+		},
+		"av1_nvenc": {
+			"RateControl": "cbr",
+			"Bitrate": "5M",
+			"CQ": 0,
 			"Preset": "p7",
 			"AdditionalOptions": ""
 		},
@@ -659,6 +671,11 @@
 			"BlendFrames": 6,
 			"BlendFunctionID": 1,
 			"GaussWeightsMult": 1.5
+		}
+	},
+	"Debug": {
+		"PerfGraph": {
+			"MaxRange": 1.2
 		}
 	}
 }
