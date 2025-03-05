@@ -13,6 +13,7 @@ sudo pacman -S --noconfirm --needed \
  ttf-font-awesome ttf-hack `#otf-ipafont` ttf-iosevka-nerd\
  rustup rust-analyzer `# rust dev things`\
  cronie `#stalonetray` xdo `#ranger\`
+ ibus `# needed for fcitx5 (???)`
  `#picom`
  # thefuck
 

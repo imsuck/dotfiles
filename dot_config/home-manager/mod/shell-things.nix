@@ -11,6 +11,8 @@
       # if ! set -q ZELLIJ
       #   exec zellij
       # end
+
+      set fish_color_command blue
     '';
     shellInitLast = ''
       if not functions -q _fish_prompt

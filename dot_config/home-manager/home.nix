@@ -49,13 +49,10 @@
     (config.lib.nixGL.wrap alacritty)
     nitrogen
     (config.lib.nixGL.wrap picom)
-    (polybar.override {
-      githubSupport = true;
-      pulseSupport = true;
-    })
+    polybar
     libqalculate
     qalculate-gtk
-    (rofi.override { plugins = [ rofi-emoji ]; }) # too lazy to port config
+    rofi
 
     # other
     autotiling
