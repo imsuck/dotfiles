@@ -8,8 +8,8 @@ return {
     -- "Comic Mono",
     -- { family = "Liga Roboto Mono", weight = "Medium" },
     {
-      family = "Fira Code",
-      weight = "Regular",
+      family = "FiraCode Nerd Font",
+      -- weight = "Regular",
       harfbuzz_features = {"ss02", "ss07"},
     },
     "Font Awesome 6 Brands",

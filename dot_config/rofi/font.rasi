@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Fira Code Medium 12";
+    font: "Mono Medium 12";
 }

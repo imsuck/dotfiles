@@ -128,10 +128,10 @@
       status = {
         sep_left = {
           open = "";
-          close = "";
+          close = "";
         };
         sep_right = {
-          open = "";
+          open = "";
           close = "";
         };
       };

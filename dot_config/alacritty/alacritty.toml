@@ -2,7 +2,7 @@
 # Source: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/alacritty/tokyonight-storm.yml
 
 [window]
-opacity = 0.9
+opacity = 1.0
 resize_increments = true
 
 [window.padding]
@@ -10,7 +10,7 @@ x = 10
 y = 10
 
 [colors]
-transparent_background_colors = true
+transparent_background_colors = false
 
 [colors.bright]
 black = "#414868"
@@ -52,13 +52,13 @@ shape = "beam"
 size = 10.0
 
 [font.bold]
-family = "Fira Code"
+family = "Mono"
 
 [font.italic]
-family = "Fira Code"
+family = "Mono"
 
 [font.normal]
-family = "Fira Code"
+family = "Mono"
 style = "Medium"
 
 [[keyboard.bindings]]

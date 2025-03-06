@@ -8,13 +8,17 @@ let
   ];
 in
 {
-  home.packages = with pkgs; [
-    fira-code
-    icomoon-feather
-    lxgw-fusionkai
-    roboto-mono
-    twitter-color-emoji
-  ];
+  home.packages =
+    (with pkgs; [
+      fira-code
+      font-awesome
+      icomoon-feather
+      lxgw-fusionkai
+      noto-fonts
+      roboto-mono
+      twitter-color-emoji
+    ])
+    ++ (with pkgs.nerd-fonts; [ fira-code ]);
 
   fonts.fontconfig = {
     enable = true;
@@ -27,7 +31,7 @@ in
       "${jp-font}"
     ];
     defaultFonts.monospace = [
-      "Fira Code"
+      "FiraCode Nerd Font"
       "${jp-font}"
     ];
     defaultFonts.emoji = emoji-fonts;
