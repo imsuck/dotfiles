@@ -14,8 +14,8 @@
     ./mod/git.nix
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
+    ./mod/services.nix
     ./mod/shell-things.nix
-    ./mod/systemd.nix
     ./mod/thumbnailers.nix
   ];
 

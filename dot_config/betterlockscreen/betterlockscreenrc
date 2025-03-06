@@ -1,0 +1,19 @@
+fx_list=(blur)
+blur_level=1
+
+loginbox=24283b66
+loginshadow=24283b66
+locktext="wat r u looking at"
+font="mono"
+ringcolor=c0caf5ff
+ringvercolor=c0caf5ff
+ringwrongcolor=c0caf5ff
+insidewrongcolor=f7768eff
+timecolor=c0caf5ff
+greetercolor=c0caf5ff
+layoutcolor=c0caf5ff
+keyhlcolor=f7768eff
+bshlcolor=f7768eff
+verifcolor=c0caf5ff
+wrongcolor=f7768eff
+modifcolor=f7768eff
