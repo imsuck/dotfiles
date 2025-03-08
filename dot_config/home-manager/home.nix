@@ -22,47 +22,57 @@
   home.username = "imsuck";
   home.homeDirectory = "/home/${config.home.username}";
 
-  home.packages = with pkgs; [
-    # nix things
-    nix-tree
-    nix-web
-    nvd
+  home.packages =
+    with pkgs;
+    [
+      # nix things
+      nix-tree
+      nix-web
+      nvd
 
-    # cli
-    bacon
-    bottom
-    btop
-    duf
-    dust
-    eza
-    fd
-    handlr
-    imagemagick
-    megacmd
-    neovim
-    ripdrag
-    ripgrep
-    watchexec
-    zellij
+      # cli
+      bacon
+      bottom
+      btop
+      duf
+      dust
+      eza
+      fd
+      handlr
+      imagemagick
+      megacmd
+      neovim
+      ripdrag
+      ripgrep
+      watchexec
+      zellij
 
-    # desktop
-    (config.lib.nixGL.wrap alacritty)
-    nitrogen
-    (config.lib.nixGL.wrap picom)
-    polybar
-    libqalculate
-    qalculate-gtk
-    rofi
+      # desktop
+      nitrogen
+      polybar
+      libqalculate
+      qalculate-gtk
+      rofi
 
-    # other
-    autotiling
-    julia-bin
-    ksuperkey
-    memos
-    sccache
-    typst
-    unclutter-xfixes
-  ];
+      # other
+      autotiling
+      julia-bin
+      ksuperkey
+      memos
+      sccache
+      typst
+      unclutter-xfixes
+    ]
+    ++ (
+      with pkgs;
+      map config.lib.nixGL.wrap [
+        # desktop
+        alacritty
+        picom
+        tetrio-desktop
+        vesktop
+      ]
+    );
 
   nix = {
     package = pkgs.nix;

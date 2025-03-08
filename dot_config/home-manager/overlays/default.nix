@@ -2,11 +2,11 @@ final: prev:
 let
   nixpkgs =
     { rev, hash }:
-    import (prev.fetchFromGitHub {
+    import (final.fetchFromGitHub {
       inherit rev hash;
       owner = "NixOS";
       repo = "nixpkgs";
-    }) { system = "x86_64-linux"; };
+    }) { inherit (final.stdenv.hostPlatform) system; };
   rofi-ime-support = nixpkgs {
     rev = "82be07453bb0cdf6b467559c92f901bd040557ae";
     hash = "sha256-eaSBFWZv0WsyRViEV7jWypLRhdfte9MhjvWWKiLBToY=";
@@ -30,4 +30,6 @@ in
       plugins = [ final.rofi-emoji ];
       rofi-unwrapped = rofi-unwrapped.override { imeSupport = true; };
     };
+
+  tetrio-desktop = prev.tetrio-desktop.override { withTetrioPlus = true; };
 }

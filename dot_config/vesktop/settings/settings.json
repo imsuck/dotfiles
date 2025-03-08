@@ -1,5 +1,5 @@
 {
-    "autoUpdate": true,
+    "autoUpdate": false,
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [],
@@ -93,7 +93,9 @@
             "enabled": false
         },
         "BetterSettings": {
-            "enabled": true
+            "enabled": true,
+            "disableFade": true,
+            "eagerLoad": true
         },
         "BetterUploadButton": {
             "enabled": true
@@ -311,7 +313,8 @@
             "enabled": false
         },
         "NoMosaic": {
-            "enabled": true
+            "enabled": true,
+            "inlineVideo": true
         },
         "NoOnboardingDelay": {
             "enabled": false
@@ -596,6 +599,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1741272913346
+        "settingsSyncVersion": 1741396418049
     }
 }

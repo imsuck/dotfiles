@@ -29,11 +29,11 @@ in
     defaultFonts.serif = [
       "Noto Serif"
       "${jp-font}"
-    ];
+    ] ++ emoji-fonts;
     defaultFonts.monospace = [
       "FiraCode Nerd Font"
       "${jp-font}"
-    ];
+    ] ++ emoji-fonts;
     defaultFonts.emoji = emoji-fonts;
   };
 }
