@@ -59,6 +59,7 @@
       julia-bin
       ksuperkey
       memos
+      porsmo
       sccache
       typst
       unclutter-xfixes

@@ -8,8 +8,8 @@ let
       repo = "nixpkgs";
     }) { inherit (final.stdenv.hostPlatform) system; };
   rofi-ime-support = nixpkgs {
-    rev = "82be07453bb0cdf6b467559c92f901bd040557ae";
-    hash = "sha256-eaSBFWZv0WsyRViEV7jWypLRhdfte9MhjvWWKiLBToY=";
+    rev = "5e38027890fa368b7de5fb3b4b0788674156168f";
+    hash = "sha256-DyWYUR56YvONf7Bzq5Dj6yl4bwL0+J/iDZ5cMkRe2Y4=";
   };
 in
 {
@@ -24,12 +24,9 @@ in
     pulseSupport = true;
   };
 
-  rofi =
-    with rofi-ime-support;
-    rofi.override {
-      plugins = [ final.rofi-emoji ];
-      rofi-unwrapped = rofi-unwrapped.override { imeSupport = true; };
-    };
+  rofi = rofi-ime-support.rofi.override {
+    plugins = [ final.rofi-emoji ];
+  };
 
   tetrio-desktop = prev.tetrio-desktop.override { withTetrioPlus = true; };
 }
