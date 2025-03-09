@@ -51,6 +51,7 @@
       nitrogen
       polybar
       libqalculate
+      pavucontrol
       qalculate-gtk
       rofi
 

@@ -21,7 +21,7 @@ configuration {
 /*	dpi: -1;*/
 
 	/*---------- Matching setting ----------*/
-	matching: "fuzzy";
+	matching: "normal";
 	tokenize: true;
 
 	/*---------- SSH settings ----------*/
@@ -119,3 +119,5 @@ configuration {
 	kb-select-9: "";
 	kb-select-10: "";
 }
+
+@theme "~/.config/rofi/rasi/list.rasi"

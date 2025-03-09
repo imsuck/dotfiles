@@ -29,7 +29,8 @@ menu,
 .context-menu,
 menu menuitem,
 .menu menuitem,
-.context-menu menuitem {
+.context-menu menuitem,
+tooltip.background {
 	border: none;
 	border-radius: 0;
 	box-shadow: none;
