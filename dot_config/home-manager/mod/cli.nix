@@ -16,5 +16,6 @@
     fileWidgetOptions = [ "--min-height=10 --height=20%" ];
     historyWidgetOptions = [ "--min-height=10 --height=20%" ];
   };
+  programs.nix-index.enable = true;
   programs.zoxide.enable = true;
 }

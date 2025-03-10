@@ -15,6 +15,7 @@
     ./mod/helix.nix
     ./mod/yazi/yazi.nix
     ./mod/services.nix
+    ./mod/shell-apps.nix
     ./mod/shell-things.nix
     ./mod/thumbnailers.nix
   ];
@@ -26,6 +27,7 @@
     with pkgs;
     [
       # nix things
+      comma
       nix-tree
       nix-web
       nvd
