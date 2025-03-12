@@ -2,3 +2,11 @@
 @import url("css/leptonContent.css");
 
 /** Add your custom styles below **********************************************/
+@import url("custom/codeforces.css");
+@import url("custom/discord.css");
+@import url("custom/github.css");
+@import url("custom/osu.css");
+
+* {
+  tab-size: 4;
+}
