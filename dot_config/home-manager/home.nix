@@ -8,16 +8,17 @@
 {
   imports = [
     ./mod/cli.nix
-    ./mod/fcitx5.nix
     ./mod/files.nix
     ./mod/fonts.nix
-    ./mod/git.nix
-    ./mod/helix.nix
-    ./mod/yazi/yazi.nix
     ./mod/services.nix
     ./mod/shell-apps.nix
     ./mod/shell-things.nix
     ./mod/thumbnailers.nix
+    ./mod/programs/fcitx5.nix
+    ./mod/programs/git.nix
+    ./mod/programs/helix.nix
+    ./mod/programs/yazi/yazi.nix
+    ./mod/programs/zathura.nix
   ];
 
   home.username = "imsuck";

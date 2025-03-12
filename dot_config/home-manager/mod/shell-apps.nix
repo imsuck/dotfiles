@@ -12,10 +12,10 @@
       text = ''
         org="nix-community"
         repo="nix-index-database"
-        latest_tag=$(curl "https://api.github.com/repos/$org/$repo/releases/latest" -s | jq .tag_name -r)
+        tag=$(curl "https://api.github.com/repos/$org/$repo/releases/latest" -s | jq .tag_name -r)
         mkdir -p ~/.cache/nix-index/
         wget \
-          "https://github.com/$org/$repo/releases/download/$latest_tag/index-${pkgs.system}" \
+          "https://github.com/$org/$repo/releases/download/$tag/index-${pkgs.system}" \
           -O ~/.cache/nix-index/files
       '';
     })

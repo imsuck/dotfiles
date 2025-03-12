@@ -13,6 +13,9 @@ backup:
 clean:
 	nix-collect-garbage --delete-older-than 7d
 
+init:
+	nix run home-manager/master -- switch -b old
+
 _build:
 	home-manager build -L --flake .
 	@nvd diff ~/.local/state/home-manager/gcroots/current-home result

@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Mono Medium 12";
+    font: "Sans 12";
 }

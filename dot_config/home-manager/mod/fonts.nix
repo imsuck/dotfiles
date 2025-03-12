@@ -15,6 +15,8 @@ in
       icomoon-feather
       lxgw-fusionkai
       noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       roboto-mono
       twitter-color-emoji
     ])
@@ -25,10 +27,12 @@ in
     defaultFonts.sansSerif = [
       "Noto Sans"
       "${jp-font}"
+      "Noto Sans CJK KR"
     ] ++ emoji-fonts;
     defaultFonts.serif = [
       "Noto Serif"
       "${jp-font}"
+      "Noto Serif CJK KR"
     ] ++ emoji-fonts;
     defaultFonts.monospace = [
       "FiraCode Nerd Font"
