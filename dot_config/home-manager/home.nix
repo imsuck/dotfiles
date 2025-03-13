@@ -31,6 +31,7 @@
       bacon
       bottom
       btop
+      cht-sh
       duf
       dust
       eza
