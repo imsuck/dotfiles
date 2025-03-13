@@ -1,16 +1,15 @@
 #!/usr/bin/env sh
 
 # Start polybar
-~/scripts/polybar.sh
+~/scripts/polybar.sh &
 
 # Start eww bar
 # eww open bar
 
 # Disable touchpad if there is a USB mouse plugged in
-~/scripts/touchpad.sh
+~/scripts/touchpad.sh &
 
-killall ksuperkey
-ksuperkey -t 250 -e "Super_L=Shift_L|F9" &
+$(killall ksuperkey; ksuperkey -t 250 -e "Super_L=Shift_L|F9") &
 
 # activate-linux &
 
@@ -19,8 +18,6 @@ xset s off -dpms &
 
 # killall xbanish
 # xbanish -i all &
-killall unclutter
-unclutter --timeout 5 -b
+systemctl restart --user unclutter.service &
 
-killall autotiling
-autotiling &
+$(killall autotiling; autotiling) &

@@ -7,18 +7,12 @@
 
 {
   imports = [
-    ./mod/cli.nix
+    ./mod/programs
     ./mod/files.nix
     ./mod/fonts.nix
     ./mod/services.nix
     ./mod/shell-apps.nix
-    ./mod/shell-things.nix
     ./mod/thumbnailers.nix
-    ./mod/programs/fcitx5.nix
-    ./mod/programs/git.nix
-    ./mod/programs/helix.nix
-    ./mod/programs/yazi/yazi.nix
-    ./mod/programs/zathura.nix
   ];
 
   home.username = "imsuck";
@@ -66,7 +60,6 @@
       porsmo
       sccache
       typst
-      unclutter-xfixes
     ]
     ++ (
       with pkgs;
@@ -115,6 +108,7 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     CARGO_HOME = "$HOME/.local/share/cargo";
+    COMMA_NIXPKGS_FLAKE = "$HOME/.config/home-manager";
     PAGER = "bat";
     RUSTC_WRAPPER = "sccache";
     VISUAL = "$HOME/.nix-profile/bin/hx";

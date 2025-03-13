@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
-dex --autostart --environment i3
+dex --autostart --environment i3 &
 
 eww daemon &
 
-alacritty &
+# alacritty &
 
 # thunar &
 

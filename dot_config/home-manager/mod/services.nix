@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  services.unclutter = {
+    enable = true;
+    timeout = 5;
+  };
+
   systemd.user = {
     services = {
       memos = {

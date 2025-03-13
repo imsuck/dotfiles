@@ -39,5 +39,6 @@
           ];
         };
       };
+      packages.${system} = pkgs;
     };
 }
