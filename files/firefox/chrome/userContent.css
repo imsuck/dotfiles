@@ -10,3 +10,7 @@
 * {
   tab-size: 4;
 }
+*::selection {
+  color: #c0caf5;
+  background-color: #373d5a;
+}

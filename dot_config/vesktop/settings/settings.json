@@ -171,7 +171,7 @@
             "enabled": false
         },
         "DontRoundMyTimestamps": {
-            "enabled": false
+            "enabled": true
         },
         "EmoteCloner": {
             "enabled": false
@@ -220,7 +220,7 @@
             "enabled": true
         },
         "FullUserInChatbox": {
-            "enabled": false
+            "enabled": true
         },
         "GameActivityToggle": {
             "enabled": false
@@ -274,7 +274,10 @@
             "enabled": false
         },
         "MessageLatency": {
-            "enabled": false
+            "enabled": true,
+            "latency": 1,
+            "detectDiscordKotlin": true,
+            "showMillis": true
         },
         "MessageLinkEmbeds": {
             "enabled": false
@@ -365,7 +368,9 @@
             "enabled": false
         },
         "PermissionFreeWill": {
-            "enabled": false
+            "enabled": false,
+            "lockout": true,
+            "onboarding": true
         },
         "PermissionsViewer": {
             "enabled": false
@@ -458,7 +463,8 @@
             "inReplies": true
         },
         "ShowTimeoutDuration": {
-            "enabled": false
+            "enabled": false,
+            "displayStyle": "ssalggnikool"
         },
         "SilentMessageToggle": {
             "enabled": false
@@ -473,7 +479,9 @@
             "enabled": false
         },
         "SpotifyCrack": {
-            "enabled": false
+            "enabled": false,
+            "noSpotifyAutoPause": true,
+            "keepSpotifyActivityOnIdle": false
         },
         "SpotifyShareCommands": {
             "enabled": false
@@ -497,7 +505,12 @@
             "enabled": false
         },
         "Translate": {
-            "enabled": false
+            "enabled": false,
+            "showChatBarButton": true,
+            "service": "google",
+            "deeplApiKey": "",
+            "autoTranslate": false,
+            "showAutoTranslateTooltip": true
         },
         "TypingIndicator": {
             "enabled": false
@@ -599,6 +612,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1741396418049
+        "settingsSyncVersion": 1741847630332
     }
 }

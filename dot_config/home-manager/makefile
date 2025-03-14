@@ -4,8 +4,13 @@ switch: _build
 	home-manager switch --flake .
 
 update: _update _build
-	@read -p "Switch profile? "
-	home-manager switch --flake .
+	@read -p "Switch profile? [Y/n] " ans && \
+		if [ $${ans:-'y'} = 'y' ]; then \
+			home-manager switch --flake .; \
+			rm flake.lock.old; \
+		else \
+			mv flake.lock.old flake.lock; \
+		fi
 
 backup:
 	home-manager switch --flake . -b old 
@@ -22,4 +27,5 @@ _build:
 	@rm result
 
 _update:
+	@cp flake.lock flake.lock.old
 	nix flake update
