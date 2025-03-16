@@ -6,6 +6,7 @@
 @import url("custom/discord.css");
 @import url("custom/github.css");
 @import url("custom/osu.css");
+@import url("custom/youtube.css");
 
 * {
   tab-size: 4;

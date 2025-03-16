@@ -1,0 +1,6 @@
+@-moz-document domain("youtube.com") {
+.ytp-play-progress,
+#progress.ytd-thumbnail-overlay-resume-playback-renderer {
+	background: #f03 !important;
+}
+}

@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Sans 12";
+    font: "Roboto Mono 12";
 }

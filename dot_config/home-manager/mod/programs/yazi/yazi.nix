@@ -59,6 +59,10 @@
             on = "e";
             run = "shell --confirm --block '$EDITOR \"$0\"'";
           }
+          {
+            on = "f";
+            run = "plugin smart-filter";
+          }
 
           {
             on = "j";
@@ -67,6 +71,10 @@
           {
             on = "k";
             run = "plugin arrow -1";
+          }
+          {
+            on = "l";
+            run = "plugin smart-enter";
           }
 
           {
