@@ -22,7 +22,7 @@ init:
 	nix run home-manager/master -- switch -b old
 
 _build:
-	home-manager build -L --flake .
+	home-manager build -L --flake . |& nom
 	@nvd diff ~/.local/state/home-manager/gcroots/current-home result
 	@rm result
 

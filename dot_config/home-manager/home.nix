@@ -23,6 +23,7 @@
     [
       # nix things
       comma
+      nix-output-monitor
       nix-tree
       nix-web
       nvd
