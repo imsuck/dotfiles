@@ -32,7 +32,7 @@ default_floating_border normal 0
 # for_window [class="^.*"] border none
 # smart_borders true
 
-gaps inner 10
+gaps inner 0
 gaps outer 0
 
 # smart_gaps true
@@ -47,7 +47,7 @@ floating_modifier $mod
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-set $bg				#24283be6
+set $bg				#24283b
 set $blue			#7aa2f7
 set $cyan			#7dcfff
 set $urgentred		#ff5370

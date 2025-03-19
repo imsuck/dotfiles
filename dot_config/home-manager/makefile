@@ -19,10 +19,11 @@ clean:
 	nix-collect-garbage --delete-older-than 7d
 
 init:
-	nix run home-manager/master -- switch -b old
+	nix shell "nixpkgs#nix-output-monitor" \
+		--command bash -c "nix run home-manager/master -- switch -b old |& nom"
 
 _build:
-	home-manager build -L --flake . |& nom
+	home-manager build -L --flake . --log-format internal-json -v |& nom --json
 	@nvd diff ~/.local/state/home-manager/gcroots/current-home result
 	@rm result
 
