@@ -20,10 +20,11 @@ clean:
 
 init:
 	nix shell "nixpkgs#nix-output-monitor" \
-		--command bash -c "nix run home-manager/master -- switch -b old |& nom"
+		--command bash -c \
+		"nix run home-manager/master -L -v --log-format internal-json -- switch --flake . -b old |& nom --json"
 
 _build:
-	home-manager build -L --flake . --log-format internal-json -v |& nom --json
+	home-manager build -L -v --flake . --log-format internal-json |& nom --json
 	@nvd diff ~/.local/state/home-manager/gcroots/current-home result
 	@rm result
 
