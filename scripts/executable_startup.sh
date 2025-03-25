@@ -20,4 +20,6 @@ systemctl --user start opentabletdriver.service &
 
 systemctl --user start fcitx5-daemon.service &
 
+systemctl --user start mouseless.service &
+
 # xclipboard &
