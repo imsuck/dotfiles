@@ -122,6 +122,7 @@
         pure_msg = "[ ](bg:green)";
         unknown_msg = "[ ](bg:yellow)";
         format = "$state[ $name ](bg:black) ";
+        disabled = true;
       };
 
       rust = {

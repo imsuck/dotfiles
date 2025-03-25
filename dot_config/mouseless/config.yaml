@@ -1,0 +1,37 @@
+devices:
+  - "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+
+# the default speed for mouse movement and scrolling
+baseMouseSpeed: 750.0
+baseScrollSpeed: 20.0
+
+# the rest of the config defines the layers with their bindings
+layers:
+  # the first layer is active at start
+  - name: initial
+    bindings:
+      # when tab is held and another key pressed, activate mouse layer
+      capslock: tap-hold layer mouse ; capslock ; 200
+  # a layer for mouse movement
+  - name: mouse
+    passThrough: true
+    bindings:
+      capslock: layer initial
+      r: reload-config
+
+      h: move -1  0
+      j: move  0  1
+      k: move  0 -1
+      l: move  1  0
+
+      w: scroll up
+      a: scroll left
+      s: scroll down
+      d: scroll right
+
+      z: button left
+      x: button middle
+      c: button right
+
+      leftshift: speed 4.0
+      leftalt: speed 0.25
