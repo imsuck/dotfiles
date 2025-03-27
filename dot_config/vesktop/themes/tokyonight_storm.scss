@@ -29,15 +29,16 @@ code,
 	font-weight: 475;
 }
 
-.theme-dark {
+.visual-refresh.theme-dark,
+.visual-refresh .theme-dark {
 	/* colours */
 	--brand-experiment: #{$blue} !important;
 	--brand-experiment-600: #{$blue} !important;
 	--brand-experiment-560: #{$blue} !important;
 	--brand-experiment-360: #{$blue} !important;
-	--primary-660: var(--background-tertiary) !important;
-	--primary-630: var(--background-secondary) !important;
-	--primary-600: var(--background-primary) !important;
+	--primary-660: var(--background-tertiary);
+	--primary-630: var(--background-secondary);
+	--primary-600: var(--background-primary);
 	--red-430: #{$red} !important;
 
 	/* backgrounds */
@@ -47,48 +48,54 @@ code,
 	--background-tertiary: #{$bg-night} !important;
 	--background-accent: #{$light-grey} !important;
 	--background-floating: #{$bg-night} !important;
-	--chat-background: var(--background-primary) !important;
-	--chat-border: var(--background-tertiary) !important;
-	--chat-input-container-background: var(--background-primary) !important;
-	--input-background: var(--background-tertiary) !important;
+	--background-surface-high: var(--background-secondary);
+	--background-surface-higher: var(--background-tertiary);
+	--background-surface-highest: var(--background-tertiary);
+
+	--chat-background: var(--background-primary);
+	--chat-border: var(--background-tertiary);
+	--chat-input-container-background: var(--background-primary);
+	--input-background: var(--background-tertiary);
+	--bg-overlay-floating: var(--background-tertiary);
 	--background-message-hover: rgba(0, 0, 0, 0.1) !important;
 	--channeltextarea-background: #ffffff10 !important;
-	--modal-background: var(--background-secondary-alt) !important;
-	--modal-footer-background: var(--background-secondary) !important;
-	--bg-overlay-chat: var(--background-primary) !important;
-	--bg-overlay-2: var(--background-primary) !important;
+	--modal-background: var(--background-secondary-alt);
+	--modal-footer-background: var(--background-secondary);
+	--bg-overlay-chat: var(--background-primary);
+	--bg-overlay-2: var(--background-primary);
 
 	/* text */
 	--text-normal: #{$fg} !important;
 	--text-muted: #{$light-grey} !important;
 	--text-link: #{$cyan} !important;
-	--header-secondary: var(--text-normal) !important; // replies colour
-	--interactive-normal: var(--text-normal) !important;
+	--header-secondary: var(--text-normal); // replies colour
+	--interactive-normal: var(--text-normal);
 
 	/* mentions */
 	--info-warning-foreground: #{$red} !important;
 	--background-mentioned: #{color.adjust($red, $alpha: -0.8)} !important;
 	--background-mentioned-hover: #{color.adjust($red, $alpha: -0.9)} !important;
 	--status-danger: #{$red} !important;
-	--modal-primary: var(--background-primary) !important;
+	--modal-primary: var(--background-primary);
 	--mention-foreground: #{$black} !important;
 	--mention-background: #{$blue} !important;
 
 	--scrollbar-thin-thumb: #{$blue} !important;
 	--scrollbar-thin-track: transparent !important;
 	--scrollbar-auto-thumb: #{$blue} !important;
-	--scrollbar-auto-track: var(--background-secondary) !important;
-	--scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary) !important;
-	--scrollbar-auto-scrollbar-color-track: var(--background-secondary) !important;
+	--scrollbar-auto-track: var(--background-secondary);
+	--scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
+	--scrollbar-auto-scrollbar-color-track: var(--background-secondary);
 
 	/* channel selector */
 	--background-modifier-hover: #{$bg-storm} !important;
 	--background-modifier-selected: #{$bg-storm} !important;
+	--bg-overlay-selected: #{$bg-storm};
 	--bg-overlay-active: #{$bg-storm} !important;
 	--bg-overlay-chat: #{$bg-storm} !important;
-	--interactive-muted: var(--text-muted) !important;
-	--channels-default: var(--text-normal) !important;
-	--channel-icon: var(--text-normal) !important;
+	--interactive-muted: var(--text-muted);
+	--channels-default: var(--text-normal);
+	--channel-icon: var(--text-normal);
 
 	/* miscellaneous */
 	--profile-body-background-color: transparent !important;
@@ -99,10 +106,10 @@ code,
 
 /*** extra colouring ***/
 /* members list */
-.memberInner_a32223,
-.members__9f47b,
-.member_b44d5d,
-.member_aa4760 {
+.memberInner__5d473,
+.members_c8ffbb,
+.member__5d473,
+.childContainer__91a9d {
 	background-color: var(--background-secondary) !important;
 }
 
@@ -114,15 +121,30 @@ code,
 	opacity: 0.3 !important;
 }
 
+/* sidebar */
+.sidebar_c48ade,
+.guilds_c48ade,
+.container__2637a,
+.privateChannels__35e86,
+.scroller__99e7c {
+	background-color: var(--background-secondary) !important;
+}
+.sidebar_c48ade:after {
+	display: none;
+}
+
 /* jump to present bar */
 .jumpToPresentBar__0ff7f {
 	background-color: $blue !important;
 }
 
 /* slash menu */
-.theme-dark .autocomplete-3NRXG8,
-.categoryHeader-OpJ1Ly {
-	background-color: var(--background-secondary);
+.theme-dark .autocomplete__13533,
+.categoryHeader_d1405b {
+	background-color: var(--background-secondary) !important;
+}
+.rail_d1405b {
+	background-color: var(--background-tertiary) !important;
 }
 
 /* selections */
@@ -181,20 +203,26 @@ code,
 	margin: 8px 16px 16px;
 }
 
-/* search bar */
-.focused-1xh-wG .searchBar-jGtisZ,
-.open-1F8u2c .searchBar-jGtisZ {
-	width: 14rem !important;
+/* title bar */
+.title_c38106 {
 	background-color: var(--background-tertiary);
 }
 
-.searchBar-jGtisZ {
+/* search bar */
+.container__55c99,
+.focused-1xh-wG .searchBar__97492,
+.open-1F8u2c .searchBar__97492 {
+	/* width: 14rem !important; */
+	background-color: var(--background-tertiary) !important;
+}
+
+/* .searchBar__97492 {
 	width: 24px;
 	background-color: transparent;
 	transition: ease-in-out 0.2s;
 }
 
-.searchBar-jGtisZ .icon-tZMHgY div svg {
+.searchBar__97492 .icon-tZMHgY div svg {
 	position: absolute;
 	cursor: pointer;
 	color: var(--interactive-normal);
@@ -203,21 +231,28 @@ code,
 	transform: translate(-4px, -4px);
 }
 
-.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.focused-1xh-wG .searchBar__97492 .icon-tZMHgY div svg,
 .icon-18rqoe {
 	width: 100%;
 	height: 100%;
 	transform: none;
 	transition: none;
-}
+} */
 
 /* search items */
-.option_b5597b:after,
-.option_b5597b:hover:after {
+.option__56fec:after,
+.option__56fec:hover:after {
 	background: linear-gradient(to right, color.adjust($bg-storm, $hue: 5, $saturation: -0.1%, $lightness: -12.7%, $alpha: -1), var(--background-floating), var(--background-floating)) !important;
 }
 
 /* login screen */
 .theme-dark.authBox-1HR6Ha {
 	background: var(--background-primary);
+}
+
+/* friend activities */
+
+/* display: none */
+.children__9293f:after {
+	display: none !important;
 }

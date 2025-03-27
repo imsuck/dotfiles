@@ -17,9 +17,9 @@ layers:
       k: move  0 -1
       l: move  1  0
 
-      q: button left
+      q: button right
       w: button middle
-      e: button right
+      e: button left
 
       leftshift: toggle-layer scroll
       a: speed 0.25
@@ -33,6 +33,8 @@ layers:
       k: scroll up
       l: scroll right
 
-      q: multi leftshift; button left
+      q: multi leftshift; button right
       w: multi leftshift; button middle
-      e: multi leftshift; button right
+      e: multi leftshift; button left
+
+      _: leftshift+_

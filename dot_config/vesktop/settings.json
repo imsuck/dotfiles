@@ -2,8 +2,8 @@
     "discordBranch": "stable",
     "minimizeToTray": true,
     "arRPC": true,
-    "splashColor": "rgb(192, 202, 245)",
-    "splashBackground": "rgb(36, 40, 59)",
+    "splashColor": "rgb(219, 222, 225)",
+    "splashBackground": "rgb(49, 51, 56)",
     "clickTrayToShowHide": true,
     "appBadge": true
 }

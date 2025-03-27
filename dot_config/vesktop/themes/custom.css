@@ -14,15 +14,16 @@ code,
   font-weight: 475;
 }
 
-.theme-dark {
+.visual-refresh.theme-dark,
+.visual-refresh .theme-dark {
   /* colours */
   --brand-experiment: #7aa2f7 !important;
   --brand-experiment-600: #7aa2f7 !important;
   --brand-experiment-560: #7aa2f7 !important;
   --brand-experiment-360: #7aa2f7 !important;
-  --primary-660: var(--background-tertiary) !important;
-  --primary-630: var(--background-secondary) !important;
-  --primary-600: var(--background-primary) !important;
+  --primary-660: var(--background-tertiary);
+  --primary-630: var(--background-secondary);
+  --primary-600: var(--background-primary);
   --red-430: #f7768e !important;
   /* backgrounds */
   --background-primary: #24283b !important;
@@ -31,44 +32,49 @@ code,
   --background-tertiary: #1a1b26 !important;
   --background-accent: #414868 !important;
   --background-floating: #1a1b26 !important;
-  --chat-background: var(--background-primary) !important;
-  --chat-border: var(--background-tertiary) !important;
-  --chat-input-container-background: var(--background-primary) !important;
-  --input-background: var(--background-tertiary) !important;
+  --background-surface-high: var(--background-secondary);
+  --background-surface-higher: var(--background-tertiary);
+  --background-surface-highest: var(--background-tertiary);
+  --chat-background: var(--background-primary);
+  --chat-border: var(--background-tertiary);
+  --chat-input-container-background: var(--background-primary);
+  --input-background: var(--background-tertiary);
+  --bg-overlay-floating: var(--background-tertiary);
   --background-message-hover: rgba(0, 0, 0, 0.1) !important;
   --channeltextarea-background: #ffffff10 !important;
-  --modal-background: var(--background-secondary-alt) !important;
-  --modal-footer-background: var(--background-secondary) !important;
-  --bg-overlay-chat: var(--background-primary) !important;
-  --bg-overlay-2: var(--background-primary) !important;
+  --modal-background: var(--background-secondary-alt);
+  --modal-footer-background: var(--background-secondary);
+  --bg-overlay-chat: var(--background-primary);
+  --bg-overlay-2: var(--background-primary);
   /* text */
   --text-normal: #c0caf5 !important;
   --text-muted: #414868 !important;
   --text-link: #7dcfff !important;
-  --header-secondary: var(--text-normal) !important;
-  --interactive-normal: var(--text-normal) !important;
+  --header-secondary: var(--text-normal);
+  --interactive-normal: var(--text-normal);
   /* mentions */
   --info-warning-foreground: #f7768e !important;
   --background-mentioned: rgba(247, 118, 142, 0.2) !important;
   --background-mentioned-hover: rgba(247, 118, 142, 0.1) !important;
   --status-danger: #f7768e !important;
-  --modal-primary: var(--background-primary) !important;
+  --modal-primary: var(--background-primary);
   --mention-foreground: #1d202f !important;
   --mention-background: #7aa2f7 !important;
   --scrollbar-thin-thumb: #7aa2f7 !important;
   --scrollbar-thin-track: transparent !important;
   --scrollbar-auto-thumb: #7aa2f7 !important;
-  --scrollbar-auto-track: var(--background-secondary) !important;
-  --scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary) !important;
-  --scrollbar-auto-scrollbar-color-track: var(--background-secondary) !important;
+  --scrollbar-auto-track: var(--background-secondary);
+  --scrollbar-auto-scrollbar-color-thumb: var(--background-tertiary);
+  --scrollbar-auto-scrollbar-color-track: var(--background-secondary);
   /* channel selector */
   --background-modifier-hover: #24283b !important;
   --background-modifier-selected: #24283b !important;
+  --bg-overlay-selected: #24283b;
   --bg-overlay-active: #24283b !important;
   --bg-overlay-chat: #24283b !important;
-  --interactive-muted: var(--text-muted) !important;
-  --channels-default: var(--text-normal) !important;
-  --channel-icon: var(--text-normal) !important;
+  --interactive-muted: var(--text-muted);
+  --channels-default: var(--text-normal);
+  --channel-icon: var(--text-normal);
   /* miscellaneous */
   --profile-body-background-color: transparent !important;
   --button-secondary-background: #414868 !important;
@@ -78,10 +84,10 @@ code,
 
 /*** extra colouring ***/
 /* members list */
-.memberInner_a32223,
-.members__9f47b,
-.member_b44d5d,
-.member_aa4760 {
+.memberInner__5d473,
+.members_c8ffbb,
+.member__5d473,
+.childContainer__91a9d {
   background-color: var(--background-secondary) !important;
 }
 
@@ -93,15 +99,32 @@ code,
   opacity: 0.3 !important;
 }
 
+/* sidebar */
+.sidebar_c48ade,
+.guilds_c48ade,
+.container__2637a,
+.privateChannels__35e86,
+.scroller__99e7c {
+  background-color: var(--background-secondary) !important;
+}
+
+.sidebar_c48ade:after {
+  display: none;
+}
+
 /* jump to present bar */
 .jumpToPresentBar__0ff7f {
   background-color: #7aa2f7 !important;
 }
 
 /* slash menu */
-.theme-dark .autocomplete-3NRXG8,
-.categoryHeader-OpJ1Ly {
-  background-color: var(--background-secondary);
+.theme-dark .autocomplete__13533,
+.categoryHeader_d1405b {
+  background-color: var(--background-secondary) !important;
+}
+
+.rail_d1405b {
+  background-color: var(--background-tertiary) !important;
 }
 
 /* selections */
@@ -160,43 +183,54 @@ code,
   margin: 8px 16px 16px;
 }
 
-/* search bar */
-.focused-1xh-wG .searchBar-jGtisZ,
-.open-1F8u2c .searchBar-jGtisZ {
-  width: 14rem !important;
+/* title bar */
+.title_c38106 {
   background-color: var(--background-tertiary);
 }
 
-.searchBar-jGtisZ {
-  width: 24px;
-  background-color: transparent;
-  transition: ease-in-out 0.2s;
+/* search bar */
+.container__55c99,
+.focused-1xh-wG .searchBar__97492,
+.open-1F8u2c .searchBar__97492 {
+  /* width: 14rem !important; */
+  background-color: var(--background-tertiary) !important;
 }
 
-.searchBar-jGtisZ .icon-tZMHgY div svg {
-  position: absolute;
-  cursor: pointer;
-  color: var(--interactive-normal);
-  width: 24px;
-  height: 24px;
-  transform: translate(-4px, -4px);
+/* .searchBar__97492 {
+	width: 24px;
+	background-color: transparent;
+	transition: ease-in-out 0.2s;
 }
 
-.focused-1xh-wG .searchBar-jGtisZ .icon-tZMHgY div svg,
+.searchBar__97492 .icon-tZMHgY div svg {
+	position: absolute;
+	cursor: pointer;
+	color: var(--interactive-normal);
+	width: 24px;
+	height: 24px;
+	transform: translate(-4px, -4px);
+}
+
+.focused-1xh-wG .searchBar__97492 .icon-tZMHgY div svg,
 .icon-18rqoe {
-  width: 100%;
-  height: 100%;
-  transform: none;
-  transition: none;
-}
-
+	width: 100%;
+	height: 100%;
+	transform: none;
+	transition: none;
+} */
 /* search items */
-.option_b5597b:after,
-.option_b5597b:hover:after {
+.option__56fec:after,
+.option__56fec:hover:after {
   background: linear-gradient(to right, rgba(11.4706939474, 12.1308943192, 18.7593060526, 0), var(--background-floating), var(--background-floating)) !important;
 }
 
 /* login screen */
 .theme-dark.authBox-1HR6Ha {
   background: var(--background-primary);
+}
+
+/* friend activities */
+/* display: none */
+.children__9293f:after {
+  display: none !important;
 }
