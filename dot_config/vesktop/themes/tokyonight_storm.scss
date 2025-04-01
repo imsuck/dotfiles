@@ -198,6 +198,11 @@ code,
 	background-color: var(--background-secondary);
 }
 
+div[class^="newMessagesBar"],
+div[class^="newMessagesBar"] button[class^="barButtonAlt"] {
+	background-color: $blue !important;
+}
+
 /*** miscellaneous ***/
 .userPopoutOverlayBackground-dKOOda {
 	margin: 8px 16px 16px;

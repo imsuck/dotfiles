@@ -42,7 +42,7 @@
         display-inlay-hints = false;
         display-signature-help-docs = false;
       };
-      # editor.inline-diagnostics.cursor-line = "error";
+      editor.inline-diagnostics.cursor-line = "error";
       editor.statusline = {
         left = [
           "mode"

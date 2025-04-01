@@ -7,10 +7,6 @@ let
       owner = "NixOS";
       repo = "nixpkgs";
     }) { inherit (final.stdenv.hostPlatform) system; };
-  pavucontrol-gtk3 = nixpkgs {
-    rev = "b60793b86201040d9dee019a05089a9150d08b5b";
-    hash = "sha256-PlL/yXNX/C87S2N8lF/HfOJhHForf/l7E6lVWZ4jMrw=";
-  };
 in
 {
   fcitx5-bamboo = prev.fcitx5-bamboo.overrideAttrs (old: {
@@ -19,7 +15,35 @@ in
     ];
   });
 
-  pavucontrol = pavucontrol-gtk3.pavucontrol;
+  # Should still work. I just don't want to evaluate another nixpkgs.
+  pavucontrol = prev.stdenv.mkDerivation rec {
+    pname = "pavucontrol";
+    version = "5.0";
+
+    src = prev.fetchurl {
+      url = "https://freedesktop.org/software/pulseaudio/${pname}/${pname}-${version}.tar.xz";
+      sha256 = "sha256-zityw7XxpwrQ3xndgXUPlFW9IIcNHTo20gU2ry6PTno=";
+    };
+
+    buildInputs = with prev; [
+      libpulseaudio
+      gtkmm3
+      libsigcxx
+      libcanberra-gtk3
+      json-glib
+      adwaita-icon-theme
+    ];
+
+    nativeBuildInputs = with prev; [
+      pkg-config
+      intltool
+      wrapGAppsHook3
+    ];
+
+    configureFlags = [ "--disable-lynx" ];
+
+    enableParallelBuilding = true;
+  };
 
   polybar = prev.polybar.override {
     githubSupport = true;

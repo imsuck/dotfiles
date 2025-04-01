@@ -48,9 +48,10 @@
 
       # desktop
       nitrogen
+      mouseless
+      pavucontrol
       polybar
       libqalculate
-      pavucontrol
       qalculate-gtk
       rofi
 
