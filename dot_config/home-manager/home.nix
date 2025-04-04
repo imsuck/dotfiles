@@ -85,7 +85,7 @@
       max-jobs = "auto";
     };
     gc = {
-      automatic = true;
+      automatic = false;
       frequency = "monthly";
       options = "--delete-older-than 30d";
     };

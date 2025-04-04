@@ -183,13 +183,18 @@
             let
               style = lib.concatStrings [
                 "-style={"
+                "AlignAfterOpenBracket: BlockIndent,"
+                "AllowAllArgumentsOnNextLine: false,"
+                "AllowAllParametersOfDeclarationOnNextLine: false,"
                 "AllowShortIfStatementsOnASingleLine: WithoutElse,"
                 "AllowShortLoopsOnASingleLine: true,"
                 "BasedOnStyle: llvm,"
-                "IndentWidth: 4,"
-                "NamespaceIndentation: All,"
+                "BinPackArguments: false,"
+                "BinPackParameters: false,"
                 "IndentCaseLabels: true,"
                 "IndentPPDirectives: BeforeHash,"
+                "IndentWidth: 4,"
+                "NamespaceIndentation: All,"
                 "SpaceAfterTemplateKeyword: false,"
                 "}"
               ];
