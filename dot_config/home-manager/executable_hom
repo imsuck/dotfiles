@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+_log() {
+	echo "$@"; "$@"
+}
+
+_build() {
+	_log home-manager build -L -v --flake . --log-format internal-json |& nom --json
+	nvd diff ~/.local/state/home-manager/gcroots/current-home result
+	rm result
+}
+
+switch() {
+	_build
+	_log home-manager switch --flake .
+}
+update() {
+	cp flake.lock flake.lock.old
+	_log nix flake update
+	PATH_CNT=$(home-manager build -n |& rg "will be fetched" | sed -e "s/^these //" -e "s/://")
+	echo ${PATH_CNT:-"0 paths will be fetched"}
+	read -p "Continue? [Y/n] " ans
+	case ${ans:-"y"} in
+		[Nn]*)
+			mv flake.lock.old flake.lock
+			return
+			;;
+	esac
+	_build
+	read -p "Switch profile? [Y/n] " ans
+	case ${ans:-"y"} in
+		[Yy]*)
+			_log home-manager switch --flake .
+			rm flake.lock.old
+		;;
+		[Nn]*)
+			mv flake.lock.old flake.lock
+		;;
+	esac
+}
+
+backup() {
+	_log home-manager switch --flake . -b old
+}
+clean() {
+	_log nix-collect-garbage --delete-older-than 7d
+}
+init() {
+	_log nix shell "nixpkg#nix-output-monitor" \
+		--command bash -c \
+			"nix run home-manager/master -L -v --log-format internal-json -- switch --flake . -b old |& nom --json"
+	ln -s ~/.config/home-manager/hom ~/.local/bin
+}
+
+main() {
+	case $1 in
+		switch) switch;;
+		up*) update;;
+		back*) backup;;
+		clean) clean;;
+		init) init;;
+		*) echo "invalid args";;
+	esac
+}
+
+main $@
