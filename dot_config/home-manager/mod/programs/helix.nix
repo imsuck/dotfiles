@@ -64,6 +64,9 @@
           "file-line-ending"
         ];
       };
+      editor.whitespace = {
+        render.newline = "all";
+      };
       editor.indent-guides = {
         render = true;
         character = "▏"; # other things "▏", "┆", "┊"
@@ -106,7 +109,7 @@
 
         backspace = {
           r = ":rl";
-          c = ":o ~/.config/home-manager/helix.nix";
+          c = ":o ~/.config/home-manager/mod/programs/helix.nix";
           R = ":config-reload";
           f = ":fmt";
           i = ":set lsp.display-inlay-hints false";
@@ -147,6 +150,8 @@
       keys.insert = {
         C-s = ":w";
         C-v = ":clipboard-paste-before";
+        C-n = "goto_next_tabstop";
+        C-p = "goto_prev_tabstop";
         C-left = "move_prev_word_start";
         C-right = "move_next_word_end";
         A-p = "select_prev_sibling";
@@ -195,6 +200,7 @@
                 "IndentPPDirectives: BeforeHash,"
                 "IndentWidth: 4,"
                 "NamespaceIndentation: All,"
+                "SkipMacroDefinitionBody: true,"
                 "SpaceAfterTemplateKeyword: false,"
                 "}"
               ];

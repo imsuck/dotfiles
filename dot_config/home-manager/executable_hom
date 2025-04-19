@@ -43,7 +43,10 @@ backup() {
 	_log home-manager switch --flake . -b old
 }
 clean() {
-	_log nix-collect-garbage --delete-older-than 7d
+	_log nix store gc -v
+}
+optimize() {
+	_log nix store optimise
 }
 init() {
 	_log nix shell "nixpkg#nix-output-monitor" \
@@ -53,11 +56,13 @@ init() {
 }
 
 main() {
+	cd $HM_FLAKE
 	case $1 in
-		switch) switch;;
+		sw*) switch;;
 		up*) update;;
 		back*) backup;;
-		clean) clean;;
+		clean|gc) clean;;
+		opt*) optimize;;
 		init) init;;
 		*) echo "invalid args";;
 	esac

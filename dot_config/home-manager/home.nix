@@ -8,6 +8,7 @@
 {
   imports = [
     ./mod/programs
+    ./mod/desktop.nix
     ./mod/files.nix
     ./mod/fonts.nix
     ./mod/services.nix
@@ -111,6 +112,7 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     CARGO_HOME = "$HOME/.local/share/cargo";
+    HM_FLAKE = "$HOME/.config/home-manager";
     COMMA_NIXPKGS_FLAKE = "$HOME/.config/home-manager";
     PAGER = "bat";
     RUSTC_WRAPPER = "sccache";

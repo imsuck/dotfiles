@@ -3,4 +3,9 @@
 #progress.ytd-thumbnail-overlay-resume-playback-renderer {
 	background: #f03 !important;
 }
+
+#contents.ytd-rich-grid-renderer {
+	--ytd-rich-grid-items-per-row: 4;
 }
+}
+

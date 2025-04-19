@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type = Application
-Exec = /home/imsuck/Applications/osu.AppImage
-Icon = /home/imsuck/Applications/osu-icon.png
+Exec = /home/imsuck/Applications/osu-lazer/osu.AppImage
+Icon = /home/imsuck/Applications/osu-lazer/osu-icon.png
 Terminal = false
 Categories = Game;
 
