@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.zathura = {
     enable = true;
+    package = pkgs.nullpkg;
     mappings = {
       i = "recolor";
       "<F1>" = ''focus_inputbar ":exec sh -c '~/scripts/zathura_open.sh history'"'';

@@ -11,6 +11,7 @@
   };
   programs.git = {
     enable = true;
+    package = pkgs.nullpkg;
 
     userName = "imsuck";
     userEmail = "imsuck12@gmail.com";

@@ -58,7 +58,6 @@
 
       # other
       autotiling
-      julia-bin
       ksuperkey
       memos
       porsmo
@@ -69,10 +68,6 @@
       with pkgs;
       map config.lib.nixGL.wrap [
         # desktop
-        alacritty
-        picom
-        tetrio-desktop
-        vesktop
       ]
     );
 
@@ -80,6 +75,7 @@
     package = pkgs.nix;
     settings = {
       experimental-features = [
+        "ca-derivations"
         "nix-command"
         "flakes"
       ];
@@ -92,8 +88,8 @@
     };
   };
 
-  nixGL.packages = nixgl.packages;
-  nixGL.installScripts = [ "mesa" ];
+  # nixGL.packages = nixgl.packages;
+  # nixGL.installScripts = [ "mesa" ];
 
   nixpkgs = {
     config = {

@@ -76,6 +76,10 @@
       keys.normal = {
         C-s = ":w";
         esc = ":q";
+        space = {
+          f = "file_picker_in_current_directory";
+          F = "file_picker";
+        };
         A-up = [
           "extend_to_line_bounds"
           "delete_selection"

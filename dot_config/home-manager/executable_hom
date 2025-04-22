@@ -6,12 +6,14 @@ _log() {
 
 _build() {
 	_log home-manager build -L -v --flake . --log-format internal-json |& nom --json
+	if [[ $? != 0 ]]; then return 1; fi
 	nvd diff ~/.local/state/home-manager/gcroots/current-home result
 	rm result
 }
 
 switch() {
 	_build
+	if [[ $? != 0 ]]; then return 1; fi
 	_log home-manager switch --flake .
 }
 update() {
