@@ -2,7 +2,7 @@
 {
   imports = [
     ./cli.nix
-    ./fcitx5.nix
+    # ./fcitx5.nix
     ./git.nix
     ./helix.nix
     ./yazi/yazi.nix

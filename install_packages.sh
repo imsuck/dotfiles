@@ -7,21 +7,21 @@
 # Use `"@y` to yank macro ok
 
 sudo pacman -S --noconfirm --needed \
- wezterm `#dunst` fzf \
- firefox\
- xclip shotgun hacksaw `# screenshot`\
- rustup rust-analyzer `# rust dev things`\
- cronie `#stalonetray` xdo `#ranger\`
- ibus `# needed for fcitx5 (???)`
- `#picom`
+ alacritty wezterm `#dunst` fzf \
+ firefox nitrogen \
+ xclip shotgun hacksaw `# screenshot` \
+ rustup rust-analyzer `# rust dev things` \
+ cronie `#stalonetray` xdo `#ranger` \
+ fcitx5-bamboo fcitx5-mozc-ut ibus `# needed for fcitx5 (???)` \
+ polybar picom rofi
  # thefuck
 
 yay -S --answerclean All --answerdiff None \
- vesktop\
- eww\
- spotify-adblock-git `#cava`\
- betterlockscreen\
- `#nerd-fonts-jetbrains-mono`\
+ vesktop \
+ eww \
+ spotify-adblock-git `#cava` \
+ betterlockscreen pavucontrol-gtk3 \
+ `#nerd-fonts-jetbrains-mono` \
  `#diskonaut` polybar-spotify-module
 
 systemctl --user enable spotify-listener

@@ -26,7 +26,6 @@
       comma
       nix-output-monitor
       nix-tree
-      nix-web
       nvd
 
       # cli
@@ -48,13 +47,7 @@
       zellij
 
       # desktop
-      nitrogen
       mouseless
-      pavucontrol
-      polybar
-      libqalculate
-      qalculate-gtk
-      rofi
 
       # other
       autotiling
@@ -113,6 +106,11 @@
     PAGER = "bat";
     RUSTC_WRAPPER = "sccache";
     VISUAL = "$HOME/.nix-profile/bin/hx";
+
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+    GLFW_IM_MODULE = "ibus";
   };
   home.sessionPath = [
     "$HOME/.local/bin"
