@@ -36,7 +36,6 @@
       duf
       dust
       eza
-      fd
       handlr
       imagemagick
       megacmd

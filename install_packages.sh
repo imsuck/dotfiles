@@ -13,7 +13,7 @@ sudo pacman -S --noconfirm --needed \
  rustup rust-analyzer `# rust dev things` \
  cronie `#stalonetray` xdo `#ranger` \
  fcitx5-bamboo fcitx5-mozc-ut ibus `# needed for fcitx5 (???)` \
- polybar picom rofi
+ polybar picom rofi rofi-emoji
  # thefuck
 
 yay -S --answerclean All --answerdiff None \

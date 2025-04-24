@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.bat = {
@@ -12,14 +12,32 @@
     enable = true;
     nix-direnv.enable = true;
   };
+  programs.fd = {
+    enable = true;
+    ignores = [ ".git" ];
+  };
   programs.fzf = {
     enable = true;
-    defaultCommand = "fd -Ltf";
-    fileWidgetCommand = "fd -Ltf";
-    defaultOptions = [ "--min-height=10 --height=20%" ];
-    fileWidgetOptions = [ "--min-height=10 --height=20%" ];
-    historyWidgetOptions = [ "--min-height=10 --height=20%" ];
+    defaultCommand = "fd -Ltf --no-hidden";
+    fileWidgetCommand = ''fd -Ltf --search-path "\$dir" --no-hidden | sed "s#^\./##"'';
+    defaultOptions = [
+      "--min-height 10 --height 20%"
+      "--preview '~/scripts/fzf_preview.sh {}'"
+    ];
+    fileWidgetOptions = [ ];
+    historyWidgetOptions = [ ];
   };
   programs.nix-index.enable = true;
+  programs.television = {
+    enable = false;
+    settings = {
+      ui = {
+        ui_scale = 90;
+      };
+      shell_integration.channel_triggers = {
+        git-repos = [ ];
+      };
+    };
+  };
   programs.zoxide.enable = true;
 }

@@ -6,6 +6,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
+      # url = "git+file:///home/imsuck/Yes/home-manager?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
