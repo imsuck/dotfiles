@@ -2,7 +2,7 @@
 
 {
   programs.fish = {
-    enable = true;
+    enable = false;
     interactiveShellInit = ''
       tabs 4
 
@@ -79,6 +79,7 @@
   };
   programs.starship = {
     enable = true;
+    package = pkgs.nullpkg;
     settings = {
       add_newline = false;
       command_timeout = 2000;

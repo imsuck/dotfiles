@@ -1,0 +1,50 @@
+Xcursor.theme: Posy_Cursor
+Xcursor.size: 16
+
+
+xterm*faceName: Fira Code-12
+URxvt*font:     Fira Code-12
+URxvt*boldFont: Fira Code-12
+
+!#define FONTSIZE 12
+!xterm*faceName: xft:PragmataPro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+!URxvt*font:     xft:PragmataPro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+!URxvt*boldFont: xft:PragmataPro:size=FONTSIZE:antialias=true:hinting=true:autohint=false:hintstyle=hintnone:dpi=96
+
+! special
+*.foreground:   #c0caf5
+*.background:   #24283b
+*.cursorColor:  #c0caf5
+
+! black
+*.color0:       #1d202f
+*.color8:       #414868
+
+! red
+*.color1:       #f7768e
+*.color9:       #f7768e
+
+! green
+*.color2:       #9ece6a
+*.color10:      #9ece6a
+
+! yellow
+*.color3:       #e0af68
+*.color11:      #e0af68
+
+! blue
+*.color4:       #7aa2f7
+*.color12:      #7aa2f7
+
+! magenta
+*.color5:       #bb9af7
+*.color13:      #bb9af7
+
+! cyan
+*.color6:       #7dcfff
+*.color14:      #7dcfff
+
+! white
+*.color7:       #a9b1d6
+*.color15:      #c0caf5
+

@@ -6,7 +6,6 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      clang-tools
       nil
       nixfmt-rfc-style
       ruff

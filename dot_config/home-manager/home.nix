@@ -29,32 +29,15 @@
       nvd
 
       # cli
-      bacon
-      bottom
-      btop
       cht-sh
-      duf
-      dust
-      eza
-      handlr
-      imagemagick
       megacmd
-      neovim
-      ripdrag
-      ripgrep
-      watchexec
-      zellij
 
       # desktop
       mouseless
 
       # other
-      autotiling
-      ksuperkey
       memos
       porsmo
-      sccache
-      typst
     ]
     ++ (
       with pkgs;
