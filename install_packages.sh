@@ -8,7 +8,7 @@
 
 alias pac_inst 'sudo pacman -S --noconfirm --needed'
 
-pac_inst bat bat-extras dust eza fd fzf ripdrag starship yazi
+pac_inst bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide
 # dev
 pac_inst clang helix mise tinymist typst watchexec zellij
 # rust dev

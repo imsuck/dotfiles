@@ -9,14 +9,15 @@ set -gx BROWSER 'firefox'
 set -gx EDITOR 'helix'
 set -gx VISUAL 'helix'
 set -gx PAGER 'bat'
+set -gx LS_COLORS (vivid generate tokyonight-storm)
 
 set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
 set -gx RUSTC_WRAPPER 'sccache'
 
-set -gx FZF_DEFAULT_COMMAND 'fd -Ltf --no-hidden'
-set -gx FZF_DEFAULT_OPTS '--bind ''ctrl-d:half-page-down,ctrl-u:half-page-up'' --min-height 10 --height 20% --preview \'~/scripts/fzf_preview.sh {}\''
-set -gx FZF_CTRL_T_COMMAND 'fd -Ltf --search-path ''$dir'' --no-hidden | sed ''s#^\\./##'''
-set -gx FZF_CTRL_R_OPTS '--preview \'\''
+set -gx FZF_DEFAULT_COMMAND 'fd -L --no-hidden --color=always'
+set -gx FZF_DEFAULT_OPTS '--ansi --bind ''ctrl-d:half-page-down,ctrl-u:half-page-up'' --min-height 10 --height 20% --preview \'~/scripts/fzf_preview.sh {}\''
+set -gx FZF_CTRL_T_COMMAND 'fd -L --search-path ''$dir'' --no-hidden --color=always | sed ''s#^\\./##'''
+set -gx FZF_CTRL_R_OPTS '--preview ""'
 
 set -gx HM_FLAKE "$HOME"'/.config/home-manager'
 set -gx COMMA_NIXPKGS_FLAKE "$HOME"'/.config/home-manager'
@@ -110,7 +111,6 @@ end
 
 function fish_user_key_bindings
     bind \cz "fg&>/dev/null; echo; fish_prompt"
-    bind \e\[3\;5~ kill-word
     bind \e\[3\;3~ kill-word
     bind \el "echo; exa --icons; fish_prompt"
     bind \cl "clear -x; printf '\e[6 q'; fish_prompt"
