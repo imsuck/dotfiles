@@ -1,0 +1,31 @@
+[[manager.prepend_keymap]]
+on = "!"
+run = "shell --block '$SHELL'"
+
+[[manager.prepend_keymap]]
+on = "o"
+run = "shell --confirm --orphan 'handlr open \"$0\"'"
+
+[[manager.prepend_keymap]]
+on = "e"
+run = "shell --confirm --block '$EDITOR \"$0\"'"
+
+[[manager.prepend_keymap]]
+on = "f"
+run = "plugin smart-filter"
+
+[[manager.prepend_keymap]]
+on = "j"
+run = "plugin arrow 1"
+
+[[manager.prepend_keymap]]
+on = "k"
+run = "plugin arrow -1"
+
+[[manager.prepend_keymap]]
+on = "l"
+run = "plugin smart-enter"
+
+[[manager.prepend_keymap]]
+on = "<C-n>"
+run = "shell --confirm 'ripdrag -x -i -s 64 \"$@\" 2>/dev/null'"

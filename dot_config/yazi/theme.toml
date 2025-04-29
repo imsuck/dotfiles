@@ -1,0 +1,53 @@
+[manager.border_style]
+fg = "darkgray"
+
+[manager.count_copied]
+bg = "green"
+fg = "black"
+
+[manager.count_cut]
+bg = "red"
+fg = "black"
+
+[manager.count_selected]
+bg = "yellow"
+fg = "black"
+
+[manager.tab_active]
+bg = "blue"
+fg = "black"
+
+[manager.tab_inactive]
+fg = "blue"
+
+[mode.normal_alt]
+bg = "darkgray"
+fg = "blue"
+
+[mode.normal_main]
+bg = "blue"
+fg = "black"
+
+[mode.select_alt]
+bg = "darkgray"
+fg = "green"
+
+[mode.select_main]
+bg = "green"
+fg = "black"
+
+[mode.unset_alt]
+bg = "darkgray"
+fg = "magenta"
+
+[mode.unset_main]
+bg = "magenta"
+fg = "black"
+
+[status.sep_left]
+close = ""
+open = ""
+
+[status.sep_right]
+close = ""
+open = ""

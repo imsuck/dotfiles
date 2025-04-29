@@ -1,0 +1,66 @@
+## Keybinds
+map i recolor
+map <F1> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh history\""
+map <F2> focus_inputbar ":exec sh -c \"~/scripts/zathura_open.sh search\""
+map <F9> focus_inputbar ":quit"
+
+map O feedkeys "<F1><Return><Return><F9><Return><Return>" # Open pdf files from history
+map o feedkeys "<F2><Return><Return><F9><Return><Return>" # Open pdf files in home directory
+
+# Smooth scroll
+map h feedkeys "<C-Left>"
+map j feedkeys "<C-Down>"
+map k feedkeys "<C-Up>"
+map l feedkeys "<C-Right>"
+map d feedkeys "g<PageDown>e"
+map u feedkeys "g<PageUp>e"
+
+## Configurations
+set selection-clipboard clipboard
+set selection-notification false
+
+set font "Noto Sans 10"
+set guioptions "shv"
+set window-title-basename true
+set statusbar-home-tilde true
+
+set adjust-open "width"
+
+## Theme
+set recolor-keephue true
+# set recolor-reverse-video true
+set recolor-lightcolor		rgba(0,0,0,0)
+set recolor-darkcolor		"#C0CAF5"
+
+set default-bg				rgba(36,40,59,0.9)
+set default-fg				rgb(192,202,245)
+
+set index-bg                rgba(36,40,59,0.0)
+set index-fg                "#C0CAF5"
+set index-active-bg         "#414868"
+set index-active-fg         "#C0CAF5"
+
+set completion-bg			"#24283B"
+set completion-fg			"#C0CAF5"
+set completion-group-bg		"#1D202F"
+set completion-group-fg		"#C0CAF5"
+set completion-highlight-bg	"#414868"
+set completion-highlight-fg	"#C0CAF5"
+
+set notification-bg			"#24283B"
+set notification-fg			"#FFFFFF"
+set notification-error-bg 	"#F7768E"
+set notification-error-fg 	"#FFFFFF"
+set notification-warning-bg "#E0AF68"
+set notification-warning-fg "#FFFFFF"
+
+set scrollbar-bg			rgba(36,40,59,0.0)
+set scrollbar-fg			rgb(192,202,245)
+
+set inputbar-bg				"#24283B"
+set inputbar-fg				"#C0CAF5"
+set statusbar-bg			"#414868"
+set statusbar-fg			"#C0CAF5"
+
+set highlight-color			"#414868"
+set highlight-active-color	"#F7768E"

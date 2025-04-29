@@ -1,0 +1,26 @@
+[[plugin.prepend_preloaders]]
+name = "*.kra"
+run = "krita"
+
+[[plugin.prepend_preloaders]]
+mime = "image/webp"
+run = "magick"
+
+[[plugin.prepend_preloaders]]
+mime = "image/adobe.photoshop"
+run = "psd"
+
+[[plugin.prepend_previewers]]
+name = "*.kra"
+run = "krita"
+
+[[plugin.prepend_previewers]]
+mime = "image/webp"
+run = "magick"
+
+[[plugin.prepend_previewers]]
+mime = "image/adobe.photoshop"
+run = "psd"
+
+[preview]
+image_delay = 100

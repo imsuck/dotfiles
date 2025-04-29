@@ -1,8 +1,8 @@
-windows/
-install_packages.sh
-list.txt
-emoji.sh
 README.md
-files/
 packages.md
+install_packages.sh
+
+windows/
+files/
+
 dot_config/home-manager/result

@@ -1,4 +1,5 @@
 inherits = "base16_transparent"
+
 "ui.virtual.indent-guide" = "gray"
 [comment]
 fg = "comment"
