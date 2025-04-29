@@ -6,9 +6,9 @@ set -gx XMODIFIERS '@im=fcitx'
 
 set -gx PATH "$HOME"'/.local/bin:'"$CARGO_HOME"'/bin'(test -n "$PATH" && echo ':' || echo)"$PATH"
 set -gx BROWSER 'firefox'
-set -gx EDITOR 'hx'
+set -gx EDITOR 'helix'
+set -gx VISUAL 'helix'
 set -gx PAGER 'bat'
-set -gx VISUAL "$HOME"'/.nix-profile/bin/hx'
 
 set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
 set -gx RUSTC_WRAPPER 'sccache'
@@ -37,7 +37,7 @@ status is-interactive; and begin
     abbr --add -- c cargo
     abbr --add -- ct 'cargo test'
     abbr --add -- df 'duf -theme ansi'
-    abbr --add -- e hx
+    abbr --add -- e helix
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'

@@ -7,8 +7,9 @@
 # Use `"@y` to yank macro ok
 
 sudo pacman -S --noconfirm --needed \
- clang typst watchexec zellij \
- alacritty wezterm bottom `#dunst` fzf \
+ bat bat-extras fzf \
+ clang typst tinymist watchexec zellij \
+ alacritty wezterm bottom `#dunst` \
  firefox nitrogen handlr ripdrag \
  xclip shotgun hacksaw `# screenshot` \
  rustup rust-analyzer bacon sccache `# rust dev things` \
@@ -28,3 +29,5 @@ yay -S --answerclean All --answerdiff None \
 
 systemctl --user enable spotify-listener
 systemctl --user start spotify-listener
+
+./plugins.fish

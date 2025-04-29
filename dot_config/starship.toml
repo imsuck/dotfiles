@@ -1,0 +1,72 @@
+add_newline = false
+command_timeout = 2000
+format = "$time $all"
+right_format = "$cmd_duration"
+
+[c]
+format = "[ ](bg:green)[ $symbol$version ](bg:black) "
+symbol = "C"
+version_format = ""
+
+[character]
+disabled = true
+error_symbol = ""
+success_symbol = ""
+
+[cmd_duration]
+disabled = false
+format = "[$duration]($style) "
+min_time = 0
+show_milliseconds = true
+
+[directory]
+format = "[ ](bg:blue)[ $path ](bg:black) "
+use_os_path_sep = false
+
+[git_branch]
+format = "[ ](bg:purple)[ $symbol$branch ](bg:black)"
+symbol = ""
+
+[git_commit]
+format = "[ ](bg:purple)[ $hash$tag ](bg:black)"
+
+[git_status]
+deleted = "-"
+format = "([$all_status$ahead_behind ]($style)) "
+style = "fg:cyan bold bg:black"
+
+[line_break]
+disabled = true
+
+[nix_shell]
+disabled = true
+format = "$state[ $name ](bg:black) "
+impure_msg = "[ ](bg:red)"
+pure_msg = "[ ](bg:green)"
+unknown_msg = "[ ](bg:yellow)"
+
+[nodejs]
+format = "[ ](bg:green)[ $symbol$version ](bg:black) "
+symbol = "node"
+version_format = ""
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[rust]
+format = "[ ](bg:red)[ $symbol$version ](bg:black) "
+symbol = "rs"
+version_format = ""
+
+[status]
+disabled = false
+format = "[\\[$status\\]](bold red) "
+
+[time]
+disabled = false
+format = "[ ](bg:yellow)[ $time ](bg:black)"
+style = "yellow bold"
+time_format = "%R"

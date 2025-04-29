@@ -1,0 +1,101 @@
+theme = "base16_terminal_edit"
+[editor]
+auto-format = false
+bufferline = "multiple"
+color-modes = true
+completion-replace = true
+completion-trigger-len = 1
+end-of-line-diagnostics = "hint"
+idle-timeout = 0
+line-number = "relative"
+rulers = [80]
+shell = ["fish", "-c"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.indent-guides]
+character = "▏"
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+
+[editor.lsp]
+display-inlay-hints = false
+display-messages = true
+display-signature-help-docs = false
+
+[editor.statusline]
+left = [
+    "mode",
+    "spacer",
+    "spinner",
+    "spacer",
+    "version-control",
+    "file-name",
+    "read-only-indicator",
+    "file-modification-indicator",
+    "spacer",
+    "diagnostics",
+]
+right = ["position", "total-line-numbers", "selections", "file-encoding", "file-line-ending"]
+
+[editor.whitespace.render]
+newline = "all"
+
+[keys.insert]
+A-i = "shrink_selection"
+A-n = "select_next_sibling"
+A-o = "expand_selection"
+A-p = "select_prev_sibling"
+C-left = "move_prev_word_start"
+C-n = "goto_next_tabstop"
+C-p = "goto_prev_tabstop"
+C-right = "move_next_word_end"
+C-s = ":w"
+C-v = ":clipboard-paste-before"
+
+[keys.normal]
+A-down = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_down",
+    "goto_line_start",
+    "paste_before",
+    "collapse_selection",
+]
+A-j = [
+    "extend_to_line_bounds",
+    "delete_selection",
+    "move_line_down",
+    "goto_line_start",
+    "paste_before",
+    "collapse_selection",
+]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "collapse_selection"]
+C-s = ":w"
+esc = ":q"
+
+[keys.normal.backspace]
+I = ":set lsp.display-inlay-hints true"
+R = ":config-reload"
+c = ":o ~/.config/home-manager/mod/programs/helix.nix"
+f = ":fmt"
+i = ":set lsp.display-inlay-hints false"
+r = ":rl"
+
+[keys.normal.space]
+F = "file_picker"
+f = "file_picker_in_current_directory"
+
+[keys.select]
+A-down = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_before", "select_mode"]
+A-j = ["extend_to_line_bounds", "delete_selection", "move_line_down", "paste_before", "select_mode"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "select_mode"]
+A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before", "select_mode"]
+C-s = ":w"
+

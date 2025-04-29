@@ -1,0 +1,88 @@
+inherits = "base16_transparent"
+"ui.virtual.indent-guide" = "gray"
+[comment]
+fg = "comment"
+modifiers = ["italic"]
+
+[hint]
+
+[palette]
+background_highlight = "#373d5a"
+comment = "#565f89"
+
+[punctuation]
+fg = "comment"
+
+["ui.bufferline"]
+
+["ui.bufferline.active"]
+bg = "gray"
+
+["ui.cursor"]
+bg = "light-gray"
+fg = "black"
+
+["ui.cursor.primary"]
+bg = "white"
+fg = "black"
+
+["ui.cursorline.primary"]
+bg = "black"
+
+["ui.help"]
+bg = "black"
+
+["ui.menu"]
+bg = "black"
+
+["ui.menu.scroll"]
+bg = "black"
+fg = "light-gray"
+
+["ui.menu.selected"]
+bg = "gray"
+
+["ui.popup"]
+bg = "black"
+
+["ui.selection"]
+bg = "background_highlight"
+
+["ui.statusline"]
+bg = "black"
+fg = "white"
+
+["ui.statusline.inactive"]
+bg = "black"
+fg = "gray"
+
+["ui.statusline.insert"]
+fg = "blue"
+modifiers = ["bold", "reversed"]
+
+["ui.statusline.normal"]
+fg = "green"
+modifiers = ["bold", "reversed"]
+
+["ui.statusline.select"]
+fg = "yellow"
+modifiers = ["bold", "reversed"]
+
+["ui.virtual.inlay-hint"]
+fg = "gray"
+
+["ui.virtual.inlay-hint.parameter"]
+fg = "gray"
+
+["ui.virtual.inlay-hint.type"]
+fg = "gray"
+
+["ui.virtual.jump-label"]
+fg = "yellow"
+modifiers = ["bold"]
+
+["ui.virtual.jump-label".underline]
+style = "line"
+
+["ui.virtual.ruler"]
+bg = "black"

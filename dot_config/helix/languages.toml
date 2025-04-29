@@ -1,0 +1,43 @@
+[[language]]
+name = "cpp"
+
+[language.formatter]
+args = ["-style={AlignAfterOpenBracket: BlockIndent,AllowAllArgumentsOnNextLine: false,AllowAllParametersOfDeclarationOnNextLine: false,AllowShortIfStatementsOnASingleLine: WithoutElse,AllowShortLoopsOnASingleLine: true,BasedOnStyle: llvm,BinPackArguments: false,BinPackParameters: false,IndentCaseLabels: true,IndentPPDirectives: BeforeHash,IndentWidth: 4,NamespaceIndentation: All,SkipMacroDefinitionBody: true,SpaceAfterTemplateKeyword: false,}"]
+command = "clang-format"
+
+[language.indent]
+tab-width = 4
+unit = "    "
+
+[[language]]
+auto-format = true
+name = "css"
+
+[language.indent]
+tab-width = 2
+unit = "  "
+
+[[language]]
+name = "nix"
+
+[language.formatter]
+command = "nixfmt"
+
+[[language]]
+name = "rust"
+
+[language.formatter]
+command = "rustfmt"
+
+[language-server.clangd]
+args = ["--header-insertion=never"]
+
+[language-server.clangd.config]
+fallbackFlags = [
+    "-std=c++17",
+    "-Wall",
+    "-Wconversion",
+    "-Wno-sign-conversion",
+    "-Wno-shorten-64-to-32",
+    "-Wno-unqualified-std-cast-call",
+]
