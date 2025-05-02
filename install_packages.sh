@@ -10,7 +10,7 @@ alias pac_inst 'sudo pacman -S --noconfirm --needed'
 
 pac_inst bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide
 # dev
-pac_inst clang helix mise tinymist typst watchexec zellij
+pac_inst clang helix mise tinymist typst typstyle watchexec zellij
 # rust dev
 pac_inst rustup rust-analyzer bacon sccache
 

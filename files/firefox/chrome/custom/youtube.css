@@ -7,5 +7,8 @@
 #contents.ytd-rich-grid-renderer {
 	--ytd-rich-grid-items-per-row: 4;
 }
+ytd-video-renderer.style-scope.ytd-item-section-renderer:has(#dismissed div) {
+	display: none !important;
+}
 }
 

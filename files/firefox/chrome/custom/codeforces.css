@@ -1,3 +1,27 @@
+/* Firefox can't style these properly, use Stylus instead.
+select,
+button,
+input {
+	color: var(--fg);
+	border-radius: 6px;
+}
+
+select,
+button {
+	background: var(--black);
+	border: var(--black) solid;
+}
+
+input {
+	background: var(--tableGreyRow);
+	border: var(--tableGreyRow) solid;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+*/
+
 @-moz-document domain("codeforces.com") {
 :root {
 	--black: #414868;
@@ -66,7 +90,7 @@ td {
 
 select {
 	color: var(--fg);
-	background-color: var(--black);
+	background: var(--black);
 	border: var(--black) solid;
 	border-radius: 6px;
 }
