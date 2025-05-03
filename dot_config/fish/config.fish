@@ -14,9 +14,10 @@ set -gx LS_COLORS (vivid generate tokyonight-storm)
 set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
 set -gx RUSTC_WRAPPER 'sccache'
 
-set -gx FZF_DEFAULT_COMMAND 'fd -LH --color=always'
+set -gx FZF_DEFAULT_COMMAND "fd -LH --no-ignore-vcs --color=always"
 set -gx FZF_DEFAULT_OPTS '--ansi --bind ctrl-d:half-page-down,ctrl-u:half-page-up --min-height 10 --height 20% --preview "~/scripts/fzf_preview.sh {}"'
-set -gx FZF_CTRL_T_COMMAND "fd -LH --color=always --search-path \$dir | sed s#\\\\./##"
+set -gx FZF_CTRL_T_COMMAND "fd -LH --no-ignore-vcs --color=always --search-path \$dir | sed s#\\\\./##"
+set -gx FZF_ALT_C_COMMAND "fd -LHtd --no-ignore-vcs --color=always --search-path \$dir |  sed s#\\\\./##"
 set -gx FZF_CTRL_R_OPTS '--preview ""'
 
 set -gx HM_FLAKE "$HOME"'/.config/home-manager'
