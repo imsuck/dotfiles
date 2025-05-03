@@ -35,6 +35,15 @@ tab-width = 2
 unit = "  "
 
 [[language]]
+name = "fish"
+language-servers = [ "fish-lsp" ]
+
+[language-server.fish-lsp]
+command = "fish-lsp"
+args= ["start"]
+environment = { "fish_lsp_show_client_popups" = "false" }
+
+[[language]]
 name = "nix"
 
 [language.formatter]
@@ -58,3 +67,9 @@ fallbackFlags = [
     "-Wno-shorten-64-to-32",
     "-Wno-unqualified-std-cast-call",
 ]
+
+[[language]]
+name = "typst"
+
+[language.formatter]
+command = "typstyle"

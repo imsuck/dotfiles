@@ -31,6 +31,7 @@
       # cli
       cht-sh
       megacmd
+      nb
 
       # desktop
       mouseless

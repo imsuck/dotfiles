@@ -10,8 +10,8 @@ bindsym Shift+F8 exec --no-startup-id ~/scripts/rofi_script_runner.sh
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym $mod+Shift+Return exec --no-startup-id wezterm
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Shift+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id wezterm
 bindsym $mod+period exec --no-startup-id ~/.config/rofi/scripts/emoji.sh
 bindsym $mod+Shift+period exec --no-startup-id ~/.config/rofi/scripts/mathematical_symbol_picker.sh
 # Screenshot

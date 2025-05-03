@@ -1,6 +1,9 @@
 README.md
-packages.md
+
+bootstrap.sh
 install_packages.sh
+packages.md
+plugins.fish
 
 windows/
 files/

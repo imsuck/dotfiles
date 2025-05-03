@@ -83,7 +83,7 @@ esc = ":q"
 [keys.normal.backspace]
 I = ":set lsp.display-inlay-hints true"
 R = ":config-reload"
-c = ":o ~/.config/home-manager/mod/programs/helix.nix"
+c = ":o ~/.config/helix/"
 f = ":fmt"
 i = ":set lsp.display-inlay-hints false"
 r = ":rl"

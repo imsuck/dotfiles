@@ -36,6 +36,7 @@ in
     ] ++ emoji-fonts;
     defaultFonts.monospace = [
       "FiraCode Nerd Font"
+      "Noto Sans Mono"
       "${jp-font}"
     ] ++ emoji-fonts;
     defaultFonts.emoji = emoji-fonts;
