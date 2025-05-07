@@ -27,7 +27,7 @@
 
         Service = with config; {
           ExecStartPre = "/bin/sleep 1";
-          ExecStart = "/usr/bin/sudo ${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
+          ExecStart = "${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
         };
 
         Install.WantedBy = [ "multi-user.target" ];

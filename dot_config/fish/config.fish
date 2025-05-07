@@ -15,7 +15,7 @@ set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
 set -gx RUSTC_WRAPPER 'sccache'
 
 set -gx FZF_DEFAULT_COMMAND "fd -LH --no-ignore-vcs --color=always"
-set -gx FZF_DEFAULT_OPTS '--ansi --bind ctrl-d:half-page-down,ctrl-u:half-page-up --min-height 10 --height 20% --preview "~/scripts/fzf_preview.sh {}"'
+set -gx FZF_DEFAULT_OPTS '--ansi --bind ctrl-d:half-page-down,ctrl-u:half-page-up --min-height 10 --height 50% --preview "~/scripts/fzf_preview.sh {}"'
 set -gx FZF_CTRL_T_COMMAND "fd -LH --no-ignore-vcs --color=always --search-path \$dir | sed s#\\\\./##"
 set -gx FZF_ALT_C_COMMAND "fd -LHtd --no-ignore-vcs --color=always --search-path \$dir |  sed s#\\\\./##"
 set -gx FZF_CTRL_R_OPTS '--preview ""'
@@ -43,10 +43,10 @@ status is-interactive; and begin
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
-    abbr --add -- l 'exa --icons'
-    abbr --add -- ll 'exa -l --icons'
-    abbr --add -- lll 'exa -la --icons'
-    abbr --add -- ls 'exa --icons'
+    abbr --add -- l 'eza --icons'
+    abbr --add -- ll 'eza -l --icons'
+    abbr --add -- lll 'eza -la --icons'
+    abbr --add -- ls 'eza --icons'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
     abbr --add -- p 'sudo pacman'

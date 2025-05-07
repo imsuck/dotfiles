@@ -6,6 +6,7 @@
 **/cargo/registry/*
 **/mise/installs/*
 **/nvim/lazy/*
+.direnv
 
 **/{Local,Session} Storage/*
 IndexedDB

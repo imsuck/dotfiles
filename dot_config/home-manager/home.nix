@@ -70,6 +70,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      # contentAddressedByDefault = true;
     };
     overlays = [
       (import ./overlays)

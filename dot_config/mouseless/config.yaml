@@ -8,6 +8,8 @@ layers:
 
   - name: mouse
     passThrough: true
+    enterCommand: "notify-send 'mouse layer entered'"
+    exitCommand: "notify-send 'mouse layer exited'"
     bindings:
       capslock: layer initial
       r: reload-config

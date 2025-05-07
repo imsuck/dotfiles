@@ -22,5 +22,15 @@ run = "magick"
 mime = "image/adobe.photoshop"
 run = "psd"
 
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
+
 [preview]
 image_delay = 100
