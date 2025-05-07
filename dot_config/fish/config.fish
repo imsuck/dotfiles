@@ -74,6 +74,8 @@ status is-interactive; and begin
 
     zoxide init fish | source
 
+    atuin init fish --disable-up-arrow | source
+
     if test "$TERM" != dumb
         starship init fish | source
     end

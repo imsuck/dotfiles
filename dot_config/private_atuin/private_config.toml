@@ -1,0 +1,82 @@
+## date format used
+dialect = "uk"
+
+## offset from UTC in the format of "<+|->H[H][:M[M][:S[S]]]"
+## for example: "+9", "-05", "+03:30", "-01:23:45", etc.
+timezone = "local"
+
+## possible values: prefix, fulltext, fuzzy, skim
+# search_mode = "fuzzy"
+
+inline_height = 20
+
+show_preview = true
+
+## possible values: return-original, return-query
+exit_mode = "return-original"
+
+## characters that count as a part of a word
+word_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+## number of context lines to show when scrolling by pages
+# scroll_context_lines = 1
+
+## use ctrl instead of alt as the shortcut modifier key for numerical UI shortcuts
+## alt-0 .. alt-9
+# ctrl_n_shortcuts = false
+
+## default history list format - can also be specified with the --format arg
+history_format = "{time}\t{command}\t{duration}"
+
+history_filter = []
+
+cwd_filter = []
+
+show_help = false
+
+secrets_filter = true
+
+enter_accept = true
+
+## Timeout (in seconds) for acquiring a local database connection (sqlite)
+local_timeout = 5
+
+[stats]
+## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
+common_subcommands = [
+#   "apt",
+  "cargo",
+#   "composer",
+#   "dnf",
+#   "docker",
+  "git",
+#   "go",
+#   "ip",
+#   "jj",
+#   "kubectl",
+#   "nix",
+#   "nmcli",
+#   "npm",
+#   "pecl",
+#   "pnpm",
+#   "podman",
+#   "port",
+#   "systemctl",
+#   "tmux",
+#   "yarn",
+]
+
+## Set commands that should be totally stripped and ignored from stats
+common_prefix = ["sudo"]
+
+[keys]
+scroll_exits = false
+exit_past_line_start = false
+# Defaults to true. The right arrow key performs the same functionality as Tab and copies the selected line to the command line to be modified.
+# accept_past_line_end = true
+
+[search]
+## The list of enabled filter modes, in order of priority.
+## The "workspace" mode is skipped when not in a workspace or workspaces = false.
+## Default filter mode can be overridden with the filter_mode setting.
+# filters = [ "global", "host", "session", "workspace", "directory" ]
