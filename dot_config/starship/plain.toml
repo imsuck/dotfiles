@@ -2,29 +2,33 @@ add_newline = false
 
 command_timeout = 2_000
 
-format = """$time $all"""
+format = """$all"""
 
-# right_format = """$time"""
+right_format = """$cmd_duration$time"""
 
 [character]
 success_symbol = "λ"
 error_symbol = "λ"
 
 [cmd_duration]
+disabled = false
+style = "yellow"
+format = "[$duration]($style) "
 min_time = 500
-disabled = true
 
 [directory]
 # truncation_symbol = "…/"
 use_os_path_sep = false
+style = 'blue'
 
 [git_branch]
 symbol = ""
-format = '[$symbol$branch](bold purple)'
+style = "purple"
+format = '[$symbol$branch]($style)'
 
 [git_status]
-format = '([$all_status$ahead_behind]($style)) '
 style = "bold cyan"
+format = '([$all_status$ahead_behind]($style)) '
 deleted = "-"
 
 [rust]
@@ -32,15 +36,19 @@ symbol = "rs"
 version_format = ""
 format = '[$symbol$version]($style) '
 
+[nodejs]
+symbol = "node"
+format = '[$symbol]($style) '
+
 [status]
-format = '[\[$status\]](bold red) '
 disabled = false
+format = '[\[$status\]](bold red) '
 
 [time]
-format = '''[\[$time\]]($style)'''
-time_format = '%R'
-style = 'yellow bold'
 disabled = false
+style = 'yellow'
+time_format = '%R'
+format = '''[\[$time\]]($style)'''
 
 [line_break]
 disabled = true
