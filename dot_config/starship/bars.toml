@@ -1,7 +1,7 @@
 add_newline = false
 command_timeout = 2000
-format = "$time $all"
-right_format = "$cmd_duration"
+format = "$all"
+right_format = "$cmd_duration$time"
 
 [c]
 format = "[ ](bg:green)[ $symbol$version ](bg:black) "
@@ -16,11 +16,13 @@ success_symbol = ""
 [cmd_duration]
 disabled = false
 format = "[$duration]($style) "
-min_time = 0
+min_time = 100
 show_milliseconds = true
 
 [directory]
 format = "[ ](bg:blue)[ $path ](bg:black) "
+truncation_length = 1
+fish_style_pwd_dir_length = 1
 use_os_path_sep = false
 
 [git_branch]

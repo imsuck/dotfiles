@@ -7,17 +7,19 @@ format = """$all"""
 right_format = """$cmd_duration$time"""
 
 [character]
-success_symbol = "λ"
-error_symbol = "λ"
+format = "λ "
 
 [cmd_duration]
 disabled = false
 style = "yellow"
 format = "[$duration]($style) "
-min_time = 500
+min_time = 100
+show_milliseconds = true
 
 [directory]
 # truncation_symbol = "…/"
+truncation_length = 1
+fish_style_pwd_dir_length = 1
 use_os_path_sep = false
 style = 'blue'
 

@@ -6,7 +6,7 @@ dialect = "uk"
 timezone = "local"
 
 ## possible values: prefix, fulltext, fuzzy, skim
-# search_mode = "fuzzy"
+search_mode = "fuzzy"
 
 inline_height = 20
 

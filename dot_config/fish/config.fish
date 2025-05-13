@@ -71,23 +71,24 @@ status is-interactive; and begin
 
     set fish_color_command blue
     set fish_greeting
+    set __mise_command_not_found
 
     zoxide init fish | source
-
-    atuin init fish --disable-up-arrow | source
 
     if test "$TERM" != dumb
         starship init fish | source
     end
 
     mise activate fish | source
+
+    set -g fish_key_bindings fish_vi_key_bindings
 end
 
-if not functions -q _fish_prompt
-    functions --copy fish_prompt _fish_prompt
-    function fish_prompt
-        _fish_prompt
-        printf "\e[0 q" # reset cursor
-        commandline -f repaint
-    end
-end
+# if not functions -q _fish_prompt
+#     functions --copy fish_prompt _fish_prompt
+#     function fish_prompt
+#         _fish_prompt
+#         printf "\e[0 q" # reset cursor
+#         commandline -f repaint
+#     end
+# end

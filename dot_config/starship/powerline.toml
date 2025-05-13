@@ -20,15 +20,17 @@ $time\
 """
 
 [character]
-success_symbol = ""
-error_symbol = ""
-format = "[ $symbol ](red inverted)"
+success_symbol = "  "
+error_symbol = ""
+format = "[$symbol](red inverted)"
 
 [cmd_duration]
-min_time = 500
+min_time = 100
 
 [directory]
-truncation_symbol = "…/"
+# truncation_symbol = "…/"
+truncation_length = 1
+fish_style_pwd_dir_length = 1
 style = "blue inverted"
 format = '[ $path ]($style)'
 use_os_path_sep = false
@@ -50,7 +52,7 @@ format = '[ $symbol ]($style)'
 
 [status]
 style = "red inverted"
-format = '[ \[$status\]]($style)'
+format = '[ $status ]($style)'
 disabled = false
 
 [time]
