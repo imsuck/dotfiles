@@ -43,10 +43,10 @@ status is-interactive; and begin
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
-    abbr --add -- l 'eza --icons'
-    abbr --add -- ll 'eza -l --icons --no-time'
-    abbr --add -- lll 'eza -la --icons --no-time'
-    abbr --add -- ls 'eza --icons'
+    abbr --add -- l 'eza --icons=always'
+    abbr --add -- ll 'eza -l --icons=always --no-time'
+    abbr --add -- lll 'eza -la --icons=always --no-time'
+    abbr --add -- ls 'eza --icons=always'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
     abbr --add -- p 'sudo pacman'
@@ -66,10 +66,6 @@ status is-interactive; and begin
 
     batman --export-env | source
 
-    # if ! set -q ZELLIJ
-    #   exec zellij
-    # end
-
     set fish_color_command blue
     set fish_greeting
     set __mise_command_not_found
@@ -85,6 +81,10 @@ status is-interactive; and begin
     set -g fish_key_bindings fish_vi_key_bindings
 
     zellij_tab_name_update
+
+    # if ! set -q ZELLIJ
+    #     exec zellij
+    # end
 end
 
 # if not functions -q _fish_prompt
