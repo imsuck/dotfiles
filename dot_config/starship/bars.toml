@@ -69,6 +69,6 @@ format = "[\\[$status\\]](bold red) "
 
 [time]
 disabled = false
-format = "[ ](bg:yellow)[ $time ](bg:black)"
+format = "[ $time ](bg:black)[ ](bg:yellow)"
 style = "yellow bold"
 time_format = "%R"

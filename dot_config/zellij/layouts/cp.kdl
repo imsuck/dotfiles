@@ -1,5 +1,11 @@
 // Auto test cpp code. Useful in competitive programming (for me atleast).
 layout {
+	default_tab_template {
+		children
+		pane size=1 borderless=true {
+			plugin location="zjstatus"
+		}
+	}
 	tab focus=true {
 		pane split_direction="vertical" {
 			pane focus=true size="75%" command="$EDITOR" {

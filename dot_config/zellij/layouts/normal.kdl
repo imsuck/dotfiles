@@ -2,7 +2,7 @@ layout {
     default_tab_template {
         children
         pane size=1 borderless=true {
-            plugin location="zellij:compact-bar"
+            plugin location="zjstatus"
         }
     }
 
@@ -57,5 +57,5 @@ layout {
         }
     }
 
-    tab name="cmd"
+    tab
 }

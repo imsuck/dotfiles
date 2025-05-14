@@ -44,13 +44,14 @@ status is-interactive; and begin
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
     abbr --add -- l 'eza --icons'
-    abbr --add -- ll 'eza -l --icons'
-    abbr --add -- lll 'eza -la --icons'
+    abbr --add -- ll 'eza -l --icons --no-time'
+    abbr --add -- lll 'eza -la --icons --no-time'
     abbr --add -- ls 'eza --icons'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
     abbr --add -- p 'sudo pacman'
     abbr --add -- pr 'gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)'
+    abbr --add -- tm tmux
     abbr --add -- wtr 'curl wttr.in/?qF'
     abbr --add -- yr 'cal -y'
     abbr --add -- yz yazi
@@ -82,6 +83,8 @@ status is-interactive; and begin
     mise activate fish | source
 
     set -g fish_key_bindings fish_vi_key_bindings
+
+    zellij_tab_name_update
 end
 
 # if not functions -q _fish_prompt

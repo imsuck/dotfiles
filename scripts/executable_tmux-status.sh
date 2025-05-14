@@ -50,17 +50,13 @@ tmux_set @prefix_highlight_bg "$primary"
 
 
 # Left side of status bar
-# tmux_set status-left-length 150
+tmux_set status-left-length 150
 LS="#[fg=$black,bg=$magenta] #S #[default] "
-# LS="$LS#[fg=$primary,bg=$BG1]$right_arrow_icon"
-
 
 # Right side of status bar
-# tmux_set status-right-length 150
+tmux_set status-right-length 150
 RS=" #{prefix_highlight}#[default] "
-RS="$RS#[bg=$yellow] #[fg=default,bg=$black] $time_format #[default]"
-# RS="$RS#[fg=$BG2]$left_arrow_icon#[fg=$BG1,bg=$primary]$time_icon$time_format"
-# RS="$RS#[fg=$primary,bg=$BG2]$left_arrow_icon#[fg=$BG1,bg=$primary]$date_icon$date_format "
+RS="$RS#[fg=default,bg=$black] $time_format #[bg=$yellow] #[default]"
 
 
 # Window status
