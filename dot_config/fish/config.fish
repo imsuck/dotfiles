@@ -1,18 +1,18 @@
 # IME
-set -gx GLFW_IM_MODULE 'ibus'
-set -gx GTK_IM_MODULE 'fcitx'
-set -gx QT_IM_MODULE 'fcitx'
+set -gx GLFW_IM_MODULE ibus
+set -gx GTK_IM_MODULE fcitx
+set -gx QT_IM_MODULE fcitx
 set -gx XMODIFIERS '@im=fcitx'
 
 set -gx PATH "$HOME"'/.local/bin:'"$CARGO_HOME"'/bin'(test -n "$PATH" && echo ':' || echo)"$PATH"
-set -gx BROWSER 'firefox'
-set -gx EDITOR 'helix'
-set -gx VISUAL 'helix'
-set -gx PAGER 'bat'
+set -gx BROWSER firefox
+set -gx EDITOR helix
+set -gx VISUAL helix
+set -gx PAGER bat
 set -gx LS_COLORS (vivid generate tokyonight-storm)
 
 set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
-set -gx RUSTC_WRAPPER 'sccache'
+set -gx RUSTC_WRAPPER sccache
 
 set -gx FZF_DEFAULT_COMMAND "fd -LH --no-ignore-vcs --color=always"
 set -gx FZF_DEFAULT_OPTS '--ansi --bind ctrl-d:half-page-down,ctrl-u:half-page-up --min-height 10 --height 50% --preview "~/scripts/fzf_preview.sh {}"'
@@ -22,8 +22,8 @@ set -gx FZF_CTRL_R_OPTS '--preview ""'
 
 set -gx HM_FLAKE "$HOME"'/.config/home-manager'
 set -gx COMMA_NIXPKGS_FLAKE "$HOME"'/.config/home-manager'
-set -gx XCURSOR_SIZE '32'
-set -gx XCURSOR_THEME 'Posy_Cursor'
+set -gx XCURSOR_SIZE 32
+set -gx XCURSOR_THEME Posy_Cursor
 set -gx XCURSOR_PATH '/home/imsuck/.nix-profile/share/icons'(test -n "$XCURSOR_PATH" && echo ':' || echo)"$XCURSOR_PATH"
 
 status is-login; and begin
@@ -43,10 +43,10 @@ status is-interactive; and begin
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
-    abbr --add -- l 'eza --icons=always'
-    abbr --add -- ll 'eza -l --icons=always --no-time'
-    abbr --add -- lll 'eza -la --icons=always --no-time'
-    abbr --add -- ls 'eza --icons=always'
+    abbr --add -- l 'eza -F --icons=auto'
+    abbr --add -- ll 'eza -lF --icons=auto --no-time'
+    abbr --add -- lll 'eza -laF --icons=auto --no-time'
+    abbr --add -- ls 'eza -F --icons=auto'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
     abbr --add -- p 'sudo pacman'
@@ -80,7 +80,7 @@ status is-interactive; and begin
 
     set -g fish_key_bindings fish_vi_key_bindings
 
-    zellij_tab_name_update
+    # _zellij_tab_name_update
 
     # if ! set -q ZELLIJ
     #     exec zellij
