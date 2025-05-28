@@ -1,3 +1,9 @@
+[manager]
+title_format = "yazi {cwd}"
+
+[preview]
+image_delay = 0
+
 [[plugin.prepend_preloaders]]
 name = "*.kra"
 run = "krita"
@@ -31,6 +37,3 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
-
-[preview]
-image_delay = 100

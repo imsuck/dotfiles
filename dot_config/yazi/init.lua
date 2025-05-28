@@ -1,4 +1,15 @@
-require("folder-rules"):setup()
+require("dir-rules"):setup {
+  rules = {
+    screenshots = {
+      sort = { "alphabetical", reverse = true },
+    },
+    Downloads = {
+      sort = { "mtime", reverse = true },
+      linemode = { "permissions" },
+      hidden = { "show" },
+    }
+  }
+}
 
 th.git = th.git or {}
 th.git.added_sign = "+"

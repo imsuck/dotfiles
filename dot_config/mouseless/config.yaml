@@ -8,8 +8,8 @@ layers:
 
   - name: mouse
     passThrough: true
-    enterCommand: "notify-send -r 32835 -t 1000 'mouse layer entered'"
-    exitCommand: "notify-send -r 32835 -t 1000 'mouse layer exited'"
+    enterCommand: "notify-send -r 32835 -t 250 'mouse layer entered'"
+    exitCommand: "notify-send -r 32835 -t 250 'mouse layer exited'"
     bindings:
       capslock: layer initial
       r: reload-config

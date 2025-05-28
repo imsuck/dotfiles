@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-main() {
+sudo_main() {
   echo 'ACTION=="add", SUBSYSTEM=="backlight", RUN+="/bin/chgrp video \$sys\$devpath/brightness", RUN+="/bin/chmod g+w \$sys\$devpath/brightness"' |\
     tee /etc/udev/rules.d/backlight.rules
 
@@ -17,7 +17,15 @@ main() {
 	echo ' Driver "libinput"'                      | tee -a /etc/X11/xorg.conf.d/40-libinput.conf
 	echo ' Option "AccelProfile" "flat"'           | tee -a /etc/X11/xorg.conf.d/40-libinput.conf
 	echo 'EndSection'                              | tee -a /etc/X11/xorg.conf.d/40-libinput.conf
+
+	# I don't use kitty anyway
+	ln -s /usr/share/terminfo/x/xterm-256color /usr/share/x/xterm-kitty
 }
 
-MAIN=$(declare -f main)
-sudo bash -c "$MAIN; main"
+main() {
+  ln -s /usr/bin/helix ~/.local/bin/hx
+}
+
+main
+SUDO_MAIN=$(declare -f sudo_main)
+sudo bash -c "$SUDO_MAIN; sudo_main"

@@ -6,6 +6,7 @@ prepend_keymap = [
   { on = "e", run = "shell --confirm --block '$EDITOR \"$0\"'" },
 
   { on = "f", run = "plugin smart-filter" },
+  { on = "F", run = "filter" },
 
   { on = "j", run = "plugin arrow 1" },
   { on = "k", run = "plugin arrow -1" },

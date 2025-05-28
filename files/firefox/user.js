@@ -1,3 +1,5 @@
+user_pref("browser.urlbar.trimURLs", false);
+
 // Fix redo icon
 user_pref("userChrome.icon.menu.full", true);
 

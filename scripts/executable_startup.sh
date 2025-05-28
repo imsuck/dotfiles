@@ -4,12 +4,6 @@ dex --autostart --environment i3 &
 
 eww daemon &
 
-# alacritty &
-
-# thunar &
-
-# firefox &
-
 dbus-launch dunst --config ~/.config/dunst/dunstrc &
 
 nitrogen --restore &
@@ -22,4 +16,4 @@ systemctl --user start fcitx5-daemon.service &
 
 systemctl --user start mouseless.service &
 
-# xclipboard &
+clipcatd &

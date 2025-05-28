@@ -1,0 +1,26 @@
+# Server endpoint
+# The `clipcat-menu` connects to the server via a Unix domain socket if `server_endpoint` is a file path, such as:
+# "/run/user/<user-id>/clipcat/grpc.sock".
+# It connects via HTTP if `server_endpoint` is a URL, like: "http://127.0.0.1:45045".
+server_endpoint = "/run/user/1000/clipcat/grpc.sock"
+
+# The default finder to invoke when no "--finder=<finder>" option is provided.
+finder = "rofi"
+
+[log]
+# file_path = "/path/to/log/file"
+emit_journald = true
+emit_stdout = false
+emit_stderr = false
+level = "INFO"
+
+[rofi]
+line_length = 100
+menu_length = 12
+menu_prompt = "Clipcat"
+extra_arguments = ["-mesg", "Please select a clip"]
+
+[custom_finder]
+program = "fzf"
+args = []
+

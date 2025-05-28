@@ -19,6 +19,9 @@ bindsym Print exec --no-startup-id ~/scripts/screenshot.sh
 # My keyboard is weird so I use this keybind for both jobs
 bindsym Shift+Print exec --no-startup-id "killall ffmpeg; ~/scripts/ffmpeg_record.sh"
 
+# Clipboard
+bindsym $mod+v exec --no-startup-id clipcat-menu insert
+
 bindsym $mod+q kill
 
 

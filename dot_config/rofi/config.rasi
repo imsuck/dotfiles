@@ -88,6 +88,7 @@ configuration {
 	threads: 0;
 	click-to-exit: true;
 	hover-select: false;
+	imdkit: false;
 /*	ignored-prefixes: "";*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 

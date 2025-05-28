@@ -6,8 +6,13 @@ set -gx XMODIFIERS '@im=fcitx'
 
 set -gx PATH "$HOME"'/.local/bin:'"$CARGO_HOME"'/bin'(test -n "$PATH" && echo ':' || echo)"$PATH"
 set -gx BROWSER firefox
-set -gx EDITOR helix
-set -gx VISUAL helix
+if command -q hx
+    set -gx EDITOR hx
+    set -gx VISUAL hx
+else if command -q helix
+    set -gx EDITOR helix
+    set -gx VISUAL helix
+end
 set -gx PAGER bat
 set -gx LS_COLORS (vivid generate tokyonight-storm)
 
@@ -39,7 +44,7 @@ status is-interactive; and begin
     abbr --add -- c cargo
     abbr --add -- ct 'cargo test'
     abbr --add -- df 'duf -theme ansi'
-    abbr --add -- e helix
+    abbr --add -- e hx
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
@@ -58,6 +63,11 @@ status is-interactive; and begin
     abbr --add -- ze zellij
 
     # Aliases
+    if command -q hx
+        # alias helix hx
+    else if command -q helix
+        alias hx helix
+    end
 
     # Interactive shell initialisation
     fzf --fish | source

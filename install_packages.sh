@@ -22,7 +22,7 @@ pac_inst firefox nitrogen picom polybar qalculate-gtk rofi rofi-emoji zathura
 # screenshot
 pac_inst xclip shotgun hacksaw
 
-pac_inst xdo `#cronie` `#stalonetray`
+pac_inst xdo clipcat `#cronie` `#stalonetray`
 pac_inst fcitx5-bamboo fcitx5-mozc-ut ibus # needed for fcitx5 (???)
 
 yay -S --needed --answerclean All --answerdiff None \
@@ -30,7 +30,7 @@ yay -S --needed --answerclean All --answerdiff None \
  vesktop \
  eww \
  spotify-adblock-git `#cava` \
- betterlockscreen pavucontrol-gtk3 \
+ betterlockscreen pavucontrol-gtk3 networkmanager-iwd \
  `#nerd-fonts-jetbrains-mono` \
  typstyle `#diskonaut` polybar-spotify-module
 
