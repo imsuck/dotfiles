@@ -10,7 +10,8 @@ alias pac_inst='sudo pacman -S --noconfirm --needed'
 
 pac_inst cronie
 
-pac_inst atuin bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide
+pac_inst atuin bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide \
+  impala
 # dev
 pac_inst clang helix mise tinymist typst watchexec zellij
 # rust dev
@@ -26,13 +27,13 @@ pac_inst xdo clipcat `#cronie` `#stalonetray`
 pac_inst fcitx5-bamboo fcitx5-mozc-ut ibus # needed for fcitx5 (???)
 
 yay -S --needed --answerclean All --answerdiff None \
- autotiling ksuperkey \
- vesktop \
- eww \
- spotify-adblock-git `#cava` \
- betterlockscreen pavucontrol-gtk3 networkmanager-iwd \
- `#nerd-fonts-jetbrains-mono` \
- typstyle `#diskonaut` polybar-spotify-module
+  autotiling ksuperkey \
+  vesktop \
+  eww \
+  spotify-adblock-git `#cava` \
+  betterlockscreen pavucontrol-gtk3 networkmanager-iwd \
+  `#nerd-fonts-jetbrains-mono` \
+  typstyle `#diskonaut` polybar-spotify-module
 
 systemctl --user enable spotify-listener
 systemctl --user start spotify-listener

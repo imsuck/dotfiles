@@ -1,13 +1,7 @@
 require("dir-rules"):setup {
   rules = {
-    screenshots = {
-      sort = { "alphabetical", reverse = true },
-    },
-    Downloads = {
-      sort = { "mtime", reverse = true },
-      linemode = { "permissions" },
-      hidden = { "show" },
-    }
+    screenshots = { sort = { "alphabetical", reverse = true } },
+    Downloads = { sort = { "mtime", reverse = true } },
   }
 }
 

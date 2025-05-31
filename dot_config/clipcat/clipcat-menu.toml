@@ -17,7 +17,7 @@ level = "INFO"
 [rofi]
 line_length = 100
 menu_length = 12
-menu_prompt = "Clipcat"
+menu_prompt = "clipcat"
 extra_arguments = ["-mesg", "Please select a clip"]
 
 [custom_finder]
