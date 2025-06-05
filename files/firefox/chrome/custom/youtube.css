@@ -4,6 +4,15 @@
 	background: #f03 !important;
 }
 
+div.ytSuggestionComponentSuggestion {
+  height: 36px;
+  margin: 0;
+  border-radius: 0;
+}
+#i0.ytSearchboxComponentSuggestionsContainer {
+  padding: 0;
+}
+
 #contents.ytd-rich-grid-renderer {
 	--ytd-rich-grid-items-per-row: 4;
 }

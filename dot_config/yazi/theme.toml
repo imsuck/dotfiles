@@ -1,23 +1,23 @@
-[manager.border_style]
+[mgr.border_style]
 fg = "darkgray"
 
-[manager.count_copied]
+[mgr.count_copied]
 bg = "green"
 fg = "black"
 
-[manager.count_cut]
+[mgr.count_cut]
 bg = "red"
 fg = "black"
 
-[manager.count_selected]
+[mgr.count_selected]
 bg = "yellow"
 fg = "black"
 
-[manager.tab_active]
+[mgr.tab_active]
 bg = "blue"
 fg = "black"
 
-[manager.tab_inactive]
+[mgr.tab_inactive]
 fg = "blue"
 
 [mode.normal_alt]
