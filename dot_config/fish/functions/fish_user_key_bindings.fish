@@ -4,6 +4,7 @@ function fish_user_key_bindings
     bind -M insert ctrl-n down-or-search
 
     bind \cz "fg&>/dev/null; echo; commandline -f repaint"
+    bind -M insert \cz "fg&>/dev/null; echo; commandline -f repaint"
     bind -M insert \e\[3\;3~ kill-word
     bind \el "echo; eza -F --icons=auto; commandline -f repaint"
     bind -M insert \el "echo; eza -F --icons=auto; commandline -f repaint"

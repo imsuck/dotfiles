@@ -9,6 +9,7 @@ inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 text/x-log=helix.desktop;firefox.desktop;
 application/octet-stream=firefox.desktop;
+application/x-zerosize=helix.desktop;
 
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;

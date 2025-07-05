@@ -26,11 +26,11 @@ workspace_layout default
 # workspace_layout tabbed
 
 # border
-default_border normal 0
-default_floating_border normal 0
+default_border pixel 2
+default_floating_border pixel 2
 # default_border none
 # for_window [class="^.*"] border none
-# smart_borders true
+smart_borders true
 
 gaps inner 0
 gaps outer 0
@@ -47,18 +47,18 @@ floating_modifier $mod
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-set $bg				#24283b
-set $blue			#7aa2f7
-set $cyan			#7dcfff
-set $urgentred		#ff5370
-set $white			#C0CAF5
-set $black			#1D202F
-set $grey			#414868
-set $purple			#c792ea
-set $grey			#eeffff
+set $bg        #24283b
+set $blue      #7aa2f7
+set $cyan      #7dcfff
+set $urgentred #ff5370
+set $white     #C0CAF5
+set $black     #1D202F
+set $grey      #414868
+set $purple    #c792ea
+set $grey      #eeffff
 
-#class		        		border		bground		text		indicator	child_border
-client.focused				$blue		$blue		$black		$blue		$blue	
-client.focused_inactive		$bg			$bg			$blue		$bg			$bg		
-client.unfocused			$bg			$bg			$blue		$bg			$bg	
-client.urgent				$urgentred	$urgentred	$white		$urgentred	$urgentred
+#class                   border     bground    text    indicator  child_border
+client.focused           $blue      $blue      $black  $blue      $blue 
+client.focused_inactive  $bg        $bg        $blue   $bg        $bg  
+client.unfocused         $bg        $bg        $blue   $bg        $bg 
+client.urgent            $urgentred $urgentred $white  $urgentred $urgentred

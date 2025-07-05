@@ -1,22 +1,49 @@
-[mgr]
-prepend_keymap = [
-  { on = "!", run = "shell --block '$SHELL'" },
+[[mgr.prepend_keymap]]
+on = "!"
+run = "shell --block '$SHELL'"
 
-  { on = "o", run = "shell --confirm --orphan 'handlr open \"$0\"'" },
-  { on = "e", run = "shell --confirm --block '$EDITOR \"$0\"'" },
+[[mgr.prepend_keymap]]
+on = "o"
+run = "shell --confirm --orphan 'handlr open \"$0\"'"
 
-  { on = "f", run = "plugin smart-filter" },
-  { on = "F", run = "filter" },
+[[mgr.prepend_keymap]]
+on = "e"
+run = "shell --confirm --block '$EDITOR \"$0\"'"
 
-  { on = "j", run = "plugin arrow 1" },
-  { on = "k", run = "plugin arrow -1" },
-  { on = "l", run = "plugin smart-enter" },
+[[mgr.prepend_keymap]]
+on = "f"
+run = "plugin smart-filter"
 
-  { on = [ "c", "m" ], run = "plugin chmod", desc = "Change file permissions" },
-  # TODO: copy image to clipboard
-  # { on = [ "c", "i" ], run = "shell --confirm --block 'cat $0 | xclip'"}
+[[mgr.prepend_keymap]]
+on = "F"
+run = "filter"
 
-  { on = "M", run = "plugin mount" },
+[[mgr.prepend_keymap]]
+on = "j"
+run = "plugin arrow 1"
 
-  { on = "<C-n>", run = "shell --confirm 'ripdrag -x -i -s 64 \"$@\" 2>/dev/null'" },
-]
+[[mgr.prepend_keymap]]
+on = "k"
+run = "plugin arrow -1"
+
+[[mgr.prepend_keymap]]
+on = "l"
+run = "plugin smart-enter"
+
+[[mgr.prepend_keymap]]
+on = [ "c", "m" ]
+run = "plugin chmod"
+desc = "Change file permissions"
+
+[[mgr.prepend_keymap]]
+on = [ "c", "c" ]
+run = "shell --confirm --block '~/scripts/yazi_copy_content.sh $0'"
+desc = "Copy file content"
+
+[[mgr.prepend_keymap]]
+on = "M"
+run = "plugin mount"
+
+[[mgr.prepend_keymap]]
+on = "<C-n>"
+run = "shell --confirm 'ripdrag -x -i -s 64 \"$@\" 2>/dev/null'"

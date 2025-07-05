@@ -5,12 +5,12 @@
 }
 
 div.ytSuggestionComponentSuggestion {
-  height: 36px;
-  margin: 0;
-  border-radius: 0;
+  height: 32px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
-#i0.ytSearchboxComponentSuggestionsContainer {
-  padding: 0;
+.ytSearchboxComponentSuggestionsContainer {
+  padding: 0 !important;
 }
 
 #contents.ytd-rich-grid-renderer {

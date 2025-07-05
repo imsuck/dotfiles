@@ -45,9 +45,25 @@ bg = "magenta"
 fg = "black"
 
 [status.sep_left]
-close = ""
 open = ""
+close = ""
 
 [status.sep_right]
 close = ""
 open = ""
+
+[tabs.active]
+bg = "blue"
+fg = "black"
+
+[tabs.inactive]
+bg = "reset"
+fg = "blue"
+
+[tabs.sep_inner]
+open = ""
+close = ""
+
+[tabs.sep_outer]
+open = ""
+close = ""
