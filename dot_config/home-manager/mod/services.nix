@@ -12,7 +12,7 @@
         Unit.Description = "memos server";
 
         Service = with config; {
-          ExecStart = "${pkgs.memos}/bin/memos -d ${xdg.dataHome}/memos/ -m prod";
+          ExecStart = "${pkgs.memos}/bin/memos --data ${xdg.dataHome}/memos/ --mode prod";
           Restart = "always";
           RestartSec = 3;
         };

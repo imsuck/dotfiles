@@ -1,16 +1,16 @@
 [Added Associations]
 application/json=Helix.desktop;helix.desktop;
+application/octet-stream=osu.desktop;firefox.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 application/x-krita=org.gnome.FileRoller.desktop;
 application/x-shellscript=fish.desktop;
+application/x-zerosize=helix.desktop;
+application/zip=osu.desktop;
 image/jpeg=feh.desktop;krita_jpeg.desktop;org.gnome.gThumb.desktop;
 image/png=org.gnome.gThumb.desktop;krita_png.desktop;feh.desktop;
 inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 text/x-log=helix.desktop;firefox.desktop;
-application/octet-stream=firefox.desktop;
-application/x-zerosize=helix.desktop;
-
 [Default Applications]
 application/pdf=org.pwmt.zathura.desktop;
 application/x-krita=org.kde.krita.desktop;
@@ -21,6 +21,7 @@ image/heif=feh.desktop;
 image/jpeg=feh.desktop;firefox.desktop;
 image/jpg=feh.desktop;firefox.desktop;
 image/png=feh.desktop;firefox.desktop;
+image/svg+xml=firefox.desktop;
 image/tiff=feh.desktop;
 image/vnd.zbrush.pcx=feh.desktop;
 image/webp=feh.desktop;
@@ -39,9 +40,9 @@ text/x-makefile=helix.desktop;
 text/x-moc=helix.desktop;
 text/x-pascal=helix.desktop;
 text/x-tex=helix.desktop;
+x-scheme-handler/discord=vesktop.desktop;
+x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop;
 x-scheme-handler/figma=figma-linux.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handlr/https=firefox.desktop;
-x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
-x-scheme-handler/discord=vesktop.desktop

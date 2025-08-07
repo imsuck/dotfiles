@@ -19,15 +19,15 @@ include window_rules
 exec --no-startup-id ~/scripts/startup.sh
 exec_always --no-startup-id ~/scripts/startup_always.sh
 
-font pango: Roboto Mono 10
+font pango: Roboto Mono 8
 
 workspace_layout default
 # workspace_layout stacking
 # workspace_layout tabbed
 
 # border
-default_border pixel 2
-default_floating_border pixel 2
+default_border normal 0
+default_floating_border normal 0
 # default_border none
 # for_window [class="^.*"] border none
 smart_borders true

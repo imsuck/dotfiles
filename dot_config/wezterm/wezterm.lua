@@ -16,7 +16,7 @@ return {
     "Twitter Color Emoji",
     "Font Awesome 6 Brands",
   },
-  font_size = 12.0,
+  font_size = 10.2,
   -- font_size = 8.5,
   -- cell_width = 1.1,
   line_height = 0.9,
