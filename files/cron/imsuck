@@ -1,3 +1,4 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/home/imsuck/.nix-profile/bin/
 
 0 0-23/4 * * * /home/imsuck/scripts/backup-mega.sh
+0 0-23/4 * * * /home/imsuck/scripts/backup_firefox.sh

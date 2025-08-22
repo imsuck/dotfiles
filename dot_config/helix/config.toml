@@ -87,6 +87,7 @@ c = ":o ~/.config/helix/"
 f = ":fmt"
 i = ":set lsp.display-inlay-hints false"
 r = ":rl"
+s = ":! getc"
 
 [keys.normal.space]
 F = "file_picker"
