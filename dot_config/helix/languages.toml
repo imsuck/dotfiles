@@ -28,6 +28,19 @@ command = "clang-format"
 tab-width = 4
 unit = "    "
 
+[language-server.clangd]
+args = ["--header-insertion=never"]
+
+[language-server.clangd.config]
+fallbackFlags = [
+    "-std=c++17",
+    "-Wall",
+    "-Wconversion",
+    "-Wno-sign-conversion",
+    # "-Wno-shorten-64-to-32",
+    "-Wno-unqualified-std-cast-call",
+]
+
 [[language]]
 auto-format = true
 name = "css"
@@ -57,18 +70,6 @@ name = "rust"
 [language.formatter]
 command = "rustfmt"
 
-[language-server.clangd]
-args = ["--header-insertion=never"]
-
-[language-server.clangd.config]
-fallbackFlags = [
-    "-std=c++17",
-    "-Wall",
-    "-Wconversion",
-    "-Wno-sign-conversion",
-    # "-Wno-shorten-64-to-32",
-    "-Wno-unqualified-std-cast-call",
-]
 
 [[language]]
 name = "typst"

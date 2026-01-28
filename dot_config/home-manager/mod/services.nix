@@ -26,7 +26,7 @@
         Unit.Description = "mouseless";
 
         Service = with config; {
-          ExecStart = "${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
+          ExecStart = "/usr/bin/sudo ${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
         };
 
         Install.WantedBy = [ "multi-user.target" ];
@@ -38,5 +38,12 @@
     paths = { };
   };
 
-  xdg.configFile = { };
-}
+  xdg.configFile = {
+    "systemd/user/mouseless.service" = {
+      onChange = ''
+        PATH=$PATH''\${PATH:+:}/usr/bin
+        echo "%wheel ALL=(ALL) NOPASSWD:${pkgs.mouseless}/bin/mouseless" | sudo tee /etc/sudoers.d/10-mouseless
+        sudo chmod 644 /etc/sudoers.d/10-mouseless
+      '';
+    };
+  };}

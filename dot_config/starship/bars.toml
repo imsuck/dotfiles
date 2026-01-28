@@ -4,9 +4,12 @@ format = "$all"
 right_format = "$cmd_duration$time"
 
 [c]
-format = "[ ](bg:green)[ $symbol$version ](bg:black) "
+format = "[ ](bg:green)[ $symbol ](bg:black) "
 symbol = "C"
-version_format = ""
+
+[cpp]
+format = "[ ](bg:green)[ $symbol ](bg:black) "
+symbol = "C++"
 
 [character]
 disabled = true

@@ -3,6 +3,8 @@ for_window [title="Picture-in-Picture"] sticky enable
 for_window [class="firefox"] border none
 for_window [class="krita"] border none
 
+for_window [class="fxclient-desktop"] border none
+
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Qalculate-gtk"] floating enable

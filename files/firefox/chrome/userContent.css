@@ -15,3 +15,25 @@
   color: #c0caf5;
   background-color: #373d5a;
 }
+
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+  .logo-and-wordmark * {
+    color: #fff !important;
+    filter: drop-shadow(2px 2px 2px #24283b) !important;
+  }
+  .search-inner-wrapper #newtab-search-text {
+    background-color: rgba(36, 40, 59, 0.75) !important;;
+  }
+
+  body::before {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: no-repeat url(img/background) center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}

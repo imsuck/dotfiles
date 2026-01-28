@@ -4,30 +4,9 @@
   home.packages = with pkgs; [
     git-filter-repo
   ];
-  programs.gh = {
+  programs.delta = {
     enable = true;
-    gitCredentialHelper.enable = true;
-    settings.git_protocol = "https";
-    extensions = with pkgs; [ gh-dash ];
-  };
-  programs.git = {
-    enable = true;
-    package = pkgs.nullpkg;
-
-    userName = "imsuck";
-    userEmail = "imsuck12@gmail.com";
-
-    extraConfig = {
-      credential.credentialStore = "gpg";
-
-      init.defaultBranch = "main";
-
-      diff.colorMoved = "default";
-      merge.conflictstyle = "zdiff3";
-    };
-
-    delta.enable = true;
-    delta.options = {
+    options = {
       line-numbers = true;
       navigate = true;
 
@@ -41,6 +20,30 @@
       plus-emph-style = "syntax '#516847'";
 
       syntax-theme = "base16";
+    };
+  };
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+    settings.git_protocol = "https";
+    extensions = with pkgs; [ gh-dash ];
+  };
+  programs.git = {
+    enable = true;
+    package = pkgs.nullpkg;
+
+    settings = {
+      user = {
+        name = "imsuck";
+        email = "imsuck12@gmail.com";
+      };
+
+      credential.credentialStore = "gpg";
+
+      init.defaultBranch = "main";
+
+      diff.colorMoved = "default";
+      merge.conflictstyle = "zdiff3";
     };
   };
 }

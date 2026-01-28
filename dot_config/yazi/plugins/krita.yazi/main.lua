@@ -23,7 +23,7 @@ function M:preload(job)
   end
 
   local output, err = Command("unzip")
-    :args({
+    :arg({
       "-p",
       tostring(job.file.url),
       "preview.png",

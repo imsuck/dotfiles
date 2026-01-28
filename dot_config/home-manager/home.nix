@@ -59,7 +59,7 @@
     };
     gc = {
       automatic = false;
-      frequency = "monthly";
+      dates = "monthly";
       options = "--delete-older-than 30d";
     };
   };

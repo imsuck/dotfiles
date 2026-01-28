@@ -1,4 +1,4 @@
-theme = "base16_terminal_edit"
+theme = "catppuccin_macchiato"
 [editor]
 auto-format = false
 bufferline = "multiple"
@@ -88,6 +88,7 @@ f = ":fmt"
 i = ":set lsp.display-inlay-hints false"
 r = ":rl"
 s = ":! getc"
+S = ":! getc code.cpp"
 
 [keys.normal.space]
 F = "file_picker"

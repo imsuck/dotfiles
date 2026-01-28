@@ -22,7 +22,7 @@ return {
   line_height = 0.9,
 
   color_schemes = {["tokyonight-storm"] = colors},
-  color_scheme = "tokyonight-storm",
+  color_scheme = "catppuccin-macchiato",
 
   enable_tab_bar = false,
 

@@ -6,6 +6,7 @@ function fish_user_key_bindings
     bind \cz "fg&>/dev/null; echo; commandline -f repaint"
     bind -M insert \cz "fg&>/dev/null; echo; commandline -f repaint"
     bind -M insert \e\[3\;3~ kill-word
+    bind -M insert alt-backspace backward-kill-path-component
     bind \el "echo; eza -F --icons=auto; commandline -f repaint"
     bind -M insert \el "echo; eza -F --icons=auto; commandline -f repaint"
 end

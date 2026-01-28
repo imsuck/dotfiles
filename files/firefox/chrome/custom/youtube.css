@@ -1,7 +1,17 @@
 @-moz-document domain("youtube.com") {
+:root[dark] [fill="red"],
+:root[dark] [fill="#F00"],
+:root[dark] [fill="#FF0000"],
+:root[dark] [fill="#f03"],
+:root[dark] [fill="#FF0033"] {
+    fill: #ed8796 !important;
+}
+
 .ytp-play-progress,
+.ytp-swatch-background-color,
+.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment,
 #progress.ytd-thumbnail-overlay-resume-playback-renderer {
-	background: #f03 !important;
+    background: #ed8796 !important;
 }
 
 div.ytSuggestionComponentSuggestion {

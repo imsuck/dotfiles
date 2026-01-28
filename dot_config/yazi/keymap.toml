@@ -20,11 +20,11 @@ run = "filter"
 
 [[mgr.prepend_keymap]]
 on = "j"
-run = "plugin arrow 1"
+run = "arrow next"
 
 [[mgr.prepend_keymap]]
 on = "k"
-run = "plugin arrow -1"
+run = "arrow prev"
 
 [[mgr.prepend_keymap]]
 on = "l"

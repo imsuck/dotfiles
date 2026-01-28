@@ -33,15 +33,6 @@ style = "bold cyan"
 format = '([$all_status$ahead_behind]($style)) '
 deleted = "-"
 
-[rust]
-symbol = "rs"
-version_format = ""
-format = '[$symbol$version]($style) '
-
-[nodejs]
-symbol = "node"
-format = '[$symbol]($style) '
-
 [status]
 disabled = false
 format = '[\[$status\]](bold red) '
@@ -57,3 +48,63 @@ disabled = true
 
 [package]
 disabled = true
+
+[rust]
+symbol = "rs"
+format = '[$symbol]($style) '
+
+[nodejs]
+symbol = "node"
+format = '[$symbol]($style) '
+
+[c]
+symbol = "C"
+format = '[$symbol]($style) '
+
+[cpp]
+symbol = "C++"
+format = '[$symbol]($style) '
+
+[cmake]
+symbol = 'cmake'
+format = '[$symbol]($style) '
+
+[golang]
+symbol = 'go'
+format = '[$symbol]($style) '
+
+[java]
+symbol = 'java'
+format = '[$symbol]($style) '
+
+[julia]
+symbol = 'jl'
+format = '[$symbol]($style) '
+
+[kotlin]
+symbol = 'kt'
+format = '[$symbol]($style) '
+
+[lua]
+symbol = 'lua'
+format = '[$symbol]($style) '
+
+[nim]
+symbol = 'nim'
+format = '[$symbol]($style) '
+
+[nix_shell]
+format = '[$symbol$state( \($name\))]($style) '
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+
+[sudo]
+format = '[as $symbol]($style) '
+
+[typst]
+symbol = 'typ'
+format = '[$symbol]($style) '
+
+[zig]
+format = '[$symbol]($style) '
