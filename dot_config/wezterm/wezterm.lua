@@ -10,7 +10,7 @@ return {
     {
       family = "Mono",
       -- weight = "Regular",
-      harfbuzz_features = {"ss02", "ss07"},
+      harfbuzz_features = {"ss02", "ss08", "ss09"},
     },
     "Noto Sans Mono",
     "Twitter Color Emoji",

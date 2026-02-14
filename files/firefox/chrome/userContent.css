@@ -10,6 +10,7 @@
 
 * {
   tab-size: 4;
+  font-feature-settings: "ss02", "ss08", "ss09";
 }
 *::selection {
   color: #c0caf5;

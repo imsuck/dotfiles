@@ -8,12 +8,10 @@ map O feedkeys "<F1><Return><Return><F9><Return><Return>" # Open pdf files from 
 map o feedkeys "<F2><Return><Return><F9><Return><Return>" # Open pdf files in home directory
 
 # Smooth scroll
-map h feedkeys "<C-Left>"
-map j feedkeys "<C-Down>"
-map k feedkeys "<C-Up>"
-map l feedkeys "<C-Right>"
-map d feedkeys "g<PageDown>e"
-map u feedkeys "g<PageUp>e"
+map j scroll smooth-down
+map k scroll smooth-up
+map d feedkeys "<C-d>"
+map u feedkeys "<C-u>"
 
 ## Configurations
 set selection-clipboard clipboard
