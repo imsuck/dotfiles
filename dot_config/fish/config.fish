@@ -90,6 +90,8 @@ status is-interactive; and begin
 
     mise activate fish | source
 
+    syncthing install-completions | source
+
     set -g fish_key_bindings fish_vi_key_bindings
 
     # _zellij_tab_name_update

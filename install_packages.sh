@@ -8,7 +8,7 @@
 
 alias pac_inst='sudo pacman -S --noconfirm --needed'
 
-pac_inst cronie
+pac_inst cronie syncthing
 
 pac_inst atuin bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide \
   trash-cli
