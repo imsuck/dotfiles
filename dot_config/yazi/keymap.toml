@@ -1,4 +1,8 @@
 [[mgr.prepend_keymap]]
+on = "<C-h>"
+run = "plugin checksum"
+
+[[mgr.prepend_keymap]]
 on = "!"
 run = "shell --block '$SHELL'"
 

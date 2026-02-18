@@ -11,13 +11,13 @@ alias pac_inst='sudo pacman -S --noconfirm --needed'
 pac_inst cronie
 
 pac_inst atuin bat bat-extras dust eza fd fzf ripdrag starship vivid yazi zoxide \
-  impala
+  trash-cli
 # dev
 pac_inst clang helix mise tinymist typst watchexec zellij
 # rust dev
 pac_inst rustup rust-analyzer bacon sccache
 
-pac_inst alacritty bottom handlr wezterm
+pac_inst alacritty bottom handlr ghostty
 pac_inst firefox nitrogen picom polybar qalculate-gtk rofi rofi-emoji zathura
 
 # screenshot

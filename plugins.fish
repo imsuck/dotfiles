@@ -5,4 +5,4 @@ fisher install edc/bass
 fisher install jorgebucaran/autopair.fish
 
 # yazi plugins, don't ask why I put it here
-ya pack -u
+ya pkg -u
