@@ -99,6 +99,11 @@ status is-interactive; and begin
     # if ! set -q ZELLIJ
     #     exec zellij
     # end
+
+    function aegis
+        set -l vault $(fd -d 1 . ~/syncthing-shared/aegis-data/ | tail -1)
+        aegis-cli -timeout 30s $vault
+    end
 end
 
 # if not functions -q _fish_prompt

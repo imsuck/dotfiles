@@ -6,7 +6,7 @@
 # workspace $ws4 gaps top -1
 # workspace $ws4 gaps right -2
 
-for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm"] move to workspace $ws1, focus
+for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm|com.mitchellh.ghostty"] move to workspace $ws1, focus
 
 for_window [class="Brave-browser|firefox"] move to workspace $ws2, focus
 

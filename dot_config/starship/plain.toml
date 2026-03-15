@@ -1,6 +1,7 @@
 add_newline = false
 
-command_timeout = 2_000
+scan_timeout = 1_000
+command_timeout = 5_000
 
 format = """$all"""
 

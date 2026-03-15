@@ -9,7 +9,9 @@ th.git = th.git or {}
 th.git.added_sign = "+"
 th.git.modified_sign = "!"
 th.git.deleted_sign = "-"
-require("git"):setup()
+require("git"):setup{
+  order = 1500,
+}
 
 function Linemode:mtime()
   local time = math.floor(self._file.cha.mtime or 0)

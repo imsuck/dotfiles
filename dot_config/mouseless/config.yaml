@@ -10,7 +10,7 @@ layers:
     passThrough: true
     # enterCommand: "notify-send -r 32835 -t 250 'mouse layer entered'"
     # exitCommand: "notify-send -r 32835 -t 250 'mouse layer exited'"
-    enterCommand: "echo 'mouse layer entered' >/tmp/mouseless.state"
+    enterCommand: "echo '!!!!! mouse layer entered !!!!!' >/tmp/mouseless.state"
     exitCommand: "echo 'mouse layer exited' >/tmp/mouseless.state"
     bindings:
       capslock: layer initial
