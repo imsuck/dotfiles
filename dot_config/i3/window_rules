@@ -12,6 +12,8 @@ for_window [class="stalonetray"] floating enable
 for_window [class="ripdrag"] floating enable, sticky enable
 
 # set floating (nontiling) for special apps
+for_window [class="copyq"] floating enable
+for_window [class="KeePassXC"] floating enable
 for_window [class="OpenTabletDriver.UX"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Running yay -Scc"
+sudo rmdir /var/cache/pacman/pkg/download*
 yay -Scc
 
 read -p "Remove firefox cache? " ff_cache

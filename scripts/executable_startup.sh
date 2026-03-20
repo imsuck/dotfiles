@@ -16,4 +16,6 @@ systemctl --user start opentabletdriver.service &
 
 systemctl --user start mouseless.service &
 
-clipcatd &
+copyq &
+
+keepassxc &
