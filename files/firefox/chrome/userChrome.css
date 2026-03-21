@@ -9,9 +9,11 @@
   transition: none !important;
 }
 
+/*
 #nav-bar {
   padding: 4px 0 0 !important;
 }
+*/
 
 .openintabs-menuseparator,
 .openintabs-menuitem,
@@ -19,121 +21,47 @@
   display: none !important;
 }
 
-/* ===================
- *      AUTO-HIDE
- * ===================
- * src: https://www.reddit.com/r/FirefoxCSS/comments/1rmvfgi/simple_css_for_autohiding/
- */
-
-:root {
-  --uc-speed: 0ms;
-  --uc-sidebar-hoverzone: 1px; 
-  --uc-sidebar-width: 300px; 
-  --uc-nav-height: 38px;
-  --uc-vert-offset: -8px;
-  --uc-curve: cubic-bezier(0.45, 0, 0.55, 1);
-}
-
-#vertical-tabs-newtab-button,
-#tabs-newtab-button,
-#sidebar-tools-and-extensions-splitter,
-.buttons-wrapper {
+/* vertical tabs */
+:root[inFullscreen] #sidebar-main,
+:root[inFullscreen] #sidebar-launcher-splitter {
   display: none !important;
 }
-
-.tab-background {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.tab-label-container {
-  &[textoverflow] {
-    &[labeldirection="ltr"], &:not([labeldirection]):-moz-locale-dir(ltr) {
-      direction: ltr;
-      mask-image: linear-gradient(to left, transparent, var(--lwt-accent-color) var(--tab-label-mask-size)) !important;
-    }
+#tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"] {
+  #vertical-tabs-newtab-button {
+    display: none !important;
+  }
+  
+  & .tabbrowser-tab { 
+    --tab-min-height: 32px;
+    --tab-inner-inline-margin: 0px;
+  }
+  .tab-background {
+    margin: 0 10px !important;
+  }
+  .tab-background[selected] {
+    background-color: #494d64 !important; /* Surface 1 */
+    background-image: none !important;
   }
 }
 
-/* Keep chrome above page */
-#navigator-toolbox {
-  position: relative !important;
-  z-index: 999 !important;
-}
-
-
-/* Hide built-in sidebar splitter */
-#sidebar-launcher-splitter {
-  display: none !important;
-}
-    
-.tab-background {
-  transition: margin var(--uc-speed) var(--uc-curve) !important;
-}
-
-:root:not(:has(#TabsToolbar .tabbrowser-tab:not([hidden]))) {
-  #sidebar-main {
-    position: fixed !important;
-    top: var(--uc-nav-height) !important;
-    bottom: 0 ;
-    bottom: var(--uc-vert-offset) !important;
-    left: 0 !important; 
-    width: var(--uc-sidebar-width) !important;
-    max-width: var(--uc-sidebar-width) !important;
-    z-index: 9999 !important;
-    background-color: var(--lwt-accent-color) !important;
-    /* box-shadow: -2px 0 18px rgba(0,255,255,1.25) !important; */
-    clip-path: inset(0px 0px 0px -30px) !important; 
-    
-    /* Tell the GPU to expect both changes */
-    will-change: width;
-    
-    /* Transition both properties */
-    transition: 
-      width var(--uc-speed) var(--uc-curve),
-      transform var(--uc-speed) var(--uc-curve) !important;
-
-
-    /* Invisible trigger strip anchored to the LEFT edge */
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0; 
-      width: var(--uc-sidebar-hoverzone);
-      height: 100%; 
-      z-index: 10000;
-      background: transparent;
-      pointer-events: auto;
-    }
-
-    /* Slide offscreen to the left */
-    &:not(:hover, :focus-within) {
-      /* transform: translateX(calc(-100% + var(--uc-sidebar-hoverzone))) !important; */
-      transform: translateX(-12px) !important;
-      width: 46px !important;
-      
-      .tab-background {
-        margin-right: 0px !important;
-        border-radius: 0 !important;
-      }
-    }
-    /* Slide back in */
-    :root[inFullscreen] & {
-      &:not(:hover, :focus-within) {
-        transform: translateX(calc(-100% + var(--uc-sidebar-hoverzone))) !important;
-      }
-
-      &:is(:hover, :focus-within) {
-        transform: translateX(0) !important;
-      }
-    }
+#tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"]:not([expanded]) {
+  .tab-background {
+    margin: auto !important;
+  }
+  .tab-icon-stack {
+    positive: absolute !important;
+    transform: translateX(-8px) !important;
   }
 }
-/* ===================
- *      AUTO-HIDE
- * ===================
- */
+
+.buttons-wrapper,
+.tools-and-extensions.actions-list {
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  width: 42px !important;
+}
+/* end of vertical tabs */
 
 /* Enable option to edit bookmark URLs under Add Bookmark (blue star) menu */
 /*
