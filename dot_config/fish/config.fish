@@ -56,11 +56,7 @@ status is-interactive; and begin
     abbr --add -- ls 'eza -F --icons=auto'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
-    if command -q doas
-        abbr --add -- p 'doas pacman'
-    else if command -q helix
-        abbr --add -- p 'sudo pacman'
-    end
+    abbr --add -- p 'sudo pacman'
     abbr --add -- pr 'gh pr create -t (git show -s --format=%s HEAD) -b (git show -s --format=%B HEAD | tail -n+3)'
     abbr --add -- tm tmux
     abbr --add -- wtr 'curl wttr.in/?qF'

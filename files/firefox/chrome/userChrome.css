@@ -27,7 +27,8 @@
   display: none !important;
 }
 #tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"] {
-  #vertical-tabs-newtab-button {
+  #vertical-tabs-newtab-button,
+  .tab-close-button.close-icon {
     display: none !important;
   }
   

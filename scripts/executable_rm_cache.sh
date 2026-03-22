@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [[ ! -t 0 || ! -t 1 ]]; then
+  exec alacritty --class="floater,floater" -e bash "$0"
+fi
+
 echo "Running yay -Scc"
 sudo rmdir /var/cache/pacman/pkg/download*
 yay -Scc
