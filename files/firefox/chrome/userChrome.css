@@ -49,7 +49,7 @@
 
 #tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"]:not([expanded]) {
   .tab-background {
-    margin: auto !important;
+    transform: translateX(-7px) !important;
   }
   .tab-icon-stack {
     positive: absolute !important;
