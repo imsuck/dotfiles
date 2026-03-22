@@ -49,11 +49,11 @@
 
 #tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"]:not([expanded]) {
   .tab-background {
-    transform: translateX(-7px) !important;
+    transform: translateX(-6px) !important;
   }
   .tab-icon-stack {
     positive: absolute !important;
-    transform: translateX(-8px) !important;
+    transform: translateX(-7px) !important;
   }
 }
 
