@@ -23,11 +23,13 @@
 
 /* vertical tabs */
 :root[inFullscreen] #sidebar-main,
-:root[inFullscreen] #sidebar-launcher-splitter {
+:root[inFullscreen] #sidebar-launcher-splitter,
+#main-button .button-background {
   display: none !important;
 }
 #tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"] {
   #vertical-tabs-newtab-button,
+  #tabs-newtab-button,
   .tab-close-button.close-icon {
     display: none !important;
   }
