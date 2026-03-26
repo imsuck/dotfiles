@@ -10,7 +10,11 @@ yay -Scc
 
 read -p "Remove firefox cache? " ff_cache
 case $ff_cache in
-  [Yy]*) rm -rf ~/.cache/mozilla/firefox/zmoahubn.default-release/cache2/
+  [Yy]*)
+    for dir in ~/.cache/mozilla/firefox/*; do
+      [ -d "$dir/cache2" ] && rm -rf "$dir/cache2"
+    done
+    ;;
 esac
 
 read -rp "Remove Electron/Chromium app caches in ~/.config? " electron_cache

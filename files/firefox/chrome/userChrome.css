@@ -15,56 +15,115 @@
 }
 */
 
+.menu-icon {
+  display: block !important;
+}
+
 .openintabs-menuseparator,
 .openintabs-menuitem,
 .bookmarks-actions-menuseparator {
   display: none !important;
 }
 
-/* vertical tabs */
-:root[inFullscreen] #sidebar-main,
-:root[inFullscreen] #sidebar-launcher-splitter,
-#main-button .button-background {
-  display: none !important;
+/* sideberry */
+/**
+* Hide sidebar-panel-header (sidebar.revamp: true)
+*/
+#sidebar-panel-header {
+  display: none;
 }
-#tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"] {
-  #vertical-tabs-newtab-button,
-  #tabs-newtab-button,
-  .tab-close-button.close-icon {
+
+/**
+* Dynamic styles
+*
+* Choose when styles below will be activated (comment/uncomment line)
+* - When Sidebery set title preface "."
+* - When Sidebery sidebar is active
+*/
+:root {
+  --sidebar-min-width: 30px;
+  --sidebar-visible-width: 250px;
+}
+:root[inFullscreen="true"] {
+  --sidebar-min-width: 1px;
+}
+#main-window:has(#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"][checked="true"]) {
+  /* Hide horizontal native tabs toolbar */
+  #TabsToolbar > * {
     display: none !important;
   }
-  
-  & .tabbrowser-tab { 
-    --tab-min-height: 32px;
-    --tab-inner-inline-margin: 0px;
+
+  /* Hide top window border */
+  #nav-bar {
+    border-color: transparent !important;
   }
-  .tab-background {
-    margin: 0 10px !important;
+
+  /* Hide new Firefox sidebar, restyle addon's sidebar */
+  #sidebar-main, #sidebar-launcher-splitter {
+    display: none !important;
   }
-  .tab-background[selected] {
-    background-color: #494d64 !important; /* Surface 1 */
+  #sidebar-box {
+    padding: 0 !important;
+  }
+  #sidebar-box #sidebar {
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+  }
+  #sidebar-splitter {
+    --splitter-width: 3px !important;
+    min-width: var(--splitter-width) !important;
+    width: var(--splitter-width) !important;
+    padding: 0 !important;
+    margin: 0 calc(-1*var(--splitter-width) + 1px) 0 0 !important;
+    border: 0 !important;
+    opacity: 0 !important;
+  }
+
+  /* Update background color of the #browser area (it's visible near the
+  rounded corner of the web page) so it blends with sidebery color with 
+  vertical nav-bar. */
+  /* #browser {
+    background-color: var(--lwt-accent-color) !important;
     background-image: none !important;
-  }
-}
+  } */
 
-#tabbrowser-tabs#tabbrowser-tabs#tabbrowser-tabs[orient="vertical"]:not([expanded]) {
-  .tab-background {
-    transform: translateX(-6px) !important;
+  /* Hide sidebar header (sidebar.revamp: false) */
+  #sidebar-header {
+    display: none !important;
   }
-  .tab-icon-stack {
-    positive: absolute !important;
-    transform: translateX(-7px) !important;
-  }
-}
 
-.buttons-wrapper,
-.tools-and-extensions.actions-list {
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  width: 42px !important;
+  /* Uncomment the block below to show window buttons in Firefox nav-bar 
+  (maybe, I didn't test it on non-linux-tiled-wm env) */
+  /* #nav-bar > .titlebar-buttonbox-container,
+  #nav-bar > .titlebar-buttonbox-container > .titlebar-buttonbox {
+    display: flex !important;
+  } */
+
+  /* Uncomment one of the lines below if you need space near window buttons */
+  /* #nav-bar > .titlebar-spacer[type="pre-tabs"] { display: flex !important; } */
+  /* #nav-bar > .titlebar-spacer[type="post-tabs"] { display: flex !important; } */
+
+  #sidebar-box, #sidebar {
+    position: relative !important;
+    min-width: var(--sidebar-min-width) !important;
+    max-width: var(--sidebar-min-width) !important;
+    transition: .1s ease .3s;
+    z-index: 999;
+  }
+
+  #sidebar-box:hover #sidebar {
+    min-width: var(--sidebar-visible-width) !important;
+    max-width: var(--sidebar-visible-width) !important;
+    transition: .1s ease .2s;
+  }
+
+  #sidebar-header { display: none; }
+  #sidebar-splitter { display: none; }
+  #webextpanels-window { background: transparent !important }
 }
-/* end of vertical tabs */
+/* end of sideberry */
 
 /* Enable option to edit bookmark URLs under Add Bookmark (blue star) menu */
 /*
@@ -74,7 +133,6 @@
 */
 
 /* Disable Email Image/Audio/Video and Set as Desktop Background context menu items */
-/*
 #context-sendimage,
 #context-sendvideo,
 #context-sendaudio,
@@ -82,4 +140,4 @@
 #context-setDesktopBackground {
   display: none !important;
 }
-*/
+
