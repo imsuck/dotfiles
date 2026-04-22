@@ -28,5 +28,10 @@ use = "imsuck/checksum"
 rev = "128a5ae"
 hash = "3835fee03c00e3918343546f2881de4c"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "442d908"
+hash = "ffa64f216083fb7333afc1ebbf73cc01"
+
 [flavor]
 deps = []

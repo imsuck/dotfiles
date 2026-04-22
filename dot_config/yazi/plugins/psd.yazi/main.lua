@@ -23,7 +23,7 @@ function M:preload(job)
   end
 
   local output, err = Command("magick")
-    :args({
+    :arg({
       tostring(job.file.url) .. "[0]",
       "-scale",
       "512x512",

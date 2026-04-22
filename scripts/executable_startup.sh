@@ -4,7 +4,7 @@ dex --autostart --environment i3 &
 
 eww daemon &
 
-dbus-launch dunst --config ~/.config/dunst/dunstrc &
+dunst --config ~/.config/dunst/dunstrc &
 
 nitrogen --restore &
 

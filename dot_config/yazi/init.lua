@@ -1,3 +1,5 @@
+require("mime-ext.local"):setup()
+
 require("dir-rules"):setup {
   rules = {
     screenshots = { sort = { "alphabetical", reverse = true } },

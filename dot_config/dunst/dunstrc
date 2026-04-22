@@ -5,7 +5,7 @@
     follow = mouse
     width = (300, 500)
     # height = 50
-    offset = 30x40
+    offset = (30, 40)
     transparency = 0
 
     highlight = "#c0caf5"
@@ -168,16 +168,16 @@
 # --- Colors --- #
 
 [urgency_low]
-    background = "#24283be6"
+    background = "#24273ae6"
     foreground = "#c0caf5"
-    timeout = 8
+    timeout = 5
 
 [urgency_normal]
-    background = "#24283be6"
+    background = "#24273ae6"
     foreground = "#c0caf5"
-    timeout = 8
+    timeout = 10
 
 [urgency_critical]
-    background = "#f7768ee6"
-    foreground = "#fff"
+    background = "#ed8796e6"
+    foreground = "#f4dbd6"
     timeout = 0

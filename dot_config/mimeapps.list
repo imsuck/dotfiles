@@ -11,12 +11,14 @@ image/png=org.gnome.gThumb.desktop;krita_png.desktop;feh.desktop;
 inode/directory=thunar.desktop;
 text/plain=helix.desktop;
 text/x-log=helix.desktop;firefox.desktop;
+video/mp4=firefox.desktop;
+
 [Default Applications]
 application/pdf=okularApplication_pdf.desktop;
 application/x-krita=org.kde.krita.desktop;
 application/x-musedata=obsidian.desktop;
 image/bmp=feh.desktop;
-image/gif=feh.desktop;
+image/gif=firefox.desktop;
 image/heif=feh.desktop;
 image/jpeg=feh.desktop;firefox.desktop;
 image/jpg=feh.desktop;firefox.desktop;
@@ -41,7 +43,7 @@ text/x-moc=helix.desktop;
 text/x-pascal=helix.desktop;
 text/x-tex=helix.desktop;
 x-scheme-handler/discord=vesktop.desktop
-x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop;
+x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 x-scheme-handler/figma=figma-linux.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;

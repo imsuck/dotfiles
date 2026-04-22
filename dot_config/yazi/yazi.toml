@@ -5,7 +5,7 @@ title_format = "yazi {cwd}"
 image_delay = 0
 
 [[plugin.prepend_preloaders]]
-name = "*.kra"
+mime = "application/krita"
 run = "krita"
 
 [[plugin.prepend_preloaders]]
@@ -17,7 +17,7 @@ mime = "image/adobe.photoshop"
 run = "psd"
 
 [[plugin.prepend_previewers]]
-name = "*.kra"
+mime = "application/krita"
 run = "krita"
 
 [[plugin.prepend_previewers]]
@@ -27,6 +27,20 @@ run = "magick"
 [[plugin.prepend_previewers]]
 mime = "image/adobe.photoshop"
 run = "psd"
+
+[[plugin.prepend_fetchers]]
+id    = "mime" # Remove if Yazi > v26.1.22
+url   = "local://*"
+run   = "mime-ext.local"
+prio  = "high"
+group = "mime"
+
+[[plugin.prepend_fetchers]]
+id    = "mime" # Remove if Yazi > v26.1.22
+url   = "remote://*"
+run   = "mime-ext.remote"
+prio  = "high"
+group = "mime"
 
 [[plugin.prepend_fetchers]]
 id   = "git"
