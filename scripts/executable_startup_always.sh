@@ -9,14 +9,14 @@
 # Disable touchpad if there is a USB mouse plugged in
 ~/scripts/touchpad.sh &
 
-~/scripts/mouseless-notif.sh &
+$(sleep 5 && bash ~/scripts/mouseless-notif.sh) &
 
 $(killall ksuperkey; ksuperkey -t 250 -e "Super_L=Shift_L|F9") &
 
 # activate-linux &
 
 # Don't turn screen off automatically
-xset s off -dpms &
+# xset s off -dpms &
 
 # killall xbanish
 # xbanish -i all &

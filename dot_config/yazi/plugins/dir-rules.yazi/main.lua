@@ -28,7 +28,7 @@ local function setup(st, opts)
 		for dir, dir_pref in pairs(st.rules) do
 			if cwd:ends_with(dir) then
 				for k, v in pairs(dir_pref) do
-					ya.mgr_emit(k, v)
+					ya.emit(k, v)
 				end
 				save_pref = true
 				break
@@ -39,7 +39,7 @@ local function setup(st, opts)
 			prev_pref = cur_pref
 		else
 			for k, v in pairs(prev_pref) do
-				ya.mgr_emit(k, v)
+				ya.emit(k, v)
 			end
 		end
 	end)

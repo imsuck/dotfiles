@@ -29,25 +29,23 @@ mime = "image/adobe.photoshop"
 run = "psd"
 
 [[plugin.prepend_fetchers]]
-id    = "mime" # Remove if Yazi > v26.1.22
 url   = "local://*"
 run   = "mime-ext.local"
 prio  = "high"
 group = "mime"
 
 [[plugin.prepend_fetchers]]
-id    = "mime" # Remove if Yazi > v26.1.22
 url   = "remote://*"
 run   = "mime-ext.remote"
 prio  = "high"
 group = "mime"
 
 [[plugin.prepend_fetchers]]
-id   = "git"
-name = "*"
-run  = "git"
+group = "git"
+url   = "local://*"
+run   = "git"
 
 [[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
+group = "git"
+url   = "local://*"
+run   = "git"

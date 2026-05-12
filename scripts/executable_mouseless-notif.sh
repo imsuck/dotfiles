@@ -11,3 +11,8 @@ watchexec -pw /tmp/mouseless.state \
   'notify-send -r 32835 -t 500 "$(cat /tmp/mouseless.state)"' &
 
 echo $! > "$PIDFILE"
+
+# keep script alive so watchexec actually works
+while true; do
+  sleep 86400
+done

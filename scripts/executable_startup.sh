@@ -6,6 +6,8 @@ eww daemon &
 
 dunst --config ~/.config/dunst/dunstrc &
 
+# $(sleep 30; ~/scripts/mouseless-notif.sh) &
+
 nitrogen --restore &
 
 sh -c 'sleep 2; picom' &
