@@ -7,8 +7,8 @@ if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
   rm -f "$PIDFILE"
 fi
 
-watchexec -pw /tmp/mouseless.state \
-  'notify-send -r 32835 -t 500 "$(cat /tmp/mouseless.state)"' &
+watchexec -pw /var/tmp/mouseless.state \
+  'notify-send -r 32835 -t 500 "$(cat /var/tmp/mouseless.state)"' &
 
 echo $! > "$PIDFILE"
 
