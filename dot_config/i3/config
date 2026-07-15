@@ -26,16 +26,18 @@ workspace_layout default
 # workspace_layout tabbed
 
 # border
-default_border normal 0
-default_floating_border normal 0
+# default_border normal 0
+# default_floating_border normal 0
+default_border pixel 2
+default_floating_border pixel 2
 # default_border none
 # for_window [class="^.*"] border none
 smart_borders true
 
-gaps inner 0
-gaps outer 0
+gaps inner 2
+gaps outer -2
 
-# smart_gaps true
+smart_gaps true
 
 # gaps bottom 26
 

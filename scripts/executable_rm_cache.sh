@@ -6,7 +6,22 @@ fi
 
 echo "Running yay -Scc"
 sudo rmdir /var/cache/pacman/pkg/download*
-yay -Scc
+
+find /var/cache/pacman/pkg ~/.cache/yay ~/.cache/paru \
+  -mindepth 1 -maxdepth 1 -print0 2>/dev/null |
+while IFS= read -r -d '' item; do
+  name=$(basename "$item")
+
+  case $name in
+    completion.cache|vcs.json)
+      continue
+      ;;
+  esac
+
+  size=$(du -sh "$item" 2>/dev/null | cut -f1)
+  echo "removing [$size] $item"
+  sudo rm -rf -- "$item"
+done
 
 read -p "Remove firefox cache? " ff_cache
 case $ff_cache in
@@ -31,7 +46,8 @@ case $electron_cache in
             seen_apps["$app_dir"]=1
         fi
 
-        echo "  removing $(basename "$cache_dir")"
+        size=$(du -sh "$cache_dir" 2>/dev/null | cut -f1)
+        echo "  removing [$size] $(basename "$cache_dir")"
         rm -rf "$cache_dir"
       done
     ;;
