@@ -25,6 +25,83 @@
   display: none !important;
 }
 
+box#sidebar-container {
+  --tab-selected-bgcolor: rgb(54, 58, 79);
+}
+
+#vertical-tabs-newtab-button {
+  display: none;
+}
+
+/* Collapsed state */
+
+#browser:has(sidebar-main:is(:not([expanded]))) {
+    #sidebar-container { --tab-min-height: 18px !important; }
+    #tabbrowser-tabs[orient="vertical"] {
+        margin-inline: -9px !important;
+        .tabbrowser-tab { height: 26px !important; }
+        .tab-background { display: none !important; }
+        .tab-close-button { 
+            height: 12px !important;
+            width: 12px !important;
+            padding: 2px !important;
+            margin-inline: 5px !important;
+        }
+        .tab-icon-stack:not([selected]):hover { 
+            margin-inline: -5.5px !important;
+            padding: 5px 5px !important;
+            background-color: rgb(54, 58, 79) !important;  
+            border-radius: 8px !important;
+        }
+        .tabbrowser-tab[selected] {
+            margin-inline: -5.5px !important;
+            .tab-icon-stack { 
+                padding: 5px 5px !important;
+                background-color: var(--tab-selected-bgcolor);
+                border-radius: 8px;
+            }
+            .tab-close-button { margin-inline: 10px !important; }
+        }
+    }
+}
+
+.actions-list {
+    /* adjust the space above the buttons (not new tab) */
+    /* -5px is max when reducing the space, more than that triggers a glitch */
+    margin-top: -5px !important;
+    gap: 7px !important;
+}
+
+/* Expanded state */
+
+#browser:has(sidebar-main:is([expanded])) {
+    #tabbrowser-tabs[orient="vertical"] {
+        --tab-inline-padding: 5px !important;
+        margin-inline: 4px !important;
+        .tabbrowser-tab { 
+            padding-left: 1px !important;
+            height: 26px !important;
+            width: 99% !important;
+        }
+        .tab-background { display: none !important; }
+        .tabbrowser-tab:not([selected]):hover { 
+            background-color: rgb(54, 58, 79) !important;  
+            border-radius: 7px !important;
+        }
+        .tabbrowser-tab[selected] {
+            padding: 13px 0px 13px 0px !important;
+            margin-bottom: -2px !important;
+            background-color: var(--tab-selected-bgcolor) !important;
+            border-radius: 8px !important;
+        }
+        #vertical-tabs-newtab-button { 
+            /* adjust the space above and below the 'new tab' button */
+            margin-top: -8px !important; 
+            margin-bottom: -8px !important; 
+        }
+    }
+}
+
 /* sideberry */
 /**
 * Hide sidebar-panel-header (sidebar.revamp: true)

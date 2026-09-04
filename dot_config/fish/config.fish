@@ -101,7 +101,7 @@ status is-interactive; and begin
     # end
 
     function aegis
-        set -l vault "$HOME/syncthing-shared/credentials/aegis-backup.json"
+        set -l vault $(fd "aegis-backup.*\.json" "$HOME/syncthing-shared/credentials" | sort | tail -1)
         aegis-cli -timeout 30s $vault
     end
 end

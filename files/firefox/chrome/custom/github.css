@@ -1,6 +1,6 @@
 @-moz-document domain("github.com") {
 	* {
-		font-family: "Fira Code", monospace !important;
+		/* font-family: "Fira Code", monospace !important; */
 	}
 
 	.react-blob-print-hide {

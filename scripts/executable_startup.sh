@@ -25,5 +25,6 @@ copyq &
 keepassxc &
 
 kdeconnectd &
+kdeconnect-indicator
 
 (cd ~/Applications/arrpc && pnpm start) &
