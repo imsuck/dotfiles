@@ -1,0 +1,10 @@
+[Unit]
+Description=Merge Fish shell history conflicts
+
+[Service]
+ExecStart=/usr/bin/watchexec --watch %h/.local/share/fish --debounce 1000 -- /usr/bin/python3 %h/bin/merge-fish-history.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
