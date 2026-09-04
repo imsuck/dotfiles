@@ -18,7 +18,7 @@ pac_inst clang helix mise tinymist typst watchexec zellij
 pac_inst rustup rust-analyzer bacon sccache
 
 pac_inst alacritty bottom handlr ghostty
-pac_inst firefox nitrogen picom polybar qalculate-gtk rofi rofi-emoji zathura
+pac_inst floorp waypaper picom polybar qalculate-gtk rofi rofi-emoji zathura
 
 # screenshot
 pac_inst xclip shotgun hacksaw

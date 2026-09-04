@@ -8,7 +8,7 @@ dunst --config ~/.config/dunst/dunstrc &
 
 # $(sleep 30; ~/scripts/mouseless-notif.sh) &
 
-nitrogen --restore &
+waypaper --restore &
 
 (sleep 5; picom) &
 
