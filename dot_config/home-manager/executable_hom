@@ -51,10 +51,10 @@ optimize() {
 	_log nix store optimise
 }
 init() {
-	_log nix shell "nixpkg#nix-output-monitor" \
+	_log nix shell "nixpkgs#nix-output-monitor" \
 		--command bash -c \
 			"nix run home-manager/master -L -v --log-format internal-json -- switch --flake . -b old |& nom --json"
-	ln -s ~/.config/home-manager/hom ~/.local/bin
+	ln -s ~/.config/home-manager/hom ~/.local/bin/ || true
 }
 
 main() {
