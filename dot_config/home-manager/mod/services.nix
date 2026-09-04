@@ -23,13 +23,19 @@
       };
 
       mouseless = {
-        Unit.Description = "mouseless";
-
-        Service = with config; {
-          ExecStart = "/usr/bin/sudo ${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
+        Unit = {
+          Description = "mouseless";
+          After = "graphical-session.target";
+          PartOf = "graphical-session.target";
         };
 
-        Install.WantedBy = [ "multi-user.target" ];
+        Service = with config; {
+          Type = "exec";
+          ExecStart = "/usr/bin/sudo ${pkgs.mouseless}/bin/mouseless --config ${xdg.configHome}/mouseless/config.yaml";
+          Restart = "on-failure";
+        };
+
+        Install.WantedBy = [ "graphical-session.target" ];
       };
     };
 

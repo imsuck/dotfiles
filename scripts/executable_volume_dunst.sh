@@ -19,7 +19,7 @@ down)
 mute)
 	amixer --quiet -D pulse sset Master toggle
 	if [[ -z "$(amixer -D pulse get Master | rg '\[on\]')" ]]; then
-		dunstify -a "changevolume" -t 2000 -r 9993 -u low -i "volume-mute" "Muted"
+		notify-send -a "changevolume" -t 2000 -r 9993 -u low -i "volume-mute" "Muted"
 	else
 		send_notification up
 	fi

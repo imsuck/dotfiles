@@ -30,7 +30,7 @@ set -gx FZF_CTRL_R_OPTS '--preview ""'
 set -gx HM_FLAKE "$HOME"'/.config/home-manager'
 set -gx COMMA_NIXPKGS_FLAKE "$HOME"'/.config/home-manager'
 set -gx XCURSOR_SIZE 32
-set -gx XCURSOR_THEME Posy_Cursor
+set -gx XCURSOR_THEME Posy_Cursor_Strokeless
 set -gx XCURSOR_PATH "$HOME/.nix-profile/share/icons:/usr/share/icons:$HOME/.icons:$HOME/.local/share/icons"(test -n "$XCURSOR_PATH" && echo ':' || echo)"$XCURSOR_PATH"
 
 status is-login; and begin

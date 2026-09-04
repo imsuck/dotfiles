@@ -76,12 +76,6 @@
     ];
   };
 
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.posy-cursors;
-    name = "Posy_Cursor";
-  };
-
   home.sessionVariables = {
     BROWSER = "firefox";
     CARGO_HOME = "$HOME/.local/share/cargo";
