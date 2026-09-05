@@ -58,8 +58,10 @@ run_cmd() {
 	selected="$yes"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
+			i3-resurrect save -S main
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
+			i3-resurrect save -S main
 			systemctl reboot
 		elif [[ $1 == '--hibernate' ]]; then
 			systemctl hibernate
@@ -70,6 +72,7 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
+			i3-resurrect save -S main
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0

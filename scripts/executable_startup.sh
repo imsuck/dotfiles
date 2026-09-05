@@ -24,7 +24,8 @@ copyq &
 
 keepassxc &
 
-kdeconnectd &
-kdeconnect-indicator
+(sleep 2; kdeconnect-indicator) &
 
 (cd ~/Applications/arrpc && pnpm start) &
+
+i3-resurrect restore -S main &
