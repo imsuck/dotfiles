@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+sleep 1
+
 dex --autostart --environment i3 &
 
 eww daemon &
@@ -10,7 +12,7 @@ dunst --config ~/.config/dunst/dunstrc &
 
 waypaper --restore &
 
-(sleep 5; picom) &
+picom &
 
 systemctl --user start opentabletdriver.service &
 
@@ -24,7 +26,7 @@ copyq &
 
 keepassxc &
 
-(sleep 2; kdeconnect-indicator) &
+kdeconnect-indicator &
 
 (cd ~/Applications/arrpc && pnpm start) &
 

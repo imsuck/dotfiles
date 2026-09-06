@@ -5,22 +5,30 @@ if [[ ! -t 0 || ! -t 1 ]]; then
 fi
 
 echo "Running yay -Scc"
-sudo rmdir /var/cache/pacman/pkg/download*
+sudo rmdir /var/cache/pacman/pkg/download* || true
 
-find /var/cache/pacman/pkg ~/.cache/yay ~/.cache/paru \
-  -mindepth 1 -maxdepth 1 -print0 2>/dev/null |
-while IFS= read -r -d '' item; do
-  name=$(basename "$item")
+# Pacman cache
+sudo pacman -Scc
 
-  case $name in
-    completion.cache|vcs.json)
-      continue
-      ;;
-  esac
+# AUR build caches
+for cache in ~/.cache/yay ~/.cache/paru; do
+  [ -d "$cache" ] || continue
 
-  size=$(du -sh "$item" 2>/dev/null | cut -f1)
-  echo "removing [$size] $item"
-  sudo rm -rf -- "$item"
+  find "$cache" -mindepth 1 -maxdepth 1 -type d -print0 2>/dev/null |
+  while IFS= read -r -d '' repo; do
+    name=$(basename "$repo")
+
+    case $name in
+      completion.cache|vcs.json)
+        continue
+        ;;
+    esac
+
+    if git -C "$repo" rev-parse --is-inside-work-tree &>/dev/null; then
+      echo "cleaning $repo"
+      git -C "$repo" clean -fd
+    fi
+  done
 done
 
 read -p "Remove firefox cache? " ff_cache

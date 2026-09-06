@@ -1,0 +1,6 @@
+[Unit]
+Description=Save i3-resurrect profile
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/i3-resurrect save -S main

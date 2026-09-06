@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically save i3-resurrect profile
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

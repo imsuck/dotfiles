@@ -4,7 +4,7 @@ set -gx GTK_IM_MODULE fcitx
 set -gx QT_IM_MODULE fcitx
 set -gx XMODIFIERS '@im=fcitx'
 
-set -gx QT_QPA_PLATFORMTHEME qt5ct
+set -gx QT_QPA_PLATFORMTHEME qt6ct
 
 set -gx PATH "$HOME"'/.local/bin:'"$CARGO_HOME"'/bin'(test -n "$PATH" && echo ':' || echo)"$PATH"
 set -gx BROWSER firefox

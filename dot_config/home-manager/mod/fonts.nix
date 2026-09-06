@@ -8,19 +8,19 @@ let
   ];
 in
 {
-  # home.packages =
-  #   (with pkgs; [
-  #     fira-code
-  #     # font-awesome
-  #     icomoon-feather
-  #     lxgw-fusionkai
-  #     noto-fonts
-  #     noto-fonts-cjk-sans
-  #     noto-fonts-cjk-serif
-  #     roboto-mono
-  #     twitter-color-emoji
-  #   ])
-  #   ++ (with pkgs.nerd-fonts; [ fira-code ]);
+  home.packages =
+    (with pkgs; [
+      fira-code
+      # font-awesome
+      icomoon-feather
+      lxgw-fusionkai
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      roboto-mono
+      twitter-color-emoji
+    ])
+    ++ (with pkgs.nerd-fonts; [ fira-code ]);
 
   fonts.fontconfig = {
     enable = false;
