@@ -11,7 +11,7 @@ for_window [class="Alacritty|VSCodium|org.wezfurlong.wezterm|com.mitchellh.ghost
 
 for_window [class="Brave-browser|firefox|floorp"] move to workspace $ws2, focus
 
-for_window [class="Thunar"] move to workspace $ws3
+for_window [class="(?i)thunar|(?i)dolphin"] move to workspace $ws3
 
 for_window [class="vesktop"] move to workspace $ws4, focus
 

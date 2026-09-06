@@ -9,7 +9,7 @@ bindsym Shift+F8 exec --no-startup-id ~/scripts/rofi_script_runner.sh
 ## App shortcuts
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom
-bindsym $mod+n exec --no-startup-id /usr/bin/thunar
+bindsym $mod+n exec --no-startup-id env /usr/bin/dolphin --platformtheme kde
 bindsym $mod+Shift+Return exec --no-startup-id alacritty
 bindsym $mod+Return exec --no-startup-id ghostty
 bindsym $mod+p exec --no-startup-id keepassxc
