@@ -3,7 +3,7 @@
 ## Add this to your wm startup file.
 
 # Terminate already running bar instances
-killall -q polybar
+killall -q -s 9 polybar
 
 # killall doesn't seem to kill the scripts started by the bar.
 # So, the following ways work better

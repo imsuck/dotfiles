@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zalo
+Comment=Zalo Messenger
+Exec=/usr/bin/steam -silent steam://rungameid/15807372334026719232
+Type=Application
+Terminal=false
+Categories=Network;InstantMessaging;
+StartupNotify=true

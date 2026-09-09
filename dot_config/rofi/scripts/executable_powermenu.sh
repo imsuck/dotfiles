@@ -58,9 +58,11 @@ run_cmd() {
 	selected="$yes"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
+			rm -r ~/.local/state/i3-resurrect/sessions/main/
 			i3-resurrect save -S main
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
+			rm -r ~/.local/state/i3-resurrect/sessions/main/
 			i3-resurrect save -S main
 			systemctl reboot
 		elif [[ $1 == '--hibernate' ]]; then
@@ -72,6 +74,7 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
+				rm -r ~/.local/state/i3-resurrect/sessions/main/
 				i3-resurrect save -S main
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
