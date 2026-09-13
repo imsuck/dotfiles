@@ -91,6 +91,7 @@ x-scheme-handler/news=userapp-Betterbird-CE99U3.desktop;
 x-scheme-handler/nntp=userapp-Betterbird-CE99U3.desktop;
 x-scheme-handler/skribbl=skribbltypo.desktop;
 x-scheme-handler/snews=userapp-Betterbird-CE99U3.desktop;
+x-scheme-handler/terminal=/usr/share/applications/Alacritty.desktop;
 x-scheme-handler/tetra=tetra-launcher.desktop;
 x-scheme-handler/webcal=userapp-Betterbird-7JB3U3.desktop;
 x-scheme-handler/webcals=userapp-Betterbird-7JB3U3.desktop;

@@ -8,7 +8,7 @@ echo "Running yay -Scc"
 sudo rmdir /var/cache/pacman/pkg/download* || true
 
 # Pacman cache
-sudo pacman -Scc
+# sudo pacman -Scc
 
 # AUR build caches
 for cache in ~/.cache/yay ~/.cache/paru; do
@@ -26,7 +26,7 @@ for cache in ~/.cache/yay ~/.cache/paru; do
 
     if git -C "$repo" rev-parse --is-inside-work-tree &>/dev/null; then
       echo "cleaning $repo"
-      git -C "$repo" clean -fd
+      git -C "$repo" clean -fdx
     fi
   done
 done
@@ -34,7 +34,7 @@ done
 read -p "Remove firefox cache? " ff_cache
 case $ff_cache in
   [Yy]*)
-    for dir in ~/.cache/mozilla/firefox/*; do
+    for dir in ~/.cache/floorp/*; do
       [ -d "$dir/cache2" ] && rm -rf "$dir/cache2"
     done
     ;;

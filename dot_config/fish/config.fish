@@ -6,6 +6,7 @@ set -gx XMODIFIERS '@im=fcitx'
 
 set -gx QT_QPA_PLATFORMTHEME qt6ct
 
+set -gx TERMINAL alacritty
 set -gx PATH "$HOME"'/.local/bin:'"$CARGO_HOME"'/bin'(test -n "$PATH" && echo ':' || echo)"$PATH"
 set -gx BROWSER firefox
 set -gx MOZ_USE_XINPUT2 1
