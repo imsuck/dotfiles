@@ -48,13 +48,12 @@ status is-interactive; and begin
     abbr --add -- c cargo
     abbr --add -- ct 'cargo test'
     abbr --add -- df 'duf -theme ansi'
-    abbr --add -- e hx
     abbr --add -- g git
     abbr --add -- ga 'git add -p'
     abbr --add -- gc 'git checkout'
     abbr --add -- l 'eza -F --icons=auto'
-    abbr --add -- ll 'eza -lF --icons=auto --no-time'
-    abbr --add -- lll 'eza -laF --icons=auto --no-time'
+    abbr --add -- ll 'eza -lF --icons=auto'
+    abbr --add -- lll 'eza -laF --icons=auto'
     abbr --add -- ls 'eza -F --icons=auto'
     abbr --add -- m make
     abbr --add -- o 'handlr open'
@@ -68,9 +67,11 @@ status is-interactive; and begin
 
     # Aliases
     if command -q hx
-        # alias helix hx
+        alias helix hx
+        abbr --add -- e hx
     else if command -q helix
         alias hx helix
+        abbr --add -- e helix
     end
 
     # Interactive shell initialisation

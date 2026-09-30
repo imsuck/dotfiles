@@ -13,20 +13,19 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-hibernate=''
-logout=''
+shutdown='shutdown'
+reboot='reboot'
+lock='lock'
+sleep='sleep'
+hibernate='hibernate'
+logout='logout'
 yes=''
 no=''
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "$host - $uptime" \
-		-mesg "Uptime: $uptime" \
-		-theme $dir
+		-theme-str "entry { placeholder: \"$host - $uptime\"; }"
 }
 
 # Confirmation CMD
@@ -49,7 +48,13 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$hibernate\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$sleep\n$hibernate\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
+
+save_sess() {
+	rm -r ~/.local/state/i3-resurrect/sessions/main/
+	i3-resurrect save -S main
+	sleep 1;
 }
 
 # Execute Command
@@ -58,13 +63,14 @@ run_cmd() {
 	selected="$yes"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			rm -r ~/.local/state/i3-resurrect/sessions/main/
-			i3-resurrect save -S main
+			save_sess
 			systemctl poweroff
 		elif [[ $1 == '--reboot' ]]; then
-			rm -r ~/.local/state/i3-resurrect/sessions/main/
-			i3-resurrect save -S main
+			save_sess
 			systemctl reboot
+		elif [[ $1 == '--sleep' ]]; then
+			systemctl sleep
+			betterlockscreen -l
 		elif [[ $1 == '--hibernate' ]]; then
 			systemctl hibernate
 			betterlockscreen -l
@@ -74,8 +80,7 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				rm -r ~/.local/state/i3-resurrect/sessions/main/
-				i3-resurrect save -S main
+				save_sess
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
@@ -101,6 +106,9 @@ case ${chosen} in
 		elif [[ -x '/usr/bin/i3lock' ]]; then
 			i3lock
 		fi
+        ;;
+    $sleep)
+		run_cmd --sleep
         ;;
     $hibernate)
 		run_cmd --hibernate

@@ -31,3 +31,6 @@ kdeconnect-indicator &
 (cd ~/Applications/arrpc && pnpm start) &
 
 i3-resurrect restore -S main &
+
+# what on earth is this keyboard layout?
+xmodmap -e 'keycode 94 = Shift_L'

@@ -3,9 +3,9 @@ add_newline = false
 scan_timeout = 1_000
 command_timeout = 5_000
 
-format = """$all"""
+format = """$time$all"""
 
-right_format = """$cmd_duration$time"""
+# right_format = """$cmd_duration$time"""
 
 [character]
 format = "λ "
@@ -42,7 +42,7 @@ format = '[\[$status\]](bold red) '
 disabled = false
 style = 'yellow'
 time_format = '%R'
-format = '''[\[$time\]]($style)'''
+format = '''[\[$time\]]($style) '''
 
 [line_break]
 disabled = true

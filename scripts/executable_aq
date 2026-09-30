@@ -1,0 +1,289 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+if [ "$#" -lt 1 ]; then
+    echo "Usage: aq <url> [output]"
+    echo
+    echo "Examples:"
+    echo "  aq https://example.com/file.zip"
+    echo "  aq https://example.com/file.zip ./file.zip"
+    echo "  aq https://example.com/file.zip ./downloads/"
+    echo "  aq https://example.com/file.zip /tmp/file.zip"
+    exit 2
+fi
+
+# ---------------------------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------------------------
+
+ARIA2_RPC_URL="${ARIA2_RPC_URL:-http://localhost:6800/jsonrpc}"
+ARIA2_TOKEN="${ARIA2_TOKEN:-}"
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+
+for cmd in curl jq realpath; do
+    if ! command -v "$cmd" >/dev/null 2>&1; then
+        echo "aq: required command '$cmd' is not installed." >&2
+        exit 1
+    fi
+done
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+die() {
+    echo "aq: $*" >&2
+    exit 1
+}
+
+rpc_call() {
+    local payload="$1"
+    local response
+
+    if ! response=$(curl -fsS \
+        --connect-timeout 5 \
+        --max-time 30 \
+        -X POST \
+        "$ARIA2_RPC_URL" \
+        -H "Content-Type: application/json" \
+        -d "$payload"); then
+        die "failed to contact aria2 RPC server at $ARIA2_RPC_URL"
+    fi
+
+    if ! jq -e . >/dev/null 2>&1 <<<"$response"; then
+        die "aria2 returned invalid JSON"
+    fi
+
+    echo "$response"
+}
+
+fmt_size() {
+    local size="${1:-0}"
+
+    if command -v numfmt >/dev/null 2>&1; then
+        numfmt --to=iec "$size"
+    else
+        echo "${size}B"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Resolve URL and output
+# ---------------------------------------------------------------------------
+
+url="$1"
+
+# Strip query string when determining the default filename.
+clean_url="${url%%\?*}"
+default_filename="${clean_url##*/}"
+
+if [ -z "$default_filename" ] || [ "$default_filename" = "." ] || [ "$default_filename" = ".." ]; then
+    die "could not determine output filename from URL"
+fi
+
+output="${2:-$default_filename}"
+
+# Determine whether output is a directory or file.
+if [ -d "$output" ] || [[ "$output" == */ ]]; then
+    dir="$(realpath -m "$output")"
+    file="$default_filename"
+    output="$dir/$file"
+else
+    output="$(realpath -m "$output")"
+    dir="$(dirname "$output")"
+    file="$(basename "$output")"
+fi
+
+# Make sure the target directory exists.
+if ! mkdir -p "$dir"; then
+    die "could not create output directory: $dir"
+fi
+
+echo "Queued:"
+echo "  $url"
+echo "  -> $output"
+
+# ---------------------------------------------------------------------------
+# aria2.addUri
+# ---------------------------------------------------------------------------
+
+add_payload=$(
+    jq -n -c \
+        --arg url "$url" \
+        --arg dir "$dir" \
+        --arg file "$file" \
+        --arg token "$ARIA2_TOKEN" '
+        {
+            jsonrpc: "2.0",
+            id: "aq",
+            method: "aria2.addUri",
+            params:
+                (
+                    (if $token != ""
+                     then ["token:" + $token]
+                     else []
+                     end)
+                    +
+                    [
+                        [$url],
+                        {
+                            dir: $dir,
+                            out: $file,
+                            "allow-overwrite": "true"
+                        }
+                    ]
+                )
+        }'
+)
+
+add_response="$(rpc_call "$add_payload")"
+
+# Check for aria2 RPC error.
+error_msg="$(jq -r '.error.message // empty' <<<"$add_response")"
+
+if [ -n "$error_msg" ]; then
+    die "aria2 error: $error_msg"
+fi
+
+gid="$(jq -r '.result // empty' <<<"$add_response")"
+
+if [ -z "$gid" ]; then
+    die "aria2 did not return a download GID"
+fi
+
+echo "  GID: $gid"
+
+# ---------------------------------------------------------------------------
+# aria2.tellStatus payload
+# ---------------------------------------------------------------------------
+
+status_payload=$(
+    jq -n -c \
+        --arg gid "$gid" \
+        --arg token "$ARIA2_TOKEN" '
+        {
+            jsonrpc: "2.0",
+            id: "aq",
+            method: "aria2.tellStatus",
+            params:
+                (
+                    (if $token != ""
+                     then ["token:" + $token]
+                     else []
+                     end)
+                    +
+                    [
+                        $gid,
+                        [
+                            "status",
+                            "completedLength",
+                            "totalLength",
+                            "downloadSpeed",
+                            "errorMessage"
+                        ]
+                    ]
+                )
+        }'
+)
+
+# ---------------------------------------------------------------------------
+# Poll loop
+# ---------------------------------------------------------------------------
+
+while true; do
+    status_resp="$(rpc_call "$status_payload")"
+
+    # Handle RPC errors.
+    status_error="$(jq -r '.error.message // empty' <<<"$status_resp")"
+
+    if [ -n "$status_error" ]; then
+        printf '\r\033[KDownload status error: %s\n' "$status_error" >&2
+        exit 1
+    fi
+
+    # Extract all status fields in one jq invocation.
+    IFS=$'\t' read -r \
+        dl_status \
+        completed \
+        total \
+        speed \
+        err_msg \
+        < <(
+            jq -r '[
+                (.result.status // ""),
+                (.result.completedLength // "0"),
+                (.result.totalLength // "0"),
+                (.result.downloadSpeed // "0"),
+                (.result.errorMessage // "")
+            ] | @tsv' <<<"$status_resp"
+        )
+
+    # Make sure numeric fields are actually numeric.
+    completed="${completed:-0}"
+    total="${total:-0}"
+    speed="${speed:-0}"
+
+    case "$dl_status" in
+        complete)
+            printf '\r\033[K[=========================] 100%% - Download complete!\n'
+            break
+            ;;
+
+        error)
+            printf '\r\033[KDownload failed: %s\n' \
+                "${err_msg:-unknown error}" >&2
+            exit 1
+            ;;
+
+        removed)
+            printf '\r\033[KDownload removed from aria2.\n' >&2
+            exit 1
+            ;;
+
+        paused)
+            printf '\r\033[KStatus: paused...'
+            ;;
+
+        active|waiting|"")
+            if [ "$total" -gt 0 ] 2>/dev/null; then
+                pct=$(( completed * 100 / total ))
+                filled=$(( completed * 25 / total ))
+
+                # Prevent an overfull bar due to rounding.
+                if [ "$filled" -gt 25 ]; then
+                    filled=25
+                fi
+
+                empty=$((25 - filled))
+
+                bar="$(printf '%*s' "$filled" '' | tr ' ' '=')"
+                bar_space="$(printf '%*s' "$empty" '')"
+                full_bar="${bar}${bar_space}"
+
+                comp_fmt="$(fmt_size "$completed")"
+                tot_fmt="$(fmt_size "$total")"
+                speed_fmt="$(fmt_size "$speed")"
+
+                printf '\r\033[K[%s] %3d%% (%s/%s) - %s/s' \
+                    "$full_bar" \
+                    "$pct" \
+                    "$comp_fmt" \
+                    "$tot_fmt" \
+                    "$speed_fmt"
+            else
+                printf '\r\033[KStatus: %s...' \
+                    "${dl_status:-waiting}"
+            fi
+            ;;
+
+        *)
+            printf '\r\033[KStatus: %s...' "$dl_status"
+            ;;
+    esac
+
+    sleep 0.5
+done
