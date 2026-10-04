@@ -1,5 +1,5 @@
-Xcursor.theme: Posy_Cursor_Strokeless
-Xcursor.size: 16
+Xcursor.theme: Posy_Cursor
+Xcursor.size: 32
 
 
 xterm*faceName: Fira Code-12

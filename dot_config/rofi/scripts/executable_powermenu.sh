@@ -73,6 +73,7 @@ run_cmd() {
 			betterlockscreen -l
 		elif [[ $1 == '--hibernate' ]]; then
 			systemctl hibernate
+			sleep 0.5
 			betterlockscreen -l
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then

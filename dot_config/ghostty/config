@@ -15,3 +15,5 @@ right-click-action = ignore
 window-inherit-working-directory = false
 
 keybind = ctrl+backspace=text:\x1B\x7F
+
+custom-shader = /home/imsuck/.config/ghostty/cursor_warp.glsl

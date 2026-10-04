@@ -2,15 +2,70 @@
 
 set -Eeuo pipefail
 
-if [ "$#" -lt 1 ]; then
-    echo "Usage: aq <url> [output]"
-    echo
-    echo "Examples:"
-    echo "  aq https://example.com/file.zip"
-    echo "  aq https://example.com/file.zip ./file.zip"
-    echo "  aq https://example.com/file.zip ./downloads/"
-    echo "  aq https://example.com/file.zip /tmp/file.zip"
+# ---------------------------------------------------------------------------
+# Colors & Formatting Setup
+# ---------------------------------------------------------------------------
+if [ -t 1 ] && [ -t 2 ]; then
+    C_RESET='\033[0m'
+    C_BOLD='\033[1m'
+    C_RED='\033[0;31m'
+    C_GREEN='\033[0;32m'
+    C_YELLOW='\033[0;33m'
+    C_CYAN='\033[0;36m'
+    C_MAGENTA='\033[0;35m'
+    C_DIM='\033[2m'
+else
+    C_RESET='' C_BOLD='' C_RED='' C_GREEN='' C_YELLOW='' C_CYAN='' C_MAGENTA='' C_DIM=''
+fi
+
+usage() {
+    cat <<EOF
+Usage: aq [options] <url> [output]
+
+Options:
+  -c, --checksum <hash|url>  Specify a hash (e.g., sha-256=a1b2c3...) OR
+                             a URL to a checksum file (.sha256, .md5, etc.)
+  -h, --help                 Show this help message
+
+Examples:
+  aq https://example.com/file.zip
+  aq -c sha-256=d3b07384... https://example.com/file.zip
+  aq -c https://example.com/file.zip.sha256 https://example.com/file.zip ./file.zip
+EOF
     exit 2
+}
+
+# ---------------------------------------------------------------------------
+# Options Parsing
+# ---------------------------------------------------------------------------
+CHECKSUM_INPUT=""
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -c|--checksum)
+            [ -z "${2:-}" ] && { echo -e "${C_RED}aq: --checksum requires an argument${C_RESET}" >&2; exit 1; }
+            CHECKSUM_INPUT="$2"
+            shift 2
+            ;;
+        -h|--help)
+            usage
+            ;;
+        -*)
+            echo -e "${C_RED}aq: unknown option '$1'${C_RESET}" >&2
+            usage
+            ;;
+        *)
+            POSITIONAL_ARGS+=("$1")
+            shift
+            ;;
+    esac
+done
+
+set -- "${POSITIONAL_ARGS[@]}"
+
+if [ "$#" -lt 1 ]; then
+    usage
 fi
 
 # ---------------------------------------------------------------------------
@@ -19,26 +74,56 @@ fi
 
 ARIA2_RPC_URL="${ARIA2_RPC_URL:-http://localhost:6800/jsonrpc}"
 ARIA2_TOKEN="${ARIA2_TOKEN:-}"
+CURRENT_GID=""
 
 # ---------------------------------------------------------------------------
-# Dependencies
+# Dependencies Check
 # ---------------------------------------------------------------------------
 
 for cmd in curl jq realpath; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
-        echo "aq: required command '$cmd' is not installed." >&2
+        echo -e "${C_RED}aq: required command '$cmd' is not installed.${C_RESET}" >&2
         exit 1
     fi
 done
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Helpers & Signals
 # ---------------------------------------------------------------------------
 
 die() {
-    echo "aq: $*" >&2
+    echo -e "${C_RED}aq: $*${C_RESET}" >&2
     exit 1
 }
+
+# Trap SIGINT (Ctrl+C) and SIGTERM to pause download in aria2
+cleanup_and_pause() {
+    trap - INT TERM
+    echo -e "\n${C_YELLOW}Interrupted. Sending pause request to aria2...${C_RESET}" >&2
+
+    if [ -n "$CURRENT_GID" ]; then
+        local pause_payload
+        pause_payload=$(jq -n -c \
+            --arg gid "$CURRENT_GID" \
+            --arg token "$ARIA2_TOKEN" '
+            {
+                jsonrpc: "2.0",
+                id: "aq-pause",
+                method: "aria2.pause",
+                params: (if $token != "" then ["token:" + $token] else [] end + [$gid])
+            }')
+        
+        curl -fsS --connect-timeout 2 --max-time 5 \
+            -X POST "$ARIA2_RPC_URL" \
+            -H "Content-Type: application/json" \
+            -d "$pause_payload" >/dev/null 2>&1 || true
+        
+        echo -e "${C_GREEN}Download paused (GID: $CURRENT_GID).${C_RESET}" >&2
+    fi
+    exit 130
+}
+
+trap cleanup_and_pause INT TERM
 
 rpc_call() {
     local payload="$1"
@@ -63,7 +148,6 @@ rpc_call() {
 
 fmt_size() {
     local size="${1:-0}"
-
     if command -v numfmt >/dev/null 2>&1; then
         numfmt --to=iec "$size"
     else
@@ -71,13 +155,101 @@ fmt_size() {
     fi
 }
 
+fmt_eta() {
+    local rem_bytes="$1"
+    local speed_bytes="$2"
+
+    if [ "$speed_bytes" -le 0 ] || [ "$rem_bytes" -le 0 ]; then
+        echo "--:--"
+        return
+    fi
+
+    local eta_sec=$(( rem_bytes / speed_bytes ))
+    local hours=$(( eta_sec / 3600 ))
+    local mins=$(( (eta_sec % 3600) / 60 ))
+    local secs=$(( eta_sec % 60 ))
+
+    if [ "$hours" -gt 0 ]; then
+        printf "%02dh %02dm %02ds" "$hours" "$mins" "$secs"
+    else
+        printf "%02dm %02ds" "$mins" "$secs"
+    fi
+}
+
+resolve_checksum() {
+    local input="$1"
+    local filename="$2"
+
+    # Helper function to normalize any hash string into aria2's strict 'algo=hash' format
+    normalize_hash_pair() {
+        local raw="$1"
+        # Convert colon separator to '=' (e.g., sha256:abc -> sha256=abc)
+        raw="${raw/:/=}"
+
+        local algo_part="${raw%%=*}"
+        local hash_part="${raw#*=}"
+        algo_part="$(echo "$algo_part" | tr '[:upper:]' '[:lower:]')"
+
+        # Convert sha256 -> sha-256, sha1 -> sha-1, sha512 -> sha-512
+        if [[ "$algo_part" =~ ^sha([0-9]+)$ ]]; then
+            algo_part="sha-${BASH_REMATCH[1]}"
+        fi
+
+        echo "${algo_part}=${hash_part}"
+    }
+
+    # 1. Direct hash argument (e.g. sha256:abc..., SHA-256=abc..., md5:abc...)
+    if [[ "$input" =~ ^[a-zA-Z0-9-]+[:=][a-fA-F0-9]+$ ]]; then
+        normalize_hash_pair "$input"
+        return
+    fi
+
+    # 2. Remote checksum URL provided (e.g. https://example.com/SHA256SUMS)
+    if [[ "$input" =~ ^https?:// ]]; then
+        echo -e "${C_CYAN}Fetching checksum file from:${C_RESET} $input" >&2
+        local checksum_content
+        if ! checksum_content=$(curl -fsSL --connect-timeout 5 --max-time 15 "$input"); then
+            die "failed to download remote checksum file"
+        fi
+
+        # Filter for line containing target filename, or fall back to the first line
+        local hash_line hash_val algo=""
+        hash_line=$(grep -F "$filename" <<<"$checksum_content" || head -n 1 <<<"$checksum_content")
+
+        # Check if line specifies an explicit prefix (e.g. SHA256:xxx or sha256=xxx)
+        if [[ "$hash_line" =~ ([a-zA-Z0-9-]+)[:=]([a-fA-F0-9]{32,128}) ]]; then
+            normalize_hash_pair "${BASH_REMATCH[1]}=${BASH_REMATCH[2]}"
+            return
+        fi
+
+        # Standard BSD/GNU format (e.g. "a1b2c3d4...  file.zip")
+        hash_val=$(echo "$hash_line" | grep -oE '[a-fA-F0-9]{32,128}' | head -n 1)
+        if [ -z "$hash_val" ]; then
+            die "could not extract valid hash from remote checksum file"
+        fi
+
+        case "${#hash_val}" in
+            32)  algo="md5" ;;
+            40)  algo="sha-1" ;;
+            64)  algo="sha-256" ;;
+            128) algo="sha-512" ;;
+            *)   die "unsupported checksum length (${#hash_val} chars)" ;;
+        esac
+
+        echo -e "${C_GREEN}Matched checksum:${C_RESET} ${algo}=${hash_val}" >&2
+        echo "${algo}=${hash_val}"
+        return
+    fi
+
+    die "invalid checksum format. Expected 'algo=hash', 'algo:hash', or HTTP(S) URL"
+}
+
 # ---------------------------------------------------------------------------
-# Resolve URL and output
+# Resolve URL, output path, and checksum
 # ---------------------------------------------------------------------------
 
 url="$1"
 
-# Strip query string when determining the default filename.
 clean_url="${url%%\?*}"
 default_filename="${clean_url##*/}"
 
@@ -87,7 +259,6 @@ fi
 
 output="${2:-$default_filename}"
 
-# Determine whether output is a directory or file.
 if [ -d "$output" ] || [[ "$output" == */ ]]; then
     dir="$(realpath -m "$output")"
     file="$default_filename"
@@ -98,14 +269,18 @@ else
     file="$(basename "$output")"
 fi
 
-# Make sure the target directory exists.
 if ! mkdir -p "$dir"; then
     die "could not create output directory: $dir"
 fi
 
-echo "Queued:"
-echo "  $url"
-echo "  -> $output"
+aria2_checksum=""
+if [ -n "$CHECKSUM_INPUT" ]; then
+    aria2_checksum="$(resolve_checksum "$CHECKSUM_INPUT" "$file")"
+fi
+
+echo -e "${C_BOLD}Queued:${C_RESET}"
+echo -e "  ${C_CYAN}URL:${C_RESET}    $url"
+echo -e "  ${C_CYAN}Target:${C_RESET} $output"
 
 # ---------------------------------------------------------------------------
 # aria2.addUri
@@ -116,25 +291,25 @@ add_payload=$(
         --arg url "$url" \
         --arg dir "$dir" \
         --arg file "$file" \
-        --arg token "$ARIA2_TOKEN" '
+        --arg token "$ARIA2_TOKEN" \
+        --arg checksum "$aria2_checksum" '
         {
             jsonrpc: "2.0",
             id: "aq",
             method: "aria2.addUri",
             params:
                 (
-                    (if $token != ""
-                     then ["token:" + $token]
-                     else []
-                     end)
+                    (if $token != "" then ["token:" + $token] else [] end)
                     +
                     [
                         [$url],
-                        {
-                            dir: $dir,
-                            out: $file,
-                            "allow-overwrite": "true"
-                        }
+                        (
+                            {
+                                dir: $dir,
+                                out: $file,
+                                "allow-overwrite": "true"
+                            } + (if $checksum != "" then {checksum: $checksum} else {} end)
+                        )
                     ]
                 )
         }'
@@ -142,23 +317,21 @@ add_payload=$(
 
 add_response="$(rpc_call "$add_payload")"
 
-# Check for aria2 RPC error.
 error_msg="$(jq -r '.error.message // empty' <<<"$add_response")"
-
 if [ -n "$error_msg" ]; then
     die "aria2 error: $error_msg"
 fi
 
 gid="$(jq -r '.result // empty' <<<"$add_response")"
-
 if [ -z "$gid" ]; then
     die "aria2 did not return a download GID"
 fi
 
-echo "  GID: $gid"
+CURRENT_GID="$gid"
+echo -e "  ${C_CYAN}GID:${C_RESET}    ${C_MAGENTA}$gid${C_RESET}"
 
 # ---------------------------------------------------------------------------
-# aria2.tellStatus payload
+# Status Payload & Poll Loop
 # ---------------------------------------------------------------------------
 
 status_payload=$(
@@ -171,81 +344,60 @@ status_payload=$(
             method: "aria2.tellStatus",
             params:
                 (
-                    (if $token != ""
-                     then ["token:" + $token]
-                     else []
-                     end)
+                    (if $token != "" then ["token:" + $token] else [] end)
                     +
                     [
                         $gid,
-                        [
-                            "status",
-                            "completedLength",
-                            "totalLength",
-                            "downloadSpeed",
-                            "errorMessage"
-                        ]
+                        ["status", "completedLength", "totalLength", "downloadSpeed", "errorMessage"]
                     ]
                 )
         }'
 )
 
-# ---------------------------------------------------------------------------
-# Poll loop
-# ---------------------------------------------------------------------------
-
 while true; do
     status_resp="$(rpc_call "$status_payload")"
-
-    # Handle RPC errors.
     status_error="$(jq -r '.error.message // empty' <<<"$status_resp")"
 
     if [ -n "$status_error" ]; then
-        printf '\r\033[KDownload status error: %s\n' "$status_error" >&2
+        printf '\r\033[K%bDownload status error: %s%b\n' "$C_RED" "$status_error" "$C_RESET" >&2
         exit 1
     fi
 
-    # Extract all status fields in one jq invocation.
-    IFS=$'\t' read -r \
-        dl_status \
-        completed \
-        total \
-        speed \
-        err_msg \
-        < <(
-            jq -r '[
-                (.result.status // ""),
-                (.result.completedLength // "0"),
-                (.result.totalLength // "0"),
-                (.result.downloadSpeed // "0"),
-                (.result.errorMessage // "")
-            ] | @tsv' <<<"$status_resp"
-        )
+    IFS=$'\t' read -r dl_status completed total speed err_msg < <(
+        jq -r '[
+            (.result.status // ""),
+            (.result.completedLength // "0"),
+            (.result.totalLength // "0"),
+            (.result.downloadSpeed // "0"),
+            (.result.errorMessage // "")
+        ] | @tsv' <<<"$status_resp"
+    )
 
-    # Make sure numeric fields are actually numeric.
     completed="${completed:-0}"
     total="${total:-0}"
     speed="${speed:-0}"
 
     case "$dl_status" in
         complete)
-            printf '\r\033[K[=========================] 100%% - Download complete!\n'
+            printf '\r\033[K%b[=========================] 100%% - Download complete!%b\n' "$C_GREEN" "$C_RESET"
+            CURRENT_GID=""
             break
             ;;
 
         error)
-            printf '\r\033[KDownload failed: %s\n' \
-                "${err_msg:-unknown error}" >&2
+            printf '\r\033[K%bDownload failed: %s%b\n' "$C_RED" "${err_msg:-unknown error}" "$C_RESET" >&2
+            CURRENT_GID=""
             exit 1
             ;;
 
         removed)
-            printf '\r\033[KDownload removed from aria2.\n' >&2
+            printf '\r\033[K%bDownload removed from aria2.%b\n' "$C_YELLOW" "$C_RESET" >&2
+            CURRENT_GID=""
             exit 1
             ;;
 
         paused)
-            printf '\r\033[KStatus: paused...'
+            printf '\r\033[K%bStatus: paused...%b' "$C_YELLOW" "$C_RESET"
             ;;
 
         active|waiting|"")
@@ -253,11 +405,7 @@ while true; do
                 pct=$(( completed * 100 / total ))
                 filled=$(( completed * 25 / total ))
 
-                # Prevent an overfull bar due to rounding.
-                if [ "$filled" -gt 25 ]; then
-                    filled=25
-                fi
-
+                [ "$filled" -gt 25 ] && filled=25
                 empty=$((25 - filled))
 
                 bar="$(printf '%*s' "$filled" '' | tr ' ' '=')"
@@ -268,20 +416,23 @@ while true; do
                 tot_fmt="$(fmt_size "$total")"
                 speed_fmt="$(fmt_size "$speed")"
 
-                printf '\r\033[K[%s] %3d%% (%s/%s) - %s/s' \
-                    "$full_bar" \
+                remaining=$(( total - completed ))
+                eta="$(fmt_eta "$remaining" "$speed")"
+
+                printf '\r\033[K[%b%s%b] %3d%% (%s/%s) - %b%s/s%b (ETA: %s)' \
+                    "$C_CYAN" "$full_bar" "$C_RESET" \
                     "$pct" \
                     "$comp_fmt" \
                     "$tot_fmt" \
-                    "$speed_fmt"
+                    "$C_GREEN" "$speed_fmt" "$C_RESET" \
+                    "$eta"
             else
-                printf '\r\033[KStatus: %s...' \
-                    "${dl_status:-waiting}"
+                printf '\r\033[KStatus: %b%s...%b' "$C_CYAN" "${dl_status:-waiting}" "$C_RESET"
             fi
             ;;
 
         *)
-            printf '\r\033[KStatus: %s...' "$dl_status"
+            printf '\r\033[KStatus: %b%s...%b' "$C_CYAN" "$dl_status" "$C_RESET"
             ;;
     esac
 
