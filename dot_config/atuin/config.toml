@@ -36,7 +36,14 @@ show_help = false
 
 secrets_filter = true
 
-enter_accept = true
+enter_accept = false
+
+keymap_mode = "vim-insert"
+keymap_cursor = {
+  emacs = "steady-bar",
+  vim_insert = "steady-bar",
+  vim_normal = "steady-block",
+}
 
 ## Timeout (in seconds) for acquiring a local database connection (sqlite)
 local_timeout = 5

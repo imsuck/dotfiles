@@ -18,6 +18,7 @@ else if command -q helix
     set -gx VISUAL helix
 end
 set -gx PAGER bat
+set -gx LESS '-I'
 set -gx LS_COLORS (vivid generate tokyonight-storm)
 
 set -gx CARGO_HOME "$HOME"'/.local/share/cargo'
@@ -76,7 +77,7 @@ status is-interactive; and begin
 
     # Interactive shell initialisation
     fzf --fish | source
-    atuin init fish | source
+    atuin init fish --disable-up-arrow | source
 
     tabs 4
 

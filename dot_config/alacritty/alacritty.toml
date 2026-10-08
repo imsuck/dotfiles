@@ -83,7 +83,7 @@ blinking = "Off"
 shape = "beam"
 
 [font]
-size = 8.0
+size = 6.0
 
 [font.bold]
 family = "Mono"
