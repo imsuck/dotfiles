@@ -24,7 +24,7 @@ warp-taskbar &
 
 copyq &
 
-keepassxc &
+# keepassxc &
 
 kdeconnect-indicator &
 
