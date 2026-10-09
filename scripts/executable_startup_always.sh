@@ -25,4 +25,4 @@ systemctl restart --user unclutter.service &
 $(killall autotiling; autotiling) &
 
 # what on earth is this keyboard layout?
-xmodmap -e 'keycode 94 = Shift_L'
+xmodmap -e 'keycode 94 = Shift_L' &
