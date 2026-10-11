@@ -1,12 +1,12 @@
 [Desktop Entry]
-Type = Application
-Exec = /home/imsuck/Applications/osu-lazer/osu.AppImage
-Icon = /home/imsuck/Applications/osu-lazer/osu-icon.png
-Terminal = false
-Categories = Game;
+Type=Application
+Exec=/home/imsuck/Applications/osu-lazer/osu.AppImage
+Icon=/home/imsuck/Applications/osu-lazer/osu-icon.png
+Terminal=false
+Categories=Game;
 
-Name = osu!lazer
-GenericName = circle clicking game
-Comment = osu game
-StartupWMClass = osu
-Actions = New;
+Name=osu!lazer
+GenericName=circle clicking game
+Comment=osu game
+StartupWMClass=osu
+Actions=New;

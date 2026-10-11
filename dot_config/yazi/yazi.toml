@@ -6,7 +6,7 @@ image_delay = 0
 
 [opener]
 open = [
-  { run = "handlr open %s1", desc = "Open" }
+  { run = "handlr open %s", desc = "Open" }
 ]
 
 [[plugin.prepend_preloaders]]

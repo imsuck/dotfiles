@@ -1,0 +1,6 @@
+[Unit]
+Description=Remap keycode 94 to Shift_L
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xmodmap -e "keycode 94 = Shift_L"

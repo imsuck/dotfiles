@@ -6,13 +6,13 @@ run = "plugin checksum"
 on = "!"
 run = "shell --block '$SHELL'"
 
-[[mgr.prepend_keymap]]
-on = "o"
-run = "shell --confirm --orphan 'handlr open %h'"
+# [[mgr.prepend_keymap]]
+# on = "o"
+# run = "shell --confirm --orphan 'handlr open %s'"
 
 [[mgr.prepend_keymap]]
 on = "e"
-run = "shell --confirm --block '$EDITOR %h'"
+run = "shell --confirm --block '$EDITOR %s'"
 
 [[mgr.prepend_keymap]]
 on = "f"

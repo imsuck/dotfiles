@@ -13,6 +13,7 @@ for_window [class="ripdrag"] floating enable, sticky enable
 
 # set floating (nontiling) for special apps
 for_window [class="kdeconnect.app"] floating enable
+for_window [title="^termfilechooser$"] floating enable, focus
 for_window [class="floater"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="KeePassXC"] floating enable, focus
