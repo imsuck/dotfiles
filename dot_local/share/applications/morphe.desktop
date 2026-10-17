@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+TryExec=/bin/java
+Exec=/bin/java -jar /home/imsuck/Applications/morphe/morphe-desktop.jar
+Icon=morphe-logo
+Terminal=false
+Categories=Utilities;
+Name=Morphe Patcher Desktop
+GenericName=apk patcher
+Comment=
+StartupWMClass=morphe

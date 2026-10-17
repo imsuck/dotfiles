@@ -17,6 +17,7 @@ for_window [title="^termfilechooser$"] floating enable, focus
 for_window [class="floater"] floating enable
 for_window [class="copyq"] floating enable
 for_window [class="KeePassXC"] floating enable, focus
+for_window [class="Zotero"] floating enable
 for_window [class="OpenTabletDriver.UX"] floating enable
 for_window [class="(?i)Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable

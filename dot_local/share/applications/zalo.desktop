@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Zalo
 Comment=Zalo Messenger
-Exec=/usr/bin/steam -silent steam://rungameid/15807372334026719232
+Exec=/home/imsuck/.local/bin/zalo
+Icon=zalo
 Type=Application
 Terminal=false
 Categories=Network;InstantMessaging;
